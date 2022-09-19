@@ -3,3 +3,4 @@
 **/*.inp
 **/*.bin
 .DS_Store
+.gitignore
