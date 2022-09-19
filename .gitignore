@@ -1,5 +1,5 @@
-*checkpoint.ipynb
-*.rpt
-*.inp
-*.bin
+**/*checkpoint.ipynb
+**/*.rpt
+**/*.inp
+**/*.bin
 .DS_Store
