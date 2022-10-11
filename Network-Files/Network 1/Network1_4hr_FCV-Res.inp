@@ -1,0 +1,549 @@
+[TITLE]
+Case Study 1 Network in Campisano et al. (2018) Using EPA-SWMM to simulate
+intermittent water distribution systems.
+Converted to an EPANET IWS using the EPANET-PDA method assuming the head of the
+reservoir (not provided in the original paper)
+Details of this specific conversion process are included in:
+PLACEHOLDER
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+         1     712.00          0                     ;
+         2     707.51          0                     ;
+         3     702.18          0                     ;
+         4     687.00          0                     ;
+         5     686.26          0                     ;
+         6     687.00          0                     ;
+         7     666.00          0                     ;
+         8     650.00          0                     ;
+         9     660.70          0                     ;
+        10     671.00          0                     ;
+        11     671.43          0                     ;
+        12     670.35          0                     ;
+        13     670.35          0                     ;
+        14     674.10          0                     ;
+        15     710.39          0                     ;
+        16     711.04          0                     ;
+        17     723.25          0                     ;
+        18     711.50          0                     ;
+        19     731.53          0                     ;
+        20     728.19          0                     ;
+        21     757.02          0                     ;
+        22     741.38          0                     ;
+        23     777.19          0                     ;
+        24     772.00          0                     ;
+        25     772.00          0                     ;
+        26     762.00          0                     ;
+        27     737.13          0                     ;
+        28     727.21          0                     ;
+        29     727.00          0                     ;
+        30     719.00          0                     ;
+        31     711.08          0                     ;
+        32     705.00          0                     ;
+        33     700.36          0                     ;
+        34     757.00          0                     ;
+        35     749.00          0                     ;
+        36     746.24          0                     ;
+        37     746.00          0                     ;
+        38     751.08          0                     ;
+        39     758.02          0                     ;
+        40     760.00          0                     ;
+        41     738.75          0                     ;
+        42     735.83          0                     ;
+        43     719.99          0                     ;
+        44     717.36          0                     ;
+        45     717.36          0                     ;
+        46     715.00          0                     ;
+        47     713.02          0                     ;
+        48     712.00          0                     ;
+        49     719.80          0                     ;
+        50     720.20          0                     ;
+        51     722.67          0                     ;
+        52     716.52          0                     ;
+        53     725.00          0                     ;
+        54     725.00          0                     ;
+        55     745.72          0                     ;
+        56     764.60          0                     ;
+ ANforNode1     712.00          0                     ;
+ ANforNode2     707.51          0                     ;
+ ANforNode3     702.18          0                     ;
+ ANforNode5     686.26          0                     ;
+ ANforNode9     660.70          0                     ;
+ANforNode10     671.00          0                     ;
+ANforNode11     671.43          0                     ;
+ANforNode13     670.35          0                     ;
+ANforNode15     710.39          0                     ;
+ANforNode17     723.25          0                     ;
+ANforNode18     711.50          0                     ;
+ANforNode20     728.19          0                     ;
+ANforNode21     757.02          0                     ;
+ANforNode22     741.38          0                     ;
+ANforNode25     772.00          0                     ;
+ANforNode26     762.00          0                     ;
+ANforNode27     737.13          0                     ;
+ANforNode28     727.21          0                     ;
+ANforNode30     719.00          0                     ;
+ANforNode31     711.08          0                     ;
+ANforNode32     705.00          0                     ;
+ANforNode33     700.36          0                     ;
+ANforNode34     757.00          0                     ;
+ANforNode35     749.00          0                     ;
+ANforNode36     746.24          0                     ;
+ANforNode37     746.00          0                     ;
+ANforNode38     751.08          0                     ;
+ANforNode39     758.02          0                     ;
+ANforNode40     760.00          0                     ;
+ANforNode41     738.75          0                     ;
+ANforNode42     735.83          0                     ;
+ANforNode43     719.99          0                     ;
+ANforNode44     717.36          0                     ;
+ANforNode45     717.36          0                     ;
+ANforNode49     719.80          0                     ;
+ANforNode50     720.20          0                     ;
+ANforNode52     716.52          0                     ;
+ANforNode54     725.00          0                     ;
+
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ 57              	800.0000    	                	;
+ AR1 712.00      ;
+ AR2 707.51      ;
+ AR3 702.18      ;
+ AR5 686.26      ;
+ AR9 660.70      ;
+AR10 671.00      ;
+AR11 671.43      ;
+AR13 670.35      ;
+AR15 710.39      ;
+AR17 723.25      ;
+AR18 711.50      ;
+AR20 728.19      ;
+AR21 757.02      ;
+AR22 741.38      ;
+AR25 772.00      ;
+AR26 762.00      ;
+AR27 737.13      ;
+AR28 727.21      ;
+AR30 719.00      ;
+AR31 711.08      ;
+AR32 705.00      ;
+AR33 700.36      ;
+AR34 757.00      ;
+AR35 749.00      ;
+AR36 746.24      ;
+AR37 746.00      ;
+AR38 751.08      ;
+AR39 758.02      ;
+AR40 760.00      ;
+AR41 738.75      ;
+AR42 735.83      ;
+AR43 719.99      ;
+AR44 717.36      ;
+AR45 717.36      ;
+AR49 719.80      ;
+AR50 720.20      ;
+AR52 716.52      ;
+AR54 725.00      ;
+
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ 1               	1               	2               	62.4        	125         	130         	0           	Open  	;
+ 2               	2               	3               	31.4        	100         	130         	0           	Open  	;
+ 3               	3               	4               	66.8        	100         	130         	0           	Open  	;
+ 4               	4               	5               	106.2       	100         	130         	0           	Open  	;
+ 5               	5               	6               	152.7       	100         	130         	0           	Open  	;
+ 6               	6               	7               	186.7       	100         	130         	0           	Open  	;
+ 7               	7               	8               	209.7       	100         	130         	0           	Open  	;
+ 8               	8               	9               	1779        	100         	130         	0           	Open  	;
+ 9               	9               	10              	133.7       	100         	130         	0           	Open  	;
+ 10              	10              	11              	177         	50          	130         	0           	Open  	;
+ 11              	11              	12              	172.39      	25          	130         	0           	Open  	;
+ 12              	12              	13              	100         	25          	130         	0           	Open  	;
+ 13              	12              	14              	88.03       	25          	130         	0           	Open  	;
+ 14              	10              	15              	380.3       	100         	130         	0           	Open  	;
+ 15              	15              	16              	51.1        	60          	130         	0           	Open  	;
+ 16              	16              	17              	91.78       	60          	130         	0           	Open  	;
+ 17              	16              	18              	50          	60          	130         	0           	Open  	;
+ 18              	15              	19              	167.8       	100         	130         	0           	Open  	;
+ 19              	19              	20              	134.2       	100         	130         	0           	Open  	;
+ 20              	19              	21              	177.1       	100         	130         	0           	Open  	;
+ 21              	21              	22              	281.2       	60          	130         	0           	Open  	;
+ 22              	21              	23              	183.1       	200         	130         	0           	Open  	;
+ 23              	23              	24              	383.9       	150         	130         	0           	Open  	;
+ 24              	24              	25              	69.9        	100         	130         	0           	Open  	;
+ 25              	25              	26              	161.7       	100         	130         	0           	Open  	;
+ 26              	26              	27              	132.4       	100         	130         	0           	Open  	;
+ 27              	27              	28              	167.3       	100         	130         	0           	Open  	;
+ 28              	28              	29              	34.5        	100         	130         	0           	Open  	;
+ 29              	29              	30              	69.2        	100         	130         	0           	Open  	;
+ 30              	30              	31              	121.3       	100         	130         	0           	Open  	;
+ 31              	31              	32              	47.6        	100         	130         	0           	Open  	;
+ 32              	32              	33              	93.9        	100         	130         	0           	Open  	;
+ 33              	33              	9               	345.1       	160         	130         	0           	Open  	;
+ 34              	26              	34              	73          	100         	130         	0           	Open  	;
+ 35              	34              	35              	98.3        	100         	130         	0           	Open  	;
+ 36              	35              	36              	94.8        	150         	130         	0           	Open  	;
+ 37              	36              	37              	80.1        	32          	130         	0           	Open  	;
+ 38              	37              	38              	58.5        	100         	130         	0           	Open  	;
+ 39              	38              	39              	41.4        	100         	130         	0           	Open  	;
+ 40              	39              	40              	117.8       	100         	130         	0           	Open  	;
+ 41              	38              	34              	184.8       	32          	130         	0           	Open  	;
+ 42              	36              	41              	67.1        	150         	130         	0           	Open  	;
+ 43              	41              	42              	110.3       	125         	130         	0           	Open  	;
+ 44              	42              	43              	242.3       	125         	130         	0           	Open  	;
+ 45              	43              	44              	51.5        	125         	130         	0           	Open  	;
+ 46              	44              	45              	13.7        	125         	130         	0           	Open  	;
+ 47              	45              	46              	72.6        	125         	130         	0           	Open  	;
+ 48              	46              	47              	43.2        	125         	130         	0           	Open  	;
+ 49              	47              	48              	48.6        	125         	130         	0           	Open  	;
+ 50              	48              	2               	102.5       	125         	130         	0           	Open  	;
+ 51              	44              	49              	60          	80          	130         	0           	Open  	;
+ 52              	49              	50              	75.6        	80          	130         	0           	Open  	;
+ 53              	50              	51              	62.3        	100         	130         	0           	Open  	;
+ 54              	51              	52              	95.1        	50          	130         	0           	Open  	;
+ 55              	51              	53              	184.6       	100         	130         	0           	Open  	;
+ 56              	53              	54              	20.6        	100         	130         	0           	Open  	;
+ 57              	53              	55              	179.1       	100         	130         	0           	Open  	;
+ 58              	55              	56              	364.4       	100         	130         	0           	Open  	;
+ 59              	57              	23              	50          	1000        	130         	0           	CV    	;
+ Pipe1forNode1  ANforNode1        AR1        0.1        350        130 3.503370e+06         CV          ;
+ Pipe1forNode2  ANforNode2        AR2        0.1        350        130 3.892633e+05         CV          ;
+ Pipe1forNode3  ANforNode3        AR3        0.1        350        130 8.291999e+04         CV          ;
+ Pipe1forNode5  ANforNode5        AR5        0.1        350        130 1.730059e+05         CV          ;
+ Pipe1forNode9  ANforNode9        AR9        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode10 ANforNode10       AR10        0.1        350        130 2.189606e+05         CV          ;
+Pipe1forNode11 ANforNode11       AR11        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode13 ANforNode13       AR13        0.1        350        130 1.042325e+06         CV          ;
+Pipe1forNode15 ANforNode15       AR15        0.1        350        130 1.081287e+04         CV          ;
+Pipe1forNode17 ANforNode17       AR17        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode18 ANforNode18       AR18        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode20 ANforNode20       AR20        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode21 ANforNode21       AR21        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode22 ANforNode22       AR22        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode25 ANforNode25       AR25        0.1        350        130 1.261213e+08         CV          ;
+Pipe1forNode26 ANforNode26       AR26        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode27 ANforNode27       AR27        0.1        350        130 9.731582e+04         CV          ;
+Pipe1forNode28 ANforNode28       AR28        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode30 ANforNode30       AR30        0.1        350        130 3.503370e+06         CV          ;
+Pipe1forNode31 ANforNode31       AR31        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode32 ANforNode32       AR32        0.1        350        130 3.503370e+06         CV          ;
+Pipe1forNode33 ANforNode33       AR33        0.1        350        130 5.605391e+05         CV          ;
+Pipe1forNode34 ANforNode34       AR34        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode35 ANforNode35       AR35        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode36 ANforNode36       AR36        0.1        350        130 1.401348e+05         CV          ;
+Pipe1forNode37 ANforNode37       AR37        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode38 ANforNode38       AR38        0.1        350        130 5.605391e+05         CV          ;
+Pipe1forNode39 ANforNode39       AR39        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode40 ANforNode40       AR40        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode41 ANforNode41       AR41        0.1        350        130 4.848954e+04         CV          ;
+Pipe1forNode42 ANforNode42       AR42        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode43 ANforNode43       AR43        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode44 ANforNode44       AR44        0.1        350        130 1.368504e+04         CV          ;
+Pipe1forNode45 ANforNode45       AR45        0.1        350        130 2.189606e+05         CV          ;
+Pipe1forNode49 ANforNode49       AR49        0.1        350        130 2.859894e+05         CV          ;
+Pipe1forNode50 ANforNode50       AR50        0.1        350        130 8.758424e+05         CV          ;
+Pipe1forNode52 ANforNode52       AR52        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode54 ANforNode54       AR54        0.1        350        130 1.401348e+07         CV          ;
+
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+ FCVforNode1          1  ANforNode1       12.0        FCV       0.72     0.0000          ;
+ FCVforNode2          2  ANforNode2       12.0        FCV       2.16     0.0000          ;
+ FCVforNode3          3  ANforNode3       12.0        FCV       4.68     0.0000          ;
+ FCVforNode5          5  ANforNode5       12.0        FCV       3.24     0.0000          ;
+ FCVforNode9          9  ANforNode9       12.0        FCV       0.36     0.0000          ;
+FCVforNode10         10 ANforNode10       12.0        FCV       2.88     0.0000          ;
+FCVforNode11         11 ANforNode11       12.0        FCV       0.36     0.0000          ;
+FCVforNode13         13 ANforNode13       12.0        FCV       1.32     0.0000          ;
+FCVforNode15         15 ANforNode15       12.0        FCV      12.96     0.0000          ;
+FCVforNode17         17 ANforNode17       12.0        FCV       0.36     0.0000          ;
+FCVforNode18         18 ANforNode18       12.0        FCV       0.36     0.0000          ;
+FCVforNode20         20 ANforNode20       12.0        FCV       0.36     0.0000          ;
+FCVforNode21         21 ANforNode21       12.0        FCV       1.08     0.0000          ;
+FCVforNode22         22 ANforNode22       12.0        FCV       0.36     0.0000          ;
+FCVforNode25         25 ANforNode25       12.0        FCV       0.12     0.0000          ;
+FCVforNode26         26 ANforNode26       12.0        FCV       0.36     0.0000          ;
+FCVforNode27         27 ANforNode27       12.0        FCV       4.32     0.0000          ;
+FCVforNode28         28 ANforNode28       12.0        FCV       1.08     0.0000          ;
+FCVforNode30         30 ANforNode30       12.0        FCV       0.72     0.0000          ;
+FCVforNode31         31 ANforNode31       12.0        FCV       0.36     0.0000          ;
+FCVforNode32         32 ANforNode32       12.0        FCV       0.72     0.0000          ;
+FCVforNode33         33 ANforNode33       12.0        FCV       1.80     0.0000          ;
+FCVforNode34         34 ANforNode34       12.0        FCV       2.16     0.0000          ;
+FCVforNode35         35 ANforNode35       12.0        FCV       2.16     0.0000          ;
+FCVforNode36         36 ANforNode36       12.0        FCV       3.60     0.0000          ;
+FCVforNode37         37 ANforNode37       12.0        FCV       0.36     0.0000          ;
+FCVforNode38         38 ANforNode38       12.0        FCV       1.80     0.0000          ;
+FCVforNode39         39 ANforNode39       12.0        FCV       0.36     0.0000          ;
+FCVforNode40         40 ANforNode40       12.0        FCV       0.36     0.0000          ;
+FCVforNode41         41 ANforNode41       12.0        FCV       6.12     0.0000          ;
+FCVforNode42         42 ANforNode42       12.0        FCV       2.16     0.0000          ;
+FCVforNode43         43 ANforNode43       12.0        FCV       1.08     0.0000          ;
+FCVforNode44         44 ANforNode44       12.0        FCV      11.52     0.0000          ;
+FCVforNode45         45 ANforNode45       12.0        FCV       2.88     0.0000          ;
+FCVforNode49         49 ANforNode49       12.0        FCV       2.52     0.0000          ;
+FCVforNode50         50 ANforNode50       12.0        FCV       1.44     0.0000          ;
+FCVforNode52         52 ANforNode52       12.0        FCV       0.36     0.0000          ;
+FCVforNode54         54 ANforNode54       12.0        FCV       0.36     0.0000          ;
+
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+
+
+
+
+
+
+
+[RULES]
+
+
+
+
+
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75.0000
+ Global Price       	0
+ Demand Charge      	0.0000
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1.00
+ Order Tank            	1.00
+ Order Wall            	1
+ Global Bulk           	0.000000
+ Global Wall           	0.000000
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	4:00 
+ Hydraulic Timestep 	1:00 
+ Quality Timestep   	0:01 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	0:01 
+ Report Start       	0:00 
+ Start ClockTime    	0:00:00
+ Statistic          	NONE
+
+[REPORT]
+ Status             	No
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1.000000
+ Viscosity          	1.000000
+ Trials             	40
+ Accuracy           	0.00100000
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0.00000000
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0000
+ Demand Model       	PDA
+ Minimum Pressure   	0
+ Required Pressure  	10
+ Pressure Exponent  	0.5
+ Emitter Exponent   	0.5000
+ Quality            	NONE mg/L
+ Diffusivity        	1.000000
+ Tolerance          	0.01000000
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+1               	462.099           	438.352           
+2               	462.018           	436.411           
+3               	461.776           	433.904           
+4               	457.225           	432.809           
+5               	462.141           	427.336           
+6               	456.706           	422.924           
+7               	462.345           	418.266           
+8               	462.222           	412.443           
+9               	467.861           	414.650           
+10              	473.622           	420.166           
+11              	480.915           	420.472           
+12              	486.799           	419.982           
+13              	490.707           	417.138           
+14              	491.642           	424.536           
+15              	479.571           	436.685           
+16              	475.677           	438.398           
+17              	477.702           	441.280           
+18              	474.042           	436.062           
+19              	491.953           	445.952           
+20              	499.585           	446.108           
+21              	492.654           	454.674           
+22              	500.520           	454.830           
+23              	496.937           	466.745           
+24              	478.474           	465.754           
+25              	476.514           	468.498           
+26              	469.883           	467.818           
+27              	469.768           	462.028           
+28              	471.041           	456.355           
+29              	471.504           	452.419           
+30              	470.810           	447.672           
+31              	469.189           	440.956           
+32              	468.494           	435.862           
+33              	467.683           	430.073           
+34              	465.415           	467.951           
+35              	461.614           	467.951           
+36              	456.762           	467.871           
+37              	458.056           	474.098           
+38              	459.916           	477.009           
+39              	461.371           	479.355           
+40              	463.555           	482.347           
+41              	446.976           	468.113           
+42              	450.858           	463.908           
+43              	448.270           	454.041           
+44              	447.542           	450.564           
+45              	446.870           	447.114           
+46              	446.030           	444.221           
+47              	441.924           	440.955           
+48              	451.536           	437.969           
+49              	441.364           	451.500           
+50              	435.952           	452.806           
+51              	430.540           	454.486           
+52              	429.233           	450.567           
+53              	427.554           	455.512           
+54              	424.288           	455.979           
+55              	429.420           	462.791           
+56              	432.313           	467.923           
+57              	500.909           	469.393           
+ ANforNode1    464.099    437.352
+ ANforNode2    464.018    435.411
+ ANforNode3    463.776    432.904
+ ANforNode5    464.141    426.336
+ ANforNode9    469.861    413.650
+ANforNode10    475.622    419.166
+ANforNode11    482.915    419.472
+ANforNode13    492.707    416.138
+ANforNode15    481.571    435.685
+ANforNode17    479.702    440.280
+ANforNode18    476.042    435.062
+ANforNode20    501.585    445.108
+ANforNode21    494.654    453.674
+ANforNode22    502.520    453.830
+ANforNode25    478.514    467.498
+ANforNode26    471.883    466.818
+ANforNode27    471.768    461.028
+ANforNode28    473.041    455.355
+ANforNode30    472.810    446.672
+ANforNode31    471.189    439.956
+ANforNode32    470.494    434.862
+ANforNode33    469.683    429.073
+ANforNode34    467.415    466.951
+ANforNode35    463.614    466.951
+ANforNode36    458.762    466.871
+ANforNode37    460.056    473.098
+ANforNode38    461.916    476.009
+ANforNode39    463.371    478.355
+ANforNode40    465.555    481.347
+ANforNode41    448.976    467.113
+ANforNode42    452.858    462.908
+ANforNode43    450.270    453.041
+ANforNode44    449.542    449.564
+ANforNode45    448.870    446.114
+ANforNode49    443.364    450.500
+ANforNode50    437.952    451.806
+ANforNode52    431.233    449.567
+ANforNode54    426.288    454.979
+        AR1    464.099    435.852
+        AR2    464.018    433.911
+        AR3    463.776    431.404
+        AR5    464.141    424.836
+        AR9    469.861    412.150
+       AR10    475.622    417.666
+       AR11    482.915    417.972
+       AR13    492.707    414.638
+       AR15    481.571    434.185
+       AR17    479.702    438.780
+       AR18    476.042    433.562
+       AR20    501.585    443.608
+       AR21    494.654    452.174
+       AR22    502.520    452.330
+       AR25    478.514    465.998
+       AR26    471.883    465.318
+       AR27    471.768    459.528
+       AR28    473.041    453.855
+       AR30    472.810    445.172
+       AR31    471.189    438.456
+       AR32    470.494    433.362
+       AR33    469.683    427.573
+       AR34    467.415    465.451
+       AR35    463.614    465.451
+       AR36    458.762    465.371
+       AR37    460.056    471.598
+       AR38    461.916    474.509
+       AR39    463.371    476.855
+       AR40    465.555    479.847
+       AR41    448.976    465.613
+       AR42    452.858    461.408
+       AR43    450.270    451.541
+       AR44    449.542    448.064
+       AR45    448.870    444.614
+       AR49    443.364    449.000
+       AR50    437.952    450.306
+       AR52    431.233    448.067
+       AR54    426.288    453.479
+
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	420.457           	408.948           	504.740           	485.842           
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
