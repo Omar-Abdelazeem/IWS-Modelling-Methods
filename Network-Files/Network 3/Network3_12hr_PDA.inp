@@ -669,7 +669,7 @@ PLACEHOLDER
 ;Tank            	Model
 
 [TIMES]
- Duration           	4:00
+ Duration           	12:00
  Hydraulic Timestep 	1:00
  Quality Timestep   	0:01
  Pattern Timestep   	2:00
