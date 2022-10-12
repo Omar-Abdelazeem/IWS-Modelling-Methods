@@ -1,0 +1,572 @@
+[TITLE]
+Pescara -- Bragalli, D'Ambrosio, Lee, Lodi, Toth (2008)
+Originally presented by:
+Bragalli, C., D'Ambrosio, C., Lee, J., Lodi, A., & Toth, P. (2012, June). On the optimal design of water distribution networks: a practical MINLP approach. Optimization and Engineering, 13 (2), 219-246.
+Converted to represent an intermittent water supply using EPANET's PDA method
+Details of this specific conversion process are included in:
+PLACEHOLDER
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern
+ 1  2.9 0       ;
+ 2  5.0 0       ;
+ 3  3.5 0       ;
+ 4  3.8 0       ;
+ 5  2.2 0       ;
+ 6  7.0 0       ;
+ 7  6.5 0       ;
+ 8  5.2 0       ;
+ 9  4.3 0       ;
+10  5.2 0       ;
+11 28.0 0       ;
+12  3.2 0       ;
+13  3.2 0       ;
+14 19.2 0       ;
+17  4.0 0       ;
+18  3.5 0       ;
+19  2.8 0       ;
+20  2.7 0       ;
+21  1.8 0       ;
+22  2.1 0       ;
+23  2.0 0       ;
+24 18.7 0       ;
+25  3.2 0       ;
+26  1.6 0       ;
+27  3.8 0       ;
+28  4.3 0       ;
+29  3.6 0       ;
+30  3.2 0       ;
+31  2.8 0       ;
+32  1.8 0       ;
+33  3.8 0       ;
+34  2.9 0       ;
+35  3.7 0       ;
+36  2.1 0       ;
+37  6.7 0       ;
+38  6.7 0       ;
+39  4.2 0       ;
+40  2.9 0       ;
+41  2.9 0       ;
+42 28.5 0       ;
+44 27.3 0       ;
+45  1.1 0       ;
+46  2.5 0       ;
+47  2.8 0       ;
+48  3.3 0       ;
+49  1.8 0       ;
+50  1.8 0       ;
+51  1.6 0       ;
+52  1.8 0       ;
+53  1.6 0       ;
+54  3.3 0       ;
+55  2.5 0       ;
+56  2.8 0       ;
+57  3.2 0       ;
+58  3.6 0       ;
+59  3.8 0       ;
+60  3.1 0       ;
+61  3.0 0       ;
+62  4.2 0       ;
+76  4.2 0       ;
+82  2.1 0       ;
+83  2.1 0       ;
+84  3.3 0       ;
+85  2.1 0       ;
+86  1.5 0       ;
+87 19.2 0       ;
+88  2.1 0       ;
+89  1.5 0       ;
+
+
+[RESERVOIRS]
+;ID              	Head        	Pattern
+ 15              	57.0000     	                	;
+ 43              	53.0800     	                	;
+ 65              	55.0000     	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+ TankforNode1        2.9        0.0        0.0        1.0    23.4646        0.0                     ;
+ TankforNode2        5.0        0.0        0.0        1.0    26.1476        0.0                     ;
+ TankforNode3        3.5        0.0        0.0        1.0    21.6225        0.0                     ;
+ TankforNode4        3.8        0.0        0.0        1.0    21.6225        0.0                     ;
+ TankforNode5        2.2        0.0        0.0        1.0    25.8195        0.0                     ;
+ TankforNode6        7.0        0.0        0.0        1.0     9.4687        0.0                     ;
+ TankforNode8        5.2        0.0        0.0        1.0    42.9899        0.0                     ;
+ TankforNode9        4.3        0.0        0.0        1.0    15.5215        0.0                     ;
+TankforNode10        5.2        0.0        0.0        1.0    30.0344        0.0                     ;
+TankforNode11       28.0        0.0        0.0        1.0    40.4656        0.0                     ;
+TankforNode12        3.2        0.0        0.0        1.0     5.1915        0.0                     ;
+TankforNode13        3.2        0.0        0.0        1.0    20.2973        0.0                     ;
+TankforNode14       19.2        0.0        0.0        1.0    18.2572        0.0                     ;
+TankforNode17        4.0        0.0        0.0        1.0    12.3435        0.0                     ;
+TankforNode18        3.5        0.0        0.0        1.0    16.6334        0.0                     ;
+TankforNode19        2.8        0.0        0.0        1.0    16.2656        0.0                     ;
+TankforNode20        2.7        0.0        0.0        1.0    34.0189        0.0                     ;
+TankforNode21        1.8        0.0        0.0        1.0    30.5249        0.0                     ;
+TankforNode22        2.1        0.0        0.0        1.0    23.9289        0.0                     ;
+TankforNode23        2.0        0.0        0.0        1.0    10.9251        0.0                     ;
+TankforNode24       18.7        0.0        0.0        1.0    18.9809        0.0                     ;
+TankforNode25        3.2        0.0        0.0        1.0    23.9289        0.0                     ;
+TankforNode26        1.6        0.0        0.0        1.0    12.3657        0.0                     ;
+TankforNode27        3.8        0.0        0.0        1.0    17.1062        0.0                     ;
+TankforNode28        4.3        0.0        0.0        1.0    14.1303        0.0                     ;
+TankforNode29        3.6        0.0        0.0        1.0    42.6043        0.0                     ;
+TankforNode30        3.2        0.0        0.0        1.0    18.1666        0.0                     ;
+TankforNode31        2.8        0.0        0.0        1.0    18.7623        0.0                     ;
+TankforNode32        1.8        0.0        0.0        1.0    12.7598        0.0                     ;
+TankforNode33        3.8        0.0        0.0        1.0    13.0370        0.0                     ;
+TankforNode34        2.9        0.0        0.0        1.0    13.0370        0.0                     ;
+TankforNode35        3.7        0.0        0.0        1.0    21.9883        0.0                     ;
+TankforNode36        2.1        0.0        0.0        1.0     9.6128        0.0                     ;
+TankforNode37        6.7        0.0        0.0        1.0    26.3676        0.0                     ;
+TankforNode38        6.7        0.0        0.0        1.0    26.3676        0.0                     ;
+TankforNode39        4.2        0.0        0.0        1.0    26.3676        0.0                     ;
+TankforNode40        2.9        0.0        0.0        1.0    17.4878        0.0                     ;
+TankforNode41        2.9        0.0        0.0        1.0    11.9587        0.0                     ;
+TankforNode42       28.5        0.0        0.0        1.0    15.8546        0.0                     ;
+TankforNode44       27.3        0.0        0.0        1.0    20.3919        0.0                     ;
+TankforNode45        1.1        0.0        0.0        1.0    18.4817        0.0                     ;
+TankforNode46        2.5        0.0        0.0        1.0    13.0370        0.0                     ;
+TankforNode47        2.8        0.0        0.0        1.0     5.6967        0.0                     ;
+TankforNode48        3.3        0.0        0.0        1.0    26.3572        0.0                     ;
+TankforNode49        1.8        0.0        0.0        1.0    13.6954        0.0                     ;
+TankforNode50        1.8        0.0        0.0        1.0    26.9556        0.0                     ;
+TankforNode51        1.6        0.0        0.0        1.0    14.5899        0.0                     ;
+TankforNode52        1.8        0.0        0.0        1.0    18.8063        0.0                     ;
+TankforNode53        1.6        0.0        0.0        1.0    11.8431        0.0                     ;
+TankforNode55        2.5        0.0        0.0        1.0    24.9308        0.0                     ;
+TankforNode56        2.8        0.0        0.0        1.0    14.8144        0.0                     ;
+TankforNode57        3.2        0.0        0.0        1.0    20.6466        0.0                     ;
+TankforNode58        3.6        0.0        0.0        1.0    10.2498        0.0                     ;
+TankforNode59        3.8        0.0        0.0        1.0     6.9573        0.0                     ;
+TankforNode60        3.1        0.0        0.0        1.0    16.8143        0.0                     ;
+TankforNode61        3.0        0.0        0.0        1.0    16.8143        0.0                     ;
+TankforNode62        4.2        0.0        0.0        1.0    20.2294        0.0                     ;
+TankforNode82        2.1        0.0        0.0        1.0     0.7416        0.0                     ;
+TankforNode84        3.3        0.0        0.0        1.0     5.4500        0.0                     ;
+TankforNode85        2.1        0.0        0.0        1.0     4.5113        0.0                     ;
+TankforNode86        1.5        0.0        0.0        1.0    18.8501        0.0                     ;
+TankforNode87       19.2        0.0        0.0        1.0    37.0823        0.0                     ;
+TankforNode88        2.1        0.0        0.0        1.0    10.8747        0.0                     ;
+TankforNode89        1.5        0.0        0.0        1.0     9.8111        0.0                     ;
+
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ 1               	1               	2               	977.3600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 2               	3               	4               	443.1700    	150.0000    	130.0000    	0.0000      	Open  	;
+ 3               	3               	5               	1410.7700   	100.0000    	130.0000    	0.0000      	Open  	;
+ 4               	3               	1               	269.6100    	125.0000    	130.0000    	0.0000      	Open  	;
+ 5               	6               	7               	116.5200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 6               	6               	8               	203.0600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 7               	9               	6               	2309.1400   	100.0000    	130.0000    	0.0000      	Open  	;
+ 8               	10              	11              	1479.9800   	150.0000    	130.0000    	0.0000      	Open  	;
+ 11              	15              	14              	43.9700     	350.0000    	130.0000    	0.0000      	Open  	;
+ 12              	13              	17              	589.1600    	200.0000    	130.0000    	0.0000      	Open  	;
+ 13              	18              	13              	618.5300    	200.0000    	130.0000    	0.0000      	Open  	;
+ 14              	18              	19              	341.1000    	200.0000    	130.0000    	0.0000      	Open  	;
+ 15              	20              	18              	341.9200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 16              	21              	20              	434.2400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 17              	22              	23              	240.5900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 18              	24              	25              	957.4400    	200.0000    	130.0000    	0.0000      	Open  	;
+ 19              	14              	24              	171.0400    	350.0000    	130.0000    	0.0000      	Open  	;
+ 20              	24              	17              	235.5700    	300.0000    	130.0000    	0.0000      	Open  	;
+ 21              	26              	17              	3.5900      	200.0000    	130.0000    	0.0000      	Open  	;
+ 22              	26              	27              	324.3600    	200.0000    	130.0000    	0.0000      	Open  	;
+ 24              	21              	22              	749.7400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 25              	23              	21              	639.7000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 26              	27              	23              	422.9500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 27              	20              	27              	843.5200    	125.0000    	130.0000    	0.0000      	Open  	;
+ 28              	19              	20              	609.2300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 29              	28              	29              	179.0400    	150.0000    	130.0000    	0.0000      	Open  	;
+ 30              	28              	30              	570.9000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 31              	30              	28              	575.7300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 32              	31              	32              	250.2800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 33              	30              	33              	442.1100    	100.0000    	130.0000    	0.0000      	Open  	;
+ 34              	34              	30              	762.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 35              	35              	36              	1124.9000   	100.0000    	130.0000    	0.0000      	Open  	;
+ 36              	31              	11              	1903.7500   	100.0000    	130.0000    	0.0000      	Open  	;
+ 37              	37              	31              	125.5100    	125.0000    	130.0000    	0.0000      	Open  	;
+ 38              	37              	38              	121.2700    	200.0000    	130.0000    	0.0000      	Open  	;
+ 39              	19              	38              	55.3200     	200.0000    	130.0000    	0.0000      	Open  	;
+ 41              	40              	39              	424.8600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 42              	40              	41              	72.8000     	100.0000    	130.0000    	0.0000      	Open  	;
+ 43              	9               	40              	554.0800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 44              	33              	9               	305.5300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 45              	41              	33              	568.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 46              	34              	41              	63.8100     	100.0000    	130.0000    	0.0000      	Open  	;
+ 47              	39              	34              	310.7600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 48              	12              	39              	1217.1700   	200.0000    	130.0000    	0.0000      	Open  	;
+ 49              	25              	12              	365.8200    	150.0000    	130.0000    	0.0000      	Open  	;
+ 50              	35              	25              	1408.3300   	100.0000    	130.0000    	0.0000      	Open  	;
+ 51              	29              	35              	33.2500     	100.0000    	130.0000    	0.0000      	Open  	;
+ 52              	8               	29              	720.9000    	200.0000    	130.0000    	0.0000      	Open  	;
+ 53              	42              	11              	441.6900    	250.0000    	130.0000    	0.0000      	Open  	;
+ 54              	43              	42              	332.9900    	400.0000    	130.0000    	0.0000      	Open  	;
+ 55              	44              	42              	229.8500    	350.0000    	130.0000    	0.0000      	Open  	;
+ 56              	45              	46              	500.9200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 57              	47              	48              	232.0700    	250.0000    	130.0000    	0.0000      	Open  	;
+ 58              	32              	49              	5.4300      	100.0000    	130.0000    	0.0000      	Open  	;
+ 59              	46              	32              	66.2400     	100.0000    	130.0000    	0.0000      	Open  	;
+ 60              	50              	46              	232.1300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 61              	49              	50              	154.7800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 62              	48              	49              	645.1000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 63              	51              	48              	157.8700    	200.0000    	130.0000    	0.0000      	Open  	;
+ 64              	50              	51              	645.7900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 65              	52              	50              	206.6900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 66              	51              	53              	156.7500    	150.0000    	130.0000    	0.0000      	Open  	;
+ 68              	54              	55              	152.8100    	100.0000    	130.0000    	0.0000      	Open  	;
+ 70              	56              	47              	52.3700     	250.0000    	130.0000    	0.0000      	Open  	;
+ 71              	44              	57              	394.6700    	300.0000    	130.0000    	0.0000      	Open  	;
+ 72              	56              	44              	774.6900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 73              	57              	56              	435.5800    	200.0000    	130.0000    	0.0000      	Open  	;
+ 74              	58              	57              	899.6700    	250.0000    	130.0000    	0.0000      	Open  	;
+ 75              	59              	60              	198.5000    	125.0000    	130.0000    	0.0000      	Open  	;
+ 76              	55              	61              	1116.1500   	100.0000    	130.0000    	0.0000      	Open  	;
+ 78              	52              	53              	631.8000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 79              	45              	52              	350.9700    	100.0000    	130.0000    	0.0000      	Open  	;
+ 81              	61              	5               	226.0300    	125.0000    	130.0000    	0.0000      	Open  	;
+ 82              	60              	61              	186.7700    	100.0000    	130.0000    	0.0000      	Open  	;
+ 83              	58              	60              	337.2400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 84              	62              	58              	173.0900    	250.0000    	130.0000    	0.0000      	Open  	;
+ 85              	62              	2               	784.4500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 86              	59              	62              	86.3900     	200.0000    	130.0000    	0.0000      	Open  	;
+ 87              	4               	59              	732.9300    	200.0000    	130.0000    	0.0000      	Open  	;
+ 88              	2               	4               	193.7800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 89              	65              	6               	1744.2700   	100.0000    	130.0000    	0.0000      	Open  	;
+ 90              	65              	76              	154.1800    	250.0000    	130.0000    	0.0000      	Open  	;
+ 92              	86              	45              	1635.6900   	100.0000    	130.0000    	0.0000      	Open  	;
+ 93              	76              	8               	1072.6900   	250.0000    	130.0000    	0.0000      	Open  	;
+ 94              	82              	83              	5.0000      	100.0000    	130.0000    	0.0000      	Open  	;
+ 95              	82              	85              	240.0500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 96              	22              	85              	841.6300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 97              	26              	83              	601.5800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 98              	5               	86              	1600.0000   	100.0000    	130.0000    	0.0000      	Open  	;
+ 100             	54              	84              	180.0000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 102             	83              	85              	240.0000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 103             	43              	87              	10.0000     	150.0000    	130.0000    	0.0000      	Open  	;
+ 104             	55              	89              	179.5400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 105             	89              	53              	331.4000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 106             	55              	88              	332.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 107             	88              	51              	325.0300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 108             	84              	88              	113.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 109             	88              	89              	150.8200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 110             	55              	86              	165.4300    	100.0000    	130.0000    	0.0000      	Open  	;
+ PipeforNode1          1  TankforNode1      2.3465         50        130        0.0         CV          ;
+ PipeforNode2          2  TankforNode2      1.5713         50        130        0.0         CV          ;
+ PipeforNode3          3  TankforNode3      3.1764         50        130        0.0         CV          ;
+ PipeforNode4          4  TankforNode4      3.1764         50        130        0.0         CV          ;
+ PipeforNode5          5  TankforNode5      1.6465         50        130        0.0         CV          ;
+ PipeforNode6          6  TankforNode6     67.6463         50        130        0.0         CV          ;
+ PipeforNode8          8  TankforNode8      0.2491         50        130        0.0         CV          ;
+ PipeforNode9          9  TankforNode9     10.8444         50        130        0.0         CV          ;
+PipeforNode10         10 TankforNode10      0.9404         50        130        0.0         CV          ;
+PipeforNode11         11 TankforNode11      0.3117         50        130        0.0         CV          ;
+PipeforNode12         12 TankforNode12    626.5832         50        130        0.0         CV          ;
+PipeforNode13         13 TankforNode13      4.0149         50        130        0.0         CV          ;
+PipeforNode14         14 TankforNode14      5.9439         50        130        0.0         CV          ;
+PipeforNode17         17 TankforNode17     25.3359         50        130        0.0         CV          ;
+PipeforNode18         18 TankforNode18      8.3929         50        130        0.0         CV          ;
+PipeforNode19         19 TankforNode19      9.1176         50        130        0.0         CV          ;
+PipeforNode20         20 TankforNode20      0.5928         50        130        0.0         CV          ;
+PipeforNode21         21 TankforNode21      0.8857         50        130        0.0         CV          ;
+PipeforNode22         22 TankforNode22      2.1822         50        130        0.0         CV          ;
+PipeforNode23         23 TankforNode23     39.8195         50        130        0.0         CV          ;
+PipeforNode24         24 TankforNode24      5.1468         50        130        0.0         CV          ;
+PipeforNode25         25 TankforNode25      2.1822         50        130        0.0         CV          ;
+PipeforNode26         26 TankforNode26     25.1678         50        130        0.0         CV          ;
+PipeforNode27         27 TankforNode27      7.5652         50        130        0.0         CV          ;
+PipeforNode28         28 TankforNode28     15.3555         50        130        0.0         CV          ;
+PipeforNode29         29 TankforNode29      0.2576         50        130        0.0         CV          ;
+PipeforNode30         30 TankforNode30      6.0544         50        130        0.0         CV          ;
+PipeforNode31         31 TankforNode31      5.3724         50        130        0.0         CV          ;
+PipeforNode32         32 TankforNode32     22.4067         50        130        0.0         CV          ;
+PipeforNode33         33 TankforNode33     20.6921         50        130        0.0         CV          ;
+PipeforNode34         34 TankforNode34     20.6921         50        130        0.0         CV          ;
+PipeforNode35         35 TankforNode35      2.9850         50        130        0.0         CV          ;
+PipeforNode36         36 TankforNode36     63.9657         50        130        0.0         CV          ;
+PipeforNode37         37 TankforNode37      1.5233         50        130        0.0         CV          ;
+PipeforNode38         38 TankforNode38      1.5233         50        130        0.0         CV          ;
+PipeforNode39         39 TankforNode39      1.5233         50        130        0.0         CV          ;
+PipeforNode40         40 TankforNode40      6.9716         50        130        0.0         CV          ;
+PipeforNode41         41 TankforNode41     28.4893         50        130        0.0         CV          ;
+PipeforNode42         42 TankforNode42     10.0242         50        130        0.0         CV          ;
+PipeforNode44         44 TankforNode44      3.9463         50        130        0.0         CV          ;
+PipeforNode45         45 TankforNode45      5.6808         50        130        0.0         CV          ;
+PipeforNode46         46 TankforNode46     20.6921         50        130        0.0         CV          ;
+PipeforNode47         47 TankforNode47    444.2164         50        130        0.0         CV          ;
+PipeforNode48         48 TankforNode48      1.5255         50        130        0.0         CV          ;
+PipeforNode49         49 TankforNode49     17.2405         50        130        0.0         CV          ;
+PipeforNode50         50 TankforNode50      1.4038         50        130        0.0         CV          ;
+PipeforNode51         51 TankforNode51     13.6387         50        130        0.0         CV          ;
+PipeforNode52         52 TankforNode52      5.3260         50        130        0.0         CV          ;
+PipeforNode53         53 TankforNode53     29.5330         50        130        0.0         CV          ;
+PipeforNode55         55 TankforNode55      1.8746         50        130        0.0         CV          ;
+PipeforNode56         56 TankforNode56     12.8887         50        130        0.0         CV          ;
+PipeforNode57         57 TankforNode57      3.7690         50        130        0.0         CV          ;
+PipeforNode58         58 TankforNode58     50.4352         50        130        0.0         CV          ;
+PipeforNode59         59 TankforNode59    211.8473         50        130        0.0         CV          ;
+PipeforNode60         60 TankforNode60      8.0632         50        130        0.0         CV          ;
+PipeforNode61         61 TankforNode61      8.0632         50        130        0.0         CV          ;
+PipeforNode62         62 TankforNode62      4.0650         50        130        0.0         CV          ;
+PipeforNode82         82 TankforNode82 845891.7966         50        130        0.0         CV          ;
+PipeforNode84         84 TankforNode84    523.3724         50        130        0.0         CV          ;
+PipeforNode85         85 TankforNode85   1054.1197         50        130        0.0         CV          ;
+PipeforNode86         86 TankforNode86      5.2803         50        130        0.0         CV          ;
+PipeforNode87         87 TankforNode87      0.4308         50        130        0.0         CV          ;
+PipeforNode88         88 TankforNode88     40.5074         50        130        0.0         CV          ;
+PipeforNode89         89 TankforNode89     59.3063         50        130        0.0         CV          ;
+
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+
+
+
+[RULES]
+
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75.0000
+ Global Price       	0
+ Demand Charge      	0.0000
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1.00
+ Order Tank            	1.00
+ Order Wall            	1
+ Global Bulk           	0.000000
+ Global Wall           	0.000000
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	4:00
+ Hydraulic Timestep 	1:00
+ Quality Timestep   	0:01
+ Pattern Timestep   	2:00
+ Pattern Start      	0:00
+ Report Timestep    	0:01
+ Report Start       	0:00
+ Start ClockTime    	0:00:00
+ Statistic          	NONE
+
+[REPORT]
+ Status             	No
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1.000000
+ Viscosity          	1.000000
+ Trials             	40
+ Accuracy           	0.00100000
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0.00000000
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0000
+ Demand Model       	PDA
+ Minimum Pressure   	0
+ Required Pressure  	10
+ Pressure Exponent  	0.5
+ Emitter Exponent   	0.5000
+ Quality            	Chlorine mg/L
+ Diffusivity        	1.000000
+ Tolerance          	0.01000000
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+1               	656582.880        	963296.250
+2               	657289.060        	963069.500
+3               	656852.190        	963283.190
+4               	657294.630        	963262.250
+5               	657933.440        	963588.940
+6               	661346.750        	960658.380
+7               	661252.190        	960607.190
+8               	661547.630        	960688.130
+9               	660262.190        	961842.690
+10              	659947.690        	961952.630
+11              	659120.750        	962107.190
+12              	661689.690        	962215.250
+13              	661623.880        	962717.690
+14              	662482.810        	962917.750
+17              	662131.880        	963005.560
+18              	661006.880        	962760.810
+19              	660673.440        	962792.060
+20              	661012.000        	963102.440
+21              	661221.060        	963474.690
+22              	661856.940        	963711.130
+23              	661860.750        	963473.880
+24              	662326.000        	962957.190
+25              	662031.810        	962086.690
+26              	662135.060        	963007.190
+27              	661853.690        	963051.000
+28              	661141.500        	961352.250
+29              	661319.630        	961368.810
+30              	660878.690        	961712.130
+31              	660390.130        	962876.630
+32              	660381.190        	963121.000
+33              	660557.310        	961781.060
+34              	660596.630        	962340.810
+35              	661308.000        	961400.000
+36              	660857.630        	962345.560
+37              	660500.440        	962822.940
+38              	660618.310        	962796.500
+39              	660651.250        	962646.690
+40              	660461.310        	962359.190
+41              	660533.310        	962348.810
+42              	659046.310        	962535.190
+44              	659015.000        	962761.750
+45              	660704.560        	963432.500
+46              	660447.380        	963119.130
+47              	659504.060        	963179.190
+48              	659732.880        	963154.940
+49              	660377.060        	963121.750
+50              	660375.880        	963276.440
+51              	659734.190        	963310.880
+52              	660371.380        	963483.060
+53              	659739.940        	963467.500
+54              	659230.130        	963333.940
+55              	659229.190        	963481.630
+56              	659457.440        	963155.310
+57              	659097.250        	963096.190
+58              	658198.440        	963134.440
+59              	658026.940        	963233.880
+60              	658114.750        	963350.060
+61              	658119.750        	963536.750
+62              	658025.810        	963147.500
+76              	662523.130        	960626.310
+82              	662454.000        	963567.130
+83              	662458.630        	963565.250
+84              	659408.690        	963212.440
+85              	662548.060        	963787.940
+86              	659408.690        	963642.060
+87              	658728.690        	962454.750
+88              	659408.690        	963325.810
+89              	659408.690        	963476.630
+15              	662492.560        	962874.810
+43              	658738.690        	962454.750
+65              	662568.190        	960492.440
+ TankforNode1  656632.88  963346.25
+ TankforNode2  657339.06  963119.50
+ TankforNode3  656902.19  963333.19
+ TankforNode4  657344.63  963312.25
+ TankforNode5  657983.44  963638.94
+ TankforNode6  661396.75  960708.38
+ TankforNode8  661597.63  960738.13
+ TankforNode9  660312.19  961892.69
+TankforNode10  659997.69  962002.63
+TankforNode11  659170.75  962157.19
+TankforNode12  661739.69  962265.25
+TankforNode13  661673.88  962767.69
+TankforNode14  662532.81  962967.75
+TankforNode17  662181.88  963055.56
+TankforNode18  661056.88  962810.81
+TankforNode19  660723.44  962842.06
+TankforNode20  661062.00  963152.44
+TankforNode21  661271.06  963524.69
+TankforNode22  661906.94  963761.13
+TankforNode23  661910.75  963523.88
+TankforNode24  662376.00  963007.19
+TankforNode25  662081.81  962136.69
+TankforNode26  662185.06  963057.19
+TankforNode27  661903.69  963101.00
+TankforNode28  661191.50  961402.25
+TankforNode29  661369.63  961418.81
+TankforNode30  660928.69  961762.13
+TankforNode31  660440.13  962926.63
+TankforNode32  660431.19  963171.00
+TankforNode33  660607.31  961831.06
+TankforNode34  660646.63  962390.81
+TankforNode35  661358.00  961450.00
+TankforNode36  660907.63  962395.56
+TankforNode37  660550.44  962872.94
+TankforNode38  660668.31  962846.50
+TankforNode39  660701.25  962696.69
+TankforNode40  660511.31  962409.19
+TankforNode41  660583.31  962398.81
+TankforNode42  659096.31  962585.19
+TankforNode44  659065.00  962811.75
+TankforNode45  660754.56  963482.50
+TankforNode46  660497.38  963169.13
+TankforNode47  659554.06  963229.19
+TankforNode48  659782.88  963204.94
+TankforNode49  660427.06  963171.75
+TankforNode50  660425.88  963326.44
+TankforNode51  659784.19  963360.88
+TankforNode52  660421.38  963533.06
+TankforNode53  659789.94  963517.50
+TankforNode55  659279.19  963531.63
+TankforNode56  659507.44  963205.31
+TankforNode57  659147.25  963146.19
+TankforNode58  658248.44  963184.44
+TankforNode59  658076.94  963283.88
+TankforNode60  658164.75  963400.06
+TankforNode61  658169.75  963586.75
+TankforNode62  658075.81  963197.50
+TankforNode82  662504.00  963617.13
+TankforNode84  659458.69  963262.44
+TankforNode85  662598.06  963837.94
+TankforNode86  659458.69  963692.06
+TankforNode87  658778.69  962504.75
+TankforNode88  659458.69  963375.81
+TankforNode89  659458.69  963526.63
+
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	656280.190        	960321.300        	662939.250        	963953.020
+ UNITS          	None
+ FILE
+ OFFSET         	0.00            	0.00
+
+[END]

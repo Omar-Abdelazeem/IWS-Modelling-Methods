@@ -1,0 +1,957 @@
+[TITLE]
+Pescara -- Bragalli, D'Ambrosio, Lee, Lodi, Toth (2008)
+Originally presented by:
+Bragalli, C., D'Ambrosio, C., Lee, J., Lodi, A., & Toth, P. (2012, June). On the optimal design of water distribution networks: a practical MINLP approach. Optimization and Engineering, 13 (2), 219-246.
+Converted to represent an intermittent water supply using EPANET's PDA method
+Details of this specific conversion process are included in:
+PLACEHOLDER
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern
+         1        2.9          0                     ;
+         2        5.0          0                     ;
+         3        3.5          0                     ;
+         4        3.8          0                     ;
+         5        2.2          0                     ;
+         6        7.0          0                     ;
+         7        6.5          0                     ;
+         8        5.2          0                     ;
+         9        4.3          0                     ;
+        10        5.2          0                     ;
+        11       28.0          0                     ;
+        12        3.2          0                     ;
+        13        3.2          0                     ;
+        14       19.2          0                     ;
+        17        4.0          0                     ;
+        18        3.5          0                     ;
+        19        2.8          0                     ;
+        20        2.7          0                     ;
+        21        1.8          0                     ;
+        22        2.1          0                     ;
+        23        2.0          0                     ;
+        24       18.7          0                     ;
+        25        3.2          0                     ;
+        26        1.6          0                     ;
+        27        3.8          0                     ;
+        28        4.3          0                     ;
+        29        3.6          0                     ;
+        30        3.2          0                     ;
+        31        2.8          0                     ;
+        32        1.8          0                     ;
+        33        3.8          0                     ;
+        34        2.9          0                     ;
+        35        3.7          0                     ;
+        36        2.1          0                     ;
+        37        6.7          0                     ;
+        38        6.7          0                     ;
+        39        4.2          0                     ;
+        40        2.9          0                     ;
+        41        2.9          0                     ;
+        42       28.5          0                     ;
+        44       27.3          0                     ;
+        45        1.1          0                     ;
+        46        2.5          0                     ;
+        47        2.8          0                     ;
+        48        3.3          0                     ;
+        49        1.8          0                     ;
+        50        1.8          0                     ;
+        51        1.6          0                     ;
+        52        1.8          0                     ;
+        53        1.6          0                     ;
+        54        3.3          0                     ;
+        55        2.5          0                     ;
+        56        2.8          0                     ;
+        57        3.2          0                     ;
+        58        3.6          0                     ;
+        59        3.8          0                     ;
+        60        3.1          0                     ;
+        61        3.0          0                     ;
+        62        4.2          0                     ;
+        76        4.2          0                     ;
+        82        2.1          0                     ;
+        83        2.1          0                     ;
+        84        3.3          0                     ;
+        85        2.1          0                     ;
+        86        1.5          0                     ;
+        87       19.2          0                     ;
+        88        2.1          0                     ;
+        89        1.5          0                     ;
+ AN1forNode1        2.9          0                     ;
+ AN1forNode2        5.0          0                     ;
+ AN1forNode3        3.5          0                     ;
+ AN1forNode4        3.8          0                     ;
+ AN1forNode5        2.2          0                     ;
+ AN1forNode6        7.0          0                     ;
+ AN1forNode8        5.2          0                     ;
+ AN1forNode9        4.3          0                     ;
+AN1forNode10        5.2          0                     ;
+AN1forNode11       28.0          0                     ;
+AN1forNode12        3.2          0                     ;
+AN1forNode13        3.2          0                     ;
+AN1forNode14       19.2          0                     ;
+AN1forNode17        4.0          0                     ;
+AN1forNode18        3.5          0                     ;
+AN1forNode19        2.8          0                     ;
+AN1forNode20        2.7          0                     ;
+AN1forNode21        1.8          0                     ;
+AN1forNode22        2.1          0                     ;
+AN1forNode23        2.0          0                     ;
+AN1forNode24       18.7          0                     ;
+AN1forNode25        3.2          0                     ;
+AN1forNode26        1.6          0                     ;
+AN1forNode27        3.8          0                     ;
+AN1forNode28        4.3          0                     ;
+AN1forNode29        3.6          0                     ;
+AN1forNode30        3.2          0                     ;
+AN1forNode31        2.8          0                     ;
+AN1forNode32        1.8          0                     ;
+AN1forNode33        3.8          0                     ;
+AN1forNode34        2.9          0                     ;
+AN1forNode35        3.7          0                     ;
+AN1forNode36        2.1          0                     ;
+AN1forNode37        6.7          0                     ;
+AN1forNode38        6.7          0                     ;
+AN1forNode39        4.2          0                     ;
+AN1forNode40        2.9          0                     ;
+AN1forNode41        2.9          0                     ;
+AN1forNode42       28.5          0                     ;
+AN1forNode44       27.3          0                     ;
+AN1forNode45        1.1          0                     ;
+AN1forNode46        2.5          0                     ;
+AN1forNode47        2.8          0                     ;
+AN1forNode48        3.3          0                     ;
+AN1forNode49        1.8          0                     ;
+AN1forNode50        1.8          0                     ;
+AN1forNode51        1.6          0                     ;
+AN1forNode52        1.8          0                     ;
+AN1forNode53        1.6          0                     ;
+AN1forNode55        2.5          0                     ;
+AN1forNode56        2.8          0                     ;
+AN1forNode57        3.2          0                     ;
+AN1forNode58        3.6          0                     ;
+AN1forNode59        3.8          0                     ;
+AN1forNode60        3.1          0                     ;
+AN1forNode61        3.0          0                     ;
+AN1forNode62        4.2          0                     ;
+AN1forNode82        2.1          0                     ;
+AN1forNode84        3.3          0                     ;
+AN1forNode85        2.1          0                     ;
+AN1forNode86        1.5          0                     ;
+AN1forNode87       19.2          0                     ;
+AN1forNode88        2.1          0                     ;
+AN1forNode89        1.5          0                     ;
+ AN2forNode1        2.9          0                     ;
+ AN2forNode2        5.0          0                     ;
+ AN2forNode3        3.5          0                     ;
+ AN2forNode4        3.8          0                     ;
+ AN2forNode5        2.2          0                     ;
+ AN2forNode6        7.0          0                     ;
+ AN2forNode8        5.2          0                     ;
+ AN2forNode9        4.3          0                     ;
+AN2forNode10        5.2          0                     ;
+AN2forNode11       28.0          0                     ;
+AN2forNode12        3.2          0                     ;
+AN2forNode13        3.2          0                     ;
+AN2forNode14       19.2          0                     ;
+AN2forNode17        4.0          0                     ;
+AN2forNode18        3.5          0                     ;
+AN2forNode19        2.8          0                     ;
+AN2forNode20        2.7          0                     ;
+AN2forNode21        1.8          0                     ;
+AN2forNode22        2.1          0                     ;
+AN2forNode23        2.0          0                     ;
+AN2forNode24       18.7          0                     ;
+AN2forNode25        3.2          0                     ;
+AN2forNode26        1.6          0                     ;
+AN2forNode27        3.8          0                     ;
+AN2forNode28        4.3          0                     ;
+AN2forNode29        3.6          0                     ;
+AN2forNode30        3.2          0                     ;
+AN2forNode31        2.8          0                     ;
+AN2forNode32        1.8          0                     ;
+AN2forNode33        3.8          0                     ;
+AN2forNode34        2.9          0                     ;
+AN2forNode35        3.7          0                     ;
+AN2forNode36        2.1          0                     ;
+AN2forNode37        6.7          0                     ;
+AN2forNode38        6.7          0                     ;
+AN2forNode39        4.2          0                     ;
+AN2forNode40        2.9          0                     ;
+AN2forNode41        2.9          0                     ;
+AN2forNode42       28.5          0                     ;
+AN2forNode44       27.3          0                     ;
+AN2forNode45        1.1          0                     ;
+AN2forNode46        2.5          0                     ;
+AN2forNode47        2.8          0                     ;
+AN2forNode48        3.3          0                     ;
+AN2forNode49        1.8          0                     ;
+AN2forNode50        1.8          0                     ;
+AN2forNode51        1.6          0                     ;
+AN2forNode52        1.8          0                     ;
+AN2forNode53        1.6          0                     ;
+AN2forNode55        2.5          0                     ;
+AN2forNode56        2.8          0                     ;
+AN2forNode57        3.2          0                     ;
+AN2forNode58        3.6          0                     ;
+AN2forNode59        3.8          0                     ;
+AN2forNode60        3.1          0                     ;
+AN2forNode61        3.0          0                     ;
+AN2forNode62        4.2          0                     ;
+AN2forNode82        2.1          0                     ;
+AN2forNode84        3.3          0                     ;
+AN2forNode85        2.1          0                     ;
+AN2forNode86        1.5          0                     ;
+AN2forNode87       19.2          0                     ;
+AN2forNode88        2.1          0                     ;
+AN2forNode89        1.5          0                     ;
+
+
+[RESERVOIRS]
+;ID              	Head        	Pattern
+ 15              	57.0000     	                	;
+ 43              	53.0800     	                	;
+ 65              	55.0000     	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+ ATforNode1        1.9        0.0        0.0        1.0    23.4646        0.0                     ;
+ ATforNode2        4.0        0.0        0.0        1.0    26.1476        0.0                     ;
+ ATforNode3        2.5        0.0        0.0        1.0    21.6225        0.0                     ;
+ ATforNode4        2.8        0.0        0.0        1.0    21.6225        0.0                     ;
+ ATforNode5        1.2        0.0        0.0        1.0    25.8195        0.0                     ;
+ ATforNode6        6.0        0.0        0.0        1.0     9.4687        0.0                     ;
+ ATforNode8        4.2        0.0        0.0        1.0    42.9899        0.0                     ;
+ ATforNode9        3.3        0.0        0.0        1.0    15.5215        0.0                     ;
+ATforNode10        4.2        0.0        0.0        1.0    30.0344        0.0                     ;
+ATforNode11       27.0        0.0        0.0        1.0    40.4656        0.0                     ;
+ATforNode12        2.2        0.0        0.0        1.0     5.1915        0.0                     ;
+ATforNode13        2.2        0.0        0.0        1.0    20.2973        0.0                     ;
+ATforNode14       18.2        0.0        0.0        1.0    18.2572        0.0                     ;
+ATforNode17        3.0        0.0        0.0        1.0    12.3435        0.0                     ;
+ATforNode18        2.5        0.0        0.0        1.0    16.6334        0.0                     ;
+ATforNode19        1.8        0.0        0.0        1.0    16.2656        0.0                     ;
+ATforNode20        1.7        0.0        0.0        1.0    34.0189        0.0                     ;
+ATforNode21        0.8        0.0        0.0        1.0    30.5249        0.0                     ;
+ATforNode22        1.1        0.0        0.0        1.0    23.9289        0.0                     ;
+ATforNode23        1.0        0.0        0.0        1.0    10.9251        0.0                     ;
+ATforNode24       17.7        0.0        0.0        1.0    18.9809        0.0                     ;
+ATforNode25        2.2        0.0        0.0        1.0    23.9289        0.0                     ;
+ATforNode26        0.6        0.0        0.0        1.0    12.3657        0.0                     ;
+ATforNode27        2.8        0.0        0.0        1.0    17.1062        0.0                     ;
+ATforNode28        3.3        0.0        0.0        1.0    14.1303        0.0                     ;
+ATforNode29        2.6        0.0        0.0        1.0    42.6043        0.0                     ;
+ATforNode30        2.2        0.0        0.0        1.0    18.1666        0.0                     ;
+ATforNode31        1.8        0.0        0.0        1.0    18.7623        0.0                     ;
+ATforNode32        0.8        0.0        0.0        1.0    12.7598        0.0                     ;
+ATforNode33        2.8        0.0        0.0        1.0    13.0370        0.0                     ;
+ATforNode34        1.9        0.0        0.0        1.0    13.0370        0.0                     ;
+ATforNode35        2.7        0.0        0.0        1.0    21.9883        0.0                     ;
+ATforNode36        1.1        0.0        0.0        1.0     9.6128        0.0                     ;
+ATforNode37        5.7        0.0        0.0        1.0    26.3676        0.0                     ;
+ATforNode38        5.7        0.0        0.0        1.0    26.3676        0.0                     ;
+ATforNode39        3.2        0.0        0.0        1.0    26.3676        0.0                     ;
+ATforNode40        1.9        0.0        0.0        1.0    17.4878        0.0                     ;
+ATforNode41        1.9        0.0        0.0        1.0    11.9587        0.0                     ;
+ATforNode42       27.5        0.0        0.0        1.0    15.8546        0.0                     ;
+ATforNode44       26.3        0.0        0.0        1.0    20.3919        0.0                     ;
+ATforNode45        0.1        0.0        0.0        1.0    18.4817        0.0                     ;
+ATforNode46        1.5        0.0        0.0        1.0    13.0370        0.0                     ;
+ATforNode47        1.8        0.0        0.0        1.0     5.6967        0.0                     ;
+ATforNode48        2.3        0.0        0.0        1.0    26.3572        0.0                     ;
+ATforNode49        0.8        0.0        0.0        1.0    13.6954        0.0                     ;
+ATforNode50        0.8        0.0        0.0        1.0    26.9556        0.0                     ;
+ATforNode51        0.6        0.0        0.0        1.0    14.5899        0.0                     ;
+ATforNode52        0.8        0.0        0.0        1.0    18.8063        0.0                     ;
+ATforNode53        0.6        0.0        0.0        1.0    11.8431        0.0                     ;
+ATforNode55        1.5        0.0        0.0        1.0    24.9308        0.0                     ;
+ATforNode56        1.8        0.0        0.0        1.0    14.8144        0.0                     ;
+ATforNode57        2.2        0.0        0.0        1.0    20.6466        0.0                     ;
+ATforNode58        2.6        0.0        0.0        1.0    10.2498        0.0                     ;
+ATforNode59        2.8        0.0        0.0        1.0     6.9573        0.0                     ;
+ATforNode60        2.1        0.0        0.0        1.0    16.8143        0.0                     ;
+ATforNode61        2.0        0.0        0.0        1.0    16.8143        0.0                     ;
+ATforNode62        3.2        0.0        0.0        1.0    20.2294        0.0                     ;
+ATforNode82        1.1        0.0        0.0        1.0     0.7416        0.0                     ;
+ATforNode84        2.3        0.0        0.0        1.0     5.4500        0.0                     ;
+ATforNode85        1.1        0.0        0.0        1.0     4.5113        0.0                     ;
+ATforNode86        0.5        0.0        0.0        1.0    18.8501        0.0                     ;
+ATforNode87       18.2        0.0        0.0        1.0    37.0823        0.0                     ;
+ATforNode88        1.1        0.0        0.0        1.0    10.8747        0.0                     ;
+ATforNode89        0.5        0.0        0.0        1.0     9.8111        0.0                     ;
+
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ 1               	1               	2               	977.3600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 2               	3               	4               	443.1700    	150.0000    	130.0000    	0.0000      	Open  	;
+ 3               	3               	5               	1410.7700   	100.0000    	130.0000    	0.0000      	Open  	;
+ 4               	3               	1               	269.6100    	125.0000    	130.0000    	0.0000      	Open  	;
+ 5               	6               	7               	116.5200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 6               	6               	8               	203.0600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 7               	9               	6               	2309.1400   	100.0000    	130.0000    	0.0000      	Open  	;
+ 8               	10              	11              	1479.9800   	150.0000    	130.0000    	0.0000      	Open  	;
+ 11              	15              	14              	43.9700     	350.0000    	130.0000    	0.0000      	Open  	;
+ 12              	13              	17              	589.1600    	200.0000    	130.0000    	0.0000      	Open  	;
+ 13              	18              	13              	618.5300    	200.0000    	130.0000    	0.0000      	Open  	;
+ 14              	18              	19              	341.1000    	200.0000    	130.0000    	0.0000      	Open  	;
+ 15              	20              	18              	341.9200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 16              	21              	20              	434.2400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 17              	22              	23              	240.5900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 18              	24              	25              	957.4400    	200.0000    	130.0000    	0.0000      	Open  	;
+ 19              	14              	24              	171.0400    	350.0000    	130.0000    	0.0000      	Open  	;
+ 20              	24              	17              	235.5700    	300.0000    	130.0000    	0.0000      	Open  	;
+ 21              	26              	17              	3.5900      	200.0000    	130.0000    	0.0000      	Open  	;
+ 22              	26              	27              	324.3600    	200.0000    	130.0000    	0.0000      	Open  	;
+ 24              	21              	22              	749.7400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 25              	23              	21              	639.7000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 26              	27              	23              	422.9500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 27              	20              	27              	843.5200    	125.0000    	130.0000    	0.0000      	Open  	;
+ 28              	19              	20              	609.2300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 29              	28              	29              	179.0400    	150.0000    	130.0000    	0.0000      	Open  	;
+ 30              	28              	30              	570.9000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 31              	30              	28              	575.7300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 32              	31              	32              	250.2800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 33              	30              	33              	442.1100    	100.0000    	130.0000    	0.0000      	Open  	;
+ 34              	34              	30              	762.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 35              	35              	36              	1124.9000   	100.0000    	130.0000    	0.0000      	Open  	;
+ 36              	31              	11              	1903.7500   	100.0000    	130.0000    	0.0000      	Open  	;
+ 37              	37              	31              	125.5100    	125.0000    	130.0000    	0.0000      	Open  	;
+ 38              	37              	38              	121.2700    	200.0000    	130.0000    	0.0000      	Open  	;
+ 39              	19              	38              	55.3200     	200.0000    	130.0000    	0.0000      	Open  	;
+ 41              	40              	39              	424.8600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 42              	40              	41              	72.8000     	100.0000    	130.0000    	0.0000      	Open  	;
+ 43              	9               	40              	554.0800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 44              	33              	9               	305.5300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 45              	41              	33              	568.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 46              	34              	41              	63.8100     	100.0000    	130.0000    	0.0000      	Open  	;
+ 47              	39              	34              	310.7600    	100.0000    	130.0000    	0.0000      	Open  	;
+ 48              	12              	39              	1217.1700   	200.0000    	130.0000    	0.0000      	Open  	;
+ 49              	25              	12              	365.8200    	150.0000    	130.0000    	0.0000      	Open  	;
+ 50              	35              	25              	1408.3300   	100.0000    	130.0000    	0.0000      	Open  	;
+ 51              	29              	35              	33.2500     	100.0000    	130.0000    	0.0000      	Open  	;
+ 52              	8               	29              	720.9000    	200.0000    	130.0000    	0.0000      	Open  	;
+ 53              	42              	11              	441.6900    	250.0000    	130.0000    	0.0000      	Open  	;
+ 54              	43              	42              	332.9900    	400.0000    	130.0000    	0.0000      	Open  	;
+ 55              	44              	42              	229.8500    	350.0000    	130.0000    	0.0000      	Open  	;
+ 56              	45              	46              	500.9200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 57              	47              	48              	232.0700    	250.0000    	130.0000    	0.0000      	Open  	;
+ 58              	32              	49              	5.4300      	100.0000    	130.0000    	0.0000      	Open  	;
+ 59              	46              	32              	66.2400     	100.0000    	130.0000    	0.0000      	Open  	;
+ 60              	50              	46              	232.1300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 61              	49              	50              	154.7800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 62              	48              	49              	645.1000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 63              	51              	48              	157.8700    	200.0000    	130.0000    	0.0000      	Open  	;
+ 64              	50              	51              	645.7900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 65              	52              	50              	206.6900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 66              	51              	53              	156.7500    	150.0000    	130.0000    	0.0000      	Open  	;
+ 68              	54              	55              	152.8100    	100.0000    	130.0000    	0.0000      	Open  	;
+ 70              	56              	47              	52.3700     	250.0000    	130.0000    	0.0000      	Open  	;
+ 71              	44              	57              	394.6700    	300.0000    	130.0000    	0.0000      	Open  	;
+ 72              	56              	44              	774.6900    	100.0000    	130.0000    	0.0000      	Open  	;
+ 73              	57              	56              	435.5800    	200.0000    	130.0000    	0.0000      	Open  	;
+ 74              	58              	57              	899.6700    	250.0000    	130.0000    	0.0000      	Open  	;
+ 75              	59              	60              	198.5000    	125.0000    	130.0000    	0.0000      	Open  	;
+ 76              	55              	61              	1116.1500   	100.0000    	130.0000    	0.0000      	Open  	;
+ 78              	52              	53              	631.8000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 79              	45              	52              	350.9700    	100.0000    	130.0000    	0.0000      	Open  	;
+ 81              	61              	5               	226.0300    	125.0000    	130.0000    	0.0000      	Open  	;
+ 82              	60              	61              	186.7700    	100.0000    	130.0000    	0.0000      	Open  	;
+ 83              	58              	60              	337.2400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 84              	62              	58              	173.0900    	250.0000    	130.0000    	0.0000      	Open  	;
+ 85              	62              	2               	784.4500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 86              	59              	62              	86.3900     	200.0000    	130.0000    	0.0000      	Open  	;
+ 87              	4               	59              	732.9300    	200.0000    	130.0000    	0.0000      	Open  	;
+ 88              	2               	4               	193.7800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 89              	65              	6               	1744.2700   	100.0000    	130.0000    	0.0000      	Open  	;
+ 90              	65              	76              	154.1800    	250.0000    	130.0000    	0.0000      	Open  	;
+ 92              	86              	45              	1635.6900   	100.0000    	130.0000    	0.0000      	Open  	;
+ 93              	76              	8               	1072.6900   	250.0000    	130.0000    	0.0000      	Open  	;
+ 94              	82              	83              	5.0000      	100.0000    	130.0000    	0.0000      	Open  	;
+ 95              	82              	85              	240.0500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 96              	22              	85              	841.6300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 97              	26              	83              	601.5800    	100.0000    	130.0000    	0.0000      	Open  	;
+ 98              	5               	86              	1600.0000   	100.0000    	130.0000    	0.0000      	Open  	;
+ 100             	54              	84              	180.0000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 102             	83              	85              	240.0000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 103             	43              	87              	10.0000     	150.0000    	130.0000    	0.0000      	Open  	;
+ 104             	55              	89              	179.5400    	100.0000    	130.0000    	0.0000      	Open  	;
+ 105             	89              	53              	331.4000    	100.0000    	130.0000    	0.0000      	Open  	;
+ 106             	55              	88              	332.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 107             	88              	51              	325.0300    	100.0000    	130.0000    	0.0000      	Open  	;
+ 108             	84              	88              	113.3500    	100.0000    	130.0000    	0.0000      	Open  	;
+ 109             	88              	89              	150.8200    	100.0000    	130.0000    	0.0000      	Open  	;
+ 110             	55              	86              	165.4300    	100.0000    	130.0000    	0.0000      	Open  	;
+ Pipe1forNode1            1  AN1forNode1        0.1        350        130 2.013926e+03         CV          ;
+ Pipe1forNode2            2  AN1forNode2        0.1        350        130 1.306077e+03         CV          ;
+ Pipe1forNode3            3  AN1forNode3        0.1        350        130 2.793010e+03         CV          ;
+ Pipe1forNode4            4  AN1forNode4        0.1        350        130 2.793010e+03         CV          ;
+ Pipe1forNode5            5  AN1forNode5        0.1        350        130 1.373741e+03         CV          ;
+ Pipe1forNode6            6  AN1forNode6        0.1        350        130 7.595122e+04         CV          ;
+ Pipe1forNode8            8  AN1forNode8        0.1        350        130 1.787436e+02         CV          ;
+ Pipe1forNode9            9  AN1forNode9        0.1        350        130 1.051868e+04         CV          ;
+Pipe1forNode10           10 AN1forNode10        0.1        350        130 7.502747e+02         CV          ;
+Pipe1forNode11           11 AN1forNode11        0.1        350        130 2.276943e+02         CV          ;
+Pipe1forNode12           12 AN1forNode12        0.1        350        130 8.404749e+05         CV          ;
+Pipe1forNode13           13 AN1forNode13        0.1        350        130 3.597022e+03         CV          ;
+Pipe1forNode14           14 AN1forNode14        0.1        350        130 5.494896e+03         CV          ;
+Pipe1forNode17           17 AN1forNode17        0.1        350        130 2.629922e+04         CV          ;
+Pipe1forNode18           18 AN1forNode18        0.1        350        130 7.975759e+03         CV          ;
+Pipe1forNode19           19 AN1forNode19        0.1        350        130 8.721995e+03         CV          ;
+Pipe1forNode20           20 AN1forNode20        0.1        350        130 4.558428e+02         CV          ;
+Pipe1forNode21           21 AN1forNode21        0.1        350        130 7.032005e+02         CV          ;
+Pipe1forNode22           22 AN1forNode22        0.1        350        130 1.862110e+03         CV          ;
+Pipe1forNode23           23 AN1forNode23        0.1        350        130 4.285431e+04         CV          ;
+Pipe1forNode24           24 AN1forNode24        0.1        350        130 4.703585e+03         CV          ;
+Pipe1forNode25           25 AN1forNode25        0.1        350        130 1.862110e+03         CV          ;
+Pipe1forNode26           26 AN1forNode26        0.1        350        130 2.611087e+04         CV          ;
+Pipe1forNode27           27 AN1forNode27        0.1        350        130 7.129876e+03         CV          ;
+Pipe1forNode28           28 AN1forNode28        0.1        350        130 1.531407e+04         CV          ;
+Pipe1forNode29           29 AN1forNode29        0.1        350        130 1.853030e+02         CV          ;
+Pipe1forNode30           30 AN1forNode30        0.1        350        130 5.605335e+03         CV          ;
+Pipe1forNode31           31 AN1forNode31        0.1        350        130 4.926652e+03         CV          ;
+Pipe1forNode32           32 AN1forNode32        0.1        350        130 2.303142e+04         CV          ;
+Pipe1forNode33           33 AN1forNode33        0.1        350        130 2.113418e+04         CV          ;
+Pipe1forNode34           34 AN1forNode34        0.1        350        130 2.113418e+04         CV          ;
+Pipe1forNode35           35 AN1forNode35        0.1        350        130 2.611738e+03         CV          ;
+Pipe1forNode36           36 AN1forNode36        0.1        350        130 7.149844e+04         CV          ;
+Pipe1forNode37           37 AN1forNode37        0.1        350        130 1.263030e+03         CV          ;
+Pipe1forNode38           38 AN1forNode38        0.1        350        130 1.263030e+03         CV          ;
+Pipe1forNode39           39 AN1forNode39        0.1        350        130 1.263030e+03         CV          ;
+Pipe1forNode40           40 AN1forNode40        0.1        350        130 6.527629e+03         CV          ;
+Pipe1forNode41           41 AN1forNode41        0.1        350        130 2.985110e+04         CV          ;
+Pipe1forNode42           42 AN1forNode42        0.1        350        130 9.662177e+03         CV          ;
+Pipe1forNode44           44 AN1forNode44        0.1        350        130 3.530737e+03         CV          ;
+Pipe1forNode45           45 AN1forNode45        0.1        350        130 5.232732e+03         CV          ;
+Pipe1forNode46           46 AN1forNode46        0.1        350        130 2.113418e+04         CV          ;
+Pipe1forNode47           47 AN1forNode47        0.1        350        130 5.796993e+05         CV          ;
+Pipe1forNode48           48 AN1forNode48        0.1        350        130 1.265025e+03         CV          ;
+Pipe1forNode49           49 AN1forNode49        0.1        350        130 1.735391e+04         CV          ;
+Pipe1forNode50           50 AN1forNode50        0.1        350        130 1.156379e+03         CV          ;
+Pipe1forNode51           51 AN1forNode51        0.1        350        130 1.347370e+04         CV          ;
+Pipe1forNode52           52 AN1forNode52        0.1        350        130 4.880707e+03         CV          ;
+Pipe1forNode53           53 AN1forNode53        0.1        350        130 3.103377e+04         CV          ;
+Pipe1forNode55           55 AN1forNode55        0.1        350        130 1.580343e+03         CV          ;
+Pipe1forNode56           56 AN1forNode56        0.1        350        130 1.267535e+04         CV          ;
+Pipe1forNode57           57 AN1forNode57        0.1        350        130 3.359711e+03         CV          ;
+Pipe1forNode58           58 AN1forNode58        0.1        350        130 5.531394e+04         CV          ;
+Pipe1forNode59           59 AN1forNode59        0.1        350        130 2.605753e+05         CV          ;
+Pipe1forNode60           60 AN1forNode60        0.1        350        130 7.638024e+03         CV          ;
+Pipe1forNode61           61 AN1forNode61        0.1        350        130 7.638024e+03         CV          ;
+Pipe1forNode62           62 AN1forNode62        0.1        350        130 3.645559e+03         CV          ;
+Pipe1forNode82           82 AN1forNode82        0.1        350        130 2.018447e+09         CV          ;
+Pipe1forNode84           84 AN1forNode84        0.1        350        130 6.920065e+05         CV          ;
+Pipe1forNode85           85 AN1forNode85        0.1        350        130 1.473972e+06         CV          ;
+Pipe1forNode86           86 AN1forNode86        0.1        350        130 4.835502e+03         CV          ;
+Pipe1forNode87           87 AN1forNode87        0.1        350        130 3.228714e+02         CV          ;
+Pipe1forNode88           88 AN1forNode88        0.1        350        130 4.365430e+04         CV          ;
+Pipe1forNode89           89 AN1forNode89        0.1        350        130 6.589089e+04         CV          ;
+ Pipe2forNode1  AN2forNode1   ATforNode1        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode2  AN2forNode2   ATforNode2        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode3  AN2forNode3   ATforNode3        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode4  AN2forNode4   ATforNode4        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode5  AN2forNode5   ATforNode5        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode6  AN2forNode6   ATforNode6        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode8  AN2forNode8   ATforNode8        0.1        350        130 0.000000e+00         CV          ;
+ Pipe2forNode9  AN2forNode9   ATforNode9        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode10 AN2forNode10  ATforNode10        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode11 AN2forNode11  ATforNode11        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode12 AN2forNode12  ATforNode12        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode13 AN2forNode13  ATforNode13        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode14 AN2forNode14  ATforNode14        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode17 AN2forNode17  ATforNode17        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode18 AN2forNode18  ATforNode18        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode19 AN2forNode19  ATforNode19        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode20 AN2forNode20  ATforNode20        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode21 AN2forNode21  ATforNode21        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode22 AN2forNode22  ATforNode22        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode23 AN2forNode23  ATforNode23        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode24 AN2forNode24  ATforNode24        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode25 AN2forNode25  ATforNode25        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode26 AN2forNode26  ATforNode26        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode27 AN2forNode27  ATforNode27        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode28 AN2forNode28  ATforNode28        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode29 AN2forNode29  ATforNode29        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode30 AN2forNode30  ATforNode30        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode31 AN2forNode31  ATforNode31        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode32 AN2forNode32  ATforNode32        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode33 AN2forNode33  ATforNode33        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode34 AN2forNode34  ATforNode34        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode35 AN2forNode35  ATforNode35        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode36 AN2forNode36  ATforNode36        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode37 AN2forNode37  ATforNode37        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode38 AN2forNode38  ATforNode38        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode39 AN2forNode39  ATforNode39        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode40 AN2forNode40  ATforNode40        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode41 AN2forNode41  ATforNode41        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode42 AN2forNode42  ATforNode42        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode44 AN2forNode44  ATforNode44        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode45 AN2forNode45  ATforNode45        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode46 AN2forNode46  ATforNode46        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode47 AN2forNode47  ATforNode47        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode48 AN2forNode48  ATforNode48        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode49 AN2forNode49  ATforNode49        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode50 AN2forNode50  ATforNode50        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode51 AN2forNode51  ATforNode51        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode52 AN2forNode52  ATforNode52        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode53 AN2forNode53  ATforNode53        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode55 AN2forNode55  ATforNode55        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode56 AN2forNode56  ATforNode56        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode57 AN2forNode57  ATforNode57        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode58 AN2forNode58  ATforNode58        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode59 AN2forNode59  ATforNode59        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode60 AN2forNode60  ATforNode60        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode61 AN2forNode61  ATforNode61        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode62 AN2forNode62  ATforNode62        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode82 AN2forNode82  ATforNode82        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode84 AN2forNode84  ATforNode84        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode85 AN2forNode85  ATforNode85        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode86 AN2forNode86  ATforNode86        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode87 AN2forNode87  ATforNode87        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode88 AN2forNode88  ATforNode88        0.1        350        130 0.000000e+00         CV          ;
+Pipe2forNode89 AN2forNode89  ATforNode89        0.1        350        130 0.000000e+00         CV          ;
+
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss
+ APSVforNode1  AN1forNode1  AN2forNode1       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode2  AN1forNode2  AN2forNode2       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode3  AN1forNode3  AN2forNode3       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode4  AN1forNode4  AN2forNode4       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode5  AN1forNode5  AN2forNode5       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode6  AN1forNode6  AN2forNode6       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode8  AN1forNode8  AN2forNode8       12.0        PSV     0.0000     0.0000          ;
+ APSVforNode9  AN1forNode9  AN2forNode9       12.0        PSV     0.0000     0.0000          ;
+APSVforNode10 AN1forNode10 AN2forNode10       12.0        PSV     0.0000     0.0000          ;
+APSVforNode11 AN1forNode11 AN2forNode11       12.0        PSV     0.0000     0.0000          ;
+APSVforNode12 AN1forNode12 AN2forNode12       12.0        PSV     0.0000     0.0000          ;
+APSVforNode13 AN1forNode13 AN2forNode13       12.0        PSV     0.0000     0.0000          ;
+APSVforNode14 AN1forNode14 AN2forNode14       12.0        PSV     0.0000     0.0000          ;
+APSVforNode17 AN1forNode17 AN2forNode17       12.0        PSV     0.0000     0.0000          ;
+APSVforNode18 AN1forNode18 AN2forNode18       12.0        PSV     0.0000     0.0000          ;
+APSVforNode19 AN1forNode19 AN2forNode19       12.0        PSV     0.0000     0.0000          ;
+APSVforNode20 AN1forNode20 AN2forNode20       12.0        PSV     0.0000     0.0000          ;
+APSVforNode21 AN1forNode21 AN2forNode21       12.0        PSV     0.0000     0.0000          ;
+APSVforNode22 AN1forNode22 AN2forNode22       12.0        PSV     0.0000     0.0000          ;
+APSVforNode23 AN1forNode23 AN2forNode23       12.0        PSV     0.0000     0.0000          ;
+APSVforNode24 AN1forNode24 AN2forNode24       12.0        PSV     0.0000     0.0000          ;
+APSVforNode25 AN1forNode25 AN2forNode25       12.0        PSV     0.0000     0.0000          ;
+APSVforNode26 AN1forNode26 AN2forNode26       12.0        PSV     0.0000     0.0000          ;
+APSVforNode27 AN1forNode27 AN2forNode27       12.0        PSV     0.0000     0.0000          ;
+APSVforNode28 AN1forNode28 AN2forNode28       12.0        PSV     0.0000     0.0000          ;
+APSVforNode29 AN1forNode29 AN2forNode29       12.0        PSV     0.0000     0.0000          ;
+APSVforNode30 AN1forNode30 AN2forNode30       12.0        PSV     0.0000     0.0000          ;
+APSVforNode31 AN1forNode31 AN2forNode31       12.0        PSV     0.0000     0.0000          ;
+APSVforNode32 AN1forNode32 AN2forNode32       12.0        PSV     0.0000     0.0000          ;
+APSVforNode33 AN1forNode33 AN2forNode33       12.0        PSV     0.0000     0.0000          ;
+APSVforNode34 AN1forNode34 AN2forNode34       12.0        PSV     0.0000     0.0000          ;
+APSVforNode35 AN1forNode35 AN2forNode35       12.0        PSV     0.0000     0.0000          ;
+APSVforNode36 AN1forNode36 AN2forNode36       12.0        PSV     0.0000     0.0000          ;
+APSVforNode37 AN1forNode37 AN2forNode37       12.0        PSV     0.0000     0.0000          ;
+APSVforNode38 AN1forNode38 AN2forNode38       12.0        PSV     0.0000     0.0000          ;
+APSVforNode39 AN1forNode39 AN2forNode39       12.0        PSV     0.0000     0.0000          ;
+APSVforNode40 AN1forNode40 AN2forNode40       12.0        PSV     0.0000     0.0000          ;
+APSVforNode41 AN1forNode41 AN2forNode41       12.0        PSV     0.0000     0.0000          ;
+APSVforNode42 AN1forNode42 AN2forNode42       12.0        PSV     0.0000     0.0000          ;
+APSVforNode44 AN1forNode44 AN2forNode44       12.0        PSV     0.0000     0.0000          ;
+APSVforNode45 AN1forNode45 AN2forNode45       12.0        PSV     0.0000     0.0000          ;
+APSVforNode46 AN1forNode46 AN2forNode46       12.0        PSV     0.0000     0.0000          ;
+APSVforNode47 AN1forNode47 AN2forNode47       12.0        PSV     0.0000     0.0000          ;
+APSVforNode48 AN1forNode48 AN2forNode48       12.0        PSV     0.0000     0.0000          ;
+APSVforNode49 AN1forNode49 AN2forNode49       12.0        PSV     0.0000     0.0000          ;
+APSVforNode50 AN1forNode50 AN2forNode50       12.0        PSV     0.0000     0.0000          ;
+APSVforNode51 AN1forNode51 AN2forNode51       12.0        PSV     0.0000     0.0000          ;
+APSVforNode52 AN1forNode52 AN2forNode52       12.0        PSV     0.0000     0.0000          ;
+APSVforNode53 AN1forNode53 AN2forNode53       12.0        PSV     0.0000     0.0000          ;
+APSVforNode55 AN1forNode55 AN2forNode55       12.0        PSV     0.0000     0.0000          ;
+APSVforNode56 AN1forNode56 AN2forNode56       12.0        PSV     0.0000     0.0000          ;
+APSVforNode57 AN1forNode57 AN2forNode57       12.0        PSV     0.0000     0.0000          ;
+APSVforNode58 AN1forNode58 AN2forNode58       12.0        PSV     0.0000     0.0000          ;
+APSVforNode59 AN1forNode59 AN2forNode59       12.0        PSV     0.0000     0.0000          ;
+APSVforNode60 AN1forNode60 AN2forNode60       12.0        PSV     0.0000     0.0000          ;
+APSVforNode61 AN1forNode61 AN2forNode61       12.0        PSV     0.0000     0.0000          ;
+APSVforNode62 AN1forNode62 AN2forNode62       12.0        PSV     0.0000     0.0000          ;
+APSVforNode82 AN1forNode82 AN2forNode82       12.0        PSV     0.0000     0.0000          ;
+APSVforNode84 AN1forNode84 AN2forNode84       12.0        PSV     0.0000     0.0000          ;
+APSVforNode85 AN1forNode85 AN2forNode85       12.0        PSV     0.0000     0.0000          ;
+APSVforNode86 AN1forNode86 AN2forNode86       12.0        PSV     0.0000     0.0000          ;
+APSVforNode87 AN1forNode87 AN2forNode87       12.0        PSV     0.0000     0.0000          ;
+APSVforNode88 AN1forNode88 AN2forNode88       12.0        PSV     0.0000     0.0000          ;
+APSVforNode89 AN1forNode89 AN2forNode89       12.0        PSV     0.0000     0.0000          ;
+
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+[CONTROLS]
+
+
+
+
+[RULES]
+
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75.0000
+ Global Price       	0
+ Demand Charge      	0.0000
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1.00
+ Order Tank            	1.00
+ Order Wall            	1
+ Global Bulk           	0.000000
+ Global Wall           	0.000000
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	4:00
+ Hydraulic Timestep 	1:00
+ Quality Timestep   	0:01
+ Pattern Timestep   	2:00
+ Pattern Start      	0:00
+ Report Timestep    	0:01
+ Report Start       	0:00
+ Start ClockTime    	0:00:00
+ Statistic          	NONE
+
+[REPORT]
+ Status             	No
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	LPS
+ Headloss           	H-W
+ Specific Gravity   	1.000000
+ Viscosity          	1.000000
+ Trials             	40
+ Accuracy           	0.00100000
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0.00000000
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0000
+ Demand Model       	PDA
+ Minimum Pressure   	0
+ Required Pressure  	10
+ Pressure Exponent  	0.5
+ Emitter Exponent   	0.5000
+ Quality            	Chlorine mg/L
+ Diffusivity        	1.000000
+ Tolerance          	0.01000000
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+1               	656582.880        	963296.250
+2               	657289.060        	963069.500
+3               	656852.190        	963283.190
+4               	657294.630        	963262.250
+5               	657933.440        	963588.940
+6               	661346.750        	960658.380
+7               	661252.190        	960607.190
+8               	661547.630        	960688.130
+9               	660262.190        	961842.690
+10              	659947.690        	961952.630
+11              	659120.750        	962107.190
+12              	661689.690        	962215.250
+13              	661623.880        	962717.690
+14              	662482.810        	962917.750
+17              	662131.880        	963005.560
+18              	661006.880        	962760.810
+19              	660673.440        	962792.060
+20              	661012.000        	963102.440
+21              	661221.060        	963474.690
+22              	661856.940        	963711.130
+23              	661860.750        	963473.880
+24              	662326.000        	962957.190
+25              	662031.810        	962086.690
+26              	662135.060        	963007.190
+27              	661853.690        	963051.000
+28              	661141.500        	961352.250
+29              	661319.630        	961368.810
+30              	660878.690        	961712.130
+31              	660390.130        	962876.630
+32              	660381.190        	963121.000
+33              	660557.310        	961781.060
+34              	660596.630        	962340.810
+35              	661308.000        	961400.000
+36              	660857.630        	962345.560
+37              	660500.440        	962822.940
+38              	660618.310        	962796.500
+39              	660651.250        	962646.690
+40              	660461.310        	962359.190
+41              	660533.310        	962348.810
+42              	659046.310        	962535.190
+44              	659015.000        	962761.750
+45              	660704.560        	963432.500
+46              	660447.380        	963119.130
+47              	659504.060        	963179.190
+48              	659732.880        	963154.940
+49              	660377.060        	963121.750
+50              	660375.880        	963276.440
+51              	659734.190        	963310.880
+52              	660371.380        	963483.060
+53              	659739.940        	963467.500
+54              	659230.130        	963333.940
+55              	659229.190        	963481.630
+56              	659457.440        	963155.310
+57              	659097.250        	963096.190
+58              	658198.440        	963134.440
+59              	658026.940        	963233.880
+60              	658114.750        	963350.060
+61              	658119.750        	963536.750
+62              	658025.810        	963147.500
+76              	662523.130        	960626.310
+82              	662454.000        	963567.130
+83              	662458.630        	963565.250
+84              	659408.690        	963212.440
+85              	662548.060        	963787.940
+86              	659408.690        	963642.060
+87              	658728.690        	962454.750
+88              	659408.690        	963325.810
+89              	659408.690        	963476.630
+15              	662492.560        	962874.810
+43              	658738.690        	962454.750
+65              	662568.190        	960492.440
+ AN1forNode1  656602.88  963276.25
+ AN1forNode2  657309.06  963049.50
+ AN1forNode3  656872.19  963263.19
+ AN1forNode4  657314.63  963242.25
+ AN1forNode5  657953.44  963568.94
+ AN1forNode6  661366.75  960638.38
+ AN1forNode8  661567.63  960668.13
+ AN1forNode9  660282.19  961822.69
+AN1forNode10  659967.69  961932.63
+AN1forNode11  659140.75  962087.19
+AN1forNode12  661709.69  962195.25
+AN1forNode13  661643.88  962697.69
+AN1forNode14  662502.81  962897.75
+AN1forNode17  662151.88  962985.56
+AN1forNode18  661026.88  962740.81
+AN1forNode19  660693.44  962772.06
+AN1forNode20  661032.00  963082.44
+AN1forNode21  661241.06  963454.69
+AN1forNode22  661876.94  963691.13
+AN1forNode23  661880.75  963453.88
+AN1forNode24  662346.00  962937.19
+AN1forNode25  662051.81  962066.69
+AN1forNode26  662155.06  962987.19
+AN1forNode27  661873.69  963031.00
+AN1forNode28  661161.50  961332.25
+AN1forNode29  661339.63  961348.81
+AN1forNode30  660898.69  961692.13
+AN1forNode31  660410.13  962856.63
+AN1forNode32  660401.19  963101.00
+AN1forNode33  660577.31  961761.06
+AN1forNode34  660616.63  962320.81
+AN1forNode35  661328.00  961380.00
+AN1forNode36  660877.63  962325.56
+AN1forNode37  660520.44  962802.94
+AN1forNode38  660638.31  962776.50
+AN1forNode39  660671.25  962626.69
+AN1forNode40  660481.31  962339.19
+AN1forNode41  660553.31  962328.81
+AN1forNode42  659066.31  962515.19
+AN1forNode44  659035.00  962741.75
+AN1forNode45  660724.56  963412.50
+AN1forNode46  660467.38  963099.13
+AN1forNode47  659524.06  963159.19
+AN1forNode48  659752.88  963134.94
+AN1forNode49  660397.06  963101.75
+AN1forNode50  660395.88  963256.44
+AN1forNode51  659754.19  963290.88
+AN1forNode52  660391.38  963463.06
+AN1forNode53  659759.94  963447.50
+AN1forNode55  659249.19  963461.63
+AN1forNode56  659477.44  963135.31
+AN1forNode57  659117.25  963076.19
+AN1forNode58  658218.44  963114.44
+AN1forNode59  658046.94  963213.88
+AN1forNode60  658134.75  963330.06
+AN1forNode61  658139.75  963516.75
+AN1forNode62  658045.81  963127.50
+AN1forNode82  662474.00  963547.13
+AN1forNode84  659428.69  963192.44
+AN1forNode85  662568.06  963767.94
+AN1forNode86  659428.69  963622.06
+AN1forNode87  658748.69  962434.75
+AN1forNode88  659428.69  963305.81
+AN1forNode89  659428.69  963456.63
+ AN2forNode1  656622.88  963296.25
+ AN2forNode2  657329.06  963069.50
+ AN2forNode3  656892.19  963283.19
+ AN2forNode4  657334.63  963262.25
+ AN2forNode5  657973.44  963588.94
+ AN2forNode6  661386.75  960658.38
+ AN2forNode8  661587.63  960688.13
+ AN2forNode9  660302.19  961842.69
+AN2forNode10  659987.69  961952.63
+AN2forNode11  659160.75  962107.19
+AN2forNode12  661729.69  962215.25
+AN2forNode13  661663.88  962717.69
+AN2forNode14  662522.81  962917.75
+AN2forNode17  662171.88  963005.56
+AN2forNode18  661046.88  962760.81
+AN2forNode19  660713.44  962792.06
+AN2forNode20  661052.00  963102.44
+AN2forNode21  661261.06  963474.69
+AN2forNode22  661896.94  963711.13
+AN2forNode23  661900.75  963473.88
+AN2forNode24  662366.00  962957.19
+AN2forNode25  662071.81  962086.69
+AN2forNode26  662175.06  963007.19
+AN2forNode27  661893.69  963051.00
+AN2forNode28  661181.50  961352.25
+AN2forNode29  661359.63  961368.81
+AN2forNode30  660918.69  961712.13
+AN2forNode31  660430.13  962876.63
+AN2forNode32  660421.19  963121.00
+AN2forNode33  660597.31  961781.06
+AN2forNode34  660636.63  962340.81
+AN2forNode35  661348.00  961400.00
+AN2forNode36  660897.63  962345.56
+AN2forNode37  660540.44  962822.94
+AN2forNode38  660658.31  962796.50
+AN2forNode39  660691.25  962646.69
+AN2forNode40  660501.31  962359.19
+AN2forNode41  660573.31  962348.81
+AN2forNode42  659086.31  962535.19
+AN2forNode44  659055.00  962761.75
+AN2forNode45  660744.56  963432.50
+AN2forNode46  660487.38  963119.13
+AN2forNode47  659544.06  963179.19
+AN2forNode48  659772.88  963154.94
+AN2forNode49  660417.06  963121.75
+AN2forNode50  660415.88  963276.44
+AN2forNode51  659774.19  963310.88
+AN2forNode52  660411.38  963483.06
+AN2forNode53  659779.94  963467.50
+AN2forNode55  659269.19  963481.63
+AN2forNode56  659497.44  963155.31
+AN2forNode57  659137.25  963096.19
+AN2forNode58  658238.44  963134.44
+AN2forNode59  658066.94  963233.88
+AN2forNode60  658154.75  963350.06
+AN2forNode61  658159.75  963536.75
+AN2forNode62  658065.81  963147.50
+AN2forNode82  662494.00  963567.13
+AN2forNode84  659448.69  963212.44
+AN2forNode85  662588.06  963787.94
+AN2forNode86  659448.69  963642.06
+AN2forNode87  658768.69  962454.75
+AN2forNode88  659448.69  963325.81
+AN2forNode89  659448.69  963476.63
+  ATforNode1  656642.88  963276.25
+  ATforNode2  657349.06  963049.50
+  ATforNode3  656912.19  963263.19
+  ATforNode4  657354.63  963242.25
+  ATforNode5  657993.44  963568.94
+  ATforNode6  661406.75  960638.38
+  ATforNode8  661607.63  960668.13
+  ATforNode9  660322.19  961822.69
+ ATforNode10  660007.69  961932.63
+ ATforNode11  659180.75  962087.19
+ ATforNode12  661749.69  962195.25
+ ATforNode13  661683.88  962697.69
+ ATforNode14  662542.81  962897.75
+ ATforNode17  662191.88  962985.56
+ ATforNode18  661066.88  962740.81
+ ATforNode19  660733.44  962772.06
+ ATforNode20  661072.00  963082.44
+ ATforNode21  661281.06  963454.69
+ ATforNode22  661916.94  963691.13
+ ATforNode23  661920.75  963453.88
+ ATforNode24  662386.00  962937.19
+ ATforNode25  662091.81  962066.69
+ ATforNode26  662195.06  962987.19
+ ATforNode27  661913.69  963031.00
+ ATforNode28  661201.50  961332.25
+ ATforNode29  661379.63  961348.81
+ ATforNode30  660938.69  961692.13
+ ATforNode31  660450.13  962856.63
+ ATforNode32  660441.19  963101.00
+ ATforNode33  660617.31  961761.06
+ ATforNode34  660656.63  962320.81
+ ATforNode35  661368.00  961380.00
+ ATforNode36  660917.63  962325.56
+ ATforNode37  660560.44  962802.94
+ ATforNode38  660678.31  962776.50
+ ATforNode39  660711.25  962626.69
+ ATforNode40  660521.31  962339.19
+ ATforNode41  660593.31  962328.81
+ ATforNode42  659106.31  962515.19
+ ATforNode44  659075.00  962741.75
+ ATforNode45  660764.56  963412.50
+ ATforNode46  660507.38  963099.13
+ ATforNode47  659564.06  963159.19
+ ATforNode48  659792.88  963134.94
+ ATforNode49  660437.06  963101.75
+ ATforNode50  660435.88  963256.44
+ ATforNode51  659794.19  963290.88
+ ATforNode52  660431.38  963463.06
+ ATforNode53  659799.94  963447.50
+ ATforNode55  659289.19  963461.63
+ ATforNode56  659517.44  963135.31
+ ATforNode57  659157.25  963076.19
+ ATforNode58  658258.44  963114.44
+ ATforNode59  658086.94  963213.88
+ ATforNode60  658174.75  963330.06
+ ATforNode61  658179.75  963516.75
+ ATforNode62  658085.81  963127.50
+ ATforNode82  662514.00  963547.13
+ ATforNode84  659468.69  963192.44
+ ATforNode85  662608.06  963767.94
+ ATforNode86  659468.69  963622.06
+ ATforNode87  658788.69  962434.75
+ ATforNode88  659468.69  963305.81
+ ATforNode89  659468.69  963456.63
+
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	656280.190        	960321.300        	662939.250        	963953.020
+ UNITS          	None
+ FILE
+ OFFSET         	0.00            	0.00
+
+[END]
