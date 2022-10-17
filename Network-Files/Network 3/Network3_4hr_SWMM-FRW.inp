@@ -16,7 +16,7 @@ START_TIME           00:00:00
 REPORT_START_DATE    05/18/2022
 REPORT_START_TIME    00:00:00
 END_DATE             05/18/2022
-END_TIME             12:00:00
+END_TIME             04:00:00
 SWEEP_START          01/01
 SWEEP_END            12/31
 DRY_DAYS             0
@@ -14954,251 +14954,251 @@ Outfall268      35.61       FREE                    NO
 [OUTLETS]
 ;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated
 ;;-------------- ---------------- ---------------- ---------- --------------- ---------------- ---------- --------
-   Outlet1          1   Outfall1          0 TABULAR/DEPTH         60                   YES
-   Outlet2          2   Outfall2          0 TABULAR/DEPTH       1450                   YES
-   Outlet3          3   Outfall3          0 TABULAR/DEPTH       5130                   YES
-   Outlet4          4   Outfall4          0 TABULAR/DEPTH       2760                   YES
-   Outlet5          5   Outfall5          0 TABULAR/DEPTH        960                   YES
-   Outlet6          6   Outfall6          0 TABULAR/DEPTH        780                   YES
-   Outlet7          7   Outfall7          0 TABULAR/DEPTH       1030                   YES
-   Outlet8          8   Outfall8          0 TABULAR/DEPTH       2120                   YES
-   Outlet9          9   Outfall9          0 TABULAR/DEPTH       1160                   YES
-  Outlet10         10  Outfall10          0 TABULAR/DEPTH       1780                   YES
-  Outlet11         11  Outfall11          0 TABULAR/DEPTH        440                   YES
-  Outlet12         12  Outfall12          0 TABULAR/DEPTH         30                   YES
-  Outlet13         13  Outfall13          0 TABULAR/DEPTH        570                   YES
-  Outlet14         14  Outfall14          0 TABULAR/DEPTH        360                   YES
-  Outlet15         15  Outfall15          0 TABULAR/DEPTH       3300                   YES
-  Outlet16         16  Outfall16          0 TABULAR/DEPTH         30                   YES
-  Outlet17         17  Outfall17          0 TABULAR/DEPTH       2100                   YES
-  Outlet18         18  Outfall18          0 TABULAR/DEPTH       4670                   YES
-  Outlet20         20  Outfall20          0 TABULAR/DEPTH       1530                   YES
-  Outlet21         21  Outfall21          0 TABULAR/DEPTH       4610                   YES
-  Outlet22         22  Outfall22          0 TABULAR/DEPTH       1060                   YES
-  Outlet23         23  Outfall23          0 TABULAR/DEPTH       1320                   YES
-  Outlet24         24  Outfall24          0 TABULAR/DEPTH       2740                   YES
-  Outlet25         25  Outfall25          0 TABULAR/DEPTH        590                   YES
-  Outlet26         26  Outfall26          0 TABULAR/DEPTH        450                   YES
-  Outlet27         27  Outfall27          0 TABULAR/DEPTH        640                   YES
-  Outlet28         28  Outfall28          0 TABULAR/DEPTH       7110                   YES
-  Outlet29         29  Outfall29          0 TABULAR/DEPTH        930                   YES
-  Outlet30         30  Outfall30          0 TABULAR/DEPTH         40                   YES
-  Outlet31         31  Outfall31          0 TABULAR/DEPTH         20                   YES
-  Outlet32         32  Outfall32          0 TABULAR/DEPTH       2930                   YES
-  Outlet33         33  Outfall33          0 TABULAR/DEPTH       2340                   YES
-  Outlet34         34  Outfall34          0 TABULAR/DEPTH       1940                   YES
-  Outlet35         35  Outfall35          0 TABULAR/DEPTH       1190                   YES
-  Outlet36         36  Outfall36          0 TABULAR/DEPTH       1410                   YES
-  Outlet37         37  Outfall37          0 TABULAR/DEPTH       2980                   YES
-  Outlet38         38  Outfall38          0 TABULAR/DEPTH       2110                   YES
-  Outlet39         39  Outfall39          0 TABULAR/DEPTH       7740                   YES
-  Outlet40         40  Outfall40          0 TABULAR/DEPTH       4290                   YES
-  Outlet41         41  Outfall41          0 TABULAR/DEPTH       7780                   YES
-  Outlet42         42  Outfall42          0 TABULAR/DEPTH       3750                   YES
-  Outlet43         43  Outfall43          0 TABULAR/DEPTH       2370                   YES
-  Outlet44         44  Outfall44          0 TABULAR/DEPTH       1420                   YES
-  Outlet45         45  Outfall45          0 TABULAR/DEPTH        320                   YES
-  Outlet46         46  Outfall46          0 TABULAR/DEPTH       1140                   YES
-  Outlet47         47  Outfall47          0 TABULAR/DEPTH       1230                   YES
-  Outlet48         48  Outfall48          0 TABULAR/DEPTH       1370                   YES
-  Outlet49         49  Outfall49          0 TABULAR/DEPTH       1180                   YES
-  Outlet50         50  Outfall50          0 TABULAR/DEPTH       1810                   YES
-  Outlet51         51  Outfall51          0 TABULAR/DEPTH        970                   YES
-  Outlet52         52  Outfall52          0 TABULAR/DEPTH        550                   YES
-  Outlet53         53  Outfall53          0 TABULAR/DEPTH       2770                   YES
-  Outlet54         54  Outfall54          0 TABULAR/DEPTH        650                   YES
-  Outlet55         55  Outfall55          0 TABULAR/DEPTH       1380                   YES
-  Outlet56         56  Outfall56          0 TABULAR/DEPTH       8280                   YES
-  Outlet57         57  Outfall57          0 TABULAR/DEPTH       1220                   YES
-  Outlet58         58  Outfall58          0 TABULAR/DEPTH       3850                   YES
-  Outlet59         59  Outfall59          0 TABULAR/DEPTH       2620                   YES
-  Outlet60         60  Outfall60          0 TABULAR/DEPTH       2780                   YES
-  Outlet61         61  Outfall61          0 TABULAR/DEPTH       1560                   YES
-  Outlet62         62  Outfall62          0 TABULAR/DEPTH       1160                   YES
-  Outlet63         63  Outfall63          0 TABULAR/DEPTH       1220                   YES
-  Outlet64         64  Outfall64          0 TABULAR/DEPTH       2930                   YES
-  Outlet65         65  Outfall65          0 TABULAR/DEPTH       1130                   YES
-  Outlet66         66  Outfall66          0 TABULAR/DEPTH       1120                   YES
-  Outlet67         67  Outfall67          0 TABULAR/DEPTH        480                   YES
-  Outlet68         68  Outfall68          0 TABULAR/DEPTH       1370                   YES
-  Outlet69         69  Outfall69          0 TABULAR/DEPTH       2260                   YES
-  Outlet70         70  Outfall70          0 TABULAR/DEPTH       1310                   YES
-  Outlet71         71  Outfall71          0 TABULAR/DEPTH       1060                   YES
-  Outlet72         72  Outfall72          0 TABULAR/DEPTH        380                   YES
-  Outlet73         73  Outfall73          0 TABULAR/DEPTH       1760                   YES
-  Outlet74         74  Outfall74          0 TABULAR/DEPTH        560                   YES
-  Outlet76         76  Outfall76          0 TABULAR/DEPTH       4640                   YES
-  Outlet77         77  Outfall77          0 TABULAR/DEPTH       1030                   YES
-  Outlet78         78  Outfall78          0 TABULAR/DEPTH       3080                   YES
-  Outlet79         79  Outfall79          0 TABULAR/DEPTH       1600                   YES
-  Outlet80         80  Outfall80          0 TABULAR/DEPTH       4490                   YES
-  Outlet81         81  Outfall81          0 TABULAR/DEPTH       1250                   YES
-  Outlet82         82  Outfall82          0 TABULAR/DEPTH        870                   YES
-  Outlet83         83  Outfall83          0 TABULAR/DEPTH        720                   YES
-  Outlet84         84  Outfall84          0 TABULAR/DEPTH        490                   YES
-  Outlet85         85  Outfall85          0 TABULAR/DEPTH       3920                   YES
-  Outlet86         86  Outfall86          0 TABULAR/DEPTH        940                   YES
-  Outlet87         87  Outfall87          0 TABULAR/DEPTH       3330                   YES
-  Outlet88         88  Outfall88          0 TABULAR/DEPTH       4170                   YES
-  Outlet89         89  Outfall89          0 TABULAR/DEPTH       1440                   YES
-  Outlet90         90  Outfall90          0 TABULAR/DEPTH       1840                   YES
-  Outlet91         91  Outfall91          0 TABULAR/DEPTH       2000                   YES
-  Outlet92         92  Outfall92          0 TABULAR/DEPTH       2240                   YES
-  Outlet93         93  Outfall93          0 TABULAR/DEPTH        200                   YES
-  Outlet94         94  Outfall94          0 TABULAR/DEPTH       2270                   YES
-  Outlet95         95  Outfall95          0 TABULAR/DEPTH       1440                   YES
-  Outlet96         96  Outfall96          0 TABULAR/DEPTH       2670                   YES
-  Outlet97         97  Outfall97          0 TABULAR/DEPTH        600                   YES
-  Outlet98         98  Outfall98          0 TABULAR/DEPTH       2760                   YES
-  Outlet99         99  Outfall99          0 TABULAR/DEPTH         50                   YES
- Outlet100        100 Outfall100          0 TABULAR/DEPTH       2060                   YES
- Outlet101        101 Outfall101          0 TABULAR/DEPTH       3190                   YES
- Outlet102        102 Outfall102          0 TABULAR/DEPTH       4690                   YES
- Outlet103        103 Outfall103          0 TABULAR/DEPTH       1700                   YES
- Outlet104        104 Outfall104          0 TABULAR/DEPTH         20                   YES
- Outlet105        105 Outfall105          0 TABULAR/DEPTH        100                   YES
- Outlet106        106 Outfall106          0 TABULAR/DEPTH       1110                   YES
- Outlet107        107 Outfall107          0 TABULAR/DEPTH       1020                   YES
- Outlet108        108 Outfall108          0 TABULAR/DEPTH        880                   YES
- Outlet109        109 Outfall109          0 TABULAR/DEPTH       2330                   YES
- Outlet110        110 Outfall110          0 TABULAR/DEPTH        310                   YES
- Outlet111        111 Outfall111          0 TABULAR/DEPTH        450                   YES
- Outlet112        112 Outfall112          0 TABULAR/DEPTH       2960                   YES
- Outlet113        113 Outfall113          0 TABULAR/DEPTH       8120                   YES
- Outlet114        114 Outfall114          0 TABULAR/DEPTH       1760                   YES
- Outlet115        115 Outfall115          0 TABULAR/DEPTH       5960                   YES
- Outlet117        117 Outfall117          0 TABULAR/DEPTH       6340                   YES
- Outlet120        120 Outfall120          0 TABULAR/DEPTH       3030                   YES
- Outlet121        121 Outfall121          0 TABULAR/DEPTH       1850                   YES
- Outlet122        122 Outfall122          0 TABULAR/DEPTH       1770                   YES
- Outlet123        123 Outfall123          0 TABULAR/DEPTH       1480                   YES
- Outlet125        125 Outfall125          0 TABULAR/DEPTH       1320                   YES
- Outlet126        126 Outfall126          0 TABULAR/DEPTH       2240                   YES
- Outlet127        127 Outfall127          0 TABULAR/DEPTH       1260                   YES
- Outlet128        128 Outfall128          0 TABULAR/DEPTH       5390                   YES
- Outlet129        129 Outfall129          0 TABULAR/DEPTH       1000                   YES
- Outlet130        130 Outfall130          0 TABULAR/DEPTH       1610                   YES
- Outlet131        131 Outfall131          0 TABULAR/DEPTH       4710                   YES
- Outlet132        132 Outfall132          0 TABULAR/DEPTH       2640                   YES
- Outlet133        133 Outfall133          0 TABULAR/DEPTH       2110                   YES
- Outlet134        134 Outfall134          0 TABULAR/DEPTH       1510                   YES
- Outlet135        135 Outfall135          0 TABULAR/DEPTH        840                   YES
- Outlet136        136 Outfall136          0 TABULAR/DEPTH       1050                   YES
- Outlet137        137 Outfall137          0 TABULAR/DEPTH       1160                   YES
- Outlet138        138 Outfall138          0 TABULAR/DEPTH       2450                   YES
- Outlet139        139 Outfall139          0 TABULAR/DEPTH       1660                   YES
- Outlet143        143 Outfall143          0 TABULAR/DEPTH        800                   YES
- Outlet144        144 Outfall144          0 TABULAR/DEPTH        330                   YES
- Outlet145        145 Outfall145          0 TABULAR/DEPTH        340                   YES
- Outlet146        146 Outfall146          0 TABULAR/DEPTH       1020                   YES
- Outlet147        147 Outfall147          0 TABULAR/DEPTH       1230                   YES
- Outlet148        148 Outfall148          0 TABULAR/DEPTH         90                   YES
- Outlet149        149 Outfall149          0 TABULAR/DEPTH        430                   YES
- Outlet150        150 Outfall150          0 TABULAR/DEPTH       1560                   YES
- Outlet151        151 Outfall151          0 TABULAR/DEPTH        800                   YES
- Outlet152        152 Outfall152          0 TABULAR/DEPTH       1380                   YES
- Outlet153        153 Outfall153          0 TABULAR/DEPTH        530                   YES
- Outlet154        154 Outfall154          0 TABULAR/DEPTH        590                   YES
- Outlet155        155 Outfall155          0 TABULAR/DEPTH       2330                   YES
- Outlet156        156 Outfall156          0 TABULAR/DEPTH         30                   YES
- Outlet157        157 Outfall157          0 TABULAR/DEPTH        310                   YES
- Outlet158        158 Outfall158          0 TABULAR/DEPTH       8490                   YES
- Outlet159        159 Outfall159          0 TABULAR/DEPTH        320                   YES
- Outlet160        160 Outfall160          0 TABULAR/DEPTH        210                   YES
- Outlet161        161 Outfall161          0 TABULAR/DEPTH         20                   YES
- Outlet162        162 Outfall162          0 TABULAR/DEPTH       1230                   YES
- Outlet163        163 Outfall163          0 TABULAR/DEPTH        990                   YES
- Outlet164        164 Outfall164          0 TABULAR/DEPTH        550                   YES
- Outlet165        165 Outfall165          0 TABULAR/DEPTH        780                   YES
- Outlet166        166 Outfall166          0 TABULAR/DEPTH        270                   YES
- Outlet167        167 Outfall167          0 TABULAR/DEPTH        270                   YES
- Outlet168        168 Outfall168          0 TABULAR/DEPTH         70                   YES
- Outlet169        169 Outfall169          0 TABULAR/DEPTH       9470                   YES
- Outlet170        170 Outfall170          0 TABULAR/DEPTH       2640                   YES
- Outlet171        171 Outfall171          0 TABULAR/DEPTH       1020                   YES
- Outlet172        172 Outfall172          0 TABULAR/DEPTH        880                   YES
- Outlet173        173 Outfall173          0 TABULAR/DEPTH        490                   YES
- Outlet175        175 Outfall175          0 TABULAR/DEPTH       1120                   YES
- Outlet178        178 Outfall178          0 TABULAR/DEPTH         10                   YES
- Outlet182        182 Outfall182          0 TABULAR/DEPTH         10                   YES
- Outlet183        183 Outfall183          0 TABULAR/DEPTH       1840                   YES
- Outlet184        184 Outfall184          0 TABULAR/DEPTH         40                   YES
- Outlet185        185 Outfall185          0 TABULAR/DEPTH       1680                   YES
- Outlet186        186 Outfall186          0 TABULAR/DEPTH       2370                   YES
- Outlet187        187 Outfall187          0 TABULAR/DEPTH         90                   YES
- Outlet188        188 Outfall188          0 TABULAR/DEPTH       1230                   YES
- Outlet189        189 Outfall189          0 TABULAR/DEPTH       3900                   YES
- Outlet190        190 Outfall190          0 TABULAR/DEPTH       1170                   YES
- Outlet191        191 Outfall191          0 TABULAR/DEPTH       1700                   YES
- Outlet192        192 Outfall192          0 TABULAR/DEPTH       2150                   YES
- Outlet193        193 Outfall193          0 TABULAR/DEPTH       4000                   YES
- Outlet194        194 Outfall194          0 TABULAR/DEPTH       4460                   YES
- Outlet195        195 Outfall195          0 TABULAR/DEPTH         50                   YES
- Outlet196        196 Outfall196          0 TABULAR/DEPTH         10                   YES
- Outlet197        197 Outfall197          0 TABULAR/DEPTH       4120                   YES
- Outlet198        198 Outfall198          0 TABULAR/DEPTH        390                   YES
- Outlet199        199 Outfall199          0 TABULAR/DEPTH        150                   YES
- Outlet200        200 Outfall200          0 TABULAR/DEPTH       1820                   YES
- Outlet201        201 Outfall201          0 TABULAR/DEPTH       3430                   YES
- Outlet202        202 Outfall202          0 TABULAR/DEPTH        620                   YES
- Outlet203        203 Outfall203          0 TABULAR/DEPTH       4170                   YES
- Outlet204        204 Outfall204          0 TABULAR/DEPTH       2260                   YES
- Outlet205        205 Outfall205          0 TABULAR/DEPTH       1010                   YES
- Outlet206        206 Outfall206          0 TABULAR/DEPTH        540                   YES
- Outlet207        207 Outfall207          0 TABULAR/DEPTH        770                   YES
- Outlet208        208 Outfall208          0 TABULAR/DEPTH        330                   YES
- Outlet209        209 Outfall209          0 TABULAR/DEPTH       1150                   YES
- Outlet210        210 Outfall210          0 TABULAR/DEPTH       1530                   YES
- Outlet212        212 Outfall212          0 TABULAR/DEPTH        300                   YES
- Outlet213        213 Outfall213          0 TABULAR/DEPTH        320                   YES
- Outlet214        214 Outfall214          0 TABULAR/DEPTH        560                   YES
- Outlet216        216 Outfall216          0 TABULAR/DEPTH        190                   YES
- Outlet217        217 Outfall217          0 TABULAR/DEPTH       1420                   YES
- Outlet218        218 Outfall218          0 TABULAR/DEPTH        590                   YES
- Outlet219        219 Outfall219          0 TABULAR/DEPTH       1480                   YES
- Outlet220        220 Outfall220          0 TABULAR/DEPTH        920                   YES
- Outlet221        221 Outfall221          0 TABULAR/DEPTH        330                   YES
- Outlet222        222 Outfall222          0 TABULAR/DEPTH         60                   YES
- Outlet223        223 Outfall223          0 TABULAR/DEPTH        460                   YES
- Outlet224        224 Outfall224          0 TABULAR/DEPTH        720                   YES
- Outlet227        227 Outfall227          0 TABULAR/DEPTH        200                   YES
- Outlet228        228 Outfall228          0 TABULAR/DEPTH         80                   YES
- Outlet229        229 Outfall229          0 TABULAR/DEPTH       1300                   YES
- Outlet230        230 Outfall230          0 TABULAR/DEPTH       1070                   YES
- Outlet231        231 Outfall231          0 TABULAR/DEPTH       1030                   YES
- Outlet232        232 Outfall232          0 TABULAR/DEPTH         30                   YES
- Outlet233        233 Outfall233          0 TABULAR/DEPTH       1150                   YES
- Outlet234        234 Outfall234          0 TABULAR/DEPTH       1430                   YES
- Outlet235        235 Outfall235          0 TABULAR/DEPTH       4860                   YES
- Outlet236        236 Outfall236          0 TABULAR/DEPTH       4710                   YES
- Outlet237        237 Outfall237          0 TABULAR/DEPTH       1340                   YES
- Outlet238        238 Outfall238          0 TABULAR/DEPTH       1870                   YES
- Outlet239        239 Outfall239          0 TABULAR/DEPTH        820                   YES
- Outlet240        240 Outfall240          0 TABULAR/DEPTH        940                   YES
- Outlet241        241 Outfall241          0 TABULAR/DEPTH         90                   YES
- Outlet242        242 Outfall242          0 TABULAR/DEPTH       1280                   YES
- Outlet243        243 Outfall243          0 TABULAR/DEPTH        430                   YES
- Outlet244        244 Outfall244          0 TABULAR/DEPTH        510                   YES
- Outlet246        246 Outfall246          0 TABULAR/DEPTH         10                   YES
- Outlet247        247 Outfall247          0 TABULAR/DEPTH         10                   YES
- Outlet249        249 Outfall249          0 TABULAR/DEPTH       1750                   YES
- Outlet250        250 Outfall250          0 TABULAR/DEPTH       1030                   YES
- Outlet251        251 Outfall251          0 TABULAR/DEPTH       1260                   YES
- Outlet252        252 Outfall252          0 TABULAR/DEPTH       1360                   YES
- Outlet253        253 Outfall253          0 TABULAR/DEPTH        140                   YES
- Outlet255        255 Outfall255          0 TABULAR/DEPTH       1960                   YES
- Outlet256        256 Outfall256          0 TABULAR/DEPTH       2210                   YES
- Outlet257        257 Outfall257          0 TABULAR/DEPTH        620                   YES
- Outlet259        259 Outfall259          0 TABULAR/DEPTH        500                   YES
- Outlet260        260 Outfall260          0 TABULAR/DEPTH        110                   YES
- Outlet261        261 Outfall261          0 TABULAR/DEPTH        120                   YES
- Outlet262        262 Outfall262          0 TABULAR/DEPTH        220                   YES
- Outlet263        263 Outfall263          0 TABULAR/DEPTH       1280                   YES
- Outlet264        264 Outfall264          0 TABULAR/DEPTH        190                   YES
- Outlet265        265 Outfall265          0 TABULAR/DEPTH        220                   YES
- Outlet266        266 Outfall266          0 TABULAR/DEPTH       1190                   YES
- Outlet267        267 Outfall267          0 TABULAR/DEPTH       1690                   YES
- Outlet268        268 Outfall268          0 TABULAR/DEPTH        430                   YES
+   Outlet1          1   Outfall1          0 TABULAR/DEPTH        180                   YES
+   Outlet2          2   Outfall2          0 TABULAR/DEPTH       4350                   YES
+   Outlet3          3   Outfall3          0 TABULAR/DEPTH      15390                   YES
+   Outlet4          4   Outfall4          0 TABULAR/DEPTH       8280                   YES
+   Outlet5          5   Outfall5          0 TABULAR/DEPTH       2880                   YES
+   Outlet6          6   Outfall6          0 TABULAR/DEPTH       2340                   YES
+   Outlet7          7   Outfall7          0 TABULAR/DEPTH       3090                   YES
+   Outlet8          8   Outfall8          0 TABULAR/DEPTH       6360                   YES
+   Outlet9          9   Outfall9          0 TABULAR/DEPTH       3480                   YES
+  Outlet10         10  Outfall10          0 TABULAR/DEPTH       5340                   YES
+  Outlet11         11  Outfall11          0 TABULAR/DEPTH       1320                   YES
+  Outlet12         12  Outfall12          0 TABULAR/DEPTH         90                   YES
+  Outlet13         13  Outfall13          0 TABULAR/DEPTH       1710                   YES
+  Outlet14         14  Outfall14          0 TABULAR/DEPTH       1080                   YES
+  Outlet15         15  Outfall15          0 TABULAR/DEPTH       9900                   YES
+  Outlet16         16  Outfall16          0 TABULAR/DEPTH         90                   YES
+  Outlet17         17  Outfall17          0 TABULAR/DEPTH       6300                   YES
+  Outlet18         18  Outfall18          0 TABULAR/DEPTH      14010                   YES
+  Outlet20         20  Outfall20          0 TABULAR/DEPTH       4590                   YES
+  Outlet21         21  Outfall21          0 TABULAR/DEPTH      13830                   YES
+  Outlet22         22  Outfall22          0 TABULAR/DEPTH       3180                   YES
+  Outlet23         23  Outfall23          0 TABULAR/DEPTH       3960                   YES
+  Outlet24         24  Outfall24          0 TABULAR/DEPTH       8220                   YES
+  Outlet25         25  Outfall25          0 TABULAR/DEPTH       1770                   YES
+  Outlet26         26  Outfall26          0 TABULAR/DEPTH       1350                   YES
+  Outlet27         27  Outfall27          0 TABULAR/DEPTH       1920                   YES
+  Outlet28         28  Outfall28          0 TABULAR/DEPTH      21330                   YES
+  Outlet29         29  Outfall29          0 TABULAR/DEPTH       2790                   YES
+  Outlet30         30  Outfall30          0 TABULAR/DEPTH        120                   YES
+  Outlet31         31  Outfall31          0 TABULAR/DEPTH         60                   YES
+  Outlet32         32  Outfall32          0 TABULAR/DEPTH       8790                   YES
+  Outlet33         33  Outfall33          0 TABULAR/DEPTH       7020                   YES
+  Outlet34         34  Outfall34          0 TABULAR/DEPTH       5820                   YES
+  Outlet35         35  Outfall35          0 TABULAR/DEPTH       3570                   YES
+  Outlet36         36  Outfall36          0 TABULAR/DEPTH       4230                   YES
+  Outlet37         37  Outfall37          0 TABULAR/DEPTH       8940                   YES
+  Outlet38         38  Outfall38          0 TABULAR/DEPTH       6330                   YES
+  Outlet39         39  Outfall39          0 TABULAR/DEPTH      23220                   YES
+  Outlet40         40  Outfall40          0 TABULAR/DEPTH      12870                   YES
+  Outlet41         41  Outfall41          0 TABULAR/DEPTH      23340                   YES
+  Outlet42         42  Outfall42          0 TABULAR/DEPTH      11250                   YES
+  Outlet43         43  Outfall43          0 TABULAR/DEPTH       7110                   YES
+  Outlet44         44  Outfall44          0 TABULAR/DEPTH       4260                   YES
+  Outlet45         45  Outfall45          0 TABULAR/DEPTH        960                   YES
+  Outlet46         46  Outfall46          0 TABULAR/DEPTH       3420                   YES
+  Outlet47         47  Outfall47          0 TABULAR/DEPTH       3690                   YES
+  Outlet48         48  Outfall48          0 TABULAR/DEPTH       4110                   YES
+  Outlet49         49  Outfall49          0 TABULAR/DEPTH       3540                   YES
+  Outlet50         50  Outfall50          0 TABULAR/DEPTH       5430                   YES
+  Outlet51         51  Outfall51          0 TABULAR/DEPTH       2910                   YES
+  Outlet52         52  Outfall52          0 TABULAR/DEPTH       1650                   YES
+  Outlet53         53  Outfall53          0 TABULAR/DEPTH       8310                   YES
+  Outlet54         54  Outfall54          0 TABULAR/DEPTH       1950                   YES
+  Outlet55         55  Outfall55          0 TABULAR/DEPTH       4140                   YES
+  Outlet56         56  Outfall56          0 TABULAR/DEPTH      24840                   YES
+  Outlet57         57  Outfall57          0 TABULAR/DEPTH       3660                   YES
+  Outlet58         58  Outfall58          0 TABULAR/DEPTH      11550                   YES
+  Outlet59         59  Outfall59          0 TABULAR/DEPTH       7860                   YES
+  Outlet60         60  Outfall60          0 TABULAR/DEPTH       8340                   YES
+  Outlet61         61  Outfall61          0 TABULAR/DEPTH       4680                   YES
+  Outlet62         62  Outfall62          0 TABULAR/DEPTH       3480                   YES
+  Outlet63         63  Outfall63          0 TABULAR/DEPTH       3660                   YES
+  Outlet64         64  Outfall64          0 TABULAR/DEPTH       8790                   YES
+  Outlet65         65  Outfall65          0 TABULAR/DEPTH       3390                   YES
+  Outlet66         66  Outfall66          0 TABULAR/DEPTH       3360                   YES
+  Outlet67         67  Outfall67          0 TABULAR/DEPTH       1440                   YES
+  Outlet68         68  Outfall68          0 TABULAR/DEPTH       4110                   YES
+  Outlet69         69  Outfall69          0 TABULAR/DEPTH       6780                   YES
+  Outlet70         70  Outfall70          0 TABULAR/DEPTH       3930                   YES
+  Outlet71         71  Outfall71          0 TABULAR/DEPTH       3180                   YES
+  Outlet72         72  Outfall72          0 TABULAR/DEPTH       1140                   YES
+  Outlet73         73  Outfall73          0 TABULAR/DEPTH       5280                   YES
+  Outlet74         74  Outfall74          0 TABULAR/DEPTH       1680                   YES
+  Outlet76         76  Outfall76          0 TABULAR/DEPTH      13920                   YES
+  Outlet77         77  Outfall77          0 TABULAR/DEPTH       3090                   YES
+  Outlet78         78  Outfall78          0 TABULAR/DEPTH       9240                   YES
+  Outlet79         79  Outfall79          0 TABULAR/DEPTH       4800                   YES
+  Outlet80         80  Outfall80          0 TABULAR/DEPTH      13470                   YES
+  Outlet81         81  Outfall81          0 TABULAR/DEPTH       3750                   YES
+  Outlet82         82  Outfall82          0 TABULAR/DEPTH       2610                   YES
+  Outlet83         83  Outfall83          0 TABULAR/DEPTH       2160                   YES
+  Outlet84         84  Outfall84          0 TABULAR/DEPTH       1470                   YES
+  Outlet85         85  Outfall85          0 TABULAR/DEPTH      11760                   YES
+  Outlet86         86  Outfall86          0 TABULAR/DEPTH       2820                   YES
+  Outlet87         87  Outfall87          0 TABULAR/DEPTH       9990                   YES
+  Outlet88         88  Outfall88          0 TABULAR/DEPTH      12510                   YES
+  Outlet89         89  Outfall89          0 TABULAR/DEPTH       4320                   YES
+  Outlet90         90  Outfall90          0 TABULAR/DEPTH       5520                   YES
+  Outlet91         91  Outfall91          0 TABULAR/DEPTH       6000                   YES
+  Outlet92         92  Outfall92          0 TABULAR/DEPTH       6720                   YES
+  Outlet93         93  Outfall93          0 TABULAR/DEPTH        600                   YES
+  Outlet94         94  Outfall94          0 TABULAR/DEPTH       6810                   YES
+  Outlet95         95  Outfall95          0 TABULAR/DEPTH       4320                   YES
+  Outlet96         96  Outfall96          0 TABULAR/DEPTH       8010                   YES
+  Outlet97         97  Outfall97          0 TABULAR/DEPTH       1800                   YES
+  Outlet98         98  Outfall98          0 TABULAR/DEPTH       8280                   YES
+  Outlet99         99  Outfall99          0 TABULAR/DEPTH        150                   YES
+ Outlet100        100 Outfall100          0 TABULAR/DEPTH       6180                   YES
+ Outlet101        101 Outfall101          0 TABULAR/DEPTH       9570                   YES
+ Outlet102        102 Outfall102          0 TABULAR/DEPTH      14070                   YES
+ Outlet103        103 Outfall103          0 TABULAR/DEPTH       5100                   YES
+ Outlet104        104 Outfall104          0 TABULAR/DEPTH         60                   YES
+ Outlet105        105 Outfall105          0 TABULAR/DEPTH        300                   YES
+ Outlet106        106 Outfall106          0 TABULAR/DEPTH       3330                   YES
+ Outlet107        107 Outfall107          0 TABULAR/DEPTH       3060                   YES
+ Outlet108        108 Outfall108          0 TABULAR/DEPTH       2640                   YES
+ Outlet109        109 Outfall109          0 TABULAR/DEPTH       6990                   YES
+ Outlet110        110 Outfall110          0 TABULAR/DEPTH        930                   YES
+ Outlet111        111 Outfall111          0 TABULAR/DEPTH       1350                   YES
+ Outlet112        112 Outfall112          0 TABULAR/DEPTH       8880                   YES
+ Outlet113        113 Outfall113          0 TABULAR/DEPTH      24360                   YES
+ Outlet114        114 Outfall114          0 TABULAR/DEPTH       5280                   YES
+ Outlet115        115 Outfall115          0 TABULAR/DEPTH      17880                   YES
+ Outlet117        117 Outfall117          0 TABULAR/DEPTH      19020                   YES
+ Outlet120        120 Outfall120          0 TABULAR/DEPTH       9090                   YES
+ Outlet121        121 Outfall121          0 TABULAR/DEPTH       5550                   YES
+ Outlet122        122 Outfall122          0 TABULAR/DEPTH       5310                   YES
+ Outlet123        123 Outfall123          0 TABULAR/DEPTH       4440                   YES
+ Outlet125        125 Outfall125          0 TABULAR/DEPTH       3960                   YES
+ Outlet126        126 Outfall126          0 TABULAR/DEPTH       6720                   YES
+ Outlet127        127 Outfall127          0 TABULAR/DEPTH       3780                   YES
+ Outlet128        128 Outfall128          0 TABULAR/DEPTH      16170                   YES
+ Outlet129        129 Outfall129          0 TABULAR/DEPTH       3000                   YES
+ Outlet130        130 Outfall130          0 TABULAR/DEPTH       4830                   YES
+ Outlet131        131 Outfall131          0 TABULAR/DEPTH      14130                   YES
+ Outlet132        132 Outfall132          0 TABULAR/DEPTH       7920                   YES
+ Outlet133        133 Outfall133          0 TABULAR/DEPTH       6330                   YES
+ Outlet134        134 Outfall134          0 TABULAR/DEPTH       4530                   YES
+ Outlet135        135 Outfall135          0 TABULAR/DEPTH       2520                   YES
+ Outlet136        136 Outfall136          0 TABULAR/DEPTH       3150                   YES
+ Outlet137        137 Outfall137          0 TABULAR/DEPTH       3480                   YES
+ Outlet138        138 Outfall138          0 TABULAR/DEPTH       7350                   YES
+ Outlet139        139 Outfall139          0 TABULAR/DEPTH       4980                   YES
+ Outlet143        143 Outfall143          0 TABULAR/DEPTH       2400                   YES
+ Outlet144        144 Outfall144          0 TABULAR/DEPTH        990                   YES
+ Outlet145        145 Outfall145          0 TABULAR/DEPTH       1020                   YES
+ Outlet146        146 Outfall146          0 TABULAR/DEPTH       3060                   YES
+ Outlet147        147 Outfall147          0 TABULAR/DEPTH       3690                   YES
+ Outlet148        148 Outfall148          0 TABULAR/DEPTH        270                   YES
+ Outlet149        149 Outfall149          0 TABULAR/DEPTH       1290                   YES
+ Outlet150        150 Outfall150          0 TABULAR/DEPTH       4680                   YES
+ Outlet151        151 Outfall151          0 TABULAR/DEPTH       2400                   YES
+ Outlet152        152 Outfall152          0 TABULAR/DEPTH       4140                   YES
+ Outlet153        153 Outfall153          0 TABULAR/DEPTH       1590                   YES
+ Outlet154        154 Outfall154          0 TABULAR/DEPTH       1770                   YES
+ Outlet155        155 Outfall155          0 TABULAR/DEPTH       6990                   YES
+ Outlet156        156 Outfall156          0 TABULAR/DEPTH         90                   YES
+ Outlet157        157 Outfall157          0 TABULAR/DEPTH        930                   YES
+ Outlet158        158 Outfall158          0 TABULAR/DEPTH      25470                   YES
+ Outlet159        159 Outfall159          0 TABULAR/DEPTH        960                   YES
+ Outlet160        160 Outfall160          0 TABULAR/DEPTH        630                   YES
+ Outlet161        161 Outfall161          0 TABULAR/DEPTH         60                   YES
+ Outlet162        162 Outfall162          0 TABULAR/DEPTH       3690                   YES
+ Outlet163        163 Outfall163          0 TABULAR/DEPTH       2970                   YES
+ Outlet164        164 Outfall164          0 TABULAR/DEPTH       1650                   YES
+ Outlet165        165 Outfall165          0 TABULAR/DEPTH       2340                   YES
+ Outlet166        166 Outfall166          0 TABULAR/DEPTH        810                   YES
+ Outlet167        167 Outfall167          0 TABULAR/DEPTH        810                   YES
+ Outlet168        168 Outfall168          0 TABULAR/DEPTH        210                   YES
+ Outlet169        169 Outfall169          0 TABULAR/DEPTH      28410                   YES
+ Outlet170        170 Outfall170          0 TABULAR/DEPTH       7920                   YES
+ Outlet171        171 Outfall171          0 TABULAR/DEPTH       3060                   YES
+ Outlet172        172 Outfall172          0 TABULAR/DEPTH       2640                   YES
+ Outlet173        173 Outfall173          0 TABULAR/DEPTH       1470                   YES
+ Outlet175        175 Outfall175          0 TABULAR/DEPTH       3360                   YES
+ Outlet178        178 Outfall178          0 TABULAR/DEPTH         30                   YES
+ Outlet182        182 Outfall182          0 TABULAR/DEPTH         30                   YES
+ Outlet183        183 Outfall183          0 TABULAR/DEPTH       5520                   YES
+ Outlet184        184 Outfall184          0 TABULAR/DEPTH        120                   YES
+ Outlet185        185 Outfall185          0 TABULAR/DEPTH       5040                   YES
+ Outlet186        186 Outfall186          0 TABULAR/DEPTH       7110                   YES
+ Outlet187        187 Outfall187          0 TABULAR/DEPTH        270                   YES
+ Outlet188        188 Outfall188          0 TABULAR/DEPTH       3690                   YES
+ Outlet189        189 Outfall189          0 TABULAR/DEPTH      11700                   YES
+ Outlet190        190 Outfall190          0 TABULAR/DEPTH       3510                   YES
+ Outlet191        191 Outfall191          0 TABULAR/DEPTH       5100                   YES
+ Outlet192        192 Outfall192          0 TABULAR/DEPTH       6450                   YES
+ Outlet193        193 Outfall193          0 TABULAR/DEPTH      12000                   YES
+ Outlet194        194 Outfall194          0 TABULAR/DEPTH      13380                   YES
+ Outlet195        195 Outfall195          0 TABULAR/DEPTH        150                   YES
+ Outlet196        196 Outfall196          0 TABULAR/DEPTH         30                   YES
+ Outlet197        197 Outfall197          0 TABULAR/DEPTH      12360                   YES
+ Outlet198        198 Outfall198          0 TABULAR/DEPTH       1170                   YES
+ Outlet199        199 Outfall199          0 TABULAR/DEPTH        450                   YES
+ Outlet200        200 Outfall200          0 TABULAR/DEPTH       5460                   YES
+ Outlet201        201 Outfall201          0 TABULAR/DEPTH      10290                   YES
+ Outlet202        202 Outfall202          0 TABULAR/DEPTH       1860                   YES
+ Outlet203        203 Outfall203          0 TABULAR/DEPTH      12510                   YES
+ Outlet204        204 Outfall204          0 TABULAR/DEPTH       6780                   YES
+ Outlet205        205 Outfall205          0 TABULAR/DEPTH       3030                   YES
+ Outlet206        206 Outfall206          0 TABULAR/DEPTH       1620                   YES
+ Outlet207        207 Outfall207          0 TABULAR/DEPTH       2310                   YES
+ Outlet208        208 Outfall208          0 TABULAR/DEPTH        990                   YES
+ Outlet209        209 Outfall209          0 TABULAR/DEPTH       3450                   YES
+ Outlet210        210 Outfall210          0 TABULAR/DEPTH       4590                   YES
+ Outlet212        212 Outfall212          0 TABULAR/DEPTH        900                   YES
+ Outlet213        213 Outfall213          0 TABULAR/DEPTH        960                   YES
+ Outlet214        214 Outfall214          0 TABULAR/DEPTH       1680                   YES
+ Outlet216        216 Outfall216          0 TABULAR/DEPTH        570                   YES
+ Outlet217        217 Outfall217          0 TABULAR/DEPTH       4260                   YES
+ Outlet218        218 Outfall218          0 TABULAR/DEPTH       1770                   YES
+ Outlet219        219 Outfall219          0 TABULAR/DEPTH       4440                   YES
+ Outlet220        220 Outfall220          0 TABULAR/DEPTH       2760                   YES
+ Outlet221        221 Outfall221          0 TABULAR/DEPTH        990                   YES
+ Outlet222        222 Outfall222          0 TABULAR/DEPTH        180                   YES
+ Outlet223        223 Outfall223          0 TABULAR/DEPTH       1380                   YES
+ Outlet224        224 Outfall224          0 TABULAR/DEPTH       2160                   YES
+ Outlet227        227 Outfall227          0 TABULAR/DEPTH        600                   YES
+ Outlet228        228 Outfall228          0 TABULAR/DEPTH        240                   YES
+ Outlet229        229 Outfall229          0 TABULAR/DEPTH       3900                   YES
+ Outlet230        230 Outfall230          0 TABULAR/DEPTH       3210                   YES
+ Outlet231        231 Outfall231          0 TABULAR/DEPTH       3090                   YES
+ Outlet232        232 Outfall232          0 TABULAR/DEPTH         90                   YES
+ Outlet233        233 Outfall233          0 TABULAR/DEPTH       3450                   YES
+ Outlet234        234 Outfall234          0 TABULAR/DEPTH       4290                   YES
+ Outlet235        235 Outfall235          0 TABULAR/DEPTH      14580                   YES
+ Outlet236        236 Outfall236          0 TABULAR/DEPTH      14130                   YES
+ Outlet237        237 Outfall237          0 TABULAR/DEPTH       4020                   YES
+ Outlet238        238 Outfall238          0 TABULAR/DEPTH       5610                   YES
+ Outlet239        239 Outfall239          0 TABULAR/DEPTH       2460                   YES
+ Outlet240        240 Outfall240          0 TABULAR/DEPTH       2820                   YES
+ Outlet241        241 Outfall241          0 TABULAR/DEPTH        270                   YES
+ Outlet242        242 Outfall242          0 TABULAR/DEPTH       3840                   YES
+ Outlet243        243 Outfall243          0 TABULAR/DEPTH       1290                   YES
+ Outlet244        244 Outfall244          0 TABULAR/DEPTH       1530                   YES
+ Outlet246        246 Outfall246          0 TABULAR/DEPTH         30                   YES
+ Outlet247        247 Outfall247          0 TABULAR/DEPTH         30                   YES
+ Outlet249        249 Outfall249          0 TABULAR/DEPTH       5250                   YES
+ Outlet250        250 Outfall250          0 TABULAR/DEPTH       3090                   YES
+ Outlet251        251 Outfall251          0 TABULAR/DEPTH       3780                   YES
+ Outlet252        252 Outfall252          0 TABULAR/DEPTH       4080                   YES
+ Outlet253        253 Outfall253          0 TABULAR/DEPTH        420                   YES
+ Outlet255        255 Outfall255          0 TABULAR/DEPTH       5880                   YES
+ Outlet256        256 Outfall256          0 TABULAR/DEPTH       6630                   YES
+ Outlet257        257 Outfall257          0 TABULAR/DEPTH       1860                   YES
+ Outlet259        259 Outfall259          0 TABULAR/DEPTH       1500                   YES
+ Outlet260        260 Outfall260          0 TABULAR/DEPTH        330                   YES
+ Outlet261        261 Outfall261          0 TABULAR/DEPTH        360                   YES
+ Outlet262        262 Outfall262          0 TABULAR/DEPTH        660                   YES
+ Outlet263        263 Outfall263          0 TABULAR/DEPTH       3840                   YES
+ Outlet264        264 Outfall264          0 TABULAR/DEPTH        570                   YES
+ Outlet265        265 Outfall265          0 TABULAR/DEPTH        660                   YES
+ Outlet266        266 Outfall266          0 TABULAR/DEPTH       3570                   YES
+ Outlet267        267 Outfall267          0 TABULAR/DEPTH       5070                   YES
+ Outlet268        268 Outfall268          0 TABULAR/DEPTH       1290                   YES
 
 
 [XSECTIONS]
@@ -22550,65 +22550,77 @@ Outfall268      35.61       FREE                    NO
 [CURVES]
 ;;Name           Type       X-Value    Y-Value
 ;;-------------- ---------- ---------- ----------
-      2330     Rating          0        0.0
-      2330                     1   0.736811
-      2330                     2   1.042008
-      2330                     3   1.276194
-      2330                     4   1.473621
-      2330                     5   1.647559
-      2330                     6    1.80481
-      2330                     7   1.949418
-      2330                     8   2.084015
-      2330                     9   2.210432
-      2330                    10       2.33
+     24840     Rating          0        0.0
+     24840                     1   7.855098
+     24840                     2  11.108786
+     24840                     3  13.605428
+     24840                     4  15.710195
+     24840                     5  17.564532
+     24840                     6  19.240981
+     24840                     7  20.782635
+     24840                     8  22.217571
+     24840                     9  23.565293
+     24840                    10      24.84
          ;                                 
-      1160     Rating          0        0.0
-      1160                     1   0.366824
-      1160                     2   0.518768
-      1160                     3   0.635358
-      1160                     4   0.733648
-      1160                     5   0.820244
-      1160                     6   0.898532
-      1160                     7   0.970526
-      1160                     8   1.037536
-      1160                     9   1.100473
-      1160                    10       1.16
+      6300     Rating          0        0.0
+      6300                     1   1.992235
+      6300                     2   2.817446
+      6300                     3   3.450652
+      6300                     4    3.98447
+      6300                     5   4.454773
+      6300                     6   4.879959
+      6300                     7   5.270958
+      6300                     8   5.634891
+      6300                     9   5.976705
+      6300                    10        6.3
          ;                                 
-      2960     Rating          0        0.0
-      2960                     1   0.936034
-      2960                     2   1.323752
-      2960                     3   1.621259
-      2960                     4   1.872068
-      2960                     5   2.093036
-      2960                     6   2.292806
-      2960                     7   2.476514
-      2960                     8   2.647504
-      2960                     9   2.808103
-      2960                    10       2.96
+     14580     Rating          0        0.0
+     14580                     1   4.610601
+     14580                     2   6.520374
+     14580                     3   7.985795
+     14580                     4   9.221202
+     14580                     5  10.309617
+     14580                     6  11.293619
+     14580                     7  12.198503
+     14580                     8  13.040748
+     14580                     9  13.831802
+     14580                    10      14.58
          ;                                 
-       780     Rating          0        0.0
-       780                     1   0.246658
-       780                     2   0.348827
-       780                     3   0.427224
-       780                     4   0.493315
-       780                     5   0.551543
-       780                     6   0.604185
-       780                     7   0.652595
-       780                     8   0.697653
-       780                     9   0.739973
-       780                    10       0.78
+      4800     Rating          0        0.0
+      4800                     1   1.517893
+      4800                     2   2.146625
+      4800                     3   2.629068
+      4800                     4   3.035787
+      4800                     5   3.394113
+      4800                     6   3.718064
+      4800                     7   4.015968
+      4800                     8   4.293251
+      4800                     9    4.55368
+      4800                    10        4.8
          ;                                 
-      1410     Rating          0        0.0
-      1410                     1   0.445881
-      1410                     2   0.630571
-      1410                     3   0.772289
-      1410                     4   0.891762
-      1410                     5   0.997021
-      1410                     6   1.092181
-      1410                     7   1.179691
-      1410                     8   1.261142
-      1410                     9   1.337643
-      1410                    10       1.41
+     12000     Rating          0        0.0
+     12000                     1   3.794733
+     12000                     2   5.366563
+     12000                     3   6.572671
+     12000                     4   7.589466
+     12000                     5   8.485281
+     12000                     6    9.29516
+     12000                     7   10.03992
+     12000                     8  10.733126
+     12000                     9    11.3842
+     12000                    10       12.0
+         ;                                 
+      3180     Rating          0        0.0
+      3180                     1   1.005604
+      3180                     2   1.422139
+      3180                     3   1.741758
+      3180                     4   2.011209
+      3180                     5     2.2486
+      3180                     6   2.463217
+      3180                     7   2.660579
+      3180                     8   2.844278
+      3180                     9   3.016813
+      3180                    10       3.18
          ;                                 
        450     Rating          0        0.0
        450                     1   0.142302
@@ -22622,78 +22634,6 @@ Outfall268      35.61       FREE                    NO
        450                     9   0.426907
        450                    10       0.45
          ;                                 
-      3190     Rating          0        0.0
-      3190                     1   1.008767
-      3190                     2   1.426611
-      3190                     3   1.747235
-      3190                     4   2.017533
-      3190                     5   2.255671
-      3190                     6   2.470963
-      3190                     7   2.668945
-      3190                     8   2.853223
-      3190                     9     3.0263
-      3190                    10       3.19
-         ;                                 
-       340     Rating          0        0.0
-       340                     1   0.107517
-       340                     2   0.152053
-       340                     3   0.186226
-       340                     4   0.215035
-       340                     5   0.240416
-       340                     6   0.263363
-       340                     7   0.284464
-       340                     8   0.304105
-       340                     9   0.322552
-       340                    10       0.34
-         ;                                 
-      2770     Rating          0        0.0
-      2770                     1   0.875951
-      2770                     2   1.238782
-      2770                     3   1.517191
-      2770                     4   1.751902
-      2770                     5   1.958686
-      2770                     6   2.145633
-      2770                     7   2.317548
-      2770                     8   2.477563
-      2770                     9   2.627853
-      2770                    10       2.77
-         ;                                 
-       320     Rating          0        0.0
-       320                     1   0.101193
-       320                     2   0.143108
-       320                     3   0.175271
-       320                     4   0.202386
-       320                     5   0.226274
-       320                     6   0.247871
-       320                     7   0.267731
-       320                     8   0.286217
-       320                     9   0.303579
-       320                    10       0.32
-         ;                                 
-       970     Rating          0        0.0
-       970                     1   0.306741
-       970                     2   0.433797
-       970                     3   0.531291
-       970                     4   0.613482
-       970                     5   0.685894
-       970                     6   0.751359
-       970                     7    0.81156
-       970                     8   0.867594
-       970                     9   0.920223
-       970                    10       0.97
-         ;                                 
-      1420     Rating          0        0.0
-      1420                     1   0.449043
-      1420                     2   0.635043
-      1420                     3   0.777766
-      1420                     4   0.898087
-      1420                     5   1.004092
-      1420                     6   1.099927
-      1420                     7   1.188057
-      1420                     8   1.270087
-      1420                     9    1.34713
-      1420                    10       1.42
-         ;                                 
       1440     Rating          0        0.0
       1440                     1   0.455368
       1440                     2   0.643988
@@ -22705,18 +22645,6 @@ Outfall268      35.61       FREE                    NO
       1440                     8   1.287975
       1440                     9   1.366104
       1440                    10       1.44
-         ;                                 
-      2980     Rating          0        0.0
-      2980                     1   0.942359
-      2980                     2   1.332697
-      2980                     3   1.632213
-      2980                     4   1.884717
-      2980                     5   2.107178
-      2980                     6   2.308298
-      2980                     7   2.493247
-      2980                     8   2.665393
-      2980                     9   2.827076
-      2980                    10       2.98
          ;                                 
        270     Rating          0        0.0
        270                     1   0.085381
@@ -22730,53 +22658,125 @@ Outfall268      35.61       FREE                    NO
        270                     9   0.256144
        270                    10       0.27
          ;                                 
-      1060     Rating          0        0.0
-      1060                     1   0.335201
-      1060                     2   0.474046
-      1060                     3   0.580586
-      1060                     4   0.670403
-      1060                     5   0.749533
-      1060                     6   0.821072
-      1060                     7    0.88686
-      1060                     8   0.948093
-      1060                     9   1.005604
-      1060                    10       1.06
+     11250     Rating          0        0.0
+     11250                     1   3.557562
+     11250                     2   5.031153
+     11250                     3   6.161879
+     11250                     4   7.115125
+     11250                     5   7.954951
+     11250                     6   8.714213
+     11250                     7   9.412425
+     11250                     8  10.062306
+     11250                     9  10.672687
+     11250                    10      11.25
          ;                                 
-      2240     Rating          0        0.0
-      2240                     1    0.70835
-      2240                     2   1.001758
-      2240                     3   1.226899
-      2240                     4     1.4167
-      2240                     5   1.583919
-      2240                     6   1.735097
-      2240                     7   1.874118
-      2240                     8   2.003517
-      2240                     9   2.125051
-      2240                    10       2.24
+      3090     Rating          0        0.0
+      3090                     1   0.977144
+      3090                     2    1.38189
+      3090                     3   1.692463
+      3090                     4   1.954288
+      3090                     5    2.18496
+      3090                     6   2.393504
+      3090                     7   2.585279
+      3090                     8    2.76378
+      3090                     9   2.931431
+      3090                    10       3.09
          ;                                 
-       870     Rating          0        0.0
-       870                     1   0.275118
-       870                     2   0.389076
-       870                     3   0.476519
-       870                     4   0.550236
-       870                     5   0.615183
-       870                     6   0.673899
-       870                     7   0.727894
-       870                     8   0.778152
-       870                     9   0.825354
-       870                    10       0.87
+      6000     Rating          0        0.0
+      6000                     1   1.897367
+      6000                     2   2.683282
+      6000                     3   3.286335
+      6000                     4   3.794733
+      6000                     5   4.242641
+      6000                     6    4.64758
+      6000                     7    5.01996
+      6000                     8   5.366563
+      6000                     9     5.6921
+      6000                    10        6.0
          ;                                 
-      1690     Rating          0        0.0
-      1690                     1   0.534425
-      1690                     2   0.755791
-      1690                     3   0.925651
-      1690                     4    1.06885
-      1690                     5    1.19501
-      1690                     6   1.309068
-      1690                     7   1.413955
-      1690                     8   1.511582
-      1690                     9   1.603275
-      1690                    10       1.69
+      6990     Rating          0        0.0
+      6990                     1   2.210432
+      6990                     2   3.126023
+      6990                     3   3.828581
+      6990                     4   4.420864
+      6990                     5   4.942676
+      6990                     6   5.414431
+      6990                     7   5.848254
+      6990                     8   6.252046
+      6990                     9   6.631296
+      6990                    10       6.99
+         ;                                 
+      2820     Rating          0        0.0
+      2820                     1   0.891762
+      2820                     2   1.261142
+      2820                     3   1.544578
+      2820                     4   1.783525
+      2820                     5   1.994041
+      2820                     6   2.184363
+      2820                     7   2.359381
+      2820                     8   2.522285
+      2820                     9   2.675287
+      2820                    10       2.82
+         ;                                 
+      8340     Rating          0        0.0
+      8340                     1    2.63734
+      8340                     2   3.729761
+      8340                     3   4.568006
+      8340                     4   5.274679
+      8340                     5   5.897271
+      8340                     6   6.460136
+      8340                     7   6.977745
+      8340                     8   7.459523
+      8340                     9   7.912019
+      8340                    10       8.34
+         ;                                 
+      6180     Rating          0        0.0
+      6180                     1   1.954288
+      6180                     2    2.76378
+      6180                     3   3.384925
+      6180                     4   3.908575
+      6180                     5    4.36992
+      6180                     6   4.787007
+      6180                     7   5.170559
+      6180                     8    5.52756
+      6180                     9   5.862863
+      6180                    10       6.18
+         ;                                 
+     16170     Rating          0        0.0
+     16170                     1   5.113403
+     16170                     2   7.231444
+     16170                     3   8.856674
+     16170                     4  10.226806
+     16170                     5  11.433917
+     16170                     6  12.525228
+     16170                     7  13.528793
+     16170                     8  14.462888
+     16170                     9  15.340209
+     16170                    10      16.17
+         ;                                 
+       900     Rating          0        0.0
+       900                     1   0.284605
+       900                     2   0.402492
+       900                     3    0.49295
+       900                     4    0.56921
+       900                     5   0.636396
+       900                     6   0.697137
+       900                     7   0.752994
+       900                     8   0.804984
+       900                     9   0.853815
+       900                    10        0.9
+         ;                                 
+     13470     Rating          0        0.0
+     13470                     1   4.259588
+     13470                     2   6.023967
+     13470                     3   7.377823
+     13470                     4   8.519176
+     13470                     5   9.524728
+     13470                     6  10.433817
+     13470                     7  11.269811
+     13470                     8  12.047934
+     13470                     9  12.778764
+     13470                    10      13.47
          ;                                 
       3030     Rating          0        0.0
       3030                     1    0.95817
@@ -22790,41 +22790,17 @@ Outfall268      35.61       FREE                    NO
       3030                     9    2.87451
       3030                    10       3.03
          ;                                 
-      1480     Rating          0        0.0
-      1480                     1   0.468017
-      1480                     2   0.661876
-      1480                     3   0.810629
-      1480                     4   0.936034
-      1480                     5   1.046518
-      1480                     6   1.146403
-      1480                     7   1.238257
-      1480                     8   1.323752
-      1480                     9   1.404051
-      1480                    10       1.48
-         ;                                 
-      1190     Rating          0        0.0
-      1190                     1   0.376311
-      1190                     2   0.532184
-      1190                     3    0.65179
-      1190                     4   0.752622
-      1190                     5   0.841457
-      1190                     6    0.92177
-      1190                     7   0.995625
-      1190                     8   1.064368
-      1190                     9   1.128933
-      1190                    10       1.19
-         ;                                 
-      2450     Rating          0        0.0
-      2450                     1   0.774758
-      2450                     2   1.095673
-      2450                     3    1.34192
-      2450                     4   1.549516
-      2450                     5   1.732412
-      2450                     6   1.897762
-      2450                     7   2.049817
-      2450                     8   2.191347
-      2450                     9   2.324274
-      2450                    10       2.45
+       180     Rating          0        0.0
+       180                     1   0.056921
+       180                     2   0.080498
+       180                     3    0.09859
+       180                     4   0.113842
+       180                     5   0.127279
+       180                     6   0.139427
+       180                     7   0.150599
+       180                     8   0.160997
+       180                     9   0.170763
+       180                    10       0.18
          ;                                 
       1020     Rating          0        0.0
       1020                     1   0.322552
@@ -22838,113 +22814,53 @@ Outfall268      35.61       FREE                    NO
       1020                     9   0.967657
       1020                    10       1.02
          ;                                 
-      1820     Rating          0        0.0
-      1820                     1   0.575535
-      1820                     2   0.813929
-      1820                     3   0.996855
-      1820                     4   1.151069
-      1820                     5   1.286934
-      1820                     6   1.409766
-      1820                     7   1.522721
-      1820                     8   1.627857
-      1820                     9   1.726604
-      1820                    10       1.82
+      4140     Rating          0        0.0
+      4140                     1   1.309183
+      4140                     2   1.851464
+      4140                     3   2.267571
+      4140                     4   2.618366
+      4140                     5   2.927422
+      4140                     6    3.20683
+      4140                     7   3.463773
+      4140                     8   3.702929
+      4140                     9   3.927549
+      4140                    10       4.14
          ;                                 
-       540     Rating          0        0.0
-       540                     1   0.170763
-       540                     2   0.241495
-       540                     3    0.29577
-       540                     4   0.341526
-       540                     5   0.381838
-       540                     6   0.418282
-       540                     7   0.451796
-       540                     8   0.482991
-       540                     9   0.512289
-       540                    10       0.54
+     28410     Rating          0        0.0
+     28410                     1   8.984031
+     28410                     2  12.705338
+     28410                     3  15.560798
+     28410                     4  17.968062
+     28410                     5  20.088904
+     28410                     6  22.006291
+     28410                     7  23.769511
+     28410                     8  25.410676
+     28410                     9  26.952092
+     28410                    10      28.41
          ;                                 
-       550     Rating          0        0.0
-       550                     1   0.173925
-       550                     2   0.245967
-       550                     3   0.301247
-       550                     4   0.347851
-       550                     5   0.388909
-       550                     6   0.426028
-       550                     7   0.460163
-       550                     8   0.491935
-       550                     9   0.521776
-       550                    10       0.55
+      8220     Rating          0        0.0
+      8220                     1   2.599392
+      8220                     2   3.676096
+      8220                     3   4.502279
+      8220                     4   5.198784
+      8220                     5   5.812418
+      8220                     6   6.367185
+      8220                     7   6.877345
+      8220                     8   7.352192
+      8220                     9   7.798177
+      8220                    10       8.22
          ;                                 
-      1760     Rating          0        0.0
-      1760                     1   0.556561
-      1760                     2   0.787096
-      1760                     3   0.963992
-      1760                     4   1.113122
-      1760                     5   1.244508
-      1760                     6    1.36329
-      1760                     7   1.472522
-      1760                     8   1.574192
-      1760                     9   1.669683
-      1760                    10       1.76
-         ;                                 
-      2780     Rating          0        0.0
-      2780                     1   0.879113
-      2780                     2   1.243254
-      2780                     3   1.522669
-      2780                     4   1.758226
-      2780                     5   1.965757
-      2780                     6   2.153379
-      2780                     7   2.325915
-      2780                     8   2.486508
-      2780                     9    2.63734
-      2780                    10       2.78
-         ;                                 
-      7740     Rating          0        0.0
-      7740                     1   2.447603
-      7740                     2   3.461433
-      7740                     3   4.239373
-      7740                     4   4.895206
-      7740                     5   5.473006
-      7740                     6   5.995378
-      7740                     7   6.475749
-      7740                     8   6.922866
-      7740                     9   7.342809
-      7740                    10       7.74
-         ;                                 
-      1510     Rating          0        0.0
-      1510                     1   0.477504
-      1510                     2   0.675293
-      1510                     3   0.827061
-      1510                     4   0.955008
-      1510                     5   1.067731
-      1510                     6   1.169641
-      1510                     7   1.263357
-      1510                     8   1.350585
-      1510                     9   1.432512
-      1510                    10       1.51
-         ;                                 
-      4610     Rating          0        0.0
-      4610                     1    1.45781
-      4610                     2   2.061655
-      4610                     3   2.525001
-      4610                     4    2.91562
-      4610                     5   3.259762
-      4610                     6   3.570891
-      4610                     7   3.857003
-      4610                     8   4.123309
-      4610                     9    4.37343
-      4610                    10       4.61
-         ;                                 
-       210     Rating          0        0.0
-       210                     1   0.066408
-       210                     2   0.093915
-       210                     3   0.115022
-       210                     4   0.132816
-       210                     5   0.148492
-       210                     6   0.162665
-       210                     7   0.175699
-       210                     8    0.18783
-       210                     9   0.199223
-       210                    10       0.21
+     24360     Rating          0        0.0
+     24360                     1   7.703308
+     24360                     2  10.894123
+     24360                     3  13.342522
+     24360                     4  15.406617
+     24360                     5  17.225121
+     24360                     6  18.869175
+     24360                     7  20.381038
+     24360                     8  21.788246
+     24360                     9  23.109925
+     24360                    10      24.36
          ;                                 
        150     Rating          0        0.0
        150                     1   0.047434
@@ -22958,65 +22874,53 @@ Outfall268      35.61       FREE                    NO
        150                     9   0.142302
        150                    10       0.15
          ;                                 
-       190     Rating          0        0.0
-       190                     1   0.060083
-       190                     2   0.084971
-       190                     3   0.104067
-       190                     4   0.120167
-       190                     5    0.13435
-       190                     6   0.147173
-       190                     7   0.158965
-       190                     8   0.169941
-       190                     9    0.18025
-       190                    10       0.19
+       210     Rating          0        0.0
+       210                     1   0.066408
+       210                     2   0.093915
+       210                     3   0.115022
+       210                     4   0.132816
+       210                     5   0.148492
+       210                     6   0.162665
+       210                     7   0.175699
+       210                     8    0.18783
+       210                     9   0.199223
+       210                    10       0.21
          ;                                 
-      1370     Rating          0        0.0
-      1370                     1   0.433232
-      1370                     2   0.612683
-      1370                     3    0.75038
-      1370                     4   0.866464
-      1370                     5   0.968736
-      1370                     6   1.061197
-      1370                     7   1.146224
-      1370                     8   1.225365
-      1370                     9   1.299696
-      1370                    10       1.37
+      8940     Rating          0        0.0
+      8940                     1   2.827076
+      8940                     2    3.99809
+      8940                     3    4.89664
+      8940                     4   5.654152
+      8940                     5   6.321535
+      8940                     6   6.924894
+      8940                     7   7.479741
+      8940                     8   7.996179
+      8940                     9   8.481229
+      8940                    10       8.94
          ;                                 
-      2060     Rating          0        0.0
-      2060                     1   0.651429
-      2060                     2    0.92126
-      2060                     3   1.128308
-      2060                     4   1.302858
-      2060                     5    1.45664
-      2060                     6   1.595669
-      2060                     7    1.72352
-      2060                     8    1.84252
-      2060                     9   1.954288
-      2060                    10       2.06
+      5100     Rating          0        0.0
+      5100                     1   1.612762
+      5100                     2   2.280789
+      5100                     3   2.793385
+      5100                     4   3.225523
+      5100                     5   3.606245
+      5100                     6   3.950443
+      5100                     7   4.266966
+      5100                     8   4.561579
+      5100                     9   4.838285
+      5100                    10        5.1
          ;                                 
-       500     Rating          0        0.0
-       500                     1   0.158114
-       500                     2   0.223607
-       500                     3   0.273861
-       500                     4   0.316228
-       500                     5   0.353553
-       500                     6   0.387298
-       500                     7    0.41833
-       500                     8   0.447214
-       500                     9   0.474342
-       500                    10        0.5
-         ;                                 
-      1300     Rating          0        0.0
-      1300                     1   0.411096
-      1300                     2   0.581378
-      1300                     3   0.712039
-      1300                     4   0.822192
-      1300                     5   0.919239
-      1300                     6   1.006976
-      1300                     7   1.087658
-      1300                     8   1.162755
-      1300                     9   1.233288
-      1300                    10        1.3
+      2520     Rating          0        0.0
+      2520                     1   0.796894
+      2520                     2   1.126978
+      2520                     3   1.380261
+      2520                     4   1.593788
+      2520                     5   1.781909
+      2520                     6   1.951984
+      2520                     7   2.108383
+      2520                     8   2.253957
+      2520                     9   2.390682
+      2520                    10       2.52
          ;                                 
         30     Rating          0        0.0
         30                     1   0.009487
@@ -23030,161 +22934,137 @@ Outfall268      35.61       FREE                    NO
         30                     9    0.02846
         30                    10       0.03
          ;                                 
-      2930     Rating          0        0.0
-      2930                     1   0.926547
-      2930                     2   1.310336
-      2930                     3   1.604827
-      2930                     4   1.853095
-      2930                     5   2.071823
-      2930                     6   2.269568
-      2930                     7   2.451414
-      2930                     8   2.620672
-      2930                     9   2.779642
-      2930                    10       2.93
+      1860     Rating          0        0.0
+      1860                     1   0.588184
+      1860                     2   0.831817
+      1860                     3   1.018764
+      1860                     4   1.176367
+      1860                     5   1.315219
+      1860                     6    1.44075
+      1860                     7   1.556188
+      1860                     8   1.663635
+      1860                     9   1.764551
+      1860                    10       1.86
          ;                                 
-      2100     Rating          0        0.0
-      2100                     1   0.664078
-      2100                     2   0.939149
-      2100                     3   1.150217
-      2100                     4   1.328157
-      2100                     5   1.484924
-      2100                     6   1.626653
-      2100                     7   1.756986
-      2100                     8   1.878297
-      2100                     9   1.992235
-      2100                    10        2.1
+      9090     Rating          0        0.0
+      9090                     1    2.87451
+      9090                     2   4.065172
+      9090                     3   4.978798
+      9090                     4   5.749021
+      9090                     5   6.427601
+      9090                     6   7.041084
+      9090                     7    7.60524
+      9090                     8   8.130343
+      9090                     9   8.623531
+      9090                    10       9.09
          ;                                 
-       640     Rating          0        0.0
-       640                     1   0.202386
-       640                     2   0.286217
-       640                     3   0.350542
-       640                     4   0.404772
-       640                     5   0.452548
-       640                     6   0.495742
-       640                     7   0.535462
-       640                     8   0.572433
-       640                     9   0.607157
-       640                    10       0.64
+     14070     Rating          0        0.0
+     14070                     1   4.449325
+     14070                     2   6.292295
+     14070                     3   7.706456
+     14070                     4   8.898649
+     14070                     5   9.948992
+     14070                     6  10.898575
+     14070                     7  11.771807
+     14070                     8  12.584591
+     14070                     9  13.347974
+     14070                    10      14.07
          ;                                 
-       920     Rating          0        0.0
-       920                     1    0.29093
-       920                     2   0.411437
-       920                     3   0.503905
-       920                     4   0.581859
-       920                     5   0.650538
-       920                     6   0.712629
-       920                     7   0.769727
-       920                     8   0.822873
-       920                     9   0.872789
-       920                    10       0.92
+      4320     Rating          0        0.0
+      4320                     1   1.366104
+      4320                     2   1.931963
+      4320                     3   2.366161
+      4320                     4   2.732208
+      4320                     5   3.054701
+      4320                     6   3.346258
+      4320                     7   3.614371
+      4320                     8   3.863925
+      4320                     9   4.098312
+      4320                    10       4.32
          ;                                 
-       590     Rating          0        0.0
-       590                     1   0.186574
-       590                     2   0.263856
-       590                     3   0.323156
-       590                     4   0.373149
-       590                     5   0.417193
-       590                     6   0.457012
-       590                     7   0.493629
-       590                     8   0.527712
-       590                     9   0.559723
-       590                    10       0.59
+      1080     Rating          0        0.0
+      1080                     1   0.341526
+      1080                     2   0.482991
+      1080                     3    0.59154
+      1080                     4   0.683052
+      1080                     5   0.763675
+      1080                     6   0.836564
+      1080                     7   0.903593
+      1080                     8   0.965981
+      1080                     9   1.024578
+      1080                    10       1.08
          ;                                 
-       380     Rating          0        0.0
-       380                     1   0.120167
-       380                     2   0.169941
-       380                     3   0.208135
-       380                     4   0.240333
-       380                     5   0.268701
-       380                     6   0.294347
-       380                     7   0.317931
-       380                     8   0.339882
-       380                     9     0.3605
-       380                    10       0.38
+      4020     Rating          0        0.0
+      4020                     1   1.271236
+      4020                     2   1.797799
+      4020                     3   2.201845
+      4020                     4   2.542471
+      4020                     5   2.842569
+      4020                     6   3.113879
+      4020                     7   3.363373
+      4020                     8   3.595597
+      4020                     9   3.813707
+      4020                    10       4.02
          ;                                 
-      1780     Rating          0        0.0
-      1780                     1   0.562885
-      1780                     2    0.79604
-      1780                     3   0.974946
-      1780                     4   1.125771
-      1780                     5    1.25865
-      1780                     6   1.378782
-      1780                     7   1.489255
-      1780                     8    1.59208
-      1780                     9   1.688656
-      1780                    10       1.78
+      5520     Rating          0        0.0
+      5520                     1   1.745577
+      5520                     2   2.468619
+      5520                     3   3.023429
+      5520                     4   3.491155
+      5520                     5   3.903229
+      5520                     6   4.275774
+      5520                     7   4.618363
+      5520                     8   4.937238
+      5520                     9   5.236732
+      5520                    10       5.52
          ;                                 
-      4710     Rating          0        0.0
-      4710                     1   1.489433
-      4710                     2   2.106376
-      4710                     3   2.579773
-      4710                     4   2.978866
-      4710                     5   3.330473
-      4710                     6    3.64835
-      4710                     7   3.940669
-      4710                     8   4.212752
-      4710                     9   4.468298
-      4710                    10       4.71
+      8880     Rating          0        0.0
+      8880                     1   2.808103
+      8880                     2   3.971257
+      8880                     3   4.863776
+      8880                     4   5.616205
+      8880                     5   6.279108
+      8880                     6   6.878418
+      8880                     7   7.429541
+      8880                     8   7.942513
+      8880                     9   8.424308
+      8880                    10       8.88
          ;                                 
-      1610     Rating          0        0.0
-      1610                     1   0.509127
-      1610                     2   0.720014
-      1610                     3   0.881833
-      1610                     4   1.018253
-      1610                     5   1.138442
-      1610                     6   1.247101
-      1610                     7   1.347023
-      1610                     8   1.440028
-      1610                     9    1.52738
-      1610                    10       1.61
+      1590     Rating          0        0.0
+      1590                     1   0.502802
+      1590                     2    0.71107
+      1590                     3   0.870879
+      1590                     4   1.005604
+      1590                     5     1.1243
+      1590                     6   1.231609
+      1590                     7   1.330289
+      1590                     8   1.422139
+      1590                     9   1.508406
+      1590                    10       1.59
          ;                                 
-      4860     Rating          0        0.0
-      4860                     1   1.536867
-      4860                     2   2.173458
-      4860                     3   2.661932
-      4860                     4   3.073734
-      4860                     5   3.436539
-      4860                     6    3.76454
-      4860                     7   4.066168
-      4860                     8   4.346916
-      4860                     9   4.610601
-      4860                    10       4.86
+      2160     Rating          0        0.0
+      2160                     1   0.683052
+      2160                     2   0.965981
+      2160                     3   1.183081
+      2160                     4   1.366104
+      2160                     5   1.527351
+      2160                     6   1.673129
+      2160                     7   1.807186
+      2160                     8   1.931963
+      2160                     9   2.049156
+      2160                    10       2.16
          ;                                 
-      9470     Rating          0        0.0
-      9470                     1   2.994677
-      9470                     2   4.235113
-      9470                     3   5.186933
-      9470                     4   5.989354
-      9470                     5   6.696301
-      9470                     6    7.33543
-      9470                     7    7.92317
-      9470                     8   8.470225
-      9470                     9   8.984031
-      9470                    10       9.47
-         ;                                 
-      1280     Rating          0        0.0
-      1280                     1   0.404772
-      1280                     2   0.572433
-      1280                     3   0.701085
-      1280                     4   0.809543
-      1280                     5   0.905097
-      1280                     6   0.991484
-      1280                     7   1.070925
-      1280                     8   1.144867
-      1280                     9   1.214315
-      1280                    10       1.28
-         ;                                 
-       820     Rating          0        0.0
-       820                     1   0.259307
-       820                     2   0.366715
-       820                     3   0.449132
-       820                     4   0.518614
-       820                     5   0.579828
-       820                     6   0.635169
-       820                     7   0.686061
-       820                     8    0.73343
-       820                     9    0.77792
-       820                    10       0.82
+      3210     Rating          0        0.0
+      3210                     1   1.015091
+      3210                     2   1.435556
+      3210                     3   1.758189
+      3210                     4   2.030182
+      3210                     5   2.269813
+      3210                     6   2.486455
+      3210                     7   2.685679
+      3210                     8   2.871111
+      3210                     9   3.045273
+      3210                    10       3.21
          ;                                 
         90     Rating          0        0.0
         90                     1    0.02846
@@ -23198,29 +23078,65 @@ Outfall268      35.61       FREE                    NO
         90                     9   0.085381
         90                    10       0.09
          ;                                 
-      4490     Rating          0        0.0
-      4490                     1   1.419863
-      4490                     2   2.007989
-      4490                     3   2.459274
-      4490                     4   2.839725
-      4490                     5   3.174909
-      4490                     6   3.477939
-      4490                     7   3.756604
-      4490                     8   4.015978
-      4490                     9   4.259588
-      4490                    10       4.49
+     14010     Rating          0        0.0
+     14010                     1   4.430351
+     14010                     2   6.265462
+     14010                     3   7.673593
+     14010                     4   8.860702
+     14010                     5   9.906566
+     14010                     6  10.852099
+     14010                     7  11.721607
+     14010                     8  12.530925
+     14010                     9  13.291053
+     14010                    10      14.01
          ;                                 
-       530     Rating          0        0.0
-       530                     1   0.167601
-       530                     2   0.237023
-       530                     3   0.290293
-       530                     4   0.335201
-       530                     5   0.374767
-       530                     6   0.410536
-       530                     7    0.44343
-       530                     8   0.474046
-       530                     9   0.502802
-       530                    10       0.53
+       810     Rating          0        0.0
+       810                     1   0.256144
+       810                     2   0.362243
+       810                     3   0.443655
+       810                     4   0.512289
+       810                     5   0.572756
+       810                     6   0.627423
+       810                     7   0.677695
+       810                     8   0.724486
+       810                     9   0.768433
+       810                    10       0.81
+         ;                                 
+      4350     Rating          0        0.0
+      4350                     1   1.375591
+      4350                     2   1.945379
+      4350                     3   2.382593
+      4350                     4   2.751182
+      4350                     5   3.075914
+      4350                     6   3.369496
+      4350                     7   3.639471
+      4350                     8   3.890758
+      4350                     9   4.126772
+      4350                    10       4.35
+         ;                                 
+      1350     Rating          0        0.0
+      1350                     1   0.426907
+      1350                     2   0.603738
+      1350                     3   0.739425
+      1350                     4   0.853815
+      1350                     5   0.954594
+      1350                     6   1.045706
+      1350                     7   1.129491
+      1350                     8   1.207477
+      1350                     9   1.280722
+      1350                    10       1.35
+         ;                                 
+       240     Rating          0        0.0
+       240                     1   0.075895
+       240                     2   0.107331
+       240                     3   0.131453
+       240                     4   0.151789
+       240                     5   0.169706
+       240                     6   0.185903
+       240                     7   0.200798
+       240                     8   0.214663
+       240                     9   0.227684
+       240                    10       0.24
          ;                                 
       1170     Rating          0        0.0
       1170                     1   0.369986
@@ -23234,113 +23150,125 @@ Outfall268      35.61       FREE                    NO
       1170                     9   1.109959
       1170                    10       1.17
          ;                                 
-        50     Rating          0        0.0
-        50                     1   0.015811
-        50                     2   0.022361
-        50                     3   0.027386
-        50                     4   0.031623
-        50                     5   0.035355
-        50                     6    0.03873
-        50                     7   0.041833
-        50                     8   0.044721
-        50                     9   0.047434
-        50                    10       0.05
+      5550     Rating          0        0.0
+      5550                     1   1.755064
+      5550                     2   2.482035
+      5550                     3    3.03986
+      5550                     4   3.510128
+      5550                     5   3.924443
+      5550                     6   4.299012
+      5550                     7   4.643463
+      5550                     8   4.964071
+      5550                     9   5.265192
+      5550                    10       5.55
          ;                                 
-       430     Rating          0        0.0
-       430                     1   0.135978
-       430                     2   0.192302
-       430                     3   0.235521
-       430                     4   0.271956
-       430                     5   0.304056
-       430                     6   0.333077
-       430                     7   0.359764
-       430                     8   0.384604
-       430                     9   0.407934
-       430                    10       0.43
+      5280     Rating          0        0.0
+      5280                     1   1.669683
+      5280                     2   2.361288
+      5280                     3   2.891975
+      5280                     4   3.339365
+      5280                     5   3.733524
+      5280                     6    4.08987
+      5280                     7   4.417565
+      5280                     8   4.722576
+      5280                     9   5.009048
+      5280                    10       5.28
          ;                                 
-      1340     Rating          0        0.0
-      1340                     1   0.423745
-      1340                     2   0.599266
-      1340                     3   0.733948
-      1340                     4    0.84749
-      1340                     5   0.947523
-      1340                     6    1.03796
-      1340                     7   1.121124
-      1340                     8   1.198532
-      1340                     9   1.271236
-      1340                    10       1.34
+     17880     Rating          0        0.0
+     17880                     1   5.654152
+     17880                     2   7.996179
+     17880                     3   9.793279
+     17880                     4  11.308305
+     17880                     5  12.643069
+     17880                     6  13.849788
+     17880                     7  14.959481
+     17880                     8  15.992358
+     17880                     9  16.962457
+     17880                    10      17.88
          ;                                 
-       620     Rating          0        0.0
-       620                     1   0.196061
-       620                     2   0.277272
-       620                     3   0.339588
-       620                     4   0.392122
-       620                     5   0.438406
-       620                     6    0.48025
-       620                     7   0.518729
-       620                     8   0.554545
-       620                     9   0.588184
-       620                    10       0.62
+     25470     Rating          0        0.0
+     25470                     1   8.054321
+     25470                     2   11.39053
+     25470                     3  13.950494
+     25470                     4  16.108642
+     25470                     5   18.01001
+     25470                     6  19.728977
+     25470                     7  21.309731
+     25470                     8  22.781061
+     25470                     9  24.162964
+     25470                    10      25.47
          ;                                 
-      1940     Rating          0        0.0
-      1940                     1   0.613482
-      1940                     2   0.867594
-      1940                     3   1.062582
-      1940                     4   1.226964
-      1940                     5   1.371787
-      1940                     6   1.502718
-      1940                     7    1.62312
-      1940                     8   1.735189
-      1940                     9   1.840446
-      1940                    10       1.94
+      5310     Rating          0        0.0
+      5310                     1   1.679169
+      5310                     2   2.374704
+      5310                     3   2.908407
+      5310                     4   3.358339
+      5310                     5   3.754737
+      5310                     6   4.113108
+      5310                     7   4.442665
+      5310                     8   4.749408
+      5310                     9   5.037508
+      5310                    10       5.31
          ;                                 
-      5390     Rating          0        0.0
-      5390                     1   1.704468
-      5390                     2   2.410481
-      5390                     3   2.952225
-      5390                     4   3.408935
-      5390                     5   3.811306
-      5390                     6   4.175076
-      5390                     7   4.509598
-      5390                     8   4.820963
-      5390                     9   5.113403
-      5390                    10       5.39
+      6810     Rating          0        0.0
+      6810                     1   2.153511
+      6810                     2   3.045525
+      6810                     3   3.729991
+      6810                     4   4.307022
+      6810                     5   4.815397
+      6810                     6   5.275003
+      6810                     7   5.697655
+      6810                     8   6.091049
+      6810                     9   6.460533
+      6810                    10       6.81
          ;                                 
-      2260     Rating          0        0.0
-      2260                     1   0.714675
-      2260                     2   1.010703
-      2260                     3   1.237853
-      2260                     4    1.42935
-      2260                     5   1.598061
-      2260                     6   1.750588
-      2260                     7   1.890852
-      2260                     8   2.021405
-      2260                     9   2.144024
-      2260                    10       2.26
+      3540     Rating          0        0.0
+      3540                     1   1.119446
+      3540                     2   1.583136
+      3540                     3   1.938938
+      3540                     4   2.238893
+      3540                     5   2.503158
+      3540                     6   2.742072
+      3540                     7   2.961776
+      3540                     8   3.166272
+      3540                     9   3.358339
+      3540                    10       3.54
          ;                                 
-      4690     Rating          0        0.0
-      4690                     1   1.483108
-      4690                     2   2.097432
-      4690                     3   2.568819
-      4690                     4   2.966216
-      4690                     5   3.316331
-      4690                     6   3.632858
-      4690                     7   3.923936
-      4690                     8   4.194864
-      4690                     9   4.449325
-      4690                    10       4.69
+      3660     Rating          0        0.0
+      3660                     1   1.157394
+      3660                     2   1.636802
+      3660                     3   2.004665
+      3660                     4   2.314787
+      3660                     5   2.588011
+      3660                     6   2.835024
+      3660                     7   3.062176
+      3660                     8   3.273604
+      3660                     9   3.472181
+      3660                    10       3.66
          ;                                 
-       770     Rating          0        0.0
-       770                     1   0.243495
-       770                     2   0.344354
-       770                     3   0.421746
-       770                     4   0.486991
-       770                     5   0.544472
-       770                     6   0.596439
-       770                     7   0.644228
-       770                     8   0.688709
-       770                     9   0.730486
-       770                    10       0.77
+      4260     Rating          0        0.0
+      4260                     1    1.34713
+      4260                     2    1.90513
+      4260                     3   2.333298
+      4260                     4   2.694261
+      4260                     5   3.012275
+      4260                     6   3.299782
+      4260                     7   3.564172
+      4260                     8    3.81026
+      4260                     9   4.041391
+      4260                    10       4.26
+         ;                                 
+      9990     Rating          0        0.0
+      9990                     1   3.159115
+      9990                     2   4.467664
+      9990                     3   5.471748
+      9990                     4   6.318231
+      9990                     5   7.063997
+      9990                     6   7.738221
+      9990                     7   8.358234
+      9990                     8   8.935328
+      9990                     9   9.477346
+      9990                    10       9.99
          ;                                 
       4290     Rating          0        0.0
       4290                     1   1.356617
@@ -23353,6 +23281,18 @@ Outfall268      35.61       FREE                    NO
       4290                     8   3.837093
       4290                     9   4.069851
       4290                    10       4.29
+         ;                                 
+      6450     Rating          0        0.0
+      6450                     1   2.039669
+      6450                     2   2.884528
+      6450                     3    3.53281
+      6450                     4   4.079338
+      6450                     5   4.560839
+      6450                     6   4.996149
+      6450                     7   5.396457
+      6450                     8   5.769055
+      6450                     9   6.119007
+      6450                    10       6.45
          ;                                 
        300     Rating          0        0.0
        300                     1   0.094868
@@ -23378,53 +23318,17 @@ Outfall268      35.61       FREE                    NO
         60                     9   0.056921
         60                    10       0.06
          ;                                 
-       510     Rating          0        0.0
-       510                     1   0.161276
-       510                     2   0.228079
-       510                     3   0.279339
-       510                     4   0.322552
-       510                     5   0.360624
-       510                     6   0.395044
-       510                     7   0.426697
-       510                     8   0.456158
-       510                     9   0.483828
-       510                    10       0.51
-         ;                                 
-       100     Rating          0        0.0
-       100                     1   0.031623
-       100                     2   0.044721
-       100                     3   0.054772
-       100                     4   0.063246
-       100                     5   0.070711
-       100                     6    0.07746
-       100                     7   0.083666
-       100                     8   0.089443
-       100                     9   0.094868
-       100                    10        0.1
-         ;                                 
-      2740     Rating          0        0.0
-      2740                     1   0.866464
-      2740                     2   1.225365
-      2740                     3    1.50076
-      2740                     4   1.732928
-      2740                     5   1.937473
-      2740                     6   2.122395
-      2740                     7   2.292448
-      2740                     8   2.450731
-      2740                     9   2.599392
-      2740                    10       2.74
-         ;                                 
-       480     Rating          0        0.0
-       480                     1   0.151789
-       480                     2   0.214663
-       480                     3   0.262907
-       480                     4   0.303579
-       480                     5   0.339411
-       480                     6   0.371806
-       480                     7   0.401597
-       480                     8   0.429325
-       480                     9   0.455368
-       480                    10       0.48
+      3360     Rating          0        0.0
+      3360                     1   1.062525
+      3360                     2   1.502638
+      3360                     3   1.840348
+      3360                     4   2.125051
+      3360                     5   2.375879
+      3360                     6   2.602645
+      3360                     7   2.811178
+      3360                     8   3.005275
+      3360                     9   3.187576
+      3360                    10       3.36
          ;                                 
       8280     Rating          0        0.0
       8280                     1   2.618366
@@ -23438,29 +23342,17 @@ Outfall268      35.61       FREE                    NO
       8280                     9   7.855098
       8280                    10       8.28
          ;                                 
-      2120     Rating          0        0.0
-      2120                     1   0.670403
-      2120                     2   0.948093
-      2120                     3   1.161172
-      2120                     4   1.340806
-      2120                     5   1.499066
-      2120                     6   1.642145
-      2120                     7   1.773719
-      2120                     8   1.896186
-      2120                     9   2.011209
-      2120                    10       2.12
-         ;                                 
-      7780     Rating          0        0.0
-      7780                     1   2.460252
-      7780                     2   3.479322
-      7780                     3   4.261281
-      7780                     4   4.920504
-      7780                     5   5.501291
-      7780                     6   6.026362
-      7780                     7   6.509215
-      7780                     8   6.958644
-      7780                     9   7.380756
-      7780                    10       7.78
+     23340     Rating          0        0.0
+     23340                     1   7.380756
+     23340                     2  10.437965
+     23340                     3  12.783844
+     23340                     4  14.761512
+     23340                     5  16.503872
+     23340                     6  18.079086
+     23340                     7  19.527645
+     23340                     8  20.875931
+     23340                     9  22.142268
+     23340                    10      23.34
          ;                                 
        600     Rating          0        0.0
        600                     1   0.189737
@@ -23474,18 +23366,6 @@ Outfall268      35.61       FREE                    NO
        600                     9    0.56921
        600                    10        0.6
          ;                                 
-      1750     Rating          0        0.0
-      1750                     1   0.553399
-      1750                     2   0.782624
-      1750                     3   0.958514
-      1750                     4   1.106797
-      1750                     5   1.237437
-      1750                     6   1.355544
-      1750                     7   1.464155
-      1750                     8   1.565248
-      1750                     9   1.660196
-      1750                    10       1.75
-         ;                                 
       3750     Rating          0        0.0
       3750                     1   1.185854
       3750                     2   1.677051
@@ -23497,6 +23377,18 @@ Outfall268      35.61       FREE                    NO
       3750                     8   3.354102
       3750                     9   3.557562
       3750                    10       3.75
+         ;                                 
+      1470     Rating          0        0.0
+      1470                     1   0.464855
+      1470                     2   0.657404
+      1470                     3   0.805152
+      1470                     4    0.92971
+      1470                     5   1.039447
+      1470                     6   1.138657
+      1470                     7    1.22989
+      1470                     8   1.314808
+      1470                     9   1.394564
+      1470                    10       1.47
          ;                                 
       3900     Rating          0        0.0
       3900                     1   1.233288
@@ -23510,113 +23402,89 @@ Outfall268      35.61       FREE                    NO
       3900                     9   3.699865
       3900                    10        3.9
          ;                                 
-        10     Rating          0        0.0
-        10                     1   0.003162
-        10                     2   0.004472
-        10                     3   0.005477
-        10                     4   0.006325
-        10                     5   0.007071
-        10                     6   0.007746
-        10                     7   0.008367
-        10                     8   0.008944
-        10                     9   0.009487
-        10                    10       0.01
+      5340     Rating          0        0.0
+      5340                     1   1.688656
+      5340                     2   2.388121
+      5340                     3   2.924838
+      5340                     4   3.377313
+      5340                     5    3.77595
+      5340                     6   4.136346
+      5340                     7   4.467765
+      5340                     8   4.776241
+      5340                     9   5.065969
+      5340                    10       5.34
          ;                                 
-       390     Rating          0        0.0
-       390                     1   0.123329
-       390                     2   0.174413
-       390                     3   0.213612
-       390                     4   0.246658
-       390                     5   0.275772
-       390                     6   0.302093
-       390                     7   0.326297
-       390                     8   0.348827
-       390                     9   0.369986
-       390                    10       0.39
+      1920     Rating          0        0.0
+      1920                     1   0.607157
+      1920                     2    0.85865
+      1920                     3   1.051627
+      1920                     4   1.214315
+      1920                     5   1.357645
+      1920                     6   1.487226
+      1920                     7   1.606387
+      1920                     8     1.7173
+      1920                     9   1.821472
+      1920                    10       1.92
          ;                                 
-      1010     Rating          0        0.0
-      1010                     1    0.31939
-      1010                     2   0.451686
-      1010                     3     0.5532
-      1010                     4    0.63878
-      1010                     5   0.714178
-      1010                     6   0.782343
-      1010                     7   0.845027
-      1010                     8   0.903371
-      1010                     9    0.95817
-      1010                    10       1.01
+      7350     Rating          0        0.0
+      7350                     1   2.324274
+      7350                     2    3.28702
+      7350                     3   4.025761
+      7350                     4   4.648548
+      7350                     5   5.197235
+      7350                     6   5.693286
+      7350                     7   6.149451
+      7350                     8    6.57404
+      7350                     9   6.972822
+      7350                    10       7.35
          ;                                 
-      2370     Rating          0        0.0
-      2370                     1    0.74946
-      2370                     2   1.059896
-      2370                     3   1.298102
-      2370                     4    1.49892
-      2370                     5   1.675843
-      2370                     6   1.835794
-      2370                     7   1.982884
-      2370                     8   2.119792
-      2370                     9   2.248379
-      2370                    10       2.37
+      3690     Rating          0        0.0
+      3690                     1    1.16688
+      3690                     2   1.650218
+      3690                     3   2.021096
+      3690                     4   2.333761
+      3690                     5   2.609224
+      3690                     6   2.858262
+      3690                     7   3.087275
+      3690                     8   3.300436
+      3690                     9   3.500641
+      3690                    10       3.69
          ;                                 
-      2670     Rating          0        0.0
-      2670                     1   0.844328
-      2670                     2    1.19406
-      2670                     3   1.462419
-      2670                     4   1.688656
-      2670                     5   1.887975
-      2670                     6   2.068173
-      2670                     7   2.233882
-      2670                     8   2.388121
-      2670                     9   2.532984
-      2670                    10       2.67
+      3390     Rating          0        0.0
+      3390                     1   1.072012
+      3390                     2   1.516054
+      3390                     3   1.856779
+      3390                     4   2.144024
+      3390                     5   2.397092
+      3390                     6   2.625883
+      3390                     7   2.836277
+      3390                     8   3.032108
+      3390                     9   3.216036
+      3390                    10       3.39
          ;                                 
-       110     Rating          0        0.0
-       110                     1   0.034785
-       110                     2   0.049193
-       110                     3   0.060249
-       110                     4    0.06957
-       110                     5   0.077782
-       110                     6   0.085206
-       110                     7   0.092033
-       110                     8   0.098387
-       110                     9   0.104355
-       110                    10       0.11
+      3480     Rating          0        0.0
+      3480                     1   1.100473
+      3480                     2   1.556303
+      3480                     3   1.906075
+      3480                     4   2.200945
+      3480                     5   2.460732
+      3480                     6   2.695596
+      3480                     7   2.911577
+      3480                     8   3.112607
+      3480                     9   3.301418
+      3480                    10       3.48
          ;                                 
-      5960     Rating          0        0.0
-      5960                     1   1.884717
-      5960                     2   2.665393
-      5960                     3   3.264426
-      5960                     4   3.769435
-      5960                     5   4.214356
-      5960                     6   4.616596
-      5960                     7   4.986494
-      5960                     8   5.330786
-      5960                     9   5.654152
-      5960                    10       5.96
-         ;                                 
-      1560     Rating          0        0.0
-      1560                     1   0.493315
-      1560                     2   0.697653
-      1560                     3   0.854447
-      1560                     4   0.986631
-      1560                     5   1.103087
-      1560                     6   1.208371
-      1560                     7    1.30519
-      1560                     8   1.395306
-      1560                     9   1.479946
-      1560                    10       1.56
-         ;                                 
-       460     Rating          0        0.0
-       460                     1   0.145465
-       460                     2   0.205718
-       460                     3   0.251952
-       460                     4    0.29093
-       460                     5   0.325269
-       460                     6   0.356314
-       460                     7   0.384864
-       460                     8   0.411437
-       460                     9   0.436394
-       460                    10       0.46
+      4230     Rating          0        0.0
+      4230                     1   1.337643
+      4230                     2   1.891714
+      4230                     3   2.316866
+      4230                     4   2.675287
+      4230                     5   2.991062
+      4230                     6   3.276544
+      4230                     7   3.539072
+      4230                     8   3.783427
+      4230                     9    4.01293
+      4230                    10       4.23
          ;                                 
       7110     Rating          0        0.0
       7110                     1   2.248379
@@ -23630,17 +23498,41 @@ Outfall268      35.61       FREE                    NO
       7110                     9   6.745138
       7110                    10       7.11
          ;                                 
-      3080     Rating          0        0.0
-      3080                     1   0.973982
-      3080                     2   1.377418
-      3080                     3   1.686985
-      3080                     4   1.947963
-      3080                     5   2.177889
-      3080                     6   2.385758
-      3080                     7   2.576913
-      3080                     8   2.754836
-      3080                     9   2.921945
-      3080                    10       3.08
+      4440     Rating          0        0.0
+      4440                     1   1.404051
+      4440                     2   1.985628
+      4440                     3   2.431888
+      4440                     4   2.808103
+      4440                     5   3.139554
+      4440                     6   3.439209
+      4440                     7   3.714771
+      4440                     8   3.971257
+      4440                     9   4.212154
+      4440                    10       4.44
+         ;                                 
+     14130     Rating          0        0.0
+     14130                     1   4.468298
+     14130                     2   6.319128
+     14130                     3    7.73932
+     14130                     4   8.936597
+     14130                     5   9.991419
+     14130                     6  10.945051
+     14130                     7  11.822006
+     14130                     8  12.638256
+     14130                     9  13.404895
+     14130                    10      14.13
+         ;                                 
+      2970     Rating          0        0.0
+      2970                     1   0.939196
+      2970                     2   1.328224
+      2970                     3   1.626736
+      2970                     4   1.878393
+      2970                     5   2.100107
+      2970                     6   2.300552
+      2970                     7    2.48488
+      2970                     8   2.656449
+      2970                     9   2.817589
+      2970                    10       2.97
          ;                                 
        360     Rating          0        0.0
        360                     1   0.113842
@@ -23654,65 +23546,29 @@ Outfall268      35.61       FREE                    NO
        360                     9   0.341526
        360                    10       0.36
          ;                                 
-        70     Rating          0        0.0
-        70                     1   0.022136
-        70                     2   0.031305
-        70                     3   0.038341
-        70                     4   0.044272
-        70                     5   0.049497
-        70                     6   0.054222
-        70                     7   0.058566
-        70                     8    0.06261
-        70                     9   0.066408
-        70                    10       0.07
+      4830     Rating          0        0.0
+      4830                     1    1.52738
+      4830                     2   2.160042
+      4830                     3     2.6455
+      4830                     4    3.05476
+      4830                     5   3.415326
+      4830                     6   3.741302
+      4830                     7   4.041068
+      4830                     8   4.320083
+      4830                     9    4.58214
+      4830                    10       4.83
          ;                                 
-      1840     Rating          0        0.0
-      1840                     1   0.581859
-      1840                     2   0.822873
-      1840                     3    1.00781
-      1840                     4   1.163718
-      1840                     5   1.301076
-      1840                     6   1.425258
-      1840                     7   1.539454
-      1840                     8   1.645746
-      1840                     9   1.745577
-      1840                    10       1.84
-         ;                                 
-       440     Rating          0        0.0
-       440                     1    0.13914
-       440                     2   0.196774
-       440                     3   0.240998
-       440                     4    0.27828
-       440                     5   0.311127
-       440                     6   0.340823
-       440                     7    0.36813
-       440                     8   0.393548
-       440                     9   0.417421
-       440                    10       0.44
-         ;                                 
-        20     Rating          0        0.0
-        20                     1   0.006325
-        20                     2   0.008944
-        20                     3   0.010954
-        20                     4   0.012649
-        20                     5   0.014142
-        20                     6   0.015492
-        20                     7   0.016733
-        20                     8   0.017889
-        20                     9   0.018974
-        20                    10       0.02
-         ;                                 
-      1230     Rating          0        0.0
-      1230                     1    0.38896
-      1230                     2   0.550073
-      1230                     3   0.673699
-      1230                     4    0.77792
-      1230                     5   0.869741
-      1230                     6   0.952754
-      1230                     7   1.029092
-      1230                     8   1.100145
-      1230                     9    1.16688
-      1230                    10       1.23
+      5040     Rating          0        0.0
+      5040                     1   1.593788
+      5040                     2   2.253957
+      5040                     3   2.760522
+      5040                     4   3.187576
+      5040                     5   3.563818
+      5040                     6   3.903967
+      5040                     7   4.216767
+      5040                     8   4.507913
+      5040                     9   4.781364
+      5040                    10       5.04
          ;                                 
        330     Rating          0        0.0
        330                     1   0.104355
@@ -23726,17 +23582,17 @@ Outfall268      35.61       FREE                    NO
        330                     9   0.313065
        330                    10       0.33
          ;                                 
-       800     Rating          0        0.0
-       800                     1   0.252982
-       800                     2   0.357771
-       800                     3   0.438178
-       800                     4   0.505964
-       800                     5   0.565685
-       800                     6   0.619677
-       800                     7   0.669328
-       800                     8   0.715542
-       800                     9   0.758947
-       800                    10        0.8
+     13920     Rating          0        0.0
+     13920                     1   4.401891
+     13920                     2   6.225213
+     13920                     3   7.624298
+     13920                     4   8.803781
+     13920                     5   9.842926
+     13920                     6  10.782386
+     13920                     7  11.646308
+     13920                     8  12.450426
+     13920                     9  13.205672
+     13920                    10      13.92
          ;                                 
        570     Rating          0        0.0
        570                     1    0.18025
@@ -23750,29 +23606,77 @@ Outfall268      35.61       FREE                    NO
        570                     9   0.540749
        570                    10       0.57
          ;                                 
-      1700     Rating          0        0.0
-      1700                     1   0.537587
-      1700                     2   0.760263
-      1700                     3   0.931128
-      1700                     4   1.075174
-      1700                     5   1.202082
-      1700                     6   1.316814
-      1700                     7   1.422322
-      1700                     8   1.520526
-      1700                     9   1.612762
-      1700                    10        1.7
+      2400     Rating          0        0.0
+      2400                     1   0.758947
+      2400                     2   1.073313
+      2400                     3   1.314534
+      2400                     4   1.517893
+      2400                     5   1.697056
+      2400                     6   1.859032
+      2400                     7   2.007984
+      2400                     8   2.146625
+      2400                     9    2.27684
+      2400                    10        2.4
          ;                                 
-       220     Rating          0        0.0
-       220                     1    0.06957
-       220                     2   0.098387
-       220                     3   0.120499
-       220                     4    0.13914
-       220                     5   0.155563
-       220                     6   0.170411
-       220                     7   0.184065
-       220                     8   0.196774
-       220                     9    0.20871
-       220                    10       0.22
+      3510     Rating          0        0.0
+      3510                     1   1.109959
+      3510                     2    1.56972
+      3510                     3   1.922506
+      3510                     4   2.219919
+      3510                     5   2.481945
+      3510                     6   2.718834
+      3510                     7   2.936677
+      3510                     8   3.139439
+      3510                     9   3.329878
+      3510                    10       3.51
+         ;                                 
+      7020     Rating          0        0.0
+      7020                     1   2.219919
+      7020                     2   3.139439
+      7020                     3   3.845012
+      7020                     4   4.439838
+      7020                     5    4.96389
+      7020                     6   5.437669
+      7020                     7   5.873353
+      7020                     8   6.278879
+      7020                     9   6.659757
+      7020                    10       7.02
+         ;                                 
+     12870     Rating          0        0.0
+     12870                     1   4.069851
+     12870                     2   5.755639
+     12870                     3   7.049189
+     12870                     4   8.139703
+     12870                     5   9.100464
+     12870                     6   9.969059
+     12870                     7  10.767815
+     12870                     8  11.511278
+     12870                     9  12.209554
+     12870                    10      12.87
+         ;                                 
+      4110     Rating          0        0.0
+      4110                     1   1.299696
+      4110                     2   1.838048
+      4110                     3    2.25114
+      4110                     4   2.599392
+      4110                     5   2.906209
+      4110                     6   3.183592
+      4110                     7   3.438673
+      4110                     8   3.676096
+      4110                     9   3.899088
+      4110                    10       4.11
+         ;                                 
+     21330     Rating          0        0.0
+     21330                     1   6.745138
+     21330                     2   9.539066
+     21330                     3  11.682922
+     21330                     4  13.490276
+     21330                     5  15.082588
+     21330                     6  16.522147
+     21330                     7  17.845958
+     21330                     8  19.078132
+     21330                     9  20.235415
+     21330                    10      21.33
          ;                                 
       3330     Rating          0        0.0
       3330                     1   1.053038
@@ -23810,41 +23714,41 @@ Outfall268      35.61       FREE                    NO
       1530                     9   1.451485
       1530                    10       1.53
          ;                                 
-      1660     Rating          0        0.0
-      1660                     1   0.524938
-      1660                     2   0.742375
-      1660                     3   0.909219
-      1660                     4   1.049876
-      1660                     5   1.173797
-      1660                     6    1.28583
-      1660                     7   1.388856
-      1660                     8   1.484749
-      1660                     9   1.574814
-      1660                    10       1.66
+      1710     Rating          0        0.0
+      1710                     1   0.540749
+      1710                     2   0.764735
+      1710                     3   0.936606
+      1710                     4   1.081499
+      1710                     5   1.209153
+      1710                     6    1.32456
+      1710                     7   1.430689
+      1710                     8    1.52947
+      1710                     9   1.622248
+      1710                    10       1.71
          ;                                 
-      1150     Rating          0        0.0
-      1150                     1   0.363662
-      1150                     2   0.514296
-      1150                     3   0.629881
-      1150                     4   0.727324
-      1150                     5   0.813173
-      1150                     6   0.890786
-      1150                     7   0.962159
-      1150                     8   1.028591
-      1150                     9   1.090986
-      1150                    10       1.15
+      6780     Rating          0        0.0
+      6780                     1   2.144024
+      6780                     2   3.032108
+      6780                     3   3.713559
+      6780                     4   4.288049
+      6780                     5   4.794184
+      6780                     6   5.251765
+      6780                     7   5.672555
+      6780                     8   6.064216
+      6780                     9   6.432073
+      6780                    10       6.78
          ;                                 
-        40     Rating          0        0.0
-        40                     1   0.012649
-        40                     2   0.017889
-        40                     3   0.021909
-        40                     4   0.025298
-        40                     5   0.028284
-        40                     6   0.030984
-        40                     7   0.033466
-        40                     8   0.035777
-        40                     9   0.037947
-        40                    10       0.04
+      6330     Rating          0        0.0
+      6330                     1   2.001722
+      6330                     2   2.830862
+      6330                     3   3.467084
+      6330                     4   4.003444
+      6330                     5   4.475986
+      6330                     6   4.903197
+      6330                     7   5.296058
+      6330                     8   5.661724
+      6330                     9   6.005165
+      6330                    10       6.33
          ;                                 
        120     Rating          0        0.0
        120                     1   0.037947
@@ -23858,125 +23762,137 @@ Outfall268      35.61       FREE                    NO
        120                     9   0.113842
        120                    10       0.12
          ;                                 
-      1960     Rating          0        0.0
-      1960                     1   0.619806
-      1960                     2   0.876539
-      1960                     3   1.073536
-      1960                     4   1.239613
-      1960                     5   1.385929
-      1960                     6   1.518209
-      1960                     7   1.639854
-      1960                     8   1.753077
-      1960                     9   1.859419
-      1960                    10       1.96
+      4680     Rating          0        0.0
+      4680                     1   1.479946
+      4680                     2    2.09296
+      4680                     3   2.563342
+      4680                     4   2.959892
+      4680                     5    3.30926
+      4680                     6   3.625112
+      4680                     7   3.915569
+      4680                     8   4.185919
+      4680                     9   4.439838
+      4680                    10       4.68
          ;                                 
-      1450     Rating          0        0.0
-      1450                     1    0.45853
-      1450                     2    0.64846
-      1450                     3   0.794198
-      1450                     4   0.917061
-      1450                     5   1.025305
-      1450                     6   1.123165
-      1450                     7   1.213157
-      1450                     8   1.296919
-      1450                     9   1.375591
-      1450                    10       1.45
+     13380     Rating          0        0.0
+     13380                     1   4.231128
+     13380                     2   5.983718
+     13380                     3   7.328528
+     13380                     4   8.462255
+     13380                     5   9.461089
+     13380                     6  10.364103
+     13380                     7  11.194511
+     13380                     8  11.967436
+     13380                     9  12.693383
+     13380                    10      13.38
          ;                                 
-      1000     Rating          0        0.0
-      1000                     1   0.316228
-      1000                     2   0.447214
-      1000                     3   0.547723
-      1000                     4   0.632456
-      1000                     5   0.707107
-      1000                     6   0.774597
-      1000                     7    0.83666
-      1000                     8   0.894427
-      1000                     9   0.948683
-      1000                    10        1.0
+      3930     Rating          0        0.0
+      3930                     1   1.242775
+      3930                     2   1.757549
+      3930                     3    2.15255
+      3930                     4    2.48555
+      3930                     5    2.77893
+      3930                     6   3.044165
+      3930                     7   3.288074
+      3930                     8   3.515099
+      3930                     9   3.728325
+      3930                    10       3.93
          ;                                 
-      3850     Rating          0        0.0
-      3850                     1   1.217477
-      3850                     2   1.721772
-      3850                     3   2.108732
-      3850                     4   2.434954
-      3850                     5   2.722361
-      3850                     6   2.982197
-      3850                     7   3.221141
-      3850                     8   3.443545
-      3850                     9   3.652431
-      3850                    10       3.85
+      7920     Rating          0        0.0
+      7920                     1   2.504524
+      7920                     2   3.541932
+      7920                     3   4.337963
+      7920                     4   5.009048
+      7920                     5   5.600286
+      7920                     6   6.134806
+      7920                     7   6.626347
+      7920                     8   7.083863
+      7920                     9   7.513572
+      7920                    10       7.92
          ;                                 
-      2000     Rating          0        0.0
-      2000                     1   0.632456
-      2000                     2   0.894427
-      2000                     3   1.095445
-      2000                     4   1.264911
-      2000                     5   1.414214
-      2000                     6   1.549193
-      2000                     7    1.67332
-      2000                     8   1.788854
-      2000                     9   1.897367
-      2000                    10        2.0
+      5880     Rating          0        0.0
+      5880                     1   1.859419
+      5880                     2   2.629616
+      5880                     3   3.220609
+      5880                     4   3.718839
+      5880                     5   4.157788
+      5880                     6   4.554628
+      5880                     7   4.919561
+      5880                     8   5.259232
+      5880                     9   5.578258
+      5880                    10       5.88
          ;                                 
-       200     Rating          0        0.0
-       200                     1   0.063246
-       200                     2   0.089443
-       200                     3   0.109545
-       200                     4   0.126491
-       200                     5   0.141421
-       200                     6   0.154919
-       200                     7   0.167332
-       200                     8   0.178885
-       200                     9   0.189737
-       200                    10        0.2
+      5070     Rating          0        0.0
+      5070                     1   1.603275
+      5070                     2   2.267373
+      5070                     3   2.776953
+      5070                     4    3.20655
+      5070                     5   3.585031
+      5070                     6   3.927205
+      5070                     7   4.241866
+      5070                     8   4.534746
+      5070                     9   4.809824
+      5070                    10       5.07
          ;                                 
-      1360     Rating          0        0.0
-      1360                     1    0.43007
-      1360                     2    0.60821
-      1360                     3   0.744903
-      1360                     4    0.86014
-      1360                     5   0.961665
-      1360                     6   1.053451
-      1360                     7   1.137858
-      1360                     8   1.216421
-      1360                     9   1.290209
-      1360                    10       1.36
+     11760     Rating          0        0.0
+     11760                     1   3.718839
+     11760                     2   5.259232
+     11760                     3   6.441217
+     11760                     4   7.437677
+     11760                     5   8.315576
+     11760                     6   9.109257
+     11760                     7   9.839122
+     11760                     8  10.518464
+     11760                     9  11.156516
+     11760                    10      11.76
          ;                                 
-       880     Rating          0        0.0
-       880                     1    0.27828
-       880                     2   0.393548
-       880                     3   0.481996
-       880                     4   0.556561
-       880                     5   0.622254
-       880                     6   0.681645
-       880                     7   0.736261
-       880                     8   0.787096
-       880                     9   0.834841
-       880                    10       0.88
+      7860     Rating          0        0.0
+      7860                     1    2.48555
+      7860                     2   3.515099
+      7860                     3   4.305099
+      7860                     4     4.9711
+      7860                     5   5.557859
+      7860                     6    6.08833
+      7860                     7   6.576148
+      7860                     8   7.030198
+      7860                     9   7.456651
+      7860                    10       7.86
          ;                                 
-       140     Rating          0        0.0
-       140                     1   0.044272
-       140                     2    0.06261
-       140                     3   0.076681
-       140                     4   0.088544
-       140                     5   0.098995
-       140                     6   0.108444
-       140                     7   0.117132
-       140                     8    0.12522
-       140                     9   0.132816
-       140                    10       0.14
+      6630     Rating          0        0.0
+      6630                     1    2.09659
+      6630                     2   2.965026
+      6630                     3   3.631401
+      6630                     4    4.19318
+      6630                     5   4.688118
+      6630                     6   5.135576
+      6630                     7   5.547056
+      6630                     8   5.930052
+      6630                     9    6.28977
+      6630                    10       6.63
          ;                                 
-      1260     Rating          0        0.0
-      1260                     1   0.398447
-      1260                     2   0.563489
-      1260                     3    0.69013
-      1260                     4   0.796894
-      1260                     5   0.890955
-      1260                     6   0.975992
-      1260                     7   1.054192
-      1260                     8   1.126978
-      1260                     9   1.195341
-      1260                    10       1.26
+      1950     Rating          0        0.0
+      1950                     1   0.616644
+      1950                     2   0.872067
+      1950                     3   1.068059
+      1950                     4   1.233288
+      1950                     5   1.378858
+      1950                     6   1.510464
+      1950                     7   1.631487
+      1950                     8   1.744133
+      1950                     9   1.849932
+      1950                    10       1.95
+         ;                                 
+      8010     Rating          0        0.0
+      8010                     1   2.532984
+      8010                     2   3.582181
+      8010                     3   4.387258
+      8010                     4   5.065969
+      8010                     5   5.663925
+      8010                     6   6.204519
+      8010                     7   6.701647
+      8010                     8   7.164362
+      8010                     9   7.598953
+      8010                    10       8.01
          ;                                 
       2340     Rating          0        0.0
       2340                     1   0.739973
@@ -23990,53 +23906,89 @@ Outfall268      35.61       FREE                    NO
       2340                     9   2.219919
       2340                    10       2.34
          ;                                 
-      1600     Rating          0        0.0
-      1600                     1   0.505964
-      1600                     2   0.715542
-      1600                     3   0.876356
-      1600                     4   1.011929
-      1600                     5   1.131371
-      1600                     6   1.239355
-      1600                     7   1.338656
-      1600                     8   1.431084
-      1600                     9   1.517893
-      1600                    10        1.6
+      8790     Rating          0        0.0
+      8790                     1   2.779642
+      8790                     2   3.931008
+      8790                     3   4.814481
+      8790                     4   5.559284
+      8790                     5   6.215469
+      8790                     6   6.808705
+      8790                     7   7.354242
+      8790                     8   7.862015
+      8790                     9   8.338926
+      8790                    10       8.79
          ;                                 
-      1870     Rating          0        0.0
-      1870                     1   0.591346
-      1870                     2   0.836289
-      1870                     3   1.024241
-      1870                     4   1.182692
-      1870                     5    1.32229
-      1870                     6   1.448496
-      1870                     7   1.564554
-      1870                     8   1.672579
-      1870                     9   1.774038
-      1870                    10       1.87
+      9570     Rating          0        0.0
+      9570                     1     3.0263
+      9570                     2   4.279834
+      9570                     3   5.241705
+      9570                     4   6.052599
+      9570                     5   6.767012
+      9570                     6    7.41289
+      9570                     7   8.006836
+      9570                     8   8.559668
+      9570                     9   9.078899
+      9570                    10       9.57
          ;                                 
-       490     Rating          0        0.0
-       490                     1   0.154952
-       490                     2   0.219135
-       490                     3   0.268384
-       490                     4   0.309903
-       490                     5   0.346482
-       490                     6   0.379552
-       490                     7   0.409963
-       490                     8   0.438269
-       490                     9   0.464855
-       490                    10       0.49
+      3060     Rating          0        0.0
+      3060                     1   0.967657
+      3060                     2   1.368474
+      3060                     3   1.676031
+      3060                     4   1.935314
+      3060                     5   2.163747
+      3060                     6   2.370266
+      3060                     7    2.56018
+      3060                     8   2.736947
+      3060                     9   2.902971
+      3060                    10       3.06
          ;                                 
-      1050     Rating          0        0.0
-      1050                     1   0.332039
-      1050                     2   0.469574
-      1050                     3   0.575109
-      1050                     4   0.664078
-      1050                     5   0.742462
-      1050                     6   0.813327
-      1050                     7   0.878493
-      1050                     8   0.939149
-      1050                     9   0.996117
-      1050                    10       1.05
+      4980     Rating          0        0.0
+      4980                     1   1.574814
+      4980                     2   2.227124
+      4980                     3   2.727658
+      4980                     4   3.149629
+      4980                     5   3.521392
+      4980                     6   3.857491
+      4980                     7   4.166567
+      4980                     8   4.454247
+      4980                     9   4.724443
+      4980                    10       4.98
+         ;                                 
+      1500     Rating          0        0.0
+      1500                     1   0.474342
+      1500                     2    0.67082
+      1500                     3   0.821584
+      1500                     4   0.948683
+      1500                     5    1.06066
+      1500                     6   1.161895
+      1500                     7    1.25499
+      1500                     8   1.341641
+      1500                     9   1.423025
+      1500                    10        1.5
+         ;                                 
+      1620     Rating          0        0.0
+      1620                     1   0.512289
+      1620                     2   0.724486
+      1620                     3   0.887311
+      1620                     4   1.024578
+      1620                     5   1.145513
+      1620                     6   1.254847
+      1620                     7   1.355389
+      1620                     8   1.448972
+      1620                     9   1.536867
+      1620                    10       1.62
+         ;                                 
+      5430     Rating          0        0.0
+      5430                     1   1.717117
+      5430                     2    2.42837
+      5430                     3   2.974133
+      5430                     4   3.434234
+      5430                     5    3.83959
+      5430                     6    4.20606
+      5430                     7   4.543064
+      5430                     8    4.85674
+      5430                     9    5.15135
+      5430                    10       5.43
          ;                                 
        960     Rating          0        0.0
        960                     1   0.303579
@@ -24050,53 +24002,53 @@ Outfall268      35.61       FREE                    NO
        960                     9   0.910736
        960                    10       0.96
          ;                                 
-      1030     Rating          0        0.0
-      1030                     1   0.325715
-      1030                     2    0.46063
-      1030                     3   0.564154
-      1030                     4   0.651429
-      1030                     5    0.72832
-      1030                     6   0.797835
-      1030                     7    0.86176
-      1030                     8    0.92126
-      1030                     9   0.977144
-      1030                    10       1.03
+      8310     Rating          0        0.0
+      8310                     1   2.627853
+      8310                     2   3.716345
+      8310                     3   4.551574
+      8310                     4   5.255705
+      8310                     5   5.876057
+      8310                     6   6.436898
+      8310                     7   6.952645
+      8310                     8    7.43269
+      8310                     9   7.883558
+      8310                    10       8.31
          ;                                 
-      3300     Rating          0        0.0
-      3300                     1   1.043552
-      3300                     2   1.475805
-      3300                     3   1.807484
-      3300                     4   2.087103
-      3300                     5   2.333452
-      3300                     6   2.556169
-      3300                     7   2.760978
-      3300                     8    2.95161
-      3300                     9   3.130655
-      3300                    10        3.3
+     23220     Rating          0        0.0
+     23220                     1   7.342809
+     23220                     2    10.3843
+     23220                     3  12.718118
+     23220                     4  14.685617
+     23220                     5  16.419019
+     23220                     6  17.986135
+     23220                     7  19.427246
+     23220                     8  20.768599
+     23220                     9  22.028426
+     23220                    10      23.22
          ;                                 
-      4670     Rating          0        0.0
-      4670                     1   1.476784
-      4670                     2   2.088487
-      4670                     3   2.557864
-      4670                     4   2.953567
-      4670                     5   3.302189
-      4670                     6   3.617366
-      4670                     7   3.907202
-      4670                     8   4.176975
-      4670                     9   4.430351
-      4670                    10       4.67
+      4530     Rating          0        0.0
+      4530                     1   1.432512
+      4530                     2   2.025878
+      4530                     3   2.481183
+      4530                     4   2.865024
+      4530                     5   3.203194
+      4530                     6   3.508923
+      4530                     7    3.79007
+      4530                     8   4.051755
+      4530                     9   4.297535
+      4530                    10       4.53
          ;                                 
-      1220     Rating          0        0.0
-      1220                     1   0.385798
-      1220                     2   0.545601
-      1220                     3   0.668222
-      1220                     4   0.771596
-      1220                     5    0.86267
-      1220                     6   0.945008
-      1220                     7   1.020725
-      1220                     8   1.091201
-      1220                     9   1.157394
-      1220                    10       1.22
+      2310     Rating          0        0.0
+      2310                     1   0.730486
+      2310                     2   1.033063
+      2310                     3   1.265239
+      2310                     4   1.460972
+      2310                     5   1.633417
+      2310                     6   1.789318
+      2310                     7   1.932685
+      2310                     8   2.066127
+      2310                     9   2.191458
+      2310                    10       2.31
          ;                                 
       2640     Rating          0        0.0
       2640                     1   0.834841
@@ -24110,41 +24062,77 @@ Outfall268      35.61       FREE                    NO
       2640                     9   2.504524
       2640                    10       2.64
          ;                                 
-      4640     Rating          0        0.0
-      4640                     1   1.467297
-      4640                     2   2.075071
-      4640                     3   2.541433
-      4640                     4   2.934594
-      4640                     5   3.280975
-      4640                     6   3.594129
-      4640                     7   3.882103
-      4640                     8   4.150142
-      4640                     9   4.401891
-      4640                    10       4.64
+      3840     Rating          0        0.0
+      3840                     1   1.214315
+      3840                     2     1.7173
+      3840                     3   2.103255
+      3840                     4   2.428629
+      3840                     5    2.71529
+      3840                     6   2.974451
+      3840                     7   3.212775
+      3840                     8     3.4346
+      3840                     9   3.642944
+      3840                    10       3.84
          ;                                 
-      1430     Rating          0        0.0
-      1430                     1   0.452206
-      1430                     2   0.639515
-      1430                     3   0.783243
-      1430                     4   0.904411
-      1430                     5   1.011163
-      1430                     6   1.107673
-      1430                     7   1.196424
-      1430                     8   1.279031
-      1430                     9   1.356617
-      1430                    10       1.43
+      5250     Rating          0        0.0
+      5250                     1   1.660196
+      5250                     2   2.347871
+      5250                     3   2.875543
+      5250                     4   3.320392
+      5250                     5   3.712311
+      5250                     6   4.066633
+      5250                     7   4.392465
+      5250                     8   4.695743
+      5250                     9   4.980587
+      5250                    10       5.25
          ;                                 
-      1120     Rating          0        0.0
-      1120                     1   0.354175
-      1120                     2   0.500879
-      1120                     3   0.613449
-      1120                     4    0.70835
-      1120                     5    0.79196
-      1120                     6   0.867548
-      1120                     7   0.937059
-      1120                     8   1.001758
-      1120                     9   1.062525
-      1120                    10       1.12
+       420     Rating          0        0.0
+       420                     1   0.132816
+       420                     2    0.18783
+       420                     3   0.230043
+       420                     4   0.265631
+       420                     5   0.296985
+       420                     6   0.325331
+       420                     7   0.351397
+       420                     8   0.375659
+       420                     9   0.398447
+       420                    10       0.42
+         ;                                 
+       660     Rating          0        0.0
+       660                     1    0.20871
+       660                     2   0.295161
+       660                     3   0.361497
+       660                     4   0.417421
+       660                     5    0.46669
+       660                     6   0.511234
+       660                     7   0.552196
+       660                     8   0.590322
+       660                     9   0.626131
+       660                    10       0.66
+         ;                                 
+      3570     Rating          0        0.0
+      3570                     1   1.128933
+      3570                     2   1.596553
+      3570                     3    1.95537
+      3570                     4   2.257866
+      3570                     5   2.524371
+      3570                     6    2.76531
+      3570                     7   2.986876
+      3570                     8   3.193105
+      3570                     9   3.386799
+      3570                    10       3.57
+         ;                                 
+      3450     Rating          0        0.0
+      3450                     1   1.090986
+      3450                     2   1.542887
+      3450                     3   1.889643
+      3450                     4   2.181972
+      3450                     5   2.439518
+      3450                     6   2.672359
+      3450                     7   2.886477
+      3450                     8   3.085774
+      3450                     9   3.272957
+      3450                    10       3.45
          ;                                 
        990     Rating          0        0.0
        990                     1   0.313065
@@ -24158,113 +24146,89 @@ Outfall268      35.61       FREE                    NO
        990                     9   0.939196
        990                    10       0.99
          ;                                 
-      1180     Rating          0        0.0
-      1180                     1   0.373149
-      1180                     2   0.527712
-      1180                     3   0.646313
-      1180                     4   0.746298
-      1180                     5   0.834386
-      1180                     6   0.914024
-      1180                     7   0.987259
-      1180                     8   1.055424
-      1180                     9   1.119446
-      1180                    10       1.18
+     13830     Rating          0        0.0
+     13830                     1    4.37343
+     13830                     2   6.184964
+     13830                     3   7.575003
+     13830                     4    8.74686
+     13830                     5   9.779287
+     13830                     6  10.712672
+     13830                     7  11.571008
+     13830                     8  12.369928
+     13830                     9   13.12029
+     13830                    10      13.83
          ;                                 
-        80     Rating          0        0.0
-        80                     1   0.025298
-        80                     2   0.035777
-        80                     3   0.043818
-        80                     4   0.050596
-        80                     5   0.056569
-        80                     6   0.061968
-        80                     7   0.066933
-        80                     8   0.071554
-        80                     9   0.075895
-        80                    10       0.08
+      2910     Rating          0        0.0
+      2910                     1   0.920223
+      2910                     2   1.301392
+      2910                     3   1.593873
+      2910                     4   1.840446
+      2910                     5   2.057681
+      2910                     6   2.254076
+      2910                     7   2.434681
+      2910                     8   2.602783
+      2910                     9   2.760668
+      2910                    10       2.91
          ;                                 
-      1850     Rating          0        0.0
-      1850                     1   0.585021
-      1850                     2   0.827345
-      1850                     3   1.013287
-      1850                     4   1.170043
-      1850                     5   1.308148
-      1850                     6   1.433004
-      1850                     7   1.547821
-      1850                     8    1.65469
-      1850                     9   1.755064
-      1850                    10       1.85
+      1800     Rating          0        0.0
+      1800                     1    0.56921
+      1800                     2   0.804984
+      1800                     3   0.985901
+      1800                     4    1.13842
+      1800                     5   1.272792
+      1800                     6   1.394274
+      1800                     7   1.505988
+      1800                     8   1.609969
+      1800                     9    1.70763
+      1800                    10        1.8
          ;                                 
-      4170     Rating          0        0.0
-      4170                     1    1.31867
-      4170                     2   1.864881
-      4170                     3   2.284003
-      4170                     4    2.63734
-      4170                     5   2.948635
-      4170                     6   3.230068
-      4170                     7   3.488872
-      4170                     8   3.729761
-      4170                     9   3.956009
-      4170                    10       4.17
+      1650     Rating          0        0.0
+      1650                     1   0.521776
+      1650                     2   0.737902
+      1650                     3   0.903742
+      1650                     4   1.043552
+      1650                     5   1.166726
+      1650                     6   1.278085
+      1650                     7   1.380489
+      1650                     8   1.475805
+      1650                     9   1.565327
+      1650                    10       1.65
          ;                                 
-      2110     Rating          0        0.0
-      2110                     1   0.667241
-      2110                     2   0.943621
-      2110                     3   1.155695
-      2110                     4   1.334481
-      2110                     5   1.491995
-      2110                     6   1.634399
-      2110                     7   1.765353
-      2110                     8   1.887241
-      2110                     9   2.001722
-      2110                    10       2.11
+      3000     Rating          0        0.0
+      3000                     1   0.948683
+      3000                     2   1.341641
+      3000                     3   1.643168
+      3000                     4   1.897367
+      3000                     5    2.12132
+      3000                     6    2.32379
+      3000                     7    2.50998
+      3000                     8   2.683282
+      3000                     9    2.84605
+      3000                    10        3.0
          ;                                 
-      3430     Rating          0        0.0
-      3430                     1   1.084661
-      3430                     2   1.533943
-      3430                     3   1.878688
-      3430                     4   2.169322
-      3430                     5   2.425376
-      3430                     6   2.656867
-      3430                     7   2.869744
-      3430                     8   3.067885
-      3430                     9   3.253984
-      3430                    10       3.43
+      5610     Rating          0        0.0
+      5610                     1   1.774038
+      5610                     2   2.508868
+      5610                     3   3.072724
+      5610                     4   3.548076
+      5610                     5   3.966869
+      5610                     6   4.345487
+      5610                     7   4.693663
+      5610                     8   5.017737
+      5610                     9   5.322113
+      5610                    10       5.61
          ;                                 
-      1130     Rating          0        0.0
-      1130                     1   0.357337
-      1130                     2   0.505351
-      1130                     3   0.618926
-      1130                     4   0.714675
-      1130                     5   0.799031
-      1130                     6   0.875294
-      1130                     7   0.945426
-      1130                     8   1.010703
-      1130                     9   1.072012
-      1130                    10       1.13
-         ;                                 
-      1310     Rating          0        0.0
-      1310                     1   0.414258
-      1310                     2    0.58585
-      1310                     3   0.717517
-      1310                     4   0.828517
-      1310                     5    0.92631
-      1310                     6   1.014722
-      1310                     7   1.096025
-      1310                     8     1.1717
-      1310                     9   1.242775
-      1310                    10       1.31
-         ;                                 
-      2620     Rating          0        0.0
-      2620                     1   0.828517
-      2620                     2     1.1717
-      2620                     3   1.435033
-      2620                     4   1.657033
-      2620                     5    1.85262
-      2620                     6   2.029443
-      2620                     7   2.192049
-      2620                     8   2.343399
-      2620                     9    2.48555
-      2620                    10       2.62
+     12360     Rating          0        0.0
+     12360                     1   3.908575
+     12360                     2    5.52756
+     12360                     3   6.769851
+     12360                     4    7.81715
+     12360                     5    8.73984
+     12360                     6   9.574015
+     12360                     7  10.341118
+     12360                     8   11.05512
+     12360                     9  11.725726
+     12360                    10      12.36
          ;                                 
       1770     Rating          0        0.0
       1770                     1   0.559723
@@ -24278,113 +24242,77 @@ Outfall268      35.61       FREE                    NO
       1770                     9   1.679169
       1770                    10       1.77
          ;                                 
-      1110     Rating          0        0.0
-      1110                     1   0.351013
-      1110                     2   0.496407
-      1110                     3   0.607972
-      1110                     4   0.702026
-      1110                     5   0.784889
-      1110                     6   0.859802
-      1110                     7   0.928693
-      1110                     8   0.992814
-      1110                     9   1.053038
-      1110                    10       1.11
+      3420     Rating          0        0.0
+      3420                     1   1.081499
+      3420                     2    1.52947
+      3420                     3   1.873211
+      3420                     4   2.162998
+      3420                     5   2.418305
+      3420                     6   2.649121
+      3420                     7   2.861377
+      3420                     8   3.058941
+      3420                     9   3.244497
+      3420                    10       3.42
          ;                                 
-      1810     Rating          0        0.0
-      1810                     1   0.572372
-      1810                     2   0.809457
-      1810                     3   0.991378
-      1810                     4   1.144745
-      1810                     5   1.279863
-      1810                     6    1.40202
-      1810                     7   1.514355
-      1810                     8   1.618913
-      1810                     9   1.717117
-      1810                    10       1.81
+      2460     Rating          0        0.0
+      2460                     1    0.77792
+      2460                     2   1.100145
+      2460                     3   1.347397
+      2460                     4   1.555841
+      2460                     5   1.739483
+      2460                     6   1.905508
+      2460                     7   2.058184
+      2460                     8   2.200291
+      2460                     9   2.333761
+      2460                    10       2.46
          ;                                 
-      2150     Rating          0        0.0
-      2150                     1    0.67989
-      2150                     2   0.961509
-      2150                     3   1.177603
-      2150                     4   1.359779
-      2150                     5    1.52028
-      2150                     6   1.665383
-      2150                     7   1.798819
-      2150                     8   1.923018
-      2150                     9   2.039669
-      2150                    10       2.15
+      5460     Rating          0        0.0
+      5460                     1   1.726604
+      5460                     2   2.441786
+      5460                     3   2.990565
+      5460                     4   3.453207
+      5460                     5   3.860803
+      5460                     6   4.229298
+      5460                     7   4.568164
+      5460                     8   4.883572
+      5460                     9   5.179811
+      5460                    10       5.46
          ;                                 
-      6340     Rating          0        0.0
-      6340                     1   2.004884
-      6340                     2   2.835334
-      6340                     3   3.472561
-      6340                     4   4.009768
-      6340                     5   4.483057
-      6340                     6   4.910943
-      6340                     7   5.304425
-      6340                     8   5.670668
-      6340                     9   6.014652
-      6340                    10       6.34
+      3150     Rating          0        0.0
+      3150                     1   0.996117
+      3150                     2   1.408723
+      3150                     3   1.725326
+      3150                     4   1.992235
+      3150                     5   2.227386
+      3150                     6    2.43998
+      3150                     7   2.635479
+      3150                     8   2.817446
+      3150                     9   2.988352
+      3150                    10       3.15
          ;                                 
-      4000     Rating          0        0.0
-      4000                     1   1.264911
-      4000                     2   1.788854
-      4000                     3    2.19089
-      4000                     4   2.529822
-      4000                     5   2.828427
-      4000                     6   3.098387
-      4000                     7    3.34664
-      4000                     8   3.577709
-      4000                     9   3.794733
-      4000                    10        4.0
+     10290     Rating          0        0.0
+     10290                     1   3.253984
+     10290                     2   4.601828
+     10290                     3   5.636065
+     10290                     4   6.507967
+     10290                     5   7.276129
+     10290                     6     7.9706
+     10290                     7   8.609232
+     10290                     8   9.203656
+     10290                     9   9.761951
+     10290                    10      10.29
          ;                                 
-      1250     Rating          0        0.0
-      1250                     1   0.395285
-      1250                     2   0.559017
-      1250                     3   0.684653
-      1250                     4   0.790569
-      1250                     5   0.883883
-      1250                     6   0.968246
-      1250                     7   1.045825
-      1250                     8   1.118034
-      1250                     9   1.185854
-      1250                    10       1.25
-         ;                                 
-      3920     Rating          0        0.0
-      3920                     1   1.239613
-      3920                     2   1.753077
-      3920                     3   2.147072
-      3920                     4   2.479226
-      3920                     5   2.771859
-      3920                     6   3.036419
-      3920                     7   3.279707
-      3920                     8   3.506155
-      3920                     9   3.718839
-      3920                    10       3.92
-         ;                                 
-      2210     Rating          0        0.0
-      2210                     1   0.698863
-      2210                     2   0.988342
-      2210                     3   1.210467
-      2210                     4   1.397727
-      2210                     5   1.562706
-      2210                     6   1.711859
-      2210                     7   1.849019
-      2210                     8   1.976684
-      2210                     9    2.09659
-      2210                    10       2.21
-         ;                                 
-       310     Rating          0        0.0
-       310                     1   0.098031
-       310                     2   0.138636
-       310                     3   0.169794
-       310                     4   0.196061
-       310                     5   0.219203
-       310                     6   0.240125
-       310                     7   0.259365
-       310                     8   0.277272
-       310                     9   0.294092
-       310                    10       0.31
+      5820     Rating          0        0.0
+      5820                     1   1.840446
+      5820                     2   2.602783
+      5820                     3   3.187745
+      5820                     4   3.680891
+      5820                     5   4.115361
+      5820                     6   4.508153
+      5820                     7   4.869361
+      5820                     8   5.205566
+      5820                     9   5.521337
+      5820                    10       5.82
          ;                                 
       1320     Rating          0        0.0
       1320                     1   0.417421
@@ -24398,17 +24326,41 @@ Outfall268      35.61       FREE                    NO
       1320                     9   1.252262
       1320                    10       1.32
          ;                                 
-      1070     Rating          0        0.0
-      1070                     1   0.338364
-      1070                     2   0.478519
-      1070                     3   0.586063
-      1070                     4   0.676727
-      1070                     5   0.756604
-      1070                     6   0.828818
-      1070                     7   0.895226
-      1070                     8   0.957037
-      1070                     9   1.015091
-      1070                    10       1.07
+      9900     Rating          0        0.0
+      9900                     1   3.130655
+      9900                     2   4.427415
+      9900                     3   5.422453
+      9900                     4    6.26131
+      9900                     5   7.000357
+      9900                     6   7.668507
+      9900                     7   8.282934
+      9900                     8   8.854829
+      9900                     9   9.391965
+      9900                    10        9.9
+         ;                                 
+      2610     Rating          0        0.0
+      2610                     1   0.825354
+      2610                     2   1.167227
+      2610                     3   1.429556
+      2610                     4   1.650709
+      2610                     5   1.845549
+      2610                     6   2.021697
+      2610                     7   2.183683
+      2610                     8   2.334455
+      2610                     9   2.476063
+      2610                    10       2.61
+         ;                                 
+      4590     Rating          0        0.0
+      4590                     1   1.451485
+      4590                     2    2.05271
+      4590                     3   2.514047
+      4590                     4   2.902971
+      4590                     5    3.24562
+      4590                     6   3.555399
+      4590                     7    3.84027
+      4590                     8   4.105421
+      4590                     9   4.354456
+      4590                    10       4.59
          ;                                 
       1140     Rating          0        0.0
       1140                     1     0.3605
@@ -24422,41 +24374,65 @@ Outfall268      35.61       FREE                    NO
       1140                     9   1.081499
       1140                    10       1.14
          ;                                 
-      2270     Rating          0        0.0
-      2270                     1   0.717837
-      2270                     2   1.015175
-      2270                     3    1.24333
-      2270                     4   1.435674
-      2270                     5   1.605132
-      2270                     6   1.758334
-      2270                     7   1.899218
-      2270                     8    2.03035
-      2270                     9   2.153511
-      2270                    10       2.27
+     11550     Rating          0        0.0
+     11550                     1   3.652431
+     11550                     2   5.165317
+     11550                     3   6.326196
+     11550                     4   7.304861
+     11550                     5   8.167083
+     11550                     6   8.946592
+     11550                     7   9.663423
+     11550                     8  10.330634
+     11550                     9  10.957292
+     11550                    10      11.55
          ;                                 
-       720     Rating          0        0.0
-       720                     1   0.227684
-       720                     2   0.321994
-       720                     3    0.39436
-       720                     4   0.455368
-       720                     5   0.509117
-       720                     6    0.55771
-       720                     7   0.602395
-       720                     8   0.643988
-       720                     9   0.683052
-       720                    10       0.72
+      6720     Rating          0        0.0
+      6720                     1   2.125051
+      6720                     2   3.005275
+      6720                     3   3.680696
+      6720                     4   4.250101
+      6720                     5   4.751758
+      6720                     6    5.20529
+      6720                     7   5.622355
+      6720                     8   6.010551
+      6720                     9   6.375152
+      6720                    10       6.72
          ;                                 
-      8490     Rating          0        0.0
-      8490                     1   2.684774
-      8490                     2   3.796843
-      8490                     3   4.650165
-      8490                     4   5.369547
-      8490                     5   6.003337
-      8490                     6   6.576326
-      8490                     7   7.103244
-      8490                     8   7.593687
-      8490                     9   8.054321
-      8490                    10       8.49
+      1290     Rating          0        0.0
+      1290                     1   0.407934
+      1290                     2   0.576906
+      1290                     3   0.706562
+      1290                     4   0.815868
+      1290                     5   0.912168
+      1290                     6    0.99923
+      1290                     7   1.079291
+      1290                     8   1.153811
+      1290                     9   1.223801
+      1290                    10       1.29
+         ;                                 
+       630     Rating          0        0.0
+       630                     1   0.199223
+       630                     2   0.281745
+       630                     3   0.345065
+       630                     4   0.398447
+       630                     5   0.445477
+       630                     6   0.487996
+       630                     7   0.527096
+       630                     8   0.563489
+       630                     9    0.59767
+       630                    10       0.63
+         ;                                 
+      4080     Rating          0        0.0
+      4080                     1   1.290209
+      4080                     2   1.824631
+      4080                     3   2.234708
+      4080                     4   2.580419
+      4080                     5   2.884996
+      4080                     6   3.160354
+      4080                     7   3.413573
+      4080                     8   3.649263
+      4080                     9   3.870628
+      4080                    10       4.08
          ;                                 
       1680     Rating          0        0.0
       1680                     1   0.531263
@@ -24470,17 +24446,17 @@ Outfall268      35.61       FREE                    NO
       1680                     9   1.593788
       1680                    10       1.68
          ;                                 
-      4460     Rating          0        0.0
-      4460                     1   1.410376
-      4460                     2   1.994573
-      4460                     3   2.442843
-      4460                     4   2.820752
-      4460                     5   3.153696
-      4460                     6   3.454701
-      4460                     7   3.731504
-      4460                     8   3.989145
-      4460                     9   4.231128
-      4460                    10       4.46
+     12510     Rating          0        0.0
+     12510                     1   3.956009
+     12510                     2   5.594642
+     12510                     3   6.852009
+     12510                     4   7.912019
+     12510                     5   8.845906
+     12510                     6   9.690204
+     12510                     7  10.466617
+     12510                     8  11.189284
+     12510                     9  11.868028
+     12510                    10      12.51
          ;                                 
        930     Rating          0        0.0
        930                     1   0.294092
@@ -24494,77 +24470,77 @@ Outfall268      35.61       FREE                    NO
        930                     9   0.882275
        930                    10       0.93
          ;                                 
-      4120     Rating          0        0.0
-      4120                     1   1.302858
-      4120                     2    1.84252
-      4120                     3   2.256617
-      4120                     4   2.605717
-      4120                     5    2.91328
-      4120                     6   3.191338
-      4120                     7   3.447039
-      4120                     8    3.68504
-      4120                     9   3.908575
-      4120                    10       4.12
+     15390     Rating          0        0.0
+     15390                     1   4.866745
+     15390                     2   6.882617
+     15390                     3    8.42945
+     15390                     4   9.733491
+     15390                     5  10.882373
+     15390                     6  11.921043
+     15390                     7  12.876198
+     15390                     8  13.765234
+     15390                     9  14.600236
+     15390                    10      15.39
          ;                                 
-      5130     Rating          0        0.0
-      5130                     1   1.622248
-      5130                     2   2.294206
-      5130                     3   2.809817
-      5130                     4   3.244497
-      5130                     5   3.627458
-      5130                     6   3.973681
-      5130                     7   4.292066
-      5130                     8   4.588411
-      5130                     9   4.866745
-      5130                    10       5.13
+      2790     Rating          0        0.0
+      2790                     1   0.882275
+      2790                     2   1.247726
+      2790                     3   1.528146
+      2790                     4   1.764551
+      2790                     5   1.972828
+      2790                     6   2.161125
+      2790                     7   2.334281
+      2790                     8   2.495452
+      2790                     9   2.646826
+      2790                    10       2.79
          ;                                 
-       840     Rating          0        0.0
-       840                     1   0.265631
-       840                     2   0.375659
-       840                     3   0.460087
-       840                     4   0.531263
-       840                     5    0.59397
-       840                     6   0.650661
-       840                     7   0.702794
-       840                     8   0.751319
-       840                     9   0.796894
-       840                    10       0.84
+      6360     Rating          0        0.0
+      6360                     1   2.011209
+      6360                     2   2.844278
+      6360                     3   3.483515
+      6360                     4   4.022417
+      6360                     5   4.497199
+      6360                     6   4.926435
+      6360                     7   5.321158
+      6360                     8   5.688557
+      6360                     9   6.033626
+      6360                    10       6.36
          ;                                 
-       940     Rating          0        0.0
-       940                     1   0.297254
-       940                     2   0.420381
-       940                     3   0.514859
-       940                     4   0.594508
-       940                     5    0.66468
-       940                     6   0.728121
-       940                     7    0.78646
-       940                     8   0.840762
-       940                     9   0.891762
-       940                    10       0.94
+      9240     Rating          0        0.0
+      9240                     1   2.921945
+      9240                     2   4.132254
+      9240                     3   5.060956
+      9240                     4   5.843889
+      9240                     5   6.533667
+      9240                     6   7.157273
+      9240                     7   7.730739
+      9240                     8   8.264507
+      9240                     9   8.765834
+      9240                    10       9.24
          ;                                 
-      8120     Rating          0        0.0
-      8120                     1   2.567769
-      8120                     2   3.631374
-      8120                     3   4.447507
-      8120                     4   5.135539
-      8120                     5   5.741707
-      8120                     6   6.289725
-      8120                     7   6.793679
-      8120                     8   7.262749
-      8120                     9   7.703308
-      8120                    10       8.12
+     11700     Rating          0        0.0
+     11700                     1   3.699865
+     11700                     2   5.232399
+     11700                     3   6.408354
+     11700                     4    7.39973
+     11700                     5   8.273149
+     11700                     6   9.062781
+     11700                     7   9.788922
+     11700                     8  10.464798
+     11700                     9  11.099595
+     11700                    10       11.7
          ;                                 
-       560     Rating          0        0.0
-       560                     1   0.177088
-       560                     2    0.25044
-       560                     3   0.306725
-       560                     4   0.354175
-       560                     5    0.39598
-       560                     6   0.433774
-       560                     7    0.46853
-       560                     8   0.500879
-       560                     9   0.531263
-       560                    10       0.56
+      3780     Rating          0        0.0
+      3780                     1   1.195341
+      3780                     2   1.690467
+      3780                     3   2.070391
+      3780                     4   2.390682
+      3780                     5   2.672864
+      3780                     6   2.927975
+      3780                     7   3.162575
+      3780                     8   3.380935
+      3780                     9   3.586023
+      3780                    10       3.78
          ;                                 
       1380     Rating          0        0.0
       1380                     1   0.436394
@@ -24578,17 +24554,41 @@ Outfall268      35.61       FREE                    NO
       1380                     9   1.309183
       1380                    10       1.38
          ;                                 
-       650     Rating          0        0.0
-       650                     1   0.205548
-       650                     2   0.290689
-       650                     3    0.35602
-       650                     4   0.411096
-       650                     5   0.459619
-       650                     6   0.503488
-       650                     7   0.543829
-       650                     8   0.581378
-       650                     9   0.616644
-       650                    10       0.65
+     19020     Rating          0        0.0
+     19020                     1   6.014652
+     19020                     2   8.506003
+     19020                     3  10.417683
+     19020                     4  12.029304
+     19020                     5  13.449171
+     19020                     6  14.732829
+     19020                     7  15.913274
+     19020                     8  17.012005
+     19020                     9  18.043956
+     19020                    10      19.02
+         ;                                 
+      3960     Rating          0        0.0
+      3960                     1   1.252262
+      3960                     2   1.770966
+      3960                     3   2.168981
+      3960                     4   2.504524
+      3960                     5   2.800143
+      3960                     6   3.067403
+      3960                     7   3.313174
+      3960                     8   3.541932
+      3960                     9   3.756786
+      3960                    10       3.96
+         ;                                 
+      2880     Rating          0        0.0
+      2880                     1   0.910736
+      2880                     2   1.287975
+      2880                     3   1.577441
+      2880                     4   1.821472
+      2880                     5   2.036468
+      2880                     6   2.230838
+      2880                     7   2.409581
+      2880                     8    2.57595
+      2880                     9   2.732208
+      2880                    10       2.88
          ;                                 
 
 
