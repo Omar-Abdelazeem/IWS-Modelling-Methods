@@ -68,7 +68,7 @@ PLACEHOLDER
 
 [RESERVOIRS]
 ;ID              	Head        	Pattern
- 57              	800.0000    	                	;
+ 57              	810.0000    	                	;
 
 [TANKS]
 ;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
@@ -173,44 +173,44 @@ TankforNode54     725.00        0.0        0.0        1.0     2.5691        0.0 
  57              	53              	55              	179.1       	100         	130         	0           	Open  	;
  58              	55              	56              	364.4       	100         	130         	0           	Open  	;
  59              	57              	23              	50          	1000        	130         	0           	CV    	;
- PipeforNode1          1  TankforNode1  17975.930095         50        130        0.0         CV          ;
- PipeforNode2          2  TankforNode2   2349.972644         50        130        0.0         CV          ;
- PipeforNode3          3  TankforNode3    561.275175         50        130        0.0         CV          ;
- PipeforNode5          5  TankforNode5   1109.026171         50        130        0.0         CV          ;
- PipeforNode9          9  TankforNode9  64893.159949         50        130        0.0         CV          ;
-PipeforNode10         10 TankforNode10   1379.355677         50        130        0.0         CV          ;
-PipeforNode11         11 TankforNode11  64893.159949         50        130        0.0         CV          ;
-PipeforNode13         13 TankforNode13   5850.166590         50        130        0.0         CV          ;
-PipeforNode15         15 TankforNode15     85.099438         50        130        0.0         CV          ;
-PipeforNode17         17 TankforNode17  64893.159949         50        130        0.0         CV          ;
-PipeforNode18         18 TankforNode18  64893.159949         50        130        0.0         CV          ;
-PipeforNode20         20 TankforNode20  64893.159949         50        130        0.0         CV          ;
-PipeforNode21         21 TankforNode21   8483.408085         50        130        0.0         CV          ;
-PipeforNode22         22 TankforNode22  64893.159949         50        130        0.0         CV          ;
-PipeforNode25         25 TankforNode25 496395.100424         50        130        0.0         CV          ;
-PipeforNode26         26 TankforNode26  64893.159949         50        130        0.0         CV          ;
-PipeforNode27         27 TankforNode27    650.961427         50        130        0.0         CV          ;
-PipeforNode28         28 TankforNode28   8483.408085         50        130        0.0         CV          ;
-PipeforNode30         30 TankforNode30  17975.930095         50        130        0.0         CV          ;
-PipeforNode31         31 TankforNode31  64893.159949         50        130        0.0         CV          ;
-PipeforNode32         32 TankforNode32  17975.930095         50        130        0.0         CV          ;
-PipeforNode33         33 TankforNode33   3293.870149         50        130        0.0         CV          ;
-PipeforNode34         34 TankforNode34   2349.972644         50        130        0.0         CV          ;
-PipeforNode35         35 TankforNode35   2349.972644         50        130        0.0         CV          ;
-PipeforNode36         36 TankforNode36    912.428669         50        130        0.0         CV          ;
-PipeforNode37         37 TankforNode37  64893.159949         50        130        0.0         CV          ;
-PipeforNode38         38 TankforNode38   3293.870149         50        130        0.0         CV          ;
-PipeforNode39         39 TankforNode39  64893.159949         50        130        0.0         CV          ;
-PipeforNode40         40 TankforNode40  64893.159949         50        130        0.0         CV          ;
-PipeforNode41         41 TankforNode41    341.513220         50        130        0.0         CV          ;
-PipeforNode42         42 TankforNode42   2349.972644         50        130        0.0         CV          ;
-PipeforNode43         43 TankforNode43   8483.408085         50        130        0.0         CV          ;
-PipeforNode44         44 TankforNode44    105.842762         50        130        0.0         CV          ;
-PipeforNode45         45 TankforNode45   1379.355677         50        130        0.0         CV          ;
-PipeforNode49         49 TankforNode49   1766.352398         50        130        0.0         CV          ;
-PipeforNode50         50 TankforNode50   4979.478007         50        130        0.0         CV          ;
-PipeforNode52         52 TankforNode52  64893.159949         50        130        0.0         CV          ;
-PipeforNode54         54 TankforNode54  64893.159949         50        130        0.0         CV          ;
+ PipeforNode1          1  TankforNode1  17975.9301         50        130        0.0         CV          ;
+ PipeforNode2          2  TankforNode2   2349.9726         50        130        0.0         CV          ;
+ PipeforNode3          3  TankforNode3    561.2752         50        130        0.0         CV          ;
+ PipeforNode5          5  TankforNode5   1109.0262         50        130        0.0         CV          ;
+ PipeforNode9          9  TankforNode9  64893.1599         50        130        0.0         CV          ;
+PipeforNode10         10 TankforNode10   1379.3557         50        130        0.0         CV          ;
+PipeforNode11         11 TankforNode11  64893.1599         50        130        0.0         CV          ;
+PipeforNode13         13 TankforNode13   5850.1666         50        130        0.0         CV          ;
+PipeforNode15         15 TankforNode15     85.0994         50        130        0.0         CV          ;
+PipeforNode17         17 TankforNode17  64893.1599         50        130        0.0         CV          ;
+PipeforNode18         18 TankforNode18  64893.1599         50        130        0.0         CV          ;
+PipeforNode20         20 TankforNode20  64893.1599         50        130        0.0         CV          ;
+PipeforNode21         21 TankforNode21   8483.4081         50        130        0.0         CV          ;
+PipeforNode22         22 TankforNode22  64893.1599         50        130        0.0         CV          ;
+PipeforNode25         25 TankforNode25 496395.1004         50        130        0.0         CV          ;
+PipeforNode26         26 TankforNode26  64893.1599         50        130        0.0         CV          ;
+PipeforNode27         27 TankforNode27    650.9614         50        130        0.0         CV          ;
+PipeforNode28         28 TankforNode28   8483.4081         50        130        0.0         CV          ;
+PipeforNode30         30 TankforNode30  17975.9301         50        130        0.0         CV          ;
+PipeforNode31         31 TankforNode31  64893.1599         50        130        0.0         CV          ;
+PipeforNode32         32 TankforNode32  17975.9301         50        130        0.0         CV          ;
+PipeforNode33         33 TankforNode33   3293.8701         50        130        0.0         CV          ;
+PipeforNode34         34 TankforNode34   2349.9726         50        130        0.0         CV          ;
+PipeforNode35         35 TankforNode35   2349.9726         50        130        0.0         CV          ;
+PipeforNode36         36 TankforNode36    912.4287         50        130        0.0         CV          ;
+PipeforNode37         37 TankforNode37  64893.1599         50        130        0.0         CV          ;
+PipeforNode38         38 TankforNode38   3293.8701         50        130        0.0         CV          ;
+PipeforNode39         39 TankforNode39  64893.1599         50        130        0.0         CV          ;
+PipeforNode40         40 TankforNode40  64893.1599         50        130        0.0         CV          ;
+PipeforNode41         41 TankforNode41    341.5132         50        130        0.0         CV          ;
+PipeforNode42         42 TankforNode42   2349.9726         50        130        0.0         CV          ;
+PipeforNode43         43 TankforNode43   8483.4081         50        130        0.0         CV          ;
+PipeforNode44         44 TankforNode44    105.8428         50        130        0.0         CV          ;
+PipeforNode45         45 TankforNode45   1379.3557         50        130        0.0         CV          ;
+PipeforNode49         49 TankforNode49   1766.3524         50        130        0.0         CV          ;
+PipeforNode50         50 TankforNode50   4979.4780         50        130        0.0         CV          ;
+PipeforNode52         52 TankforNode52  64893.1599         50        130        0.0         CV          ;
+PipeforNode54         54 TankforNode54  64893.1599         50        130        0.0         CV          ;
 
 
 [PUMPS]
