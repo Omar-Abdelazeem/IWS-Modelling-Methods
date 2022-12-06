@@ -1,5 +1,5 @@
 # IWS-Modelling-Methods-Repo
-This repo is associated with the publication entitled [PLACEHOLDER] [Link to Article]
+This repo is associated with the publication entitled "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality" Published in the Journal of Water Resources Planning and Management  [Link to Article]
 
 ### Directory
 **Running Methods:** Contains Jupyter notebooks for running prepared .inp files for all modelling methods as well as .py scripts for batch runs of the same methods  
