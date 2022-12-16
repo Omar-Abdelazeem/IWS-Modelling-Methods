@@ -78,8 +78,13 @@ This folder also contains some helper files needed to migrate some information b
 ## Reprouducing-Figures-Tables:
 This folder contains notebooks that reproduce Figures 2, 4, and 5 as well as Table S-5  
 To be able to run these notebooks and reproduce the figures, first run each method file for both supply durations. These files will automatically generate files for the results. The following is a description of the folder's content:  
+  
 **Figure2.ipynb** reproduces Figure 2 - mean satisfction ratio using EPANET methods -of the main text by default. It can also create its corresponding supplementary figures S-4 and S-5 by following the instructions in the notebook. It can also be repurposed to create similar figures using any "_Means.csv" file.  
+  
 **Figure4.ipynb** reproduces Figure 4 - Mean and Range of Satisfaction ratios in volume vs flow restricted methods - of the main text by default. It can also create its corresponding supplementary figures S-7 and S-8 by following the instructions in the notebook. It can also be repurposed to create similar figures using any "_Means.csv", "_XXthPercentile.csv" and ""YYth percentile.csv" files  
+  
 **Figure5.ipynb** reproduces Figure 5 - Mean and range of satisfaction ratios in flow and volume restricted methods: filling vs non-filling - of the main text by default. It can also create its corresponding supplementary figures S-9 and S-10 by following the instructions in the notebook. It can also be repurposed to create similar figures using any "_Means.csv", "_XXthPercentile.csv" and ""YYth percentile.csv" files  
+  
 **Table S-5.ipynb** reproduces Table S-5 - execution time of each EPANET method - by default  
+  
 **Figure3** In this subfolder: we provide 2 csv files with the input data underlying the contours in Figure 3 as well as the .shp layers we created in QGIS. The input CSVs can be loaded as layers in QGIS and contoured using the same bins to reproduce the figure
