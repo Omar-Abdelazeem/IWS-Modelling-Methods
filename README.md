@@ -8,8 +8,9 @@ This repo is associated with the publication entitled "How to Model Intermittent
 **Reproducing-Figures-Tables** Contains scripts used to generate the figures in the paper
   
 ### Naming Convention  
-Network Input and Output files are named according to the 
+Network Input and Output files are named using standardised fragments. Each notebook (Running, Conversion or Figure) is internally consistent, i.e., it will still work fine with files not named according to convention. However, we encourage the use of the naming convention since it matches the notebook names and thus will reduce chance of using the wrong notebook.  
   
+The standardised fragments are as follows:  
 #### Network Names
 **Network1** : File uses Network 1 (Campisano, 2019)  
 **Network2** : File uses Network 2 (Bragalli, 2012)  
