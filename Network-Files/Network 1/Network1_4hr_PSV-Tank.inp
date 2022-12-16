@@ -1,5 +1,5 @@
 [TITLE]
-Case Study 1 Network in Campisano et al. (2018) Using EPA-SWMM to simulate
+Case Study 1 Network in Campisano et al. (2019) Using EPA-SWMM to simulate
 intermittent water distribution systems.
 Converted to an EPANET IWS using the EPANET-PDA method assuming the head of the
 reservoir (not provided in the original paper)
@@ -249,44 +249,44 @@ ATforNode54     724.00        0.0        0.0        1.0     2.5691        0.0   
  57              	53              	55              	179.1       	100         	130         	0           	Open  	;
  58              	55              	56              	364.4       	100         	130         	0           	Open  	;
  59              	57              	23              	50          	1000        	130         	0           	CV    	;
- Pipe1forNode1            1  AN1forNode1        0.1        350        130 3.153033e+07         CV          ;
- Pipe1forNode2            2  AN1forNode2        0.1        350        130 3.503370e+06         CV          ;
- Pipe1forNode3            3  AN1forNode3        0.1        350        130 7.462799e+05         CV          ;
- Pipe1forNode5            5  AN1forNode5        0.1        350        130 1.557053e+06         CV          ;
- Pipe1forNode9            9  AN1forNode9        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode10           10 AN1forNode10        0.1        350        130 1.970645e+06         CV          ;
-Pipe1forNode11           11 AN1forNode11        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode13           13 AN1forNode13        0.1        350        130 9.380923e+06         CV          ;
-Pipe1forNode15           15 AN1forNode15        0.1        350        130 9.731582e+04         CV          ;
-Pipe1forNode17           17 AN1forNode17        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode18           18 AN1forNode18        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode20           20 AN1forNode20        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode21           21 AN1forNode21        0.1        350        130 1.401348e+07         CV          ;
-Pipe1forNode22           22 AN1forNode22        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode25           25 AN1forNode25        0.1        350        130 1.135092e+09         CV          ;
-Pipe1forNode26           26 AN1forNode26        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode27           27 AN1forNode27        0.1        350        130 8.758424e+05         CV          ;
-Pipe1forNode28           28 AN1forNode28        0.1        350        130 1.401348e+07         CV          ;
-Pipe1forNode30           30 AN1forNode30        0.1        350        130 3.153033e+07         CV          ;
-Pipe1forNode31           31 AN1forNode31        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode32           32 AN1forNode32        0.1        350        130 3.153033e+07         CV          ;
-Pipe1forNode33           33 AN1forNode33        0.1        350        130 5.044852e+06         CV          ;
-Pipe1forNode34           34 AN1forNode34        0.1        350        130 3.503370e+06         CV          ;
-Pipe1forNode35           35 AN1forNode35        0.1        350        130 3.503370e+06         CV          ;
-Pipe1forNode36           36 AN1forNode36        0.1        350        130 1.261213e+06         CV          ;
-Pipe1forNode37           37 AN1forNode37        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode38           38 AN1forNode38        0.1        350        130 5.044852e+06         CV          ;
-Pipe1forNode39           39 AN1forNode39        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode40           40 AN1forNode40        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode41           41 AN1forNode41        0.1        350        130 4.364059e+05         CV          ;
-Pipe1forNode42           42 AN1forNode42        0.1        350        130 3.503370e+06         CV          ;
-Pipe1forNode43           43 AN1forNode43        0.1        350        130 1.401348e+07         CV          ;
-Pipe1forNode44           44 AN1forNode44        0.1        350        130 1.231653e+05         CV          ;
-Pipe1forNode45           45 AN1forNode45        0.1        350        130 1.970645e+06         CV          ;
-Pipe1forNode49           49 AN1forNode49        0.1        350        130 2.573904e+06         CV          ;
-Pipe1forNode50           50 AN1forNode50        0.1        350        130 7.882581e+06         CV          ;
-Pipe1forNode52           52 AN1forNode52        0.1        350        130 1.261213e+08         CV          ;
-Pipe1forNode54           54 AN1forNode54        0.1        350        130 1.261213e+08         CV          ;
+ Pipe1forNode1            1  AN1forNode1        0.1        350        130 3.503370e+06         CV          ;
+ Pipe1forNode2            2  AN1forNode2        0.1        350        130 3.892633e+05         CV          ;
+ Pipe1forNode3            3  AN1forNode3        0.1        350        130 8.291999e+04         CV          ;
+ Pipe1forNode5            5  AN1forNode5        0.1        350        130 1.730059e+05         CV          ;
+ Pipe1forNode9            9  AN1forNode9        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode10           10 AN1forNode10        0.1        350        130 2.189606e+05         CV          ;
+Pipe1forNode11           11 AN1forNode11        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode13           13 AN1forNode13        0.1        350        130 1.042325e+06         CV          ;
+Pipe1forNode15           15 AN1forNode15        0.1        350        130 1.081287e+04         CV          ;
+Pipe1forNode17           17 AN1forNode17        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode18           18 AN1forNode18        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode20           20 AN1forNode20        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode21           21 AN1forNode21        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode22           22 AN1forNode22        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode25           25 AN1forNode25        0.1        350        130 1.261213e+08         CV          ;
+Pipe1forNode26           26 AN1forNode26        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode27           27 AN1forNode27        0.1        350        130 9.731582e+04         CV          ;
+Pipe1forNode28           28 AN1forNode28        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode30           30 AN1forNode30        0.1        350        130 3.503370e+06         CV          ;
+Pipe1forNode31           31 AN1forNode31        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode32           32 AN1forNode32        0.1        350        130 3.503370e+06         CV          ;
+Pipe1forNode33           33 AN1forNode33        0.1        350        130 5.605391e+05         CV          ;
+Pipe1forNode34           34 AN1forNode34        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode35           35 AN1forNode35        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode36           36 AN1forNode36        0.1        350        130 1.401348e+05         CV          ;
+Pipe1forNode37           37 AN1forNode37        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode38           38 AN1forNode38        0.1        350        130 5.605391e+05         CV          ;
+Pipe1forNode39           39 AN1forNode39        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode40           40 AN1forNode40        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode41           41 AN1forNode41        0.1        350        130 4.848954e+04         CV          ;
+Pipe1forNode42           42 AN1forNode42        0.1        350        130 3.892633e+05         CV          ;
+Pipe1forNode43           43 AN1forNode43        0.1        350        130 1.557053e+06         CV          ;
+Pipe1forNode44           44 AN1forNode44        0.1        350        130 1.368504e+04         CV          ;
+Pipe1forNode45           45 AN1forNode45        0.1        350        130 2.189606e+05         CV          ;
+Pipe1forNode49           49 AN1forNode49        0.1        350        130 2.859894e+05         CV          ;
+Pipe1forNode50           50 AN1forNode50        0.1        350        130 8.758424e+05         CV          ;
+Pipe1forNode52           52 AN1forNode52        0.1        350        130 1.401348e+07         CV          ;
+Pipe1forNode54           54 AN1forNode54        0.1        350        130 1.401348e+07         CV          ;
  Pipe2forNode1  AN2forNode1   ATforNode1        0.1        350        130 0.000000e+00         CV          ;
  Pipe2forNode2  AN2forNode2   ATforNode2        0.1        350        130 0.000000e+00         CV          ;
  Pipe2forNode3  AN2forNode3   ATforNode3        0.1        350        130 0.000000e+00         CV          ;
@@ -394,7 +394,9 @@ APSVforNode54 AN1forNode54 AN2forNode54       12.0        PSV     0.0000     0.0
 
 
 
+
 [RULES]
+
 
 
 
@@ -434,7 +436,7 @@ APSVforNode54 AN1forNode54 AN2forNode54       12.0        PSV     0.0000     0.0
 ;Tank            	Model
 
 [TIMES]
- Duration           	12:00
+ Duration           	4:00
  Hydraulic Timestep 	1:00
  Quality Timestep   	0:01
  Pattern Timestep   	1:00
@@ -456,9 +458,9 @@ APSVforNode54 AN1forNode54 AN2forNode54       12.0        PSV     0.0000     0.0
  Viscosity          	1.000000
  Trials             	40
  Accuracy           	0.00100000
- CHECKFREQ          	2
- MAXCHECK           	10
- DAMPLIMIT          	0.00000000
+ CHECKFREQ          	10
+ MAXCHECK           	100
+ DAMPLIMIT          	0.01000000
  Unbalanced         	Continue 10
  Pattern            	1
  Demand Multiplier  	1.0000
