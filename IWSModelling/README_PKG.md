@@ -1,5 +1,5 @@
 # IWS-Modelling-Methods-Repo
-This repo is associated with the publication titled "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality" 
+This repo is associated with the publication titles "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality" 
   
 ### Required Packages  
 The notebooks in this repository use the following packages, make sure that these packages are installed within the environment used to run these files:  
@@ -12,9 +12,8 @@ The notebooks in this repository use the following packages, make sure that thes
 **matplotlib** For plotting and visualisation  
 
 ## Directory
-**IWSModelling** is the Python package we developed to create, execute and process IWS EPANET and EPA-SWMM files using any of the eight methods we compared in our synthesis of existing IWS modelling methods. For details on the package and using it, see the README_PKG.md file in the package directory  
-**Running Methods** Contains annotated Jupyter notebooks for running prepared .inp files for all modelling methods that explain in detail how we execute and process the output of the input files in the IWSModelling package  
-**Conversion Files** Contains annotated notebooks for converting .inp files of "normal" EPANET files into .inp files of selected methods  that explain in detail procedures we follow to convert input files in the IWSModelling package  
+**Running Methods** Contains Jupyter notebooks for running prepared .inp files for all modelling methods   
+**Conversion Files** Contains notebooks for converting .inp files of "normal" EPANET files into .inp files of selected methods  
 **Network Files** Contains all the EPANET and EPA-SWMM .inp files for the 3 networks, with 8 methods each, using 2 supply durations each (48 total files)  
 **Reproducing-Figures-Tables** Contains scripts used to generate the figures in the paper
   
