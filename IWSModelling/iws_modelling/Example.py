@@ -1,4 +1,4 @@
-from Method_Convert import change_duration
+from Convert_Method import change_duration
 from Run_Method import *
 import Run_Method
 import pandas as pd

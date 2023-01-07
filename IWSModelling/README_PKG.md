@@ -1,8 +1,9 @@
-# IWS-Modelling-Methods-Repo
-This repo is associated with the publication titles "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality" 
+# iws_modelling
+The iws_modelling package was developed for modelling Intermittent Water Supply Networks in python using different modelling methods that utilize the solver engines of EPANET and EPA-SWMM  
+This package contains two main modules: Convert_Method and Run_Method for converting between methods and executing input files respectively
   
-### Required Packages  
-The notebooks in this repository use the following packages, make sure that these packages are installed within the environment used to run these files:  
+### Dependencies and Environment  
+The modules of this package use the following packages, make sure that these packages are installed within the environment used when using this package:  
 **WNTR** Water Network Tool For Resilience: Used to run EPANET files  
 **PYSWMM** Used to Run EPA-SWMM files  
 **Pandas**  
@@ -10,6 +11,8 @@ The notebooks in this repository use the following packages, make sure that thes
 **timeit** For timing execution of input files  
 **re** for using regular expressions  
 **matplotlib** For plotting and visualisation  
+
+Alternatively, we provide the IWSModellingReqs.yml environment which includes all dependencies along with the iws_modelling package itself
 
 ## Directory
 **Running Methods** Contains Jupyter notebooks for running prepared .inp files for all modelling methods   
