@@ -1,0 +1,6 @@
+"Required"
+pandas
+numpy
+matplotlib
+wntr
+pyswmm
