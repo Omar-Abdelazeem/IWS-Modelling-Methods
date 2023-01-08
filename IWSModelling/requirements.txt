@@ -4,3 +4,4 @@ numpy
 matplotlib
 wntr
 pyswmm
+scipy

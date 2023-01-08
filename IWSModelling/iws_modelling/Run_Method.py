@@ -2,10 +2,8 @@
 The Run_Method Module contains methods to execute and process the output of IWS EPANET and EPA-SWMM Files
 using one of the  eight methods we studied
 """
-global wntr,np,pd,re,math,mpl,figure,plt,timeit
-global pyswmm,LinkAttribute,NodeAttribute
+global wntr,np,pd,re,math,mpl,figure,plt,timeit,pyswmm,LinkAttribute,NodeAttribute,datetime
 global simplefilter
-global datetime
 
 import wntr
 import numpy as np 
@@ -27,19 +25,39 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
-    Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
-    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure
-    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers
-    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers
-    save_outputs (bool): Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.
-    time_execution (bool): Optionally times the execution of the EPANET file. default= False
-    n_iterations (int): number of iterations for averaging execution time. Default=100
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
+    Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
+    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
+    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
+    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
+    save_outputs (bool): Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
+    time_execution (bool): Optionally times the execution of the EPANET file. default= False  
+
+    n_iterations (int): number of iterations for averaging execution time. Default=100  
+
     plots (bool): Display mean and range plots. default: True
 
-    Returns: None. Saves output file in same directory
+
+    Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
+
+    timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
+    high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
     assert 0 < low_percentile <100, "Percentile must be between 0 and 100"
     assert 0 < high_percentile <100, "Percentile must be between 0 and 100"
@@ -192,26 +210,44 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
         elif output=='P':
             plt.ylabel('Nodal Pressure (m)')
         plt.show
+    return timesrs_processed,mean,low_percentile_series,high_percentile_series
+
             
-
-
 def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
     """
     Executes an IWS EPANET file that uses the volume-restricted method CV-Res.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure
-    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers
-    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers
-    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.
-    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False
-    n_iterations (int): number of iterations for averaging execution time. Default=100
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
+    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
+    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
+    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
+    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False  
+
+    n_iterations (int): number of iterations for averaging execution time. Default=100  
+
     plots (bool): Display mean and range plots. default: True
 
-    Returns: None. Saves output file in same directory
+
+    Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
+
+    timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
+    high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
 
     assert 0 < low_percentile <high_percentile, "Percentile must be between 0 and 100"
@@ -311,7 +347,8 @@ def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile
         elif output=='P':
             plt.ylabel('Nodal Pressure (m)')
         plt.show    
-    
+    return timesrs_processed,mean,low_percentile_series,high_percentile_series
+
 
 def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots:bool=True):
     """
@@ -319,17 +356,35 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure
-    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers
-    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers
-    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.
-    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False
-    n_iterations (int): number of iterations for averaging execution time. Default=100
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
+    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
+    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
+    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
+    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False  
+
+    n_iterations (int): number of iterations for averaging execution time. Default=100  
+
     plots (bool): Display mean and range plots. default: True
 
-    Returns: None. Saves output file in same directory
+
+    Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
+
+    timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
+    high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
 
     assert 0 < low_percentile <high_percentile, "Percentile must be between 0 and 100 and percentiles should not be equal"
@@ -431,6 +486,7 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
         elif output=='P':
             plt.ylabel('Nodal Pressure (m)')
         plt.show    
+    return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
 def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
@@ -439,17 +495,34 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure
-    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers
-    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers
-    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.
-    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False
-    n_iterations (int): number of iterations for averaging execution time. Default=100
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
+    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
+    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
+    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
+    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False  
+
+    n_iterations (int): number of iterations for averaging execution time. Default=100  
+
     plots (bool): Display mean and range plots. default: True
 
-    Returns: None. Saves output file in same directory
+    Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
+
+    timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
+    high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
 
     assert 0 < low_percentile <high_percentile, "Percentile must be between 0 and 100"
@@ -584,6 +657,7 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
         elif output=='P':
             plt.ylabel('Nodal Pressure (m)')
         plt.show 
+    return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
 def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
@@ -592,17 +666,34 @@ def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure
-    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers
-    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers
-    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.
-    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False
-    n_iterations (int): number of iterations for averaging execution time. Default=100
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
+    low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
+    high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
+    save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
+    time_execution (Boolean): Optionally times the execution of the EPANET file. default= False  
+
+    n_iterations (int): number of iterations for averaging execution time. Default=100  
+
     plots (bool): Display mean and range plots. default: True
 
-    Returns: None. Saves output file in same directory
+    Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
+
+    timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
+    high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
 
     assert 0 < low_percentile <high_percentile, "Percentile must be between 0 and 100"
@@ -732,6 +823,7 @@ def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
         elif output=='P':
             plt.ylabel('Nodal Pressure (m)')
         plt.show
+    return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
 def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,plots=True):
@@ -740,21 +832,31 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
+
     ran_before (bool): Set to True to skip executing the SWMM .inp file IF you executed the .inp file before (uses the saved .out file instead)  
+
     low_percentile (int): value for the low percentile statistic (default 10th percentile) representing disadvantaged consumers  
+
     high_percentile (int): value for the high percentile statistic (default 90th percentile) representing disadvantaged consumers  
+
     save_outputs: Save processed output and statistices (mean, median an percentiles) as CSV files. Default: True.  
+
     plots (bool): Display mean and range plots. default: True
 
     Returns: timesrs_processed, mean, low_percentile_series, high_percentile_series
 
     timesrs_processed: Pandas DataFrame of size TxN where T is the number of timesteps and N is the number of demand (non-zero) nodes 
-    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step
-    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep
-    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile
+    in the network. Contains the values for the selected output: Satisfaction Ratio (S) or Pressures (P) for each demand node at each time step  
+
+    mean: Pandas Series of size Tx1 where T is the number of timesteps. Mean output values for each timestep  
+
+    low_percentile_series: Pandas Series of size Tx1. The XXth percentile output values for each timestep. XX is determined by function input: low_percentile  
+
     high_percentile_series: Pandas Series of size Tx1. The YYth percentile output values for each timestep. YY is determined by function input: high_percentile
     """
     assert 0 < low_percentile <high_percentile, "Percentile must be between 0 and 100"
@@ -1121,8 +1223,6 @@ def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
     
 
-
-
 def __time_simulation__(abs_path:str,n_iterations:int):
     """
     Times the execution of an EPANET file for a given number of iterations
@@ -1140,6 +1240,7 @@ def __time_simulation__(abs_path:str,n_iterations:int):
     # Time and average over number of iterations
     time=np.round(timeit.timeit(stmt=timed_lines,setup='import wntr',number=n_iterations)/n_iterations*1000,decimals=2)
     print("Time taken for ",file,' is ', time, 'milliseconds per run')
+
 
 def __plot_mean__(xaxis,mean,output,color,high_p):
     fig, ax=plt.subplots()
