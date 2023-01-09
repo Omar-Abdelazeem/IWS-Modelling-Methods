@@ -251,7 +251,7 @@ def CVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,
     print("Selected File: ",name_only)
 
     # create network model from input file
-    network = wntr.network.WaterNetworkModel(path.split("/")[-1])
+    network = wntr.network.WaterNetworkModel(path)
 
     ## Extract Supply Duration from .inp file
     supply_duration=int(network.options.time.duration/60)    # in minutes
@@ -385,7 +385,7 @@ def PSVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90
     print("Selected File: ",name_only)
 
     # create network model from input file
-    network = wntr.network.WaterNetworkModel(path.split("/")[-1])
+    network = wntr.network.WaterNetworkModel(path)
 
     ## Extract Supply Duration from .inp file
     supply_duration=int(network.options.time.duration/60)    # in minutes
@@ -523,7 +523,7 @@ def FCV(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,sav
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(path.split("/")[-1])
+    network=wntr.network.WaterNetworkModel(path)
 
     # Iterates over the junction list in the Network object
     for valve in network.valves():
@@ -691,7 +691,7 @@ def PDA(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,sav
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(path.split("/")[-1])
+    network=wntr.network.WaterNetworkModel(path)
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -808,15 +808,13 @@ def PDA(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,sav
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
-def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,plots=True):
+def OutletOutfall(path:str,ran_before:bool,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,plots=True):
     """
     Executes an IWS EPA-SWMM file that uses the flow-restricted method Outlet-Outfall.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -846,11 +844,10 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
 
     simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
-    name_only=file[0:-4]
+    name_only=path.split('/')[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
-    sim=pyswmm.Simulation(inputfile=abs_path, outputfile=dir+name_only+".out")
+    sim=pyswmm.Simulation(inputfile=path, outputfile=path[0:-4]+".out")
 
     links=pyswmm.links.Links(sim)   #object containing links in the network model
     demand_links=[]                 # Empty list for storing link ids
@@ -878,7 +875,7 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
 
     if output=='S':
         # Reads the output file created above
-        with pyswmm.Output(dir+name_only+".out") as out:
+        with pyswmm.Output(path[0:-4]+".out") as out:
             # loops through each link in output file
             for link in out.links:
 
@@ -894,7 +891,7 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
                     timesrs_output.loc[:,link]=out.link_series(link,LinkAttribute.FLOW_RATE).values()
     elif output=='P':
         # Reads the output file created above
-        with pyswmm.Output(dir+name_only+".out") as out:
+        with pyswmm.Output(path[0:-4]+".out") as out:
             # loops through each link in output file
             for node in out.nodes:
 
@@ -933,7 +930,7 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     if output=='S':
         # Calculates the total demand volume in the specified supply cycle
         desired_volumes=[]
-        demand_rates=pd.read_csv(dir+name_only[0:-14]+"Demands.csv")
+        demand_rates=pd.read_csv(path[0:-4]+"_Demands.csv")
         demand_rates.set_index("ID",inplace=True)
 
         # Loop over each desired demand
@@ -972,19 +969,19 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     
     if plots:
         mpl.rcParams['figure.dpi'] = 450
@@ -1019,7 +1016,7 @@ def OutletOutfall(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
-def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,plots=True):
+def OutletStorage(path:str,ran_before:bool,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,plots=True):
     """
 
     Executes an IWS EPA-SWMM file that uses the volume-restricted method Outlet-Storage.
@@ -1027,9 +1024,7 @@ def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-
-    file (str): Filename with extension of origin file
+    path (str): path to input file. relative or full absolute path
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
     
@@ -1060,11 +1055,10 @@ def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
 
     simplefilter(action="ignore", category=pd.errors.PerformanceWarning)
-    name_only=file[0:-4]
+    name_only=path.split('/')[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
-    sim=pyswmm.Simulation(inputfile=abs_path, outputfile=dir+name_only+".out")
+    sim=pyswmm.Simulation(inputfile=path, outputfile=path[0:-4]+".out")
 
     nodes=pyswmm.nodes.Nodes(sim)
     tankids=[]
@@ -1090,7 +1084,7 @@ def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     swtch=True                   # switch variable for upcoming condition
 
     # Reads the output file created above
-    with pyswmm.Output(dir+name_only+".out") as out:
+    with pyswmm.Output(path[0:-4]+".out") as out:
         # loops through each node in output file
         for node in out.nodes:
 
@@ -1158,19 +1152,19 @@ def OutletStorage(dir:str,file:str,ran_before:bool,output:str='S',low_percentile
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     
     if plots:
         mpl.rcParams['figure.dpi'] = 450

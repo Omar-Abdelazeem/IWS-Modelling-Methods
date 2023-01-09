@@ -182,7 +182,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_CVRes(path:str,Hmin:float,Hdes:float):
@@ -355,7 +355,7 @@ def to_CVRes(path:str,Hmin:float,Hdes:float):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_FCVEM(path:str,Hmin:float,Hdes:float):
@@ -586,7 +586,7 @@ def to_FCVEM(path:str,Hmin:float,Hdes:float):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_FCVRes(path:str,Hmin:float,Hdes:float):
@@ -807,7 +807,7 @@ def to_FCVRes(path:str,Hmin:float,Hdes:float):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_PSVTank(path:str,Hmin:float,Hdes:float):
@@ -1051,7 +1051,7 @@ def to_PSVTank(path:str,Hmin:float,Hdes:float):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
@@ -1326,7 +1326,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
                 curves_type.append("Rating")
             else: curves_type.append(" ")
             curves_x.append(depth)
-            curves_y.append(demand*np.sqrt((depth-minimum_pressure)/(desired_pressure-minimum_pressure)))
+            curves_y.append(demand*np.sqrt((depth-Hmin)/(Hdes-Hmin)))
         curves_name.append(";")
         curves_type.append(" ")
         curves_x.append(" ")
@@ -1361,7 +1361,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
     dimensions_line=str(x_left)+" "+str(y_down)+" "+str(x_right)+" "+str(y_up)+"\n"
 
     # opens .inp file to read
-    file=open('Empty_SWMM_Template.inp','r')
+    file=__swmm_template__()
     lines=[]              # list to store all lines in the .inp file
     linecount=0           # Counter for the number of lines
     end_time=0
@@ -1407,7 +1407,6 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         # Store all lines in a list
         lines.append(line)
         linecount+=1
-    file.close()
 
     outfalls_marker+=len(junctions)
     storage_marker+=len(outfall_section)+len(junctions)
@@ -1438,8 +1437,8 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     demands=pd.DataFrame(zip(outlet_ids,desired_demands),columns=["ID","Demand"])
     demands.set_index("ID", inplace=True)
-    demands.to_csv(dir+name_only+"Demands.csv")
-    return dir+new_file_name
+    demands.to_csv(new_file_name[0:-4]+"_Demands.csv")
+    return new_file_name
 
 
 def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
@@ -1780,12 +1779,11 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     dimensions_line=str(x_left)+" "+str(y_down)+" "+str(x_right)+" "+str(y_up)+"\n"
 
     # opens .inp file to read
-    file=open('Empty_SWMM_Template.inp','r')
-    lines=[]              # list to store all lines in the .inp file
+    lines=__swmm_template__()
     linecount=0           # Counter for the number of lines
 
     # Loops over each line in the input file 
-    for line in file:
+    for line in lines:
         if re.search("^END_TIME",line):
             end_time=linecount
         if re.search("^DIMENSIONS",line):
@@ -1815,9 +1813,7 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
         if re.search('\[COORDINATES\]',line):
             coords_marker=linecount+3
         # Store all lines in a list
-        lines.append(line)
         linecount+=1
-    file.close()
 
     outfalls_marker+=len(junctions)
     storage_marker+=len(outfall_section)+len(junctions)
@@ -1844,9 +1840,9 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
     for line in lines:
-        file.write(line)    
+        file.write(line+'\n')    
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def change_duration(path:str,duration_hr:int,duration_min:int):
@@ -1937,7 +1933,7 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
         else: file.write(line)    
         c+=1
     file.close()
-    return dir+new_file_name
+    return new_file_name
 
 
 def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
@@ -1973,3 +1969,114 @@ def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     output_paths.append(to_Outlet_Storage(dir,file,Hmin,Hdes,del_x_max))
 
     return output_paths
+def __swmm_template__():
+    template='''
+[TITLE]
+;;Project Title/Notes
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           LPS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0
+ALLOW_PONDING        NO
+SKIP_STEADY_STATE    NO
+
+START_DATE           05/18/2022
+START_TIME           00:00:00
+REPORT_START_DATE    05/18/2022
+REPORT_START_TIME    00:00:00
+END_DATE             05/18/2022
+END_TIME             04:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             0
+REPORT_STEP          00:00:10
+WET_STEP             00:01:00
+DRY_STEP             00:01:00
+ROUTING_STEP         0:00:01
+RULE_STEP            00:00:00
+
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         0.00000001
+MAX_TRIALS           20
+HEAD_TOLERANCE       0.000005
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.1
+THREADS              4
+
+[FILES]
+;;Interfacing Files
+
+
+[EVAPORATION]
+;;Data Source    Parameters
+;;-------------- ----------------
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded
+;;-------------- ---------- ---------- ---------- ---------- ----------
+
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To
+;;-------------- ---------- ---------- ---------------- -------- ----------------
+
+
+[STORAGE]
+;;Name           Elev.    MaxDepth   InitDepth  Shape      Curve Name/Params            N/A      Fevap    Psi      Ksat     IMD
+;;-------------- -------- ---------- ----------- ---------- ---------------------------- -------- --------          -------- --------
+
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow
+;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
+
+
+[OUTLETS]
+;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated
+;;-------------- ---------------- ---------------- ---------- --------------- ---------------- ---------- --------
+
+
+[XSECTIONS]
+;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert
+;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
+
+
+[CURVES]
+;;Name           Type       X-Value    Y-Value
+;;-------------- ---------- ---------- ----------
+
+
+[REPORT]
+;;Reporting Options
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[TAGS]
+
+[MAP]
+DIMENSIONS 1649303.155 4942192.850 1656007.105 4948224.150
+Units      None
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord
+;;-------------- ------------------ ------------------
+
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord
+;;-------------- ------------------ ------------------
+    '''
+    template=template.split('\n')
+    return template

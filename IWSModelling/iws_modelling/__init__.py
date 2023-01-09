@@ -1,11 +1,11 @@
 """
 The IWSModelling Package contains two modules:
 
-Method_Convert
+Convert_Method
 --------------- 
 Contains methods for converting "normal" EPANET input files into EPANET and EPA-SWMM input files that model IWS in 7 other methods
 
-Run_Methods
+Run_Method
 ---------------
 Contains methods to run IWS EPANET and EPA-SWMM files of 8 different methods and process and format the results
 """
@@ -28,4 +28,4 @@ from .Run_Method import OutletOutfall
 from .Run_Method import OutletStorage
 
 
-__version__ = '0.0.3'
+__version__ = '0.0.8'
