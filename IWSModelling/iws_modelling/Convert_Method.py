@@ -1432,7 +1432,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
     for line in lines:
-        file.write(line)    
+        file.write(line+'\n')    
     file.close()
 
     demands=pd.DataFrame(zip(outlet_ids,desired_demands),columns=["ID","Demand"])
