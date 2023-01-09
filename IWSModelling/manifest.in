@@ -1,0 +1,2 @@
+include Example.py
+include Empty_SWMM_Template.inp

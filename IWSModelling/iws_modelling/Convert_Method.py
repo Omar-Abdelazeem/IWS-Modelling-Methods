@@ -16,9 +16,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
 
@@ -30,9 +28,12 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""
     print("Selected File: ",name_only)
-    abs_path=dir+file
     pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -45,7 +46,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
     ## MAYBE SAVE ALL NODE IDS IN DATAFRAME WITH ELEVATION AND BASE DEMAND AND THEN FILTER DATA FRAME LATER FOR DEMAND NODES ONLY
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
     assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET or edit the inp file to set demand model as PDA"
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -115,7 +116,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
     nodes=nodes.to_string(header=False,index=False).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -184,16 +185,14 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
     return dir+new_file_name
 
 
-def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
+def to_CVRes(path:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the unrestricted method CV-Reservoir (CV-Res)
 
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
 
@@ -203,11 +202,15 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     Returns: path of produced file. Saves produced file in same directory as input file
     """
 
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""
     print("Selected File: ",name_only)
-    abs_path=dir+file
+    pressure_diff=Hdes-Hmin 
 
     pressure_diff=Hdes-Hmin  
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -220,7 +223,7 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     ## MAYBE SAVE ALL NODE IDS IN DATAFRAME WITH ELEVATION AND BASE DEMAND AND THEN FILTER DATA FRAME LATER FOR DEMAND NODES ONLY
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
     assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
@@ -288,7 +291,7 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     nodes=nodes.to_string(header=False,index=False).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -355,15 +358,13 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     return dir+new_file_name
 
 
-def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
+def to_FCVEM(path:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the flow-restricted method FCV-Emitter (FCV-EM)
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
 
@@ -373,11 +374,14 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     Returns: path of produced file. Saves produced file in same directory as input file
     """
 
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""    
     print("Selected File: ",name_only)
-    abs_path=dir+file
     pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -390,7 +394,7 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     ## MAYBE SAVE ALL NODE IDS IN DATAFRAME WITH ELEVATION AND BASE DEMAND AND THEN FILTER DATA FRAME LATER FOR DEMAND NODES ONLY
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
     assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
@@ -501,7 +505,7 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     original_nodes=original_nodes.to_string(header=False,index=False,col_space=10).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -585,15 +589,13 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     return dir+new_file_name
 
 
-def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
+def to_FCVRes(path:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the flow-restricted method FCV-Reservoir (FCV-Res)
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
 
@@ -603,12 +605,15 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     Returns: path of produced file. Saves produced file in same directory as input file
     """
 
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""    
     print("Selected File: ",name_only)
-    abs_path=dir+file
-    pressure_diff=Hdes-Hmin
+    pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
@@ -619,7 +624,7 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     all_elevations=[]     # For storing elevations of all nodes
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
     assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
@@ -726,7 +731,7 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     original_nodes=original_nodes.to_string(header=False,index=False,col_space=10).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -805,15 +810,13 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     return dir+new_file_name
 
 
-def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
+def to_PSVTank(path:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the volume-restricted method PSV-Tank
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
 
@@ -823,12 +826,15 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     Returns: path of produced file. Saves produced file in same directory as input file
     """
 
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""    
     print("Selected File: ",name_only)
-    abs_path=dir+file
-    pressure_diff=Hdes-Hmin
+    pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
@@ -839,7 +845,7 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     all_elevations=[]     # For storing elevations of all nodes
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
     assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
@@ -969,7 +975,7 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     original_nodes=original_nodes.to_string(header=False,index=False,col_space=10).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -1048,15 +1054,13 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     return dir+new_file_name
 
 
-def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
+def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
     """
     Converts an EPANET Input file to an EPA-SWMM input file that uses a flow-restricted method (Outlet-Outfall)
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
@@ -1067,14 +1071,13 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Returns: path of produced file. Saves produced file in same directory as input file
     """
-
-
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
-
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""    
     print("Selected File: ",name_only)
-    abs_path=dir+file
-    pressure_diff=Hdes-Hmin
+    pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
@@ -1085,7 +1088,7 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     ## MAYBE SAVE ALL NODE IDS IN DATAFRAME WITH ELEVATION AND BASE DEMAND AND THEN FILTER DATA FRAME LATER FOR DEMAND NODES ONLY
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -1414,8 +1417,8 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     curves_marker+=len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
     coords_marker+=len(curves_section)+len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
 
-
-    file=open(dir+name_only+'Outlet-Outfall.inp','w')
+    new_file_name=dir+name_only+"_Outlet-Outfall.inp"
+    file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
     lines[junctions_marker:junctions_marker]=junctions_section
@@ -1436,18 +1439,16 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     demands=pd.DataFrame(zip(outlet_ids,desired_demands),columns=["ID","Demand"])
     demands.set_index("ID", inplace=True)
     demands.to_csv(dir+name_only+"Demands.csv")
-    return abs_path
+    return dir+new_file_name
 
 
-def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
+def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     """
     Converts an EPANET Input file to an EPA-SWMM input file that uses a volume-restricted method (Outlet-Storage)
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file. relative or full absolute path
 
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
@@ -1458,13 +1459,13 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Returns: path of produced file. Saves produced file in same directory as input file
     """
-
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
-
+    file=path.split("/")[-1]
     name_only=file[0:-4]
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""    
     print("Selected File: ",name_only)
-    abs_path=dir+file
-    pressure_diff=Hdes-Hmin
+    pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
@@ -1474,7 +1475,7 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     all_elevations=[]     # For storing elevations of all nodes
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -1827,7 +1828,8 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     coords_marker+=len(curves_section)+len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
 
 
-    file=open(dir+name_only+'Outlet-Storage.inp','w')
+    new_file_name=dir+name_only+"_Outlet-Storage.inp"
+    file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
     lines[junctions_marker:junctions_marker]=junctions_section
@@ -1844,35 +1846,39 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     for line in lines:
         file.write(line)    
     file.close()
-    return abs_path
+    return dir+new_file_name
 
 
-def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
+def change_duration(path:str,duration_hr:int,duration_min:int):
     """
     Converts an EPANET .inp file from one supply duration to another, scaling the desired demand accordingly
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
+    path (str): path to input file. relative or full absolute path
+
     duration_hr (int): New Supply Duration (HH)
+
     duration_min (int): New Supply Duration (MM)
 
-    Returns: None. Saves output file in same directory
+    Returns: path to produced file. Saves produced file in same directory
     """
 
     assert 0<=duration_hr<=24, 'Durations of 24 hours or more are not intermittent and thus not supported'
     assert 0<=duration_min<=59, 'Enter Valid Value for minutes 0-59'
 
+    file=path.split("/")[-1]
     name_only=file[0:-4]
-    print("Selected File: ",name_only)
-    abs_path=dir+file    
+    if len(path.split("/"))>1:
+        dir=path.rsplit("/",1)[0]+"/"
+    else:dir=""
+    print("Selected File: ",name_only)  
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
     elevations=[]
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path)
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -1896,7 +1902,7 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
     node_section=node_section.to_string(header=False,index=False,col_space=10).splitlines()
 
     # opens .inp file to read
-    file=open(abs_path,'r')
+    file=open(path,'r')
     lines=[]            # list to store all lines in the .inp file
     linecount=0         # Counter for the number of lines
     junctions_marker=0  # To store the line number at which the junctions section starts
@@ -1920,7 +1926,8 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
 
     print(lines[supply_duration_line])
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+"_"+str(duration_hr)+"hr.inp",'w')
+    new_file_name=dir+name_only+"_"+str(duration_hr)+"hr.inp"
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -1930,4 +1937,39 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
         else: file.write(line)    
         c+=1
     file.close()
-    return abs_path
+    return dir+new_file_name
+
+
+def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
+    '''
+    converts a PDA .inp file to all 7 other methods
+
+    Parameters
+    -----------
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
+    Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
+    del_x_max (float): Maximum pipe length used for discretizing larger pipes. 
+    Input arbitrarily high value for no discretization
+
+    Returns: list of paths of produced files. Saves produced file sin same directory as input file
+    '''
+
+
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert del_x_max>0, "Delta x must be a positive number"
+    output_paths=[]
+    output_paths.append(to_CVRes(dir,file,Hmin,Hdes))
+    output_paths.append(to_CVTank(dir,file,Hmin,Hdes))
+    output_paths.append(to_FCVEM(dir,file,Hmin,Hdes))
+    output_paths.append(to_FCVRes(dir,file,Hmin,Hdes))
+    output_paths.append(to_PSVTank(dir,file,Hmin,Hdes))
+    output_paths.append(to_Outlet_Outfall(dir,file,Hmin,Hdes,del_x_max))
+    output_paths.append(to_Outlet_Storage(dir,file,Hmin,Hdes,del_x_max))
+
+    return output_paths

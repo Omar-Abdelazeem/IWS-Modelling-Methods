@@ -18,6 +18,7 @@ from .Convert_Method import to_Outlet_Outfall
 from .Convert_Method import to_Outlet_Storage
 from .Convert_Method import to_PSVTank
 from .Convert_Method import change_duration
+from .Convert_Method import to_all
 
 from .Run_Method import CVRes
 from .Run_Method import CVTank
