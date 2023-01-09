@@ -19,19 +19,13 @@ from swmm.toolkit.shared_enum import LinkAttribute,NodeAttribute
 from warnings import simplefilter
 import datetime
 
-def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
+def CVRes(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
     """
     Executes an IWS EPANET file that uses the unrestricted method CV-Res.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
-
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
-
-    Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+    path (str): path to input file (relative, but will handle full absolute paths)
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -62,15 +56,15 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
     assert 0 < low_percentile <100, "Percentile must be between 0 and 100"
     assert 0 < high_percentile <100, "Percentile must be between 0 and 100"
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
-    assert 0<=Hmin<=Hdes, "Hdes must be higher than Hmin and both must be >= 0"
     assert n_iterations>0, "Specify a positive integer"
 
-    name_only=file[0:-4]
+    name_only=path.split("/")[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
     # create network model from input file
-    network = wntr.network.WaterNetworkModel(abs_path)
+    network = wntr.network.WaterNetworkModel(path)
+    Hmin=network.options.hydraulic.minimum_pressure
+    Hdes=network.options.hydraulic.required_pressure
 
     demand_links=[]        #list of pipes connected to demand nodes only
     lengths=[]
@@ -99,7 +93,7 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
     results=sim.run_sim()
 
     if time_execution:
-        __time_simulation__(abs_path,n_iterations)
+        __time_simulation__(path,n_iterations)
 
     timesrs_output=pd.DataFrame()
 
@@ -167,20 +161,20 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
-    
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
+
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -213,15 +207,13 @@ def CVRes(dir:str,file:str,Hmin:float,Hdes:float,output:str='S',low_percentile:i
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
             
-def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
+def CVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
     """
     Executes an IWS EPANET file that uses the volume-restricted method CV-Res.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file (relative, but will handle full absolute paths) 
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -255,12 +247,11 @@ def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
     assert n_iterations>0, "Specify a positive integer"
 
-    name_only=file[0:-4]
+    name_only=path.split("/")[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
     # create network model from input file
-    network = wntr.network.WaterNetworkModel(abs_path)
+    network = wntr.network.WaterNetworkModel(path.split("/")[-1])
 
     ## Extract Supply Duration from .inp file
     supply_duration=int(network.options.time.duration/60)    # in minutes
@@ -271,7 +262,7 @@ def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile
     results=sim.run_sim()
 
     if time_execution:
-        __time_simulation__(abs_path,n_iterations)
+        __time_simulation__(path,n_iterations)
     
     timesrs_output=pd.DataFrame()
     timesrs_output[0]=results.node['pressure'].loc[0,:]
@@ -305,19 +296,19 @@ def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -350,15 +341,13 @@ def CVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
-def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots:bool=True):
+def PSVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots:bool=True):
     """
     Executes an IWS EPANET file that uses the volume-restricted method PSV-Res.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file (relative, but will handle full absolute paths)
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -392,12 +381,11 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
     assert n_iterations>0, "Specify a positive integer"
 
-    name_only=file[0:-4]
+    name_only=path.split("/")[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
     # create network model from input file
-    network = wntr.network.WaterNetworkModel(abs_path)
+    network = wntr.network.WaterNetworkModel(path.split("/")[-1])
 
     ## Extract Supply Duration from .inp file
     supply_duration=int(network.options.time.duration/60)    # in minutes
@@ -408,7 +396,7 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
     results=sim.run_sim()
 
     if time_execution:
-        __time_simulation__(abs_path,n_iterations)
+        __time_simulation__(path,n_iterations)
     
     timesrs_output=pd.DataFrame()
     timesrs_output[0]=results.node['pressure'].loc[0,:]
@@ -444,19 +432,19 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -489,15 +477,13 @@ def PSVTank(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentil
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
-def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
+def FCV(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
     """
     Executes an IWS EPANET file that uses the flow-restricted methods FCV-Res & FCV-EM.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file (relative, but will handle full absolute paths)
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -530,15 +516,14 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
     assert n_iterations>0, "Specify a positive integer"
 
-    name_only=file[0:-4]
+    name_only=path.split("/")[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
     demand_valves=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path.split("/")[-1])
 
     # Iterates over the junction list in the Network object
     for valve in network.valves():
@@ -558,7 +543,7 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     results=sim.run_sim()
 
     if time_execution:
-        __time_simulation__(abs_path,n_iterations)
+        __time_simulation__(path,n_iterations)
 
     timesrs_output=pd.DataFrame()
     timesrs_output[0]=results.link['flowrate'].loc[0,:]
@@ -615,19 +600,19 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -660,15 +645,13 @@ def FCV(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     return timesrs_processed,mean,low_percentile_series,high_percentile_series
 
 
-def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
+def PDA(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,save_outputs:bool=True,time_execution:bool=False,n_iterations:int=100,plots=True):
     """
     Executes an IWS EPANET file that uses the flow-restricted method EPANET-PDA.
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located  
-
-    file (str): Filename with extension of origin file  
+    path (str): path to input file (relative, but will handle full absolute paths) 
 
     output (str): specify output to process. Default: Satisfaction Ratio. Other supported outputs include 'P' for Pressure  
 
@@ -701,15 +684,14 @@ def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     assert output in ['S','P'], "Specify Supported Output Type: S for Satisfaction or P for Pressures"
     assert n_iterations>0, "Specify a positive integer"
 
-    name_only=file[0:-4]
+    name_only=path.split("/")[-1][0:-4]
     print("Selected File: ",name_only)
-    abs_path=dir+file
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(abs_path)
+    network=wntr.network.WaterNetworkModel(path.split("/")[-1])
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -729,7 +711,7 @@ def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     results=sim.run_sim()
 
     if time_execution:
-        __time_simulation__(abs_path,n_iterations)
+        __time_simulation__(path,n_iterations)
 
     timesrs_output=pd.DataFrame()
     if output=='S':
@@ -781,19 +763,19 @@ def PDA(dir:str,file:str,output:str='S',low_percentile:int=10,high_percentile:in
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(dir+name_only+"_TimeSeries.csv")
+        timesrs_processed.to_csv(path[0:-4]+"_TimeSeries.csv")
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(dir+name_only+"_Means.csv")
+        mean.to_csv(path[0:-4]+"_Means.csv")
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(dir+name_only+"_Medians.csv")
+        median.to_csv(path[0:-4]+"_Medians.csv")
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(dir+name_only+"_"+str(low_percentile)+"thPercentile.csv")
+        low_percentile_series.to_csv(path[0:-4]+"_"+str(low_percentile)+"thPercentile.csv")
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(dir+name_only+"_"+str(high_percentile)+"thPercentile.csv")
+        high_percentile_series.to_csv(path[0:-4]+"_"+str(high_percentile)+"thPercentile.csv")
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',

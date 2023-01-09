@@ -10,23 +10,27 @@ import pandas as pd
 import re
 import math
 
-def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
+def to_CVTank(path:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the volume-restricted method CV-Tank
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
-    Returns: None. Saves output file in same directory
+
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
 
-    assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
+    assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin 
@@ -42,7 +46,7 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(abs_path)
-
+    assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET or edit the inp file to set demand model as PDA"
     # Iterates over the junction list in the Network object
     for node in network.junctions():
         all_nodes.append(node[1].name)
@@ -55,7 +59,6 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
             elevations.append(node[1].elevation)
             xcoordinates.append(node[1].coordinates[0])
             ycoordinates.append(node[1].coordinates[1])
-
 
 
     # Get the supply duration in minutes (/60) as an integer
@@ -119,6 +122,7 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
     tanks_marker=0      # To store the line number at which the tanks section starts
     pipes_marker=0      # To store the line number at which the pumps section starts
     coords_marker=0     # To store the line number at which the vertices section starts
+    demand_model=0  # To detect demand model line
 
     # Loops over each line in the input file 
     for line in file:
@@ -134,6 +138,8 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
         # Record the position of the phrase [Vertices] and subtract 1 to add Tank cooridnates to the end of the coordinates section
         if re.search('\[VERTICES\]',line):
             coords_marker=linecount-1
+        if re.search('Demand Model',line):
+            demand_model=linecount
         linecount+=1
         # Store all lines in a list
         lines.append(line)
@@ -145,13 +151,19 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
     coords_marker+=len(tanks_section)+len(pipes_addendum)
 
     # Inserts the created sections in their appropriate location in the list of lines
+    if demand_model:
+        lines[demand_model+1]=" Minimum Pressure   "+str(Hmin)
+        lines[demand_model+2]=" Required Pressure  "+str(Hdes)
+        demand_model+=len(pipes_addendum)+len(tanks_section)
+
     lines[junctions_marker:junctions_marker+len(nodes)]=nodes
     lines[tanks_marker:tanks_marker]=tanks_section
     lines[pipes_marker:pipes_marker]=pipes_addendum
     lines[coords_marker:coords_marker]=coordinates_add
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+'CV-Tank.inp','w')
+    new_file_name=dir+name_only+'_CV-Tank.inp'
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -164,28 +176,36 @@ def to_CVTank(dir:str,file:str,Hmin:float,Hdes:float):
             file.write(line+'\n')
         elif c>=coords_marker and c<=coords_marker+len(coordinates_add):
             file.write(line+'\n')
+        elif c>=demand_model and c<=demand_model+2:
+            file.write(line+'\n')
         else: file.write(line)    
         c+=1
     file.close()
+    return dir+new_file_name
 
 
 def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     """
     Converts an EPANET Input file to an EPANET input file that uses the unrestricted method CV-Reservoir (CV-Res)
 
+
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
-    Returns: None. Saves output file in same directory
-    """    
+
+    Returns: path of produced file. Saves produced file in same directory as input file
+    """
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
 
@@ -201,6 +221,7 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(abs_path)
+    assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -289,6 +310,8 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
         # Record the position of the phrase [Vertices] and subtract 1 to add Tank cooridnates to the end of the coordinates section
         if re.search('\[VERTICES\]',line):
             coords_marker=linecount-1
+        if re.search('Demand Model',line):
+            demand_model=linecount
         linecount+=1
         # Store all lines in a list
         lines.append(line)
@@ -300,13 +323,18 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
     coords_marker+=len(added_reservoirs)+len(added_pipes)
 
     # Inserts the created sections in their appropriate location in the list of lines
+    if demand_model:
+        lines[demand_model+1]=" Minimum Pressure   "+str(Hmin)
+        lines[demand_model+2]=" Required Pressure  "+str(Hdes)
+        demand_model+=len(added_reservoirs)+len(added_pipes)
     lines[junctions_marker:junctions_marker+len(nodes)]=nodes
     lines[reservoirs_marker:reservoirs_marker]=added_reservoirs
     lines[pipes_marker:pipes_marker]=added_pipes
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+'CV-Res.inp','w')
+    new_file_name=dir+name_only+'_CV-Res.inp'
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -319,9 +347,12 @@ def to_CVRes(dir:str,file:str,Hmin:float,Hdes:float):
             file.write(line+'\n')
         elif c>=coords_marker and c<=coords_marker+len(added_coordinates):
             file.write(line+'\n')
+        elif c>=demand_model and c<=demand_model+2:
+            file.write(line+'\n')
         else: file.write(line)    
         c+=1
     file.close()
+    return dir+new_file_name
 
 
 def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
@@ -330,17 +361,21 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
-    Returns: None. Saves output file in same directory
+
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin 
@@ -356,6 +391,7 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(abs_path)
+    assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -494,6 +530,8 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
             coords_marker=linecount-1
         if re.search('Emitter Exponent',line):
             exponent_line=linecount
+        if re.search('Demand Model',line):
+            demand_model=linecount
         linecount+=1
         # Store all lines in a list
         lines.append(line)
@@ -510,6 +548,10 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     coords_marker+=len(added_emitters)+len(added_pipes)+len(added_valves)+len(added_nodes)
 
     # Inserts the created sections in their appropriate location in the list of lines
+    if demand_model:
+        lines[demand_model+1]=" Minimum Pressure   "+str(Hmin)
+        lines[demand_model+2]=" Required Pressure  "+str(Hdes)
+        demand_model+=len(added_nodes)+len(added_pipes)+len(added_valves)+len(added_emitters)
     lines[exponent_line]="Emitter Exponent      0.5000\n"
     lines[junctions_marker:junctions_marker+len(original_nodes)]=original_nodes
     lines[junctions_marker+len(original_nodes):junctions_marker+len(original_nodes)]=added_nodes
@@ -519,7 +561,8 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+'FCV-EM.inp','w')
+    new_file_name=dir+name_only+'_FCV-EM.inp'
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -534,9 +577,12 @@ def to_FCVEM(dir:str,file:str,Hmin:float,Hdes:float):
             file.write(line+'\n')
         elif c>=coords_marker and c<=coords_marker+len(added_coordinates):
             file.write(line+'\n')
+        elif c>=demand_model and c<=demand_model+2:
+            file.write(line+'\n')
         else: file.write(line)    
         c+=1
     file.close()
+    return dir+new_file_name
 
 
 def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
@@ -545,17 +591,21 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
-    Returns: None. Saves output file in same directory
+
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin
@@ -570,6 +620,7 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(abs_path)
+    assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -590,7 +641,7 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     # Adds "AR" to each demand node id to be used as ID for AR
     reservoirids=["AR"+str(id) for id in demand_nodes]
     # Calculates the elevation of the AR
-    reservoir_elevs=[elevation + minimum_pressure for elevation in elevations ]
+    reservoir_elevs=[elevation + Hmin for elevation in elevations ]
     # No Patterns are assigned to any of the ARs
     reservoir_patterns=["    "]*len(reservoirids)
     # Semicolons to end each line
@@ -701,6 +752,8 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
         # Record the position of the phrase [Vertices] and subtract 1 to add Tank cooridnates to the end of the coordinates section
         if re.search('\[VERTICES\]',line):
             coords_marker=linecount-1
+        if re.search('Demand Model',line):
+            demand_model=linecount
         linecount+=1
         # Store all lines in a list
         lines.append(line)
@@ -716,6 +769,10 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     coords_marker+=len(added_reservoirs)+len(added_pipes)+len(added_valves)+len(added_nodes)
 
     # Inserts the created sections in their appropriate location in the list of lines
+    if demand_model:
+        lines[demand_model+1]=" Minimum Pressure   "+str(Hmin)
+        lines[demand_model+2]=" Required Pressure  "+str(Hdes)
+        demand_model+=len(added_nodes)+len(added_pipes)+len(added_valves)+len(added_reservoirs)
     lines[junctions_marker:junctions_marker+len(original_nodes)]=original_nodes
     lines[junctions_marker+len(original_nodes):junctions_marker+len(original_nodes)]=added_nodes
     lines[reservoirs_marker:reservoirs_marker]=added_reservoirs
@@ -724,7 +781,8 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+'FCV-Res.inp','w')
+    new_file_name=dir+name_only+'_FCV-Res.inp'
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -739,9 +797,12 @@ def to_FCVRes(dir:str,file:str,Hmin:float,Hdes:float):
             file.write(line+'\n')
         elif c>=coords_marker and c<=coords_marker+len(added_coordinates):
             file.write(line+'\n')
+        elif c>=demand_model and c<=demand_model+2:
+            file.write(line+'\n')
         else: file.write(line)    
         c+=1
     file.close()
+    return dir+new_file_name
 
 
 def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
@@ -750,17 +811,21 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
-    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
+    Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)  
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
 
-    Returns: None. Saves output file in same directory
+
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin
@@ -775,6 +840,7 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(abs_path)
+    assert network.options.hydraulic.demand_model=='PDA', "Please use EPANET to set demand model as PDA"
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -929,6 +995,8 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
         # Record the position of the phrase [Vertices] and subtract 1 to add Tank cooridnates to the end of the coordinates section
         if re.search('\[VERTICES\]',line):
             coords_marker=linecount-1
+        if re.search('Demand Model',line):
+            demand_model=linecount
         linecount+=1
         # Store all lines in a list
         lines.append(line)
@@ -944,6 +1012,10 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     coords_marker+=len(added_tanks)+len(added_pipes)+len(added_valves)+len(added_nodes)
 
     # Inserts the created sections in their appropriate location in the list of lines
+    if demand_model:
+        lines[demand_model+1]=" Minimum Pressure   "+str(Hmin)
+        lines[demand_model+2]=" Required Pressure  "+str(Hdes)
+        demand_model+=len(added_nodes)+len(added_pipes)+len(added_valves)+len(added_tanks)
     lines[junctions_marker:junctions_marker+len(original_nodes)]=original_nodes
     lines[junctions_marker+len(original_nodes):junctions_marker+len(original_nodes)]=added_nodes
     lines[tanks_marker:tanks_marker]=added_tanks
@@ -952,7 +1024,8 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+'PSV-Tank.inp','w')
+    new_file_name=dir+name_only+'_PSV-Tank.inp'
+    file=open(new_file_name,'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -967,9 +1040,12 @@ def to_PSVTank(dir:str,file:str,Hmin:float,Hdes:float):
             file.write(line+'\n')
         elif c>=coords_marker and c<=coords_marker+len(added_coordinates):
             file.write(line+'\n')
+        elif c>=demand_model and c<=demand_model+2:
+            file.write(line+'\n')
         else: file.write(line)    
         c+=1
     file.close()
+    return dir+new_file_name
 
 
 def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
@@ -978,19 +1054,24 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
     del_x_max (float): Maximum pipe length used for discretizing larger pipes. 
     Input arbitrarily high value for no discretization
 
-    Returns: None. Saves output file in same directory
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
+
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin
@@ -1277,7 +1358,7 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     dimensions_line=str(x_left)+" "+str(y_down)+" "+str(x_right)+" "+str(y_up)+"\n"
 
     # opens .inp file to read
-    file=open('/Users/omaraliamer/Desktop/UofT/Publications/How to Model IWS/Github/IWS-Modelling-Methods-Repo/Network-Files/Empty_SWMM_Template.inp','r')
+    file=open('Empty_SWMM_Template.inp','r')
     lines=[]              # list to store all lines in the .inp file
     linecount=0           # Counter for the number of lines
     end_time=0
@@ -1355,6 +1436,7 @@ def to_Outlet_Outfall(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     demands=pd.DataFrame(zip(outlet_ids,desired_demands),columns=["ID","Demand"])
     demands.set_index("ID", inplace=True)
     demands.to_csv(dir+name_only+"Demands.csv")
+    return abs_path
 
 
 def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
@@ -1363,19 +1445,23 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Parameters
     -----------
-    dir (str): Directory in which origin file is located
-    file (str): Filename with extension of origin file
+    dir (str): Directory in which origin file is located  
+
+    file (str): Filename with extension of origin file  
+
     Hmin (float): Value of the minimum pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
     Hdes (float): Value of the desired pressure Hmin used for Pressure-Dependent Analysis (PDA)
+
     del_x_max (float): Maximum pipe length used for discretizing larger pipes. 
     Input arbitrarily high value for no discretization
 
-    Returns: None. Saves output file in same directory
+    Returns: path of produced file. Saves produced file in same directory as input file
     """
 
     assert Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    name_only=file[0:-7]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file
     pressure_diff=Hdes-Hmin
@@ -1693,7 +1779,7 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     dimensions_line=str(x_left)+" "+str(y_down)+" "+str(x_right)+" "+str(y_up)+"\n"
 
     # opens .inp file to read
-    file=open('/Users/omaraliamer/Desktop/UofT/Publications/How to Model IWS/Github/IWS-Modelling-Methods-Repo/Network-Files/Empty_SWMM_Template.inp','r')
+    file=open('Empty_SWMM_Template.inp','r')
     lines=[]              # list to store all lines in the .inp file
     linecount=0           # Counter for the number of lines
 
@@ -1741,7 +1827,7 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     coords_marker+=len(curves_section)+len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
 
 
-    file=open(directory+name_only+'Outlet-Storage.inp','w')
+    file=open(dir+name_only+'Outlet-Storage.inp','w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
     lines[junctions_marker:junctions_marker]=junctions_section
@@ -1758,6 +1844,7 @@ def to_Outlet_Storage(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     for line in lines:
         file.write(line)    
     file.close()
+    return abs_path
 
 
 def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
@@ -1777,7 +1864,7 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
     assert 0<=duration_hr<=24, 'Durations of 24 hours or more are not intermittent and thus not supported'
     assert 0<=duration_min<=59, 'Enter Valid Value for minutes 0-59'
 
-    name_only=file[0:9]
+    name_only=file[0:-4]
     print("Selected File: ",name_only)
     abs_path=dir+file    
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -1833,7 +1920,7 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
 
     print(lines[supply_duration_line])
     # Opens a new file in the same directory to write the modified network .inp file in
-    file=open(dir+name_only+str(duration_hr)+"hr"+'_PDA.inp','w')
+    file=open(dir+name_only+"_"+str(duration_hr)+"hr.inp",'w')
     c=0     #line counter
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -1843,3 +1930,4 @@ def change_duration(dir:str,file:str,duration_hr:int,duration_min:int):
         else: file.write(line)    
         c+=1
     file.close()
+    return abs_path

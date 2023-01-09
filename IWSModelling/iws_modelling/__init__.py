@@ -15,6 +15,7 @@ from .Convert_Method import to_CVTank
 from .Convert_Method import to_FCVEM
 from .Convert_Method import to_FCVRes
 from .Convert_Method import to_Outlet_Outfall
+from .Convert_Method import to_Outlet_Storage
 from .Convert_Method import to_PSVTank
 from .Convert_Method import change_duration
 
@@ -26,4 +27,4 @@ from .Run_Method import OutletOutfall
 from .Run_Method import OutletStorage
 
 
-__version__ = '0.1'
+__version__ = '0.0.3'
