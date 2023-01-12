@@ -18,6 +18,19 @@ The notebooks in this repository use the following packages, make sure that thes
 **Network Files** Contains all the EPANET and EPA-SWMM .inp files for the 3 networks, with 8 methods each, using 2 supply durations each (48 total files)  
 **Reproducing-Figures-Tables** Contains scripts used to generate the figures in the paper
   
+## IWSModelling  
+In this directory, you'll the python package iws_modelling, a README file with information on the package, as well as some examples on using the package.  
+The package's functions perform the same tasks as the notebooks in Conversion-Files and Running-Methods but in a more direct, regular-use-friendly way.  
+Thus if you're just using our code to model IWS without getting into the details of how it does so, use the package.  
+If you want to **understand or review the specifics of our assumptions, methods and implementation**, each notebook in Running-Methods and Conversion-Files does so step by step!  
+NOTE: The core code used in both iws_modelling and the notebooks is almost identical!
+
+  
+## Running Methods:
+This folder contains notebooks for each of the eight methods compared in this study. It also generates files containing the processed results of each run which were used to generate the figures in this study.  
+EPA-SWMM files take longer to run and their output files are sizeable (.out files can be on the order of 100s of MBs) (on the order of tens of minutes depending on the machine you're using), EPANET files are rather speedy  
+Auxiliary files included in this folder labelled "_Pressures" process the output into pressure values rather than satisfaction ratio. These files were used to generate the results used in Figure S-6.  
+  
 ### Naming Convention  
 Network Input and Output files are named using standardised fragments. Each notebook (Running, Conversion or Figure) is internally consistent, i.e., it will still work fine with files not named according to convention. However, we encourage the use of the naming convention since it matches the notebook names and thus will reduce chance of using the wrong notebook.  
   
@@ -60,11 +73,6 @@ Result types are only added to result files
 **Network1_4hr_CV-Tank.inp** is an input file using EPANET IWS method CV-Tank running in Network 1 for 4 hours of supply per day  
 **Network2_12hr_Outlet-Outfall_Means.csv** is a results file containing a time series of the satisfaction ratio in Network 2 when supplied for 12 hours a day modelled using the SWMM IWS method Outlet-Outfall  
   
-## Running Methods:
-This folder contains notebooks for each of the eight methods compared in this study. It also generates files containing the processed results of each run which were used to generate the figures in this study.  
-EPA-SWMM files take longer to run and their output files are sizeable (.out files can be on the order of 100s of MBs) (on the order of tens of minutes depending on the machine you're using), EPANET files are rather speedy  
-Auxiliary files included in this folder labelled "_Pressures" process the output into pressure values rather than satisfaction ratio. These files were used to generate the results used in Figure S-6.  
-  
 ## Conversion Files:
 This folder contains notebooks that convert a Vanilla EPANET file with demands assigned to their original demand nodes (with the analysis option selected as PDA)  
 to any of the 6 EPANET methods and the 2 SWMM methods in this study. We ran these files for you and generated all input files used for this study, (48 Total files: 8 methods x 3 networks x 2 supply durations), so to reproduce the results in this study, there is no need to run these again, but feel absolutely free to do so!  
@@ -78,7 +86,11 @@ This folder also contains some helper files needed to migrate some information b
   
 ## Reprouducing-Figures-Tables:
 This folder contains notebooks that reproduce Figures 2, 4, and 5 as well as Table S-5  
-To be able to run these notebooks and reproduce the figures, first run each method file for both supply durations. These files will automatically generate files for the results. The following is a description of the folder's content:  
+To be able to run these notebooks and reproduce the figures, first run each method file for both supply durations. To facilitate this tedious task, use the Quick_Start.py script.  
+Quick_Start.py runs all of the 48 input files in our study automatically, producing all the files and data required to reproduce the figures using the scripts in this directory  
+The script uses the iws_modelling package and thus to use it either install the package to your working environment using pip, use the source distribution we provided in the IWSModelling directory, or import it from its directory using the appropriate path.  
+
+The following is a description of the folder's content:  
   
 **Figure2.ipynb** reproduces Figure 2 - mean satisfction ratio using EPANET methods -of the main text by default. It can also create its corresponding supplementary figures S-4 and S-5 by following the instructions in the notebook. It can also be repurposed to create similar figures using any "_Means.csv" file.  
   
