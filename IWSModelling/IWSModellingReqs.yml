@@ -18,7 +18,7 @@ dependencies:
   - tzdata=2022g=h04d1e81_0
   - wheel=0.37.1=pyhd3eb1b0_0
   - xz=5.2.8=h6c40b1e_0
-  - zlib=1.2.13=h4dc903c_0
+  - zlib=1.2.13=h4dc903c_0 
   - pip:
       - aenum==3.1.11
       - contourpy==1.0.6
