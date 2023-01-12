@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "iws_modelling"
-version = "0.0.8"
+version = "1.0.0"
 authors = [
   { name="Omar Abdelazeem", email="o.abdelazeem@mail.utoronto.ca" },{ name="David Meyer", email="david.meyer@utoronto.ca"},
 ]

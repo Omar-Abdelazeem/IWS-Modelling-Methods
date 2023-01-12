@@ -8,3 +8,10 @@ displayed, plotted or processed within the same script
 
 [0.0.9]
 - Bug fixes
+
+[1.0.0]
+First Major Release!
+- Convert_Method converts vanilla EPANET files into any of the IWS methods in the literature based on minimum and desired pressure inputs.
+ Also converts from one assumed supply duration to another.
+- Run_Method executes and processes IWS EPANET or EPA-SWMM input files created by Convert_Method functions. Options for processing the output based on demand satisfaction or pressures.
+Options for plotting, timing the execution and saving outputs in csv format
