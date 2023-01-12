@@ -7,5 +7,4 @@ displayed, plotted or processed within the same script
 - bug fixes
 
 [0.0.9]
-- path input to all functions can now be a list of string paths for bulk processing. Not recommended for SWMM methods, will take a long time to execute
-- added keyword argument to all Run_Method functions that does the conversion as well
+- Bug fixes
