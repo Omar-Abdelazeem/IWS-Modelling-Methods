@@ -1,0 +1,11 @@
+[0.0.8]
+- Input change for all functions from directory and file names to paths
+- Convert_Method functions now return the path of the converted file to allow for chaining operations by nesting functions, e.g., 
+change duration and then convert: to_CVTank(change_duration(path,duration),Hmin,Hdes)
+-Run_Method functions's return now unpacks into time series, mean, low percentile and high percentile. Results from these files can now be
+displayed, plotted or processed within the same script
+- bug fixes
+
+[0.0.9]
+- path input to all functions can now be a list of string paths for bulk processing. Not recommended for SWMM methods, will take a long time to execute
+- added keyword argument to all Run_Method functions that does the conversion as well

@@ -35,6 +35,7 @@ this module contains python functions for converting a "normal" EPANET file into
 **to_FCVEM** converts to a flow-restricted FCV-EM EPANET input file  
 **to_Outlet_Outfall** converts to a flow-restricted Outlet-Outfall EPA-SWMM input file (models the filling phase)  
 **to_Outlet_Storage** converts to a volume-restricted Outlet-Storage EPA-SWMM input file (models the filling phase)  
+**to_all** converts to all 7 methods
   
 ### Run_Method:  
 this module contains python functions for executing and processing IWS EPANET and EPA-SWMM input files:  

@@ -1,2 +1,2 @@
-include Example.py
-include Empty_SWMM_Template.inp
+include **/**/Empty_SWMM_Template.inp
+include **/**/Network1.inp

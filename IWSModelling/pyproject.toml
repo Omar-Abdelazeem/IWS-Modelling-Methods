@@ -21,3 +21,6 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/Omar-Abdelazeem/IWS-Modelling-Methods-Repo"
+
+[tool.setuptools]
+include-package-data=true

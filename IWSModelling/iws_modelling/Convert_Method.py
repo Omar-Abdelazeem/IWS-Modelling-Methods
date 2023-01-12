@@ -1,14 +1,11 @@
-global wntr
-global np
-global pd
-global re 
-global math
+global wntr,np,pd,re,math
 
 import wntr
 import numpy as np 
 import pandas as pd
 import re
-import math
+import math 
+
 
 def to_CVTank(path:str,Hmin:float,Hdes:float):
     """
@@ -1969,6 +1966,7 @@ def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     output_paths.append(to_Outlet_Storage(dir,file,Hmin,Hdes,del_x_max))
 
     return output_paths
+
 def __swmm_template__():
     template='''
 [TITLE]
