@@ -15,3 +15,6 @@ First Major Release!
  Also converts from one assumed supply duration to another.
 - Run_Method executes and processes IWS EPANET or EPA-SWMM input files created by Convert_Method functions. Options for processing the output based on demand satisfaction or pressures.
 Options for plotting, timing the execution and saving outputs in csv format
+
+[1.0.1]
+- Optimizations and bug fixes in writing SWMM files

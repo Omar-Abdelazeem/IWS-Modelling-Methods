@@ -1405,26 +1405,18 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         lines.append(line)
         linecount+=1
 
-    outfalls_marker+=len(junctions)
-    storage_marker+=len(outfall_section)+len(junctions)
-    conduits_marker+=len(storage_section)+len(outfall_section)+len(junctions)
-    outlets_marker+=len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    xsections_marker+=len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    curves_marker+=len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    coords_marker+=len(curves_section)+len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-
     new_file_name=dir+name_only+"_Outlet-Outfall.inp"
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
-    lines[junctions_marker:junctions_marker]=junctions_section
-    lines[outfalls_marker:outfalls_marker]=outfall_section
-    lines[storage_marker:storage_marker]=storage_section
-    lines[conduits_marker:conduits_marker]=conduits_section
-    lines[outlets_marker:outlets_marker]=outlet_section
-    lines[xsections_marker:xsections_marker]=xsections_section
-    lines[curves_marker:curves_marker]=curves_section
     lines[coords_marker:coords_marker]=coordinate_section
+    lines[curves_marker:curves_marker]=curves_section
+    lines[xsections_marker:xsections_marker]=xsections_section
+    lines[outlets_marker:outlets_marker]=outlet_section
+    lines[conduits_marker:conduits_marker]=conduits_section
+    lines[storage_marker:storage_marker]=storage_section
+    lines[outfalls_marker:outfalls_marker]=outfall_section
+    lines[junctions_marker:junctions_marker]=junctions_section
 
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
@@ -1812,28 +1804,20 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
         # Store all lines in a list
         linecount+=1
 
-    outfalls_marker+=len(junctions)
-    storage_marker+=len(outfall_section)+len(junctions)
-    conduits_marker+=len(storage_section)+len(outfall_section)+len(junctions)
-    outlets_marker+=len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    xsections_marker+=len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    curves_marker+=len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-    coords_marker+=len(curves_section)+len(xsections_section)+len(outlet_section)+len(conduits_section)+len(storage_section)+len(outfall_section)+len(junctions)
-
 
     new_file_name=dir+name_only+"_Outlet-Storage.inp"
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
-    lines[junctions_marker:junctions_marker]=junctions_section
-    lines[outfalls_marker:outfalls_marker]=outfall_section
-    lines[storage_marker:storage_marker]=storage_section
-    lines[conduits_marker:conduits_marker]=conduits_section
-    lines[outlets_marker:outlets_marker]=outlet_section
-    lines[xsections_marker:xsections_marker]=xsections_section
-    lines[curves_marker:curves_marker]=curves_section
-    lines[coords_marker:coords_marker]=coordinate_section
 
+    lines[coords_marker:coords_marker]=coordinate_section
+    lines[curves_marker:curves_marker]=curves_section
+    lines[xsections_marker:xsections_marker]=xsections_section
+    lines[outlets_marker:outlets_marker]=outlet_section
+    lines[conduits_marker:conduits_marker]=conduits_section
+    lines[storage_marker:storage_marker]=storage_section
+    lines[outfalls_marker:outfalls_marker]=outfall_section
+    lines[junctions_marker:junctions_marker]=junctions_section
 
     # All lines added by this script are missing a new line character at the end, the conditional statements below add the new line character for these lines only and writes all lines to the file
     for line in lines:
