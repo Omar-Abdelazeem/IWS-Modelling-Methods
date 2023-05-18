@@ -25,6 +25,8 @@ for network in networks:
                 iws.Run_Method.PSVTank(path,plots=False)
             elif re.search('CV-Tank',path):
                 iws.CVTank(path,plots=False)
+            elif re.search('CV-Res',path):
+                iws.CVRes(path,plots=False)
             elif re.search('Outfall',path):
                 iws.OutletOutfall(path,False,plots=False)
             elif re.search('Storage',path):
