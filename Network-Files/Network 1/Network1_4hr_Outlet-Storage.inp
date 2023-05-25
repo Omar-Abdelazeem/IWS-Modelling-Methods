@@ -29,14 +29,14 @@ RULE_STEP            00:00:00
 INERTIAL_DAMPING     PARTIAL
 NORMAL_FLOW_LIMITED  BOTH
 FORCE_MAIN_EQUATION  H-W
-VARIABLE_STEP        0.00
+VARIABLE_STEP        0.75
 LENGTHENING_STEP     0
 MIN_SURFAREA         0.00000001
 MAX_TRIALS           20
 HEAD_TOLERANCE       0.000005
 SYS_FLOW_TOL         5
 LAT_FLOW_TOL         5
-MINIMUM_STEP         0.01
+MINIMUM_STEP         0.1
 THREADS              4
 
 [FILES]
@@ -1965,6 +1965,9 @@ StorageforNode54     725.00      810.0       0.00    TABULAR      51840         
       59-4    57-3-23    57-4-23  10.000000      0.011          0          0          0          0
       59-5    57-4-23         23  10.000000      0.011          0          0          0          0
 
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
 
 [OUTLETS]
 ;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated
@@ -2945,92 +2948,247 @@ Outlet_FAKE          1     Outfall_FAKE          0 FUNCTIONAL/DEPTH   0.000010  
       59-5 FORCE_MAIN      1.000        130          0          0          1
 
 
+[CONTROLS]
+RULE StorageforNode1
+IF NODE StorageforNode1 DEPTH > 1
+THEN OUTLET Outlet1 SETTING = 0 
+
+RULE StorageforNode2
+IF NODE StorageforNode2 DEPTH > 1
+THEN OUTLET Outlet2 SETTING = 0 
+
+RULE StorageforNode3
+IF NODE StorageforNode3 DEPTH > 1
+THEN OUTLET Outlet3 SETTING = 0 
+
+RULE StorageforNode5
+IF NODE StorageforNode5 DEPTH > 1
+THEN OUTLET Outlet5 SETTING = 0 
+
+RULE StorageforNode9
+IF NODE StorageforNode9 DEPTH > 1
+THEN OUTLET Outlet9 SETTING = 0 
+
+RULE StorageforNode10
+IF NODE StorageforNode10 DEPTH > 1
+THEN OUTLET Outlet10 SETTING = 0 
+
+RULE StorageforNode11
+IF NODE StorageforNode11 DEPTH > 1
+THEN OUTLET Outlet11 SETTING = 0 
+
+RULE StorageforNode13
+IF NODE StorageforNode13 DEPTH > 1
+THEN OUTLET Outlet13 SETTING = 0 
+
+RULE StorageforNode15
+IF NODE StorageforNode15 DEPTH > 1
+THEN OUTLET Outlet15 SETTING = 0 
+
+RULE StorageforNode17
+IF NODE StorageforNode17 DEPTH > 1
+THEN OUTLET Outlet17 SETTING = 0 
+
+RULE StorageforNode18
+IF NODE StorageforNode18 DEPTH > 1
+THEN OUTLET Outlet18 SETTING = 0 
+
+RULE StorageforNode20
+IF NODE StorageforNode20 DEPTH > 1
+THEN OUTLET Outlet20 SETTING = 0 
+
+RULE StorageforNode21
+IF NODE StorageforNode21 DEPTH > 1
+THEN OUTLET Outlet21 SETTING = 0 
+
+RULE StorageforNode22
+IF NODE StorageforNode22 DEPTH > 1
+THEN OUTLET Outlet22 SETTING = 0 
+
+RULE StorageforNode25
+IF NODE StorageforNode25 DEPTH > 1
+THEN OUTLET Outlet25 SETTING = 0 
+
+RULE StorageforNode26
+IF NODE StorageforNode26 DEPTH > 1
+THEN OUTLET Outlet26 SETTING = 0 
+
+RULE StorageforNode27
+IF NODE StorageforNode27 DEPTH > 1
+THEN OUTLET Outlet27 SETTING = 0 
+
+RULE StorageforNode28
+IF NODE StorageforNode28 DEPTH > 1
+THEN OUTLET Outlet28 SETTING = 0 
+
+RULE StorageforNode30
+IF NODE StorageforNode30 DEPTH > 1
+THEN OUTLET Outlet30 SETTING = 0 
+
+RULE StorageforNode31
+IF NODE StorageforNode31 DEPTH > 1
+THEN OUTLET Outlet31 SETTING = 0 
+
+RULE StorageforNode32
+IF NODE StorageforNode32 DEPTH > 1
+THEN OUTLET Outlet32 SETTING = 0 
+
+RULE StorageforNode33
+IF NODE StorageforNode33 DEPTH > 1
+THEN OUTLET Outlet33 SETTING = 0 
+
+RULE StorageforNode34
+IF NODE StorageforNode34 DEPTH > 1
+THEN OUTLET Outlet34 SETTING = 0 
+
+RULE StorageforNode35
+IF NODE StorageforNode35 DEPTH > 1
+THEN OUTLET Outlet35 SETTING = 0 
+
+RULE StorageforNode36
+IF NODE StorageforNode36 DEPTH > 1
+THEN OUTLET Outlet36 SETTING = 0 
+
+RULE StorageforNode37
+IF NODE StorageforNode37 DEPTH > 1
+THEN OUTLET Outlet37 SETTING = 0 
+
+RULE StorageforNode38
+IF NODE StorageforNode38 DEPTH > 1
+THEN OUTLET Outlet38 SETTING = 0 
+
+RULE StorageforNode39
+IF NODE StorageforNode39 DEPTH > 1
+THEN OUTLET Outlet39 SETTING = 0 
+
+RULE StorageforNode40
+IF NODE StorageforNode40 DEPTH > 1
+THEN OUTLET Outlet40 SETTING = 0 
+
+RULE StorageforNode41
+IF NODE StorageforNode41 DEPTH > 1
+THEN OUTLET Outlet41 SETTING = 0 
+
+RULE StorageforNode42
+IF NODE StorageforNode42 DEPTH > 1
+THEN OUTLET Outlet42 SETTING = 0 
+
+RULE StorageforNode43
+IF NODE StorageforNode43 DEPTH > 1
+THEN OUTLET Outlet43 SETTING = 0 
+
+RULE StorageforNode44
+IF NODE StorageforNode44 DEPTH > 1
+THEN OUTLET Outlet44 SETTING = 0 
+
+RULE StorageforNode45
+IF NODE StorageforNode45 DEPTH > 1
+THEN OUTLET Outlet45 SETTING = 0 
+
+RULE StorageforNode49
+IF NODE StorageforNode49 DEPTH > 1
+THEN OUTLET Outlet49 SETTING = 0 
+
+RULE StorageforNode50
+IF NODE StorageforNode50 DEPTH > 1
+THEN OUTLET Outlet50 SETTING = 0 
+
+RULE StorageforNode52
+IF NODE StorageforNode52 DEPTH > 1
+THEN OUTLET Outlet52 SETTING = 0 
+
+RULE StorageforNode54
+IF NODE StorageforNode54 DEPTH > 1
+THEN OUTLET Outlet54 SETTING = 0 
+
+
+
 [CURVES]
 ;;Name           Type       X-Value    Y-Value
 ;;-------------- ---------- ---------- ----------
     103680    Storage          0     10.368
     103680                     1     10.368
-    103680                1.0001   0.000001
+    103680                 1.001   0.000001
     103680                   100   0.000001
          ;                                 
     311040    Storage          0     31.104
     311040                     1     31.104
-    311040                1.0001   0.000001
+    311040                 1.001   0.000001
     311040                   100   0.000001
          ;                                 
     466560    Storage          0     46.656
     466560                     1     46.656
-    466560                1.0001   0.000001
+    466560                 1.001   0.000001
     466560                   100   0.000001
          ;                                 
     673920    Storage          0     67.392
     673920                     1     67.392
-    673920                1.0001   0.000001
+    673920                 1.001   0.000001
     673920                   100   0.000001
          ;                                 
      51840    Storage          0      5.184
      51840                     1      5.184
-     51840                1.0001   0.000001
+     51840                 1.001   0.000001
      51840                   100   0.000001
          ;                                 
     414720    Storage          0     41.472
     414720                     1     41.472
-    414720                1.0001   0.000001
+    414720                 1.001   0.000001
     414720                   100   0.000001
          ;                                 
     190080    Storage          0     19.008
     190080                     1     19.008
-    190080                1.0001   0.000001
+    190080                 1.001   0.000001
     190080                   100   0.000001
          ;                                 
    1866240    Storage          0    186.624
    1866240                     1    186.624
-   1866240                1.0001   0.000001
+   1866240                 1.001   0.000001
    1866240                   100   0.000001
          ;                                 
     155520    Storage          0     15.552
     155520                     1     15.552
-    155520                1.0001   0.000001
+    155520                 1.001   0.000001
     155520                   100   0.000001
          ;                                 
      17280    Storage          0      1.728
      17280                     1      1.728
-     17280                1.0001   0.000001
+     17280                 1.001   0.000001
      17280                   100   0.000001
          ;                                 
     259200    Storage          0      25.92
     259200                     1      25.92
-    259200                1.0001   0.000001
+    259200                 1.001   0.000001
     259200                   100   0.000001
          ;                                 
     518400    Storage          0      51.84
     518400                     1      51.84
-    518400                1.0001   0.000001
+    518400                 1.001   0.000001
     518400                   100   0.000001
          ;                                 
     362880    Storage          0     36.288
     362880                     1     36.288
-    362880                1.0001   0.000001
+    362880                 1.001   0.000001
     362880                   100   0.000001
          ;                                 
     622080    Storage          0     62.208
     622080                     1     62.208
-    622080                1.0001   0.000001
+    622080                 1.001   0.000001
     622080                   100   0.000001
          ;                                 
     207360    Storage          0     20.736
     207360                     1     20.736
-    207360                1.0001   0.000001
+    207360                 1.001   0.000001
     207360                   100   0.000001
          ;                                 
     881280    Storage          0     88.128
     881280                     1     88.128
-    881280                1.0001   0.000001
+    881280                 1.001   0.000001
     881280                   100   0.000001
          ;                                 
    1658880    Storage          0    165.888
    1658880                     1    165.888
-   1658880                1.0001   0.000001
+   1658880                 1.001   0.000001
    1658880                   100   0.000001
          ;                                 
 

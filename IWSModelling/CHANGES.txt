@@ -18,3 +18,6 @@ Options for plotting, timing the execution and saving outputs in csv format
 
 [1.0.1]
 - Optimizations and bug fixes in writing SWMM files
+
+[1.0.2]
+- Outlet-Storage now uses simple control rules to stop flow into the tank
