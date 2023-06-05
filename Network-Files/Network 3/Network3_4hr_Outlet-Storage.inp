@@ -29,14 +29,14 @@ RULE_STEP            00:00:00
 INERTIAL_DAMPING     PARTIAL
 NORMAL_FLOW_LIMITED  BOTH
 FORCE_MAIN_EQUATION  H-W
-VARIABLE_STEP        0.00
+VARIABLE_STEP        0.75
 LENGTHENING_STEP     0
 MIN_SURFAREA         0.00000001
 MAX_TRIALS           20
 HEAD_TOLERANCE       0.000005
 SYS_FLOW_TOL         5
 LAT_FLOW_TOL         5
-MINIMUM_STEP         0.01
+MINIMUM_STEP         0.1
 THREADS              4
 
 [FILES]
@@ -14951,6 +14951,9 @@ StorageforNode268      35.61        100       0.00    TABULAR     185760        
     331-99   271-98-1   271-99-1  10.000000      0.011          0          0          0          0
    331-100   271-99-1          1  10.000000      0.011          0          0          0          0
 
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
 
 [OUTLETS]
 ;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated
@@ -22549,857 +22552,1840 @@ Outlet_FAKE          1      Outfall_FAKE          0 FUNCTIONAL/DEPTH   0.000010 
    331-100 FORCE_MAIN      0.250        130          0          0          1
 
 
+[CONTROLS]
+RULE StorageforNode1
+IF NODE StorageforNode1 DEPTH > 1
+THEN OUTLET Outlet1 SETTING = 0 
+
+RULE StorageforNode2
+IF NODE StorageforNode2 DEPTH > 1
+THEN OUTLET Outlet2 SETTING = 0 
+
+RULE StorageforNode3
+IF NODE StorageforNode3 DEPTH > 1
+THEN OUTLET Outlet3 SETTING = 0 
+
+RULE StorageforNode4
+IF NODE StorageforNode4 DEPTH > 1
+THEN OUTLET Outlet4 SETTING = 0 
+
+RULE StorageforNode5
+IF NODE StorageforNode5 DEPTH > 1
+THEN OUTLET Outlet5 SETTING = 0 
+
+RULE StorageforNode6
+IF NODE StorageforNode6 DEPTH > 1
+THEN OUTLET Outlet6 SETTING = 0 
+
+RULE StorageforNode7
+IF NODE StorageforNode7 DEPTH > 1
+THEN OUTLET Outlet7 SETTING = 0 
+
+RULE StorageforNode8
+IF NODE StorageforNode8 DEPTH > 1
+THEN OUTLET Outlet8 SETTING = 0 
+
+RULE StorageforNode9
+IF NODE StorageforNode9 DEPTH > 1
+THEN OUTLET Outlet9 SETTING = 0 
+
+RULE StorageforNode10
+IF NODE StorageforNode10 DEPTH > 1
+THEN OUTLET Outlet10 SETTING = 0 
+
+RULE StorageforNode11
+IF NODE StorageforNode11 DEPTH > 1
+THEN OUTLET Outlet11 SETTING = 0 
+
+RULE StorageforNode12
+IF NODE StorageforNode12 DEPTH > 1
+THEN OUTLET Outlet12 SETTING = 0 
+
+RULE StorageforNode13
+IF NODE StorageforNode13 DEPTH > 1
+THEN OUTLET Outlet13 SETTING = 0 
+
+RULE StorageforNode14
+IF NODE StorageforNode14 DEPTH > 1
+THEN OUTLET Outlet14 SETTING = 0 
+
+RULE StorageforNode15
+IF NODE StorageforNode15 DEPTH > 1
+THEN OUTLET Outlet15 SETTING = 0 
+
+RULE StorageforNode16
+IF NODE StorageforNode16 DEPTH > 1
+THEN OUTLET Outlet16 SETTING = 0 
+
+RULE StorageforNode17
+IF NODE StorageforNode17 DEPTH > 1
+THEN OUTLET Outlet17 SETTING = 0 
+
+RULE StorageforNode18
+IF NODE StorageforNode18 DEPTH > 1
+THEN OUTLET Outlet18 SETTING = 0 
+
+RULE StorageforNode20
+IF NODE StorageforNode20 DEPTH > 1
+THEN OUTLET Outlet20 SETTING = 0 
+
+RULE StorageforNode21
+IF NODE StorageforNode21 DEPTH > 1
+THEN OUTLET Outlet21 SETTING = 0 
+
+RULE StorageforNode22
+IF NODE StorageforNode22 DEPTH > 1
+THEN OUTLET Outlet22 SETTING = 0 
+
+RULE StorageforNode23
+IF NODE StorageforNode23 DEPTH > 1
+THEN OUTLET Outlet23 SETTING = 0 
+
+RULE StorageforNode24
+IF NODE StorageforNode24 DEPTH > 1
+THEN OUTLET Outlet24 SETTING = 0 
+
+RULE StorageforNode25
+IF NODE StorageforNode25 DEPTH > 1
+THEN OUTLET Outlet25 SETTING = 0 
+
+RULE StorageforNode26
+IF NODE StorageforNode26 DEPTH > 1
+THEN OUTLET Outlet26 SETTING = 0 
+
+RULE StorageforNode27
+IF NODE StorageforNode27 DEPTH > 1
+THEN OUTLET Outlet27 SETTING = 0 
+
+RULE StorageforNode28
+IF NODE StorageforNode28 DEPTH > 1
+THEN OUTLET Outlet28 SETTING = 0 
+
+RULE StorageforNode29
+IF NODE StorageforNode29 DEPTH > 1
+THEN OUTLET Outlet29 SETTING = 0 
+
+RULE StorageforNode30
+IF NODE StorageforNode30 DEPTH > 1
+THEN OUTLET Outlet30 SETTING = 0 
+
+RULE StorageforNode31
+IF NODE StorageforNode31 DEPTH > 1
+THEN OUTLET Outlet31 SETTING = 0 
+
+RULE StorageforNode32
+IF NODE StorageforNode32 DEPTH > 1
+THEN OUTLET Outlet32 SETTING = 0 
+
+RULE StorageforNode33
+IF NODE StorageforNode33 DEPTH > 1
+THEN OUTLET Outlet33 SETTING = 0 
+
+RULE StorageforNode34
+IF NODE StorageforNode34 DEPTH > 1
+THEN OUTLET Outlet34 SETTING = 0 
+
+RULE StorageforNode35
+IF NODE StorageforNode35 DEPTH > 1
+THEN OUTLET Outlet35 SETTING = 0 
+
+RULE StorageforNode36
+IF NODE StorageforNode36 DEPTH > 1
+THEN OUTLET Outlet36 SETTING = 0 
+
+RULE StorageforNode37
+IF NODE StorageforNode37 DEPTH > 1
+THEN OUTLET Outlet37 SETTING = 0 
+
+RULE StorageforNode38
+IF NODE StorageforNode38 DEPTH > 1
+THEN OUTLET Outlet38 SETTING = 0 
+
+RULE StorageforNode39
+IF NODE StorageforNode39 DEPTH > 1
+THEN OUTLET Outlet39 SETTING = 0 
+
+RULE StorageforNode40
+IF NODE StorageforNode40 DEPTH > 1
+THEN OUTLET Outlet40 SETTING = 0 
+
+RULE StorageforNode41
+IF NODE StorageforNode41 DEPTH > 1
+THEN OUTLET Outlet41 SETTING = 0 
+
+RULE StorageforNode42
+IF NODE StorageforNode42 DEPTH > 1
+THEN OUTLET Outlet42 SETTING = 0 
+
+RULE StorageforNode43
+IF NODE StorageforNode43 DEPTH > 1
+THEN OUTLET Outlet43 SETTING = 0 
+
+RULE StorageforNode44
+IF NODE StorageforNode44 DEPTH > 1
+THEN OUTLET Outlet44 SETTING = 0 
+
+RULE StorageforNode45
+IF NODE StorageforNode45 DEPTH > 1
+THEN OUTLET Outlet45 SETTING = 0 
+
+RULE StorageforNode46
+IF NODE StorageforNode46 DEPTH > 1
+THEN OUTLET Outlet46 SETTING = 0 
+
+RULE StorageforNode47
+IF NODE StorageforNode47 DEPTH > 1
+THEN OUTLET Outlet47 SETTING = 0 
+
+RULE StorageforNode48
+IF NODE StorageforNode48 DEPTH > 1
+THEN OUTLET Outlet48 SETTING = 0 
+
+RULE StorageforNode49
+IF NODE StorageforNode49 DEPTH > 1
+THEN OUTLET Outlet49 SETTING = 0 
+
+RULE StorageforNode50
+IF NODE StorageforNode50 DEPTH > 1
+THEN OUTLET Outlet50 SETTING = 0 
+
+RULE StorageforNode51
+IF NODE StorageforNode51 DEPTH > 1
+THEN OUTLET Outlet51 SETTING = 0 
+
+RULE StorageforNode52
+IF NODE StorageforNode52 DEPTH > 1
+THEN OUTLET Outlet52 SETTING = 0 
+
+RULE StorageforNode53
+IF NODE StorageforNode53 DEPTH > 1
+THEN OUTLET Outlet53 SETTING = 0 
+
+RULE StorageforNode54
+IF NODE StorageforNode54 DEPTH > 1
+THEN OUTLET Outlet54 SETTING = 0 
+
+RULE StorageforNode55
+IF NODE StorageforNode55 DEPTH > 1
+THEN OUTLET Outlet55 SETTING = 0 
+
+RULE StorageforNode56
+IF NODE StorageforNode56 DEPTH > 1
+THEN OUTLET Outlet56 SETTING = 0 
+
+RULE StorageforNode57
+IF NODE StorageforNode57 DEPTH > 1
+THEN OUTLET Outlet57 SETTING = 0 
+
+RULE StorageforNode58
+IF NODE StorageforNode58 DEPTH > 1
+THEN OUTLET Outlet58 SETTING = 0 
+
+RULE StorageforNode59
+IF NODE StorageforNode59 DEPTH > 1
+THEN OUTLET Outlet59 SETTING = 0 
+
+RULE StorageforNode60
+IF NODE StorageforNode60 DEPTH > 1
+THEN OUTLET Outlet60 SETTING = 0 
+
+RULE StorageforNode61
+IF NODE StorageforNode61 DEPTH > 1
+THEN OUTLET Outlet61 SETTING = 0 
+
+RULE StorageforNode62
+IF NODE StorageforNode62 DEPTH > 1
+THEN OUTLET Outlet62 SETTING = 0 
+
+RULE StorageforNode63
+IF NODE StorageforNode63 DEPTH > 1
+THEN OUTLET Outlet63 SETTING = 0 
+
+RULE StorageforNode64
+IF NODE StorageforNode64 DEPTH > 1
+THEN OUTLET Outlet64 SETTING = 0 
+
+RULE StorageforNode65
+IF NODE StorageforNode65 DEPTH > 1
+THEN OUTLET Outlet65 SETTING = 0 
+
+RULE StorageforNode66
+IF NODE StorageforNode66 DEPTH > 1
+THEN OUTLET Outlet66 SETTING = 0 
+
+RULE StorageforNode67
+IF NODE StorageforNode67 DEPTH > 1
+THEN OUTLET Outlet67 SETTING = 0 
+
+RULE StorageforNode68
+IF NODE StorageforNode68 DEPTH > 1
+THEN OUTLET Outlet68 SETTING = 0 
+
+RULE StorageforNode69
+IF NODE StorageforNode69 DEPTH > 1
+THEN OUTLET Outlet69 SETTING = 0 
+
+RULE StorageforNode70
+IF NODE StorageforNode70 DEPTH > 1
+THEN OUTLET Outlet70 SETTING = 0 
+
+RULE StorageforNode71
+IF NODE StorageforNode71 DEPTH > 1
+THEN OUTLET Outlet71 SETTING = 0 
+
+RULE StorageforNode72
+IF NODE StorageforNode72 DEPTH > 1
+THEN OUTLET Outlet72 SETTING = 0 
+
+RULE StorageforNode73
+IF NODE StorageforNode73 DEPTH > 1
+THEN OUTLET Outlet73 SETTING = 0 
+
+RULE StorageforNode74
+IF NODE StorageforNode74 DEPTH > 1
+THEN OUTLET Outlet74 SETTING = 0 
+
+RULE StorageforNode76
+IF NODE StorageforNode76 DEPTH > 1
+THEN OUTLET Outlet76 SETTING = 0 
+
+RULE StorageforNode77
+IF NODE StorageforNode77 DEPTH > 1
+THEN OUTLET Outlet77 SETTING = 0 
+
+RULE StorageforNode78
+IF NODE StorageforNode78 DEPTH > 1
+THEN OUTLET Outlet78 SETTING = 0 
+
+RULE StorageforNode79
+IF NODE StorageforNode79 DEPTH > 1
+THEN OUTLET Outlet79 SETTING = 0 
+
+RULE StorageforNode80
+IF NODE StorageforNode80 DEPTH > 1
+THEN OUTLET Outlet80 SETTING = 0 
+
+RULE StorageforNode81
+IF NODE StorageforNode81 DEPTH > 1
+THEN OUTLET Outlet81 SETTING = 0 
+
+RULE StorageforNode82
+IF NODE StorageforNode82 DEPTH > 1
+THEN OUTLET Outlet82 SETTING = 0 
+
+RULE StorageforNode83
+IF NODE StorageforNode83 DEPTH > 1
+THEN OUTLET Outlet83 SETTING = 0 
+
+RULE StorageforNode84
+IF NODE StorageforNode84 DEPTH > 1
+THEN OUTLET Outlet84 SETTING = 0 
+
+RULE StorageforNode85
+IF NODE StorageforNode85 DEPTH > 1
+THEN OUTLET Outlet85 SETTING = 0 
+
+RULE StorageforNode86
+IF NODE StorageforNode86 DEPTH > 1
+THEN OUTLET Outlet86 SETTING = 0 
+
+RULE StorageforNode87
+IF NODE StorageforNode87 DEPTH > 1
+THEN OUTLET Outlet87 SETTING = 0 
+
+RULE StorageforNode88
+IF NODE StorageforNode88 DEPTH > 1
+THEN OUTLET Outlet88 SETTING = 0 
+
+RULE StorageforNode89
+IF NODE StorageforNode89 DEPTH > 1
+THEN OUTLET Outlet89 SETTING = 0 
+
+RULE StorageforNode90
+IF NODE StorageforNode90 DEPTH > 1
+THEN OUTLET Outlet90 SETTING = 0 
+
+RULE StorageforNode91
+IF NODE StorageforNode91 DEPTH > 1
+THEN OUTLET Outlet91 SETTING = 0 
+
+RULE StorageforNode92
+IF NODE StorageforNode92 DEPTH > 1
+THEN OUTLET Outlet92 SETTING = 0 
+
+RULE StorageforNode93
+IF NODE StorageforNode93 DEPTH > 1
+THEN OUTLET Outlet93 SETTING = 0 
+
+RULE StorageforNode94
+IF NODE StorageforNode94 DEPTH > 1
+THEN OUTLET Outlet94 SETTING = 0 
+
+RULE StorageforNode95
+IF NODE StorageforNode95 DEPTH > 1
+THEN OUTLET Outlet95 SETTING = 0 
+
+RULE StorageforNode96
+IF NODE StorageforNode96 DEPTH > 1
+THEN OUTLET Outlet96 SETTING = 0 
+
+RULE StorageforNode97
+IF NODE StorageforNode97 DEPTH > 1
+THEN OUTLET Outlet97 SETTING = 0 
+
+RULE StorageforNode98
+IF NODE StorageforNode98 DEPTH > 1
+THEN OUTLET Outlet98 SETTING = 0 
+
+RULE StorageforNode99
+IF NODE StorageforNode99 DEPTH > 1
+THEN OUTLET Outlet99 SETTING = 0 
+
+RULE StorageforNode100
+IF NODE StorageforNode100 DEPTH > 1
+THEN OUTLET Outlet100 SETTING = 0 
+
+RULE StorageforNode101
+IF NODE StorageforNode101 DEPTH > 1
+THEN OUTLET Outlet101 SETTING = 0 
+
+RULE StorageforNode102
+IF NODE StorageforNode102 DEPTH > 1
+THEN OUTLET Outlet102 SETTING = 0 
+
+RULE StorageforNode103
+IF NODE StorageforNode103 DEPTH > 1
+THEN OUTLET Outlet103 SETTING = 0 
+
+RULE StorageforNode104
+IF NODE StorageforNode104 DEPTH > 1
+THEN OUTLET Outlet104 SETTING = 0 
+
+RULE StorageforNode105
+IF NODE StorageforNode105 DEPTH > 1
+THEN OUTLET Outlet105 SETTING = 0 
+
+RULE StorageforNode106
+IF NODE StorageforNode106 DEPTH > 1
+THEN OUTLET Outlet106 SETTING = 0 
+
+RULE StorageforNode107
+IF NODE StorageforNode107 DEPTH > 1
+THEN OUTLET Outlet107 SETTING = 0 
+
+RULE StorageforNode108
+IF NODE StorageforNode108 DEPTH > 1
+THEN OUTLET Outlet108 SETTING = 0 
+
+RULE StorageforNode109
+IF NODE StorageforNode109 DEPTH > 1
+THEN OUTLET Outlet109 SETTING = 0 
+
+RULE StorageforNode110
+IF NODE StorageforNode110 DEPTH > 1
+THEN OUTLET Outlet110 SETTING = 0 
+
+RULE StorageforNode111
+IF NODE StorageforNode111 DEPTH > 1
+THEN OUTLET Outlet111 SETTING = 0 
+
+RULE StorageforNode112
+IF NODE StorageforNode112 DEPTH > 1
+THEN OUTLET Outlet112 SETTING = 0 
+
+RULE StorageforNode113
+IF NODE StorageforNode113 DEPTH > 1
+THEN OUTLET Outlet113 SETTING = 0 
+
+RULE StorageforNode114
+IF NODE StorageforNode114 DEPTH > 1
+THEN OUTLET Outlet114 SETTING = 0 
+
+RULE StorageforNode115
+IF NODE StorageforNode115 DEPTH > 1
+THEN OUTLET Outlet115 SETTING = 0 
+
+RULE StorageforNode117
+IF NODE StorageforNode117 DEPTH > 1
+THEN OUTLET Outlet117 SETTING = 0 
+
+RULE StorageforNode120
+IF NODE StorageforNode120 DEPTH > 1
+THEN OUTLET Outlet120 SETTING = 0 
+
+RULE StorageforNode121
+IF NODE StorageforNode121 DEPTH > 1
+THEN OUTLET Outlet121 SETTING = 0 
+
+RULE StorageforNode122
+IF NODE StorageforNode122 DEPTH > 1
+THEN OUTLET Outlet122 SETTING = 0 
+
+RULE StorageforNode123
+IF NODE StorageforNode123 DEPTH > 1
+THEN OUTLET Outlet123 SETTING = 0 
+
+RULE StorageforNode125
+IF NODE StorageforNode125 DEPTH > 1
+THEN OUTLET Outlet125 SETTING = 0 
+
+RULE StorageforNode126
+IF NODE StorageforNode126 DEPTH > 1
+THEN OUTLET Outlet126 SETTING = 0 
+
+RULE StorageforNode127
+IF NODE StorageforNode127 DEPTH > 1
+THEN OUTLET Outlet127 SETTING = 0 
+
+RULE StorageforNode128
+IF NODE StorageforNode128 DEPTH > 1
+THEN OUTLET Outlet128 SETTING = 0 
+
+RULE StorageforNode129
+IF NODE StorageforNode129 DEPTH > 1
+THEN OUTLET Outlet129 SETTING = 0 
+
+RULE StorageforNode130
+IF NODE StorageforNode130 DEPTH > 1
+THEN OUTLET Outlet130 SETTING = 0 
+
+RULE StorageforNode131
+IF NODE StorageforNode131 DEPTH > 1
+THEN OUTLET Outlet131 SETTING = 0 
+
+RULE StorageforNode132
+IF NODE StorageforNode132 DEPTH > 1
+THEN OUTLET Outlet132 SETTING = 0 
+
+RULE StorageforNode133
+IF NODE StorageforNode133 DEPTH > 1
+THEN OUTLET Outlet133 SETTING = 0 
+
+RULE StorageforNode134
+IF NODE StorageforNode134 DEPTH > 1
+THEN OUTLET Outlet134 SETTING = 0 
+
+RULE StorageforNode135
+IF NODE StorageforNode135 DEPTH > 1
+THEN OUTLET Outlet135 SETTING = 0 
+
+RULE StorageforNode136
+IF NODE StorageforNode136 DEPTH > 1
+THEN OUTLET Outlet136 SETTING = 0 
+
+RULE StorageforNode137
+IF NODE StorageforNode137 DEPTH > 1
+THEN OUTLET Outlet137 SETTING = 0 
+
+RULE StorageforNode138
+IF NODE StorageforNode138 DEPTH > 1
+THEN OUTLET Outlet138 SETTING = 0 
+
+RULE StorageforNode139
+IF NODE StorageforNode139 DEPTH > 1
+THEN OUTLET Outlet139 SETTING = 0 
+
+RULE StorageforNode143
+IF NODE StorageforNode143 DEPTH > 1
+THEN OUTLET Outlet143 SETTING = 0 
+
+RULE StorageforNode144
+IF NODE StorageforNode144 DEPTH > 1
+THEN OUTLET Outlet144 SETTING = 0 
+
+RULE StorageforNode145
+IF NODE StorageforNode145 DEPTH > 1
+THEN OUTLET Outlet145 SETTING = 0 
+
+RULE StorageforNode146
+IF NODE StorageforNode146 DEPTH > 1
+THEN OUTLET Outlet146 SETTING = 0 
+
+RULE StorageforNode147
+IF NODE StorageforNode147 DEPTH > 1
+THEN OUTLET Outlet147 SETTING = 0 
+
+RULE StorageforNode148
+IF NODE StorageforNode148 DEPTH > 1
+THEN OUTLET Outlet148 SETTING = 0 
+
+RULE StorageforNode149
+IF NODE StorageforNode149 DEPTH > 1
+THEN OUTLET Outlet149 SETTING = 0 
+
+RULE StorageforNode150
+IF NODE StorageforNode150 DEPTH > 1
+THEN OUTLET Outlet150 SETTING = 0 
+
+RULE StorageforNode151
+IF NODE StorageforNode151 DEPTH > 1
+THEN OUTLET Outlet151 SETTING = 0 
+
+RULE StorageforNode152
+IF NODE StorageforNode152 DEPTH > 1
+THEN OUTLET Outlet152 SETTING = 0 
+
+RULE StorageforNode153
+IF NODE StorageforNode153 DEPTH > 1
+THEN OUTLET Outlet153 SETTING = 0 
+
+RULE StorageforNode154
+IF NODE StorageforNode154 DEPTH > 1
+THEN OUTLET Outlet154 SETTING = 0 
+
+RULE StorageforNode155
+IF NODE StorageforNode155 DEPTH > 1
+THEN OUTLET Outlet155 SETTING = 0 
+
+RULE StorageforNode156
+IF NODE StorageforNode156 DEPTH > 1
+THEN OUTLET Outlet156 SETTING = 0 
+
+RULE StorageforNode157
+IF NODE StorageforNode157 DEPTH > 1
+THEN OUTLET Outlet157 SETTING = 0 
+
+RULE StorageforNode158
+IF NODE StorageforNode158 DEPTH > 1
+THEN OUTLET Outlet158 SETTING = 0 
+
+RULE StorageforNode159
+IF NODE StorageforNode159 DEPTH > 1
+THEN OUTLET Outlet159 SETTING = 0 
+
+RULE StorageforNode160
+IF NODE StorageforNode160 DEPTH > 1
+THEN OUTLET Outlet160 SETTING = 0 
+
+RULE StorageforNode161
+IF NODE StorageforNode161 DEPTH > 1
+THEN OUTLET Outlet161 SETTING = 0 
+
+RULE StorageforNode162
+IF NODE StorageforNode162 DEPTH > 1
+THEN OUTLET Outlet162 SETTING = 0 
+
+RULE StorageforNode163
+IF NODE StorageforNode163 DEPTH > 1
+THEN OUTLET Outlet163 SETTING = 0 
+
+RULE StorageforNode164
+IF NODE StorageforNode164 DEPTH > 1
+THEN OUTLET Outlet164 SETTING = 0 
+
+RULE StorageforNode165
+IF NODE StorageforNode165 DEPTH > 1
+THEN OUTLET Outlet165 SETTING = 0 
+
+RULE StorageforNode166
+IF NODE StorageforNode166 DEPTH > 1
+THEN OUTLET Outlet166 SETTING = 0 
+
+RULE StorageforNode167
+IF NODE StorageforNode167 DEPTH > 1
+THEN OUTLET Outlet167 SETTING = 0 
+
+RULE StorageforNode168
+IF NODE StorageforNode168 DEPTH > 1
+THEN OUTLET Outlet168 SETTING = 0 
+
+RULE StorageforNode169
+IF NODE StorageforNode169 DEPTH > 1
+THEN OUTLET Outlet169 SETTING = 0 
+
+RULE StorageforNode170
+IF NODE StorageforNode170 DEPTH > 1
+THEN OUTLET Outlet170 SETTING = 0 
+
+RULE StorageforNode171
+IF NODE StorageforNode171 DEPTH > 1
+THEN OUTLET Outlet171 SETTING = 0 
+
+RULE StorageforNode172
+IF NODE StorageforNode172 DEPTH > 1
+THEN OUTLET Outlet172 SETTING = 0 
+
+RULE StorageforNode173
+IF NODE StorageforNode173 DEPTH > 1
+THEN OUTLET Outlet173 SETTING = 0 
+
+RULE StorageforNode175
+IF NODE StorageforNode175 DEPTH > 1
+THEN OUTLET Outlet175 SETTING = 0 
+
+RULE StorageforNode178
+IF NODE StorageforNode178 DEPTH > 1
+THEN OUTLET Outlet178 SETTING = 0 
+
+RULE StorageforNode182
+IF NODE StorageforNode182 DEPTH > 1
+THEN OUTLET Outlet182 SETTING = 0 
+
+RULE StorageforNode183
+IF NODE StorageforNode183 DEPTH > 1
+THEN OUTLET Outlet183 SETTING = 0 
+
+RULE StorageforNode184
+IF NODE StorageforNode184 DEPTH > 1
+THEN OUTLET Outlet184 SETTING = 0 
+
+RULE StorageforNode185
+IF NODE StorageforNode185 DEPTH > 1
+THEN OUTLET Outlet185 SETTING = 0 
+
+RULE StorageforNode186
+IF NODE StorageforNode186 DEPTH > 1
+THEN OUTLET Outlet186 SETTING = 0 
+
+RULE StorageforNode187
+IF NODE StorageforNode187 DEPTH > 1
+THEN OUTLET Outlet187 SETTING = 0 
+
+RULE StorageforNode188
+IF NODE StorageforNode188 DEPTH > 1
+THEN OUTLET Outlet188 SETTING = 0 
+
+RULE StorageforNode189
+IF NODE StorageforNode189 DEPTH > 1
+THEN OUTLET Outlet189 SETTING = 0 
+
+RULE StorageforNode190
+IF NODE StorageforNode190 DEPTH > 1
+THEN OUTLET Outlet190 SETTING = 0 
+
+RULE StorageforNode191
+IF NODE StorageforNode191 DEPTH > 1
+THEN OUTLET Outlet191 SETTING = 0 
+
+RULE StorageforNode192
+IF NODE StorageforNode192 DEPTH > 1
+THEN OUTLET Outlet192 SETTING = 0 
+
+RULE StorageforNode193
+IF NODE StorageforNode193 DEPTH > 1
+THEN OUTLET Outlet193 SETTING = 0 
+
+RULE StorageforNode194
+IF NODE StorageforNode194 DEPTH > 1
+THEN OUTLET Outlet194 SETTING = 0 
+
+RULE StorageforNode195
+IF NODE StorageforNode195 DEPTH > 1
+THEN OUTLET Outlet195 SETTING = 0 
+
+RULE StorageforNode196
+IF NODE StorageforNode196 DEPTH > 1
+THEN OUTLET Outlet196 SETTING = 0 
+
+RULE StorageforNode197
+IF NODE StorageforNode197 DEPTH > 1
+THEN OUTLET Outlet197 SETTING = 0 
+
+RULE StorageforNode198
+IF NODE StorageforNode198 DEPTH > 1
+THEN OUTLET Outlet198 SETTING = 0 
+
+RULE StorageforNode199
+IF NODE StorageforNode199 DEPTH > 1
+THEN OUTLET Outlet199 SETTING = 0 
+
+RULE StorageforNode200
+IF NODE StorageforNode200 DEPTH > 1
+THEN OUTLET Outlet200 SETTING = 0 
+
+RULE StorageforNode201
+IF NODE StorageforNode201 DEPTH > 1
+THEN OUTLET Outlet201 SETTING = 0 
+
+RULE StorageforNode202
+IF NODE StorageforNode202 DEPTH > 1
+THEN OUTLET Outlet202 SETTING = 0 
+
+RULE StorageforNode203
+IF NODE StorageforNode203 DEPTH > 1
+THEN OUTLET Outlet203 SETTING = 0 
+
+RULE StorageforNode204
+IF NODE StorageforNode204 DEPTH > 1
+THEN OUTLET Outlet204 SETTING = 0 
+
+RULE StorageforNode205
+IF NODE StorageforNode205 DEPTH > 1
+THEN OUTLET Outlet205 SETTING = 0 
+
+RULE StorageforNode206
+IF NODE StorageforNode206 DEPTH > 1
+THEN OUTLET Outlet206 SETTING = 0 
+
+RULE StorageforNode207
+IF NODE StorageforNode207 DEPTH > 1
+THEN OUTLET Outlet207 SETTING = 0 
+
+RULE StorageforNode208
+IF NODE StorageforNode208 DEPTH > 1
+THEN OUTLET Outlet208 SETTING = 0 
+
+RULE StorageforNode209
+IF NODE StorageforNode209 DEPTH > 1
+THEN OUTLET Outlet209 SETTING = 0 
+
+RULE StorageforNode210
+IF NODE StorageforNode210 DEPTH > 1
+THEN OUTLET Outlet210 SETTING = 0 
+
+RULE StorageforNode212
+IF NODE StorageforNode212 DEPTH > 1
+THEN OUTLET Outlet212 SETTING = 0 
+
+RULE StorageforNode213
+IF NODE StorageforNode213 DEPTH > 1
+THEN OUTLET Outlet213 SETTING = 0 
+
+RULE StorageforNode214
+IF NODE StorageforNode214 DEPTH > 1
+THEN OUTLET Outlet214 SETTING = 0 
+
+RULE StorageforNode216
+IF NODE StorageforNode216 DEPTH > 1
+THEN OUTLET Outlet216 SETTING = 0 
+
+RULE StorageforNode217
+IF NODE StorageforNode217 DEPTH > 1
+THEN OUTLET Outlet217 SETTING = 0 
+
+RULE StorageforNode218
+IF NODE StorageforNode218 DEPTH > 1
+THEN OUTLET Outlet218 SETTING = 0 
+
+RULE StorageforNode219
+IF NODE StorageforNode219 DEPTH > 1
+THEN OUTLET Outlet219 SETTING = 0 
+
+RULE StorageforNode220
+IF NODE StorageforNode220 DEPTH > 1
+THEN OUTLET Outlet220 SETTING = 0 
+
+RULE StorageforNode221
+IF NODE StorageforNode221 DEPTH > 1
+THEN OUTLET Outlet221 SETTING = 0 
+
+RULE StorageforNode222
+IF NODE StorageforNode222 DEPTH > 1
+THEN OUTLET Outlet222 SETTING = 0 
+
+RULE StorageforNode223
+IF NODE StorageforNode223 DEPTH > 1
+THEN OUTLET Outlet223 SETTING = 0 
+
+RULE StorageforNode224
+IF NODE StorageforNode224 DEPTH > 1
+THEN OUTLET Outlet224 SETTING = 0 
+
+RULE StorageforNode227
+IF NODE StorageforNode227 DEPTH > 1
+THEN OUTLET Outlet227 SETTING = 0 
+
+RULE StorageforNode228
+IF NODE StorageforNode228 DEPTH > 1
+THEN OUTLET Outlet228 SETTING = 0 
+
+RULE StorageforNode229
+IF NODE StorageforNode229 DEPTH > 1
+THEN OUTLET Outlet229 SETTING = 0 
+
+RULE StorageforNode230
+IF NODE StorageforNode230 DEPTH > 1
+THEN OUTLET Outlet230 SETTING = 0 
+
+RULE StorageforNode231
+IF NODE StorageforNode231 DEPTH > 1
+THEN OUTLET Outlet231 SETTING = 0 
+
+RULE StorageforNode232
+IF NODE StorageforNode232 DEPTH > 1
+THEN OUTLET Outlet232 SETTING = 0 
+
+RULE StorageforNode233
+IF NODE StorageforNode233 DEPTH > 1
+THEN OUTLET Outlet233 SETTING = 0 
+
+RULE StorageforNode234
+IF NODE StorageforNode234 DEPTH > 1
+THEN OUTLET Outlet234 SETTING = 0 
+
+RULE StorageforNode235
+IF NODE StorageforNode235 DEPTH > 1
+THEN OUTLET Outlet235 SETTING = 0 
+
+RULE StorageforNode236
+IF NODE StorageforNode236 DEPTH > 1
+THEN OUTLET Outlet236 SETTING = 0 
+
+RULE StorageforNode237
+IF NODE StorageforNode237 DEPTH > 1
+THEN OUTLET Outlet237 SETTING = 0 
+
+RULE StorageforNode238
+IF NODE StorageforNode238 DEPTH > 1
+THEN OUTLET Outlet238 SETTING = 0 
+
+RULE StorageforNode239
+IF NODE StorageforNode239 DEPTH > 1
+THEN OUTLET Outlet239 SETTING = 0 
+
+RULE StorageforNode240
+IF NODE StorageforNode240 DEPTH > 1
+THEN OUTLET Outlet240 SETTING = 0 
+
+RULE StorageforNode241
+IF NODE StorageforNode241 DEPTH > 1
+THEN OUTLET Outlet241 SETTING = 0 
+
+RULE StorageforNode242
+IF NODE StorageforNode242 DEPTH > 1
+THEN OUTLET Outlet242 SETTING = 0 
+
+RULE StorageforNode243
+IF NODE StorageforNode243 DEPTH > 1
+THEN OUTLET Outlet243 SETTING = 0 
+
+RULE StorageforNode244
+IF NODE StorageforNode244 DEPTH > 1
+THEN OUTLET Outlet244 SETTING = 0 
+
+RULE StorageforNode246
+IF NODE StorageforNode246 DEPTH > 1
+THEN OUTLET Outlet246 SETTING = 0 
+
+RULE StorageforNode247
+IF NODE StorageforNode247 DEPTH > 1
+THEN OUTLET Outlet247 SETTING = 0 
+
+RULE StorageforNode249
+IF NODE StorageforNode249 DEPTH > 1
+THEN OUTLET Outlet249 SETTING = 0 
+
+RULE StorageforNode250
+IF NODE StorageforNode250 DEPTH > 1
+THEN OUTLET Outlet250 SETTING = 0 
+
+RULE StorageforNode251
+IF NODE StorageforNode251 DEPTH > 1
+THEN OUTLET Outlet251 SETTING = 0 
+
+RULE StorageforNode252
+IF NODE StorageforNode252 DEPTH > 1
+THEN OUTLET Outlet252 SETTING = 0 
+
+RULE StorageforNode253
+IF NODE StorageforNode253 DEPTH > 1
+THEN OUTLET Outlet253 SETTING = 0 
+
+RULE StorageforNode255
+IF NODE StorageforNode255 DEPTH > 1
+THEN OUTLET Outlet255 SETTING = 0 
+
+RULE StorageforNode256
+IF NODE StorageforNode256 DEPTH > 1
+THEN OUTLET Outlet256 SETTING = 0 
+
+RULE StorageforNode257
+IF NODE StorageforNode257 DEPTH > 1
+THEN OUTLET Outlet257 SETTING = 0 
+
+RULE StorageforNode259
+IF NODE StorageforNode259 DEPTH > 1
+THEN OUTLET Outlet259 SETTING = 0 
+
+RULE StorageforNode260
+IF NODE StorageforNode260 DEPTH > 1
+THEN OUTLET Outlet260 SETTING = 0 
+
+RULE StorageforNode261
+IF NODE StorageforNode261 DEPTH > 1
+THEN OUTLET Outlet261 SETTING = 0 
+
+RULE StorageforNode262
+IF NODE StorageforNode262 DEPTH > 1
+THEN OUTLET Outlet262 SETTING = 0 
+
+RULE StorageforNode263
+IF NODE StorageforNode263 DEPTH > 1
+THEN OUTLET Outlet263 SETTING = 0 
+
+RULE StorageforNode264
+IF NODE StorageforNode264 DEPTH > 1
+THEN OUTLET Outlet264 SETTING = 0 
+
+RULE StorageforNode265
+IF NODE StorageforNode265 DEPTH > 1
+THEN OUTLET Outlet265 SETTING = 0 
+
+RULE StorageforNode266
+IF NODE StorageforNode266 DEPTH > 1
+THEN OUTLET Outlet266 SETTING = 0 
+
+RULE StorageforNode267
+IF NODE StorageforNode267 DEPTH > 1
+THEN OUTLET Outlet267 SETTING = 0 
+
+RULE StorageforNode268
+IF NODE StorageforNode268 DEPTH > 1
+THEN OUTLET Outlet268 SETTING = 0 
+
+
+
 [CURVES]
 ;;Name           Type       X-Value    Y-Value
 ;;-------------- ---------- ---------- ----------
     138241    Storage          0    13.8241
     138241                     1    13.8241
-    138241                1.0001   0.000001
+    138241                 1.001   0.000001
     138241                   100   0.000001
          ;                                 
     207362    Storage          0    20.7362
     207362                     1    20.7362
-    207362                1.0001   0.000001
+    207362                 1.001   0.000001
     207362                   100   0.000001
          ;                                 
     276483    Storage          0    27.6483
     276483                     1    27.6483
-    276483                1.0001   0.000001
+    276483                 1.001   0.000001
     276483                   100   0.000001
          ;                                 
     345601    Storage          0    34.5601
     345601                     1    34.5601
-    345601                1.0001   0.000001
+    345601                 1.001   0.000001
     345601                   100   0.000001
          ;                                 
     691205    Storage          0    69.1205
     691205                     1    69.1205
-    691205                1.0001   0.000001
+    691205                 1.001   0.000001
     691205                   100   0.000001
          ;                                 
     622086    Storage          0    62.2086
     622086                     1    62.2086
-    622086                1.0001   0.000001
+    622086                 1.001   0.000001
     622086                   100   0.000001
          ;                                 
     760327    Storage          0    76.0327
     760327                     1    76.0327
-    760327                1.0001   0.000001
+    760327                 1.001   0.000001
     760327                   100   0.000001
          ;                                 
     552964    Storage          0    55.2964
     552964                     1    55.2964
-    552964                1.0001   0.000001
+    552964                 1.001   0.000001
     552964                   100   0.000001
          ;                                 
    2004492    Storage          0   200.4492
    2004492                     1   200.4492
-   2004492                1.0001   0.000001
+   2004492                 1.001   0.000001
    2004492                   100   0.000001
          ;                                 
    1619995    Storage          0   161.9995
    1619995                     1   161.9995
-   1619995                1.0001   0.000001
+   1619995                 1.001   0.000001
    1619995                   100   0.000001
          ;                                 
     375838    Storage          0    37.5838
     375838                     1    37.5838
-    375838                1.0001   0.000001
+    375838                 1.001   0.000001
     375838                   100   0.000001
          ;                                 
     514079    Storage          0    51.4079
     514079                     1    51.4079
-    514079                1.0001   0.000001
+    514079                 1.001   0.000001
     514079                   100   0.000001
          ;                                 
     237600    Storage          0      23.76
     237600                     1      23.76
-    237600                1.0001   0.000001
+    237600                 1.001   0.000001
     237600                   100   0.000001
          ;                                 
     444961    Storage          0    44.4961
     444961                     1    44.4961
-    444961                1.0001   0.000001
+    444961                 1.001   0.000001
     444961                   100   0.000001
          ;                                 
    3071522    Storage          0   307.1522
    3071522                     1   307.1522
-   3071522                1.0001   0.000001
+   3071522                 1.001   0.000001
    3071522                   100   0.000001
          ;                                 
    2034718    Storage          0   203.4718
    2034718                     1   203.4718
-   2034718                1.0001   0.000001
+   2034718                 1.001   0.000001
    2034718                   100   0.000001
          ;                                 
     652319    Storage          0    65.2319
     652319                     1    65.2319
-    652319                1.0001   0.000001
+    652319                 1.001   0.000001
     652319                   100   0.000001
          ;                                 
      30240    Storage          0      3.024
      30240                     1      3.024
-     30240                1.0001   0.000001
+     30240                 1.001   0.000001
      30240                   100   0.000001
          ;                                 
     928805    Storage          0    92.8805
     928805                     1    92.8805
-    928805                1.0001   0.000001
+    928805                 1.001   0.000001
     928805                   100   0.000001
          ;                                 
     168481    Storage          0    16.8481
     168481                     1    16.8481
-    168481                1.0001   0.000001
+    168481                 1.001   0.000001
     168481                   100   0.000001
          ;                                 
    1481763    Storage          0   148.1763
    1481763                     1   148.1763
-   1481763                1.0001   0.000001
+   1481763                 1.001   0.000001
    1481763                   100   0.000001
          ;                                 
     336955    Storage          0    33.6955
     336955                     1    33.6955
-    336955                1.0001   0.000001
+    336955                 1.001   0.000001
     336955                   100   0.000001
          ;                                 
     613435    Storage          0    61.3435
     613435                     1    61.3435
-    613435                1.0001   0.000001
+    613435                 1.001   0.000001
     613435                   100   0.000001
          ;                                 
     406077    Storage          0    40.6077
     406077                     1    40.6077
-    406077                1.0001   0.000001
+    406077                 1.001   0.000001
     406077                   100   0.000001
          ;                                 
     889915    Storage          0    88.9915
     889915                     1    88.9915
-    889915                1.0001   0.000001
+    889915                 1.001   0.000001
     889915                   100   0.000001
          ;                                 
    1926716    Storage          0   192.6716
    1926716                     1   192.6716
-   1926716                1.0001   0.000001
+   1926716                 1.001   0.000001
    1926716                   100   0.000001
          ;                                 
     267837    Storage          0    26.7837
     267837                     1    26.7837
-    267837                1.0001   0.000001
+    267837                 1.001   0.000001
     267837                   100   0.000001
          ;                                 
     198721    Storage          0    19.8721
     198721                     1    19.8721
-    198721                1.0001   0.000001
+    198721                 1.001   0.000001
     198721                   100   0.000001
          ;                                 
     129602    Storage          0    12.9602
     129602                     1    12.9602
-    129602                1.0001   0.000001
+    129602                 1.001   0.000001
     129602                   100   0.000001
          ;                                 
      60481    Storage          0     6.0481
      60481                     1     6.0481
-     60481                1.0001   0.000001
+     60481                 1.001   0.000001
      60481                   100   0.000001
          ;                                 
     544325    Storage          0    54.4325
     544325                     1    54.4325
-    544325                1.0001   0.000001
+    544325                 1.001   0.000001
     544325                   100   0.000001
          ;                                 
    1265751    Storage          0   126.5751
    1265751                     1   126.5751
-   1265751                1.0001   0.000001
+   1265751                 1.001   0.000001
    1265751                   100   0.000001
          ;                                 
     781915    Storage          0    78.1915
     781915                     1    78.1915
-    781915                1.0001   0.000001
+    781915                 1.001   0.000001
     781915                   100   0.000001
          ;                                 
     505436    Storage          0    50.5436
     505436                     1    50.5436
-    505436                1.0001   0.000001
+    505436                 1.001   0.000001
     505436                   100   0.000001
          ;                                 
    1058399    Storage          0   105.8399
    1058399                     1   105.8399
-   1058399                1.0001   0.000001
+   1058399                 1.001   0.000001
    1058399                   100   0.000001
          ;                                 
    2026080    Storage          0    202.608
    2026080                     1    202.608
-   2026080                1.0001   0.000001
+   2026080                 1.001   0.000001
    2026080                   100   0.000001
          ;                                 
      21601    Storage          0     2.1601
      21601                     1     2.1601
-     21601                1.0001   0.000001
+     21601                 1.001   0.000001
      21601                   100   0.000001
          ;                                 
     228963    Storage          0    22.8963
     228963                     1    22.8963
-    228963                1.0001   0.000001
+    228963                 1.001   0.000001
     228963                   100   0.000001
          ;                                 
      90723    Storage          0     9.0723
      90723                     1     9.0723
-     90723                1.0001   0.000001
+     90723                 1.001   0.000001
      90723                   100   0.000001
          ;                                 
     436325    Storage          0    43.6325
     436325                     1    43.6325
-    436325                1.0001   0.000001
+    436325                 1.001   0.000001
     436325                   100   0.000001
          ;                                 
    1196648    Storage          0   119.6648
    1196648                     1   119.6648
-   1196648                1.0001   0.000001
+   1196648                 1.001   0.000001
    1196648                   100   0.000001
          ;                                 
     397437    Storage          0    39.7437
     397437                     1    39.7437
-    397437                1.0001   0.000001
+    397437                 1.001   0.000001
     397437                   100   0.000001
          ;                                 
     190078    Storage          0    19.0078
     190078                     1    19.0078
-    190078                1.0001   0.000001
+    190078                 1.001   0.000001
     190078                   100   0.000001
          ;                                 
      51838    Storage          0     5.1838
      51838                     1     5.1838
-     51838                1.0001   0.000001
+     51838                 1.001   0.000001
      51838                   100   0.000001
          ;                                 
     259203    Storage          0    25.9203
     259203                     1    25.9203
-    259203                1.0001   0.000001
+    259203                 1.001   0.000001
     259203                   100   0.000001
          ;                                 
    1779845    Storage          0   177.9845
    1779845                     1   177.9845
-   1779845                1.0001   0.000001
+   1779845                 1.001   0.000001
    1779845                   100   0.000001
          ;                                 
     673926    Storage          0    67.3926
     673926                     1    67.3926
-    673926                1.0001   0.000001
+    673926                 1.001   0.000001
     673926                   100   0.000001
          ;                                 
    3576970    Storage          0    357.697
    3576970                     1    357.697
-   3576970                1.0001   0.000001
+   3576970                 1.001   0.000001
    3576970                   100   0.000001
          ;                                 
    3507850    Storage          0    350.785
    3507850                     1    350.785
-   3507850                1.0001   0.000001
+   3507850                 1.001   0.000001
    3507850                   100   0.000001
          ;                                 
     911514    Storage          0    91.1514
     911514                     1    91.1514
-    911514                1.0001   0.000001
+    911514                 1.001   0.000001
     911514                   100   0.000001
          ;                                 
     980635    Storage          0    98.0635
     980635                     1    98.0635
-    980635                1.0001   0.000001
+    980635                 1.001   0.000001
     980635                   100   0.000001
          ;                                 
    2017436    Storage          0   201.7436
    2017436                     1   201.7436
-   2017436                1.0001   0.000001
+   2017436                 1.001   0.000001
    2017436                   100   0.000001
          ;                                 
     565916    Storage          0    56.5916
     565916                     1    56.5916
-    565916                1.0001   0.000001
+    565916                 1.001   0.000001
     565916                   100   0.000001
          ;                                 
     220319    Storage          0    22.0319
     220319                     1    22.0319
-    220319                1.0001   0.000001
+    220319                 1.001   0.000001
     220319                   100   0.000001
          ;                                 
      12961    Storage          0     1.2961
      12961                     1     1.2961
-     12961                1.0001   0.000001
+     12961                 1.001   0.000001
      12961                   100   0.000001
          ;                                 
     427681    Storage          0    42.7681
     427681                     1    42.7681
-    427681                1.0001   0.000001
+    427681                 1.001   0.000001
     427681                   100   0.000001
          ;                                 
     496803    Storage          0    49.6803
     496803                     1    49.6803
-    496803                1.0001   0.000001
+    496803                 1.001   0.000001
     496803                   100   0.000001
          ;                                 
      82082    Storage          0     8.2082
      82082                     1     8.2082
-     82082                1.0001   0.000001
+     82082                 1.001   0.000001
      82082                   100   0.000001
          ;                                 
    4091055    Storage          0   409.1055
    4091055                     1   409.1055
-   4091055                1.0001   0.000001
+   4091055                 1.001   0.000001
    4091055                   100   0.000001
          ;                                 
     457918    Storage          0    45.7918
     457918                     1    45.7918
-    457918                1.0001   0.000001
+    457918                 1.001   0.000001
     457918                   100   0.000001
          ;                                 
    1010878    Storage          0   101.0878
    1010878                     1   101.0878
-   1010878                1.0001   0.000001
+   1010878                 1.001   0.000001
    1010878                   100   0.000001
          ;                                 
    1287359    Storage          0   128.7359
    1287359                     1   128.7359
-   1287359                1.0001   0.000001
+   1287359                 1.001   0.000001
    1287359                   100   0.000001
          ;                                 
      43200    Storage          0       4.32
      43200                     1       4.32
-     43200                1.0001   0.000001
+     43200                 1.001   0.000001
      43200                   100   0.000001
          ;                                 
     734402    Storage          0    73.4402
     734402                     1    73.4402
-    734402                1.0001   0.000001
+    734402                 1.001   0.000001
     734402                   100   0.000001
          ;                                 
    3360964    Storage          0   336.0964
    3360964                     1   336.0964
-   3360964                1.0001   0.000001
+   3360964                 1.001   0.000001
    3360964                   100   0.000001
          ;                                 
    1425605    Storage          0   142.5605
    1425605                     1   142.5605
-   1425605                1.0001   0.000001
+   1425605                 1.001   0.000001
    1425605                   100   0.000001
          ;                                 
     596164    Storage          0    59.6164
     596164                     1    59.6164
-    596164                1.0001   0.000001
+    596164                 1.001   0.000001
     596164                   100   0.000001
          ;                                 
     527046    Storage          0    52.7046
     527046                     1    52.7046
-    527046                1.0001   0.000001
+    527046                 1.001   0.000001
     527046                   100   0.000001
          ;                                 
    2738886    Storage          0   273.8886
    2738886                     1   273.8886
-   2738886                1.0001   0.000001
+   2738886                 1.001   0.000001
    2738886                   100   0.000001
          ;                                 
    1801428    Storage          0   180.1428
    1801428                     1   180.1428
-   1801428                1.0001   0.000001
+   1801428                 1.001   0.000001
    1801428                   100   0.000001
          ;                                 
    2216154    Storage          0   221.6154
    2216154                     1   221.6154
-   2216154                1.0001   0.000001
+   2216154                 1.001   0.000001
    2216154                   100   0.000001
          ;                                 
     695514    Storage          0    69.5514
     695514                     1    69.5514
-    695514                1.0001   0.000001
+    695514                 1.001   0.000001
     695514                   100   0.000001
          ;                                 
     280796    Storage          0    28.0796
     280796                     1    28.0796
-    280796                1.0001   0.000001
+    280796                 1.001   0.000001
     280796                   100   0.000001
          ;                                 
    1939678    Storage          0   193.9678
    1939678                     1   193.9678
-   1939678                1.0001   0.000001
+   1939678                 1.001   0.000001
    1939678                   100   0.000001
          ;                                 
     211678    Storage          0    21.1678
     211678                     1    21.1678
-    211678                1.0001   0.000001
+    211678                 1.001   0.000001
     211678                   100   0.000001
          ;                                 
     626399    Storage          0    62.6399
     626399                     1    62.6399
-    626399                1.0001   0.000001
+    626399                 1.001   0.000001
     626399                   100   0.000001
          ;                                 
     488159    Storage          0    48.8159
     488159                     1    48.8159
-    488159                1.0001   0.000001
+    488159                 1.001   0.000001
     488159                   100   0.000001
          ;                                 
     142558    Storage          0    14.2558
     142558                     1    14.2558
-    142558                1.0001   0.000001
+    142558                 1.001   0.000001
     142558                   100   0.000001
          ;                                 
     419043    Storage          0    41.9043
     419043                     1    41.9043
-    419043                1.0001   0.000001
+    419043                 1.001   0.000001
     419043                   100   0.000001
          ;                                 
    3667679    Storage          0   366.7679
    3667679                     1   366.7679
-   3667679                1.0001   0.000001
+   3667679                 1.001   0.000001
    3667679                   100   0.000001
          ;                                 
       4319    Storage          0     0.4319
       4319                     1     0.4319
-      4319                1.0001   0.000001
+      4319                 1.001   0.000001
       4319                   100   0.000001
          ;                                 
     764646    Storage          0    76.4646
     764646                     1    76.4646
-    764646                1.0001   0.000001
+    764646                 1.001   0.000001
     764646                   100   0.000001
          ;                                 
    1663210    Storage          0    166.321
    1663210                     1    166.321
-   1663210                1.0001   0.000001
+   1663210                 1.001   0.000001
    1663210                   100   0.000001
          ;                                 
     725754    Storage          0    72.5754
     725754                     1    72.5754
-    725754                1.0001   0.000001
+    725754                 1.001   0.000001
     725754                   100   0.000001
          ;                                 
    1140475    Storage          0   114.0475
    1140475                     1   114.0475
-   1140475                1.0001   0.000001
+   1140475                 1.001   0.000001
    1140475                   100   0.000001
          ;                                 
     587519    Storage          0    58.7519
     587519                     1    58.7519
-    587519                1.0001   0.000001
+    587519                 1.001   0.000001
     587519                   100   0.000001
          ;                                 
      34560    Storage          0      3.456
      34560                     1      3.456
-     34560                1.0001   0.000001
+     34560                 1.001   0.000001
      34560                   100   0.000001
          ;                                 
     241922    Storage          0    24.1922
     241922                     1    24.1922
-    241922                1.0001   0.000001
+    241922                 1.001   0.000001
     241922                   100   0.000001
          ;                                 
     311042    Storage          0    31.1042
     311042                     1    31.1042
-    311042                1.0001   0.000001
+    311042                 1.001   0.000001
     311042                   100   0.000001
          ;                                 
     794883    Storage          0    79.4883
     794883                     1    79.4883
-    794883                1.0001   0.000001
+    794883                 1.001   0.000001
     794883                   100   0.000001
          ;                                 
     380164    Storage          0    38.0164
     380164                     1    38.0164
-    380164                1.0001   0.000001
+    380164                 1.001   0.000001
     380164                   100   0.000001
          ;                                 
     864006    Storage          0    86.4006
     864006                     1    86.4006
-    864006                1.0001   0.000001
+    864006                 1.001   0.000001
     864006                   100   0.000001
          ;                                 
    1278726    Storage          0   127.8726
    1278726                     1   127.8726
-   1278726                1.0001   0.000001
+   1278726                 1.001   0.000001
    1278726                   100   0.000001
          ;                                 
    1693451    Storage          0   169.3451
    1693451                     1   169.3451
-   1693451                1.0001   0.000001
+   1693451                 1.001   0.000001
    1693451                   100   0.000001
          ;                                 
    1378074    Storage          0   137.8074
    1378074                     1   137.8074
-   1378074                1.0001   0.000001
+   1378074                 1.001   0.000001
    1378074                   100   0.000001
          ;                                 
     479516    Storage          0    47.9516
     479516                     1    47.9516
-    479516                1.0001   0.000001
+    479516                 1.001   0.000001
     479516                   100   0.000001
          ;                                 
     133919    Storage          0    13.3919
     133919                     1    13.3919
-    133919                1.0001   0.000001
+    133919                 1.001   0.000001
     133919                   100   0.000001
          ;                                 
     617760    Storage          0     61.776
     617760                     1     61.776
-    617760                1.0001   0.000001
+    617760                 1.001   0.000001
     617760                   100   0.000001
          ;                                 
      64801    Storage          0     6.4801
      64801                     1     6.4801
-     64801                1.0001   0.000001
+     64801                 1.001   0.000001
      64801                   100   0.000001
          ;                                 
     756006    Storage          0    75.6006
     756006                     1    75.6006
-    756006                1.0001   0.000001
+    756006                 1.001   0.000001
     756006                   100   0.000001
          ;                                 
    1308968    Storage          0   130.8968
    1308968                     1   130.8968
-   1308968                1.0001   0.000001
+   1308968                 1.001   0.000001
    1308968                   100   0.000001
          ;                                 
    3343667    Storage          0   334.3667
    3343667                     1   334.3667
-   3343667                1.0001   0.000001
+   3343667                 1.001   0.000001
    3343667                   100   0.000001
          ;                                 
    1684790    Storage          0    168.479
    1684790                     1    168.479
-   1684790                1.0001   0.000001
+   1684790                 1.001   0.000001
    1684790                   100   0.000001
          ;                                 
     717113    Storage          0    71.7113
     717113                     1    71.7113
-    717113                1.0001   0.000001
+    717113                 1.001   0.000001
     717113                   100   0.000001
          ;                                 
     509755    Storage          0    50.9755
     509755                     1    50.9755
-    509755                1.0001   0.000001
+    509755                 1.001   0.000001
     509755                   100   0.000001
          ;                                 
    1200957    Storage          0   120.0957
    1200957                     1   120.0957
-   1200957                1.0001   0.000001
+   1200957                 1.001   0.000001
    1200957                   100   0.000001
          ;                                 
      95038    Storage          0     9.5038
      95038                     1     9.5038
-     95038                1.0001   0.000001
+     95038                 1.001   0.000001
      95038                   100   0.000001
          ;                                 
     164159    Storage          0    16.4159
     164159                     1    16.4159
-    164159                1.0001   0.000001
+    164159                 1.001   0.000001
     164159                   100   0.000001
          ;                                 
    2099520    Storage          0    209.952
    2099520                     1    209.952
-   2099520                1.0001   0.000001
+   2099520                 1.001   0.000001
    2099520                   100   0.000001
          ;                                 
      25921    Storage          0     2.5921
      25921                     1     2.5921
-     25921                1.0001   0.000001
+     25921                 1.001   0.000001
      25921                   100   0.000001
          ;                                 
    1131841    Storage          0   113.1841
    1131841                     1   113.1841
-   1131841                1.0001   0.000001
+   1131841                 1.001   0.000001
    1131841                   100   0.000001
          ;                                 
     233283    Storage          0    23.3283
     233283                     1    23.3283
-    233283                1.0001   0.000001
+    233283                 1.001   0.000001
     233283                   100   0.000001
          ;                                 
     440644    Storage          0    44.0644
     440644                     1    44.0644
-    440644                1.0001   0.000001
+    440644                 1.001   0.000001
     440644                   100   0.000001
          ;                                 
     578883    Storage          0    57.8883
     578883                     1    57.8883
-    578883                1.0001   0.000001
+    578883                 1.001   0.000001
     578883                   100   0.000001
          ;                                 
     786247    Storage          0    78.6247
     786247                     1    78.6247
-    786247                1.0001   0.000001
+    786247                 1.001   0.000001
     786247                   100   0.000001
          ;                                 
    1991514    Storage          0   199.1514
    1991514                     1   199.1514
-   1991514                1.0001   0.000001
+   1991514                 1.001   0.000001
    1991514                   100   0.000001
          ;                                 
    1853276    Storage          0   185.3276
    1853276                     1   185.3276
-   1853276                1.0001   0.000001
+   1853276                 1.001   0.000001
    1853276                   100   0.000001
          ;                                 
     332638    Storage          0    33.2638
     332638                     1    33.2638
-    332638                1.0001   0.000001
+    332638                 1.001   0.000001
     332638                   100   0.000001
          ;                                 
     194399    Storage          0    19.4399
     194399                     1    19.4399
-    194399                1.0001   0.000001
+    194399                 1.001   0.000001
     194399                   100   0.000001
          ;                                 
    1023840    Storage          0    102.384
    1023840                     1    102.384
-   1023840                1.0001   0.000001
+   1023840                 1.001   0.000001
    1023840                   100   0.000001
          ;                                 
     401762    Storage          0    40.1762
     401762                     1    40.1762
-    401762                1.0001   0.000001
+    401762                 1.001   0.000001
     401762                   100   0.000001
          ;                                 
     609125    Storage          0    60.9125
     609125                     1    60.9125
-    609125                1.0001   0.000001
+    609125                 1.001   0.000001
     609125                   100   0.000001
          ;                                 
     540005    Storage          0    54.0005
     540005                     1    54.0005
-    540005                1.0001   0.000001
+    540005                 1.001   0.000001
     540005                   100   0.000001
          ;                                 
    1438565    Storage          0   143.8565
    1438565                     1   143.8565
-   1438565                1.0001   0.000001
+   1438565                 1.001   0.000001
    1438565                   100   0.000001
          ;                                 
     954726    Storage          0    95.4726
     954726                     1    95.4726
-    954726                1.0001   0.000001
+    954726                 1.001   0.000001
     954726                   100   0.000001
          ;                                 
    1330551    Storage          0   133.0551
    1330551                     1   133.0551
-   1330551                1.0001   0.000001
+   1330551                 1.001   0.000001
    1330551                   100   0.000001
          ;                                 
     915834    Storage          0    91.5834
     915834                     1    91.5834
-    915834                1.0001   0.000001
+    915834                 1.001   0.000001
     915834                   100   0.000001
          ;                                 
     639357    Storage          0    63.9357
     639357                     1    63.9357
-    639357                1.0001   0.000001
+    639357                 1.001   0.000001
     639357                   100   0.000001
          ;                                 
      86398    Storage          0     8.6398
      86398                     1     8.6398
-     86398                1.0001   0.000001
+     86398                 1.001   0.000001
      86398                   100   0.000001
          ;                                 
      17280    Storage          0      1.728
      17280                     1      1.728
-     17280                1.0001   0.000001
+     17280                 1.001   0.000001
      17280                   100   0.000001
          ;                                 
     155521    Storage          0    15.5521
     155521                     1    15.5521
-    155521                1.0001   0.000001
+    155521                 1.001   0.000001
     155521                   100   0.000001
          ;                                 
    2574721    Storage          0   257.4721
    2574721                     1   257.4721
-   2574721                1.0001   0.000001
+   2574721                 1.001   0.000001
    2574721                   100   0.000001
          ;                                 
     501123    Storage          0    50.1123
     501123                     1    50.1123
-    501123                1.0001   0.000001
+    501123                 1.001   0.000001
     501123                   100   0.000001
          ;                                 
     570244    Storage          0    57.0244
     570244                     1    57.0244
-    570244                1.0001   0.000001
+    570244                 1.001   0.000001
     570244                   100   0.000001
          ;                                 
     432004    Storage          0    43.2004
     432004                     1    43.2004
-    432004                1.0001   0.000001
+    432004                 1.001   0.000001
     432004                   100   0.000001
          ;                                 
     362880    Storage          0     36.288
     362880                     1     36.288
-    362880                1.0001   0.000001
+    362880                 1.001   0.000001
     362880                   100   0.000001
          ;                                 
    1192328    Storage          0   119.2328
    1192328                     1   119.2328
-   1192328                1.0001   0.000001
+   1192328                 1.001   0.000001
    1192328                   100   0.000001
          ;                                 
     846728    Storage          0    84.6728
     846728                     1    84.6728
-    846728                1.0001   0.000001
+    846728                 1.001   0.000001
     846728                   100   0.000001
          ;                                 
    2328469    Storage          0   232.8469
    2328469                     1   232.8469
-   2328469                1.0001   0.000001
+   2328469                 1.001   0.000001
    2328469                   100   0.000001
          ;                                 
    1153439    Storage          0   115.3439
    1153439                     1   115.3439
-   1153439                1.0001   0.000001
+   1153439                 1.001   0.000001
    1153439                   100   0.000001
          ;                                 
     254880    Storage          0     25.488
     254880                     1     25.488
-    254880                1.0001   0.000001
+    254880                 1.001   0.000001
     254880                   100   0.000001
          ;                                 
     185760    Storage          0     18.576
     185760                     1     18.576
-    185760                1.0001   0.000001
+    185760                 1.001   0.000001
     185760                   100   0.000001
          ;                                 
     116640    Storage          0     11.664
     116640                     1     11.664
-    116640                1.0001   0.000001
+    116640                 1.001   0.000001
     116640                   100   0.000001
          ;                                 
      47521    Storage          0     4.7521
      47521                     1     4.7521
-     47521                1.0001   0.000001
+     47521                 1.001   0.000001
      47521                   100   0.000001
          ;                                 
     531366    Storage          0    53.1366
     531366                     1    53.1366
-    531366                1.0001   0.000001
+    531366                 1.001   0.000001
     531366                   100   0.000001
          ;                                 
     462246    Storage          0    46.2246
     462246                     1    46.2246
-    462246                1.0001   0.000001
+    462246                 1.001   0.000001
     462246                   100   0.000001
          ;                                 
     807846    Storage          0    80.7846
     807846                     1    80.7846
-    807846                1.0001   0.000001
+    807846                 1.001   0.000001
     807846                   100   0.000001
          ;                                 
    1183674    Storage          0   118.3674
    1183674                     1   118.3674
-   1183674                1.0001   0.000001
+   1183674                 1.001   0.000001
    1183674                   100   0.000001
          ;                                 
     838074    Storage          0    83.8074
     838074                     1    83.8074
-    838074                1.0001   0.000001
+    838074                 1.001   0.000001
     838074                   100   0.000001
          ;                                 
     215997    Storage          0    21.5997
     215997                     1    21.5997
-    215997                1.0001   0.000001
+    215997                 1.001   0.000001
     215997                   100   0.000001
          ;                                 
     492478    Storage          0    49.2478
     492478                     1    49.2478
-    492478                1.0001   0.000001
+    492478                 1.001   0.000001
     492478                   100   0.000001
          ;                                 
       8639    Storage          0     0.8639
       8639                     1     0.8639
-      8639                1.0001   0.000001
+      8639                 1.001   0.000001
       8639                   100   0.000001
          ;                                 
     768960    Storage          0     76.896
     768960                     1     76.896
-    768960                1.0001   0.000001
+    768960                 1.001   0.000001
     768960                   100   0.000001
          ;                                 
     146880    Storage          0     14.688
     146880                     1     14.688
-    146880                1.0001   0.000001
+    146880                 1.001   0.000001
     146880                   100   0.000001
          ;                                 
     976322    Storage          0    97.6322
     976322                     1    97.6322
-    976322                1.0001   0.000001
+    976322                 1.001   0.000001
     976322                   100   0.000001
          ;                                 
     354241    Storage          0    35.4241
     354241                     1    35.4241
-    354241                1.0001   0.000001
+    354241                 1.001   0.000001
     354241                   100   0.000001
          ;                                 
     907204    Storage          0    90.7204
     907204                     1    90.7204
-    907204                1.0001   0.000001
+    907204                 1.001   0.000001
     907204                   100   0.000001
          ;                                 
     561604    Storage          0    56.1604
     561604                     1    56.1604
-    561604                1.0001   0.000001
+    561604                 1.001   0.000001
     561604                   100   0.000001
          ;                                 
     591833    Storage          0    59.1833
     591833                     1    59.1833
-    591833                1.0001   0.000001
+    591833                 1.001   0.000001
     591833                   100   0.000001
          ;                                 
    1006553    Storage          0   100.6553
    1006553                     1   100.6553
-   1006553                1.0001   0.000001
+   1006553                 1.001   0.000001
    1006553                   100   0.000001
          ;                                 
     453598    Storage          0    45.3598
     453598                     1    45.3598
-    453598                1.0001   0.000001
+    453598                 1.001   0.000001
     453598                   100   0.000001
          ;                                 
     246239    Storage          0    24.6239
     246239                     1    24.6239
-    246239                1.0001   0.000001
+    246239                 1.001   0.000001
     246239                   100   0.000001
          ;                                 
      38879    Storage          0     3.8879
      38879                     1     3.8879
-     38879                1.0001   0.000001
+     38879                 1.001   0.000001
      38879                   100   0.000001
          ;                                 
     730079    Storage          0    73.0079
     730079                     1    73.0079
-    730079                1.0001   0.000001
+    730079                 1.001   0.000001
     730079                   100   0.000001
          ;                                 
     799203    Storage          0    79.9203
     799203                     1    79.9203
-    799203                1.0001   0.000001
+    799203                 1.001   0.000001
     799203                   100   0.000001
          ;                                 
     660966    Storage          0    66.0966
     660966                     1    66.0966
-    660966                1.0001   0.000001
+    660966                 1.001   0.000001
     660966                   100   0.000001
          ;                                 
     967672    Storage          0    96.7672
     967672                     1    96.7672
-    967672                1.0001   0.000001
+    967672                 1.001   0.000001
     967672                   100   0.000001
          ;                                 
    1727993    Storage          0   172.7993
    1727993                     1   172.7993
-   1727993                1.0001   0.000001
+   1727993                 1.001   0.000001
    1727993                   100   0.000001
          ;                                 
     483834    Storage          0    48.3834
     483834                     1    48.3834
-    483834                1.0001   0.000001
+    483834                 1.001   0.000001
     483834                   100   0.000001
          ;                                 
     414718    Storage          0    41.4718
     414718                     1    41.4718
-    414718                1.0001   0.000001
+    414718                 1.001   0.000001
     414718                   100   0.000001
          ;                                 
 

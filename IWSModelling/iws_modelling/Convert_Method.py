@@ -1743,6 +1743,14 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     curves_section=curves.to_string(header=False,index=False,col_space=10).splitlines()
     curves_section=[line+'\n' for line in curves_section]
 
+    controls_section=""
+    for storage in storage_ids:
+        controls_section+="RULE "+storage+"\n"
+        controls_section+="IF NODE "+storage+" DEPTH > "+str(tank_height)+"\n"
+        controls_section+="THEN OUTLET Outlet"+storage[14:]+" SETTING = 0 \n\n"
+    controls_section=controls_section.splitlines()
+    controls_section=[line+'\n' for line in controls_section]
+
     coords_demand= { node: coords[node] for node in demand_nodes}
     coords_ids=list(junctions.index)+reservoir_ids+storage_ids
 
@@ -1798,6 +1806,8 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
         # Record the position of the phrase [CURVES] and add 3 to skip the header lines
         if re.search('\[CURVES\]',line):
             curves_marker=linecount+3
+        if re.search('\[CONTROLS\]',line):
+            controls_marker=linecount+1
         # Record the position of the phrase [COORDINATES] and add 3 to skip the header lines
         if re.search('\[COORDINATES\]',line):
             coords_marker=linecount+3
@@ -1812,6 +1822,7 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     lines[coords_marker:coords_marker]=coordinate_section
     lines[curves_marker:curves_marker]=curves_section
+    lines[controls_marker:controls_marker]=controls_section
     lines[xsections_marker:xsections_marker]=xsections_section
     lines[outlets_marker:outlets_marker]=outlet_section
     lines[conduits_marker:conduits_marker]=conduits_section
