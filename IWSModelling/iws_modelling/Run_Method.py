@@ -146,18 +146,7 @@ def CVRes(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,s
         # Filter DataFrame for Columns that contain Data for demand nodes only i.e., Tanks in STM
         timesrs_processed=timesrs_output.filter(node_list,axis=1)
     
-    # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -281,18 +270,7 @@ def CVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,
                 node_list.append(column[11:])
         timesrs_processed=timesrs_output.filter(node_list,axis=1)
     
-    # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -416,18 +394,7 @@ def PSVTank(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90
                 node_list.append(node[9:])
         timesrs_processed=timesrs_output.filter(node_list,axis=1)
 
-    # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
 
     
     if save_outputs==True:
@@ -585,18 +552,7 @@ def FCV(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,sav
             node_list.append(valve[10:])
         timesrs_processed=timesrs_output[node_list]
 
-    # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -748,18 +704,7 @@ def PDA(path:str,output:str='S',low_percentile:int=10,high_percentile:int=90,sav
         timesrs_output=timesrs_output.T
         timesrs_processed=timesrs_output[demand_nodes]
 
-    # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -954,18 +899,7 @@ def OutletOutfall(path:str,ran_before:bool,output:str='S',low_percentile:int=10,
                 timesrs_processed.at[timestep,node]=timesrs_processed.at[timestep-reporting_step,node]+timesrs_output.at[timestep-reporting_step,node]*reporting_step/1000/desired_volumes[node]*100
     elif output=='P': timesrs_processed=timesrs_output
 
-   # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -1137,18 +1071,7 @@ def OutletStorage(path:str,ran_before:bool,output:str='S',low_percentile:int=10,
     elif output=='P':
         timesrs_processed=Node_Depths
 
-   # Intialize Series for storing statistics
-    mean=pd.Series(dtype='float64')
-    median=pd.Series(dtype='float64')
-    low_percentile_series=pd.Series(dtype='float64')
-    high_percentile_series=pd.Series(dtype='float64')
-
-    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
-    for row in timesrs_processed.index:
-        mean.loc[row]=np.mean(timesrs_processed.loc[row,:])
-        low_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],low_percentile)
-        median.loc[row]=np.percentile(timesrs_processed.loc[row,:],50)
-        high_percentile_series.loc[row]=np.percentile(timesrs_processed.loc[row,:],high_percentile)
+    mean,low_percentile_series,median,high_percentile_series=__get_stats__(timesrs_processed,low_percentile,high_percentile)
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
@@ -1239,3 +1162,20 @@ def __plot_mean__(xaxis,mean,output,color,high_p):
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
     return fig, ax
+
+
+def __get_stats__(timesrs,low_percentile,high_percentile):
+    # Intialize Series for storing statistics
+    mean=pd.Series(dtype='float64')
+    median=pd.Series(dtype='float64')
+    low_percentile_series=pd.Series(dtype='float64')
+    high_percentile_series=pd.Series(dtype='float64')
+
+    # Loop over each row (time step) in the results and calculate values of mean, median, low and high percentiles
+    for row in timesrs.index:
+        mean.loc[row]=np.mean(timesrs.loc[row,:])
+        low_percentile_series.loc[row]=np.percentile(timesrs.loc[row,:],low_percentile)
+        median.loc[row]=np.percentile(timesrs.loc[row,:],50)
+        high_percentile_series.loc[row]=np.percentile(timesrs.loc[row,:],high_percentile)
+    
+    return mean,low_percentile_series,median,high_percentile_series
