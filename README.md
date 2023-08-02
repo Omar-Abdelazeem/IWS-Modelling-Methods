@@ -1,5 +1,6 @@
 # IWS-Modelling-Methods-Repo
-This repo is associated with the publication titled "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality" 
+This repo is associated with the publication titled "How to Model Intermittent Water Supply: Comparing Modelling Choices and Their Impact on Inequality"   
+
 [![DOI](https://zenodo.org/badge/537076979.svg)](https://zenodo.org/badge/latestdoi/537076979)
   
 ### Required Packages  
