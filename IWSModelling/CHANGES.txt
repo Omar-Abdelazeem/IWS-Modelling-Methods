@@ -21,3 +21,8 @@ Options for plotting, timing the execution and saving outputs in csv format
 
 [1.0.2]
 - Outlet-Storage now uses simple control rules to stop flow into the tank
+
+[1.1.0]
+- Added the Float-Storage Method based on a mixture of literature recommendations (foremeost Campisano et al. (2019) Modelling Private Tanks in EPA-SWMM)
+- Streamlined Convert_Method by further modularization: __discretize_pipe__ and __match_concentric__ functions
+- Updated path system to use pathlib for seamless path handling across platforms (e.g., POSIX and Windows)

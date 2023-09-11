@@ -1,12 +1,12 @@
 [build-system]
 requires = ["setuptools>=61.0",
-"pandas","numpy","matplotlib","wntr","pyswmm"
+"pandas","numpy","matplotlib","wntr","pyswmm","pathlib"
 ]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "iws_modelling"
-version = "1.0.2"
+version = "1.1.0"
 authors = [
   { name="Omar Abdelazeem", email="o.abdelazeem@mail.utoronto.ca" },{ name="David Meyer", email="david.meyer@utoronto.ca"},
 ]
