@@ -159,7 +159,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=coordinates_add
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir/pathlib.Path(name_only+'_CV-Tank.inp')
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_CV-Tank.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -329,7 +329,7 @@ def to_CVRes(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir/pathlib.Path(name_only+'_CV-Res.inp')
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_CV-Res.inp")
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -556,7 +556,7 @@ def to_FCVEM(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir/pathlib.Path(name_only+'_FCV-EM.inp')
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_FCV-EM.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -775,7 +775,7 @@ def to_FCVRes(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir/pathlib.Path(name_only+'_FCV-Res.inp')
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_FCV-Res.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -1017,7 +1017,7 @@ def to_PSVTank(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir/pathlib.Path(name_only+'_PSV-Tank.inp')
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_PSV-Tank.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -1311,7 +1311,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         lines.append(line)
         linecount+=1
 
-    new_file_name=dir/pathlib.Path(name_only+"_"+str(del_x_max)+"m_Outlet-Outfall.inp")
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_"+str(del_x_max)+"m_Outlet-Outfall.inp")
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
@@ -1356,7 +1356,7 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     file=pathlib.Path(path)
     name_only=file.stem
     dir=file.parent
-    print("Selected File: ",name_only)
+    print("Selected File: ",name_only[0:-4])
     pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -1633,7 +1633,7 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
         linecount+=1
 
 
-    new_file_name=dir/pathlib.Path(name_only+"_"+str(del_x_max)+"m_Outlet-Storage.inp")
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_"+str(del_x_max)+"m_Outlet-Storage.inp")
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
@@ -1763,7 +1763,6 @@ def to_all(path:pathlib.Path,Hmin:float,Hdes:float,del_x_max:float):
 
     Returns: list of paths of produced files. Saves produced file sin same directory as input file
     '''
-
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
     assert del_x_max>0, "Delta x must be a positive number"

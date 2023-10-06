@@ -151,19 +151,19 @@ def CVRes(path:pathlib.Path,output:str='S',low_percentile:int=10,high_percentile
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(path.parent/(path.name+'_TimeSeries.csv'))
+        timesrs_processed.to_csv(path.parent/(path.stem+'_TimeSeries.csv'))
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(path.parent/(path.name+"_Means.csv"))
+        mean.to_csv(path.parent/(path.stem+"_Means.csv"))
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(path.parent/(path.name+"_Medians.csv"))
+        median.to_csv(path.parent/(path.stem+"_Medians.csv"))
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(path.parent/(path.name+"_"+str(low_percentile)+"thPercentile.csv"))
+        low_percentile_series.to_csv(path.parent/(path.stem+"_"+str(low_percentile)+"thPercentile.csv"))
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(path.parent/(path.name+"_"+str(high_percentile)+"thPercentile.csv"))
+        high_percentile_series.to_csv(path.parent/(path.stem+"_"+str(high_percentile)+"thPercentile.csv"))
 
     if plots:
         mpl.rcParams['figure.dpi'] = 450
@@ -275,19 +275,19 @@ def CVTank(path:pathlib.Path,output:str='S',low_percentile:int=10,high_percentil
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(path.parent/(path.name+"_TimeSeries.csv"))
+        timesrs_processed.to_csv(path.parent/(path.stem+"_TimeSeries.csv"))
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(path.parent/(path.name+"_Means.csv"))
+        mean.to_csv(path.parent/(path.stem+"_Means.csv"))
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(path.parent/(path.name+"_Medians.csv"))
+        median.to_csv(path.parent/(path.stem+"_Medians.csv"))
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(path.parent/(path.name+"_"+str(low_percentile)+"thPercentile.csv"))
+        low_percentile_series.to_csv(path.parent/(path.stem+"_"+str(low_percentile)+"thPercentile.csv"))
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(path.parent/(path.name+"_"+str(high_percentile)+"thPercentile.csv"))
+        high_percentile_series.to_csv(path.parent/(path.stem+"_"+str(high_percentile)+"thPercentile.csv"))
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -400,19 +400,19 @@ def PSVTank(path:pathlib.Path,output:str='S',low_percentile:int=10,high_percenti
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(path.parent/(path.name+"_TimeSeries.csv"))
+        timesrs_processed.to_csv(path.parent/(path.stem+"_TimeSeries.csv"))
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(path.parent/(path.name+"_Means.csv"))
+        mean.to_csv(path.parent/(path.stem+"_Means.csv"))
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(path.parent/(path.name+"_Medians.csv"))
+        median.to_csv(path.parent/(path.stem+"_Medians.csv"))
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(path.parent/(path.name+"_"+str(low_percentile)+"thPercentile.csv"))
+        low_percentile_series.to_csv(path.parent/(path.stem+"_"+str(low_percentile)+"thPercentile.csv"))
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(path.parent/(path.name+"_"+str(high_percentile)+"thPercentile.csv"))
+        high_percentile_series.to_csv(path.parent/(path.stem+"_"+str(high_percentile)+"thPercentile.csv"))
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -557,19 +557,19 @@ def FCV(path:pathlib.Path,output:str='S',low_percentile:int=10,high_percentile:i
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(path.parent/(path.name+"_TimeSeries.csv"))
+        timesrs_processed.to_csv(path.parent/(path.stem+"_TimeSeries.csv"))
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(path.parent/(path.name+"_Means.csv"))
+        mean.to_csv(path.parent/(path.stem+"_Means.csv"))
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(path.parent/(path.name+"_Medians.csv"))
+        median.to_csv(path.parent/(path.stem+"_Medians.csv"))
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(path.parent/(path.name+"_"+str(low_percentile)+"thPercentile.csv"))
+        low_percentile_series.to_csv(path.parent/(path.stem+"_"+str(low_percentile)+"thPercentile.csv"))
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(path.parent/(path.name+"_"+str(high_percentile)+"thPercentile.csv"))
+        high_percentile_series.to_csv(path.parent/(path.stem+"_"+str(high_percentile)+"thPercentile.csv"))
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -709,19 +709,19 @@ def PDA(path:pathlib.Path,output:str='S',low_percentile:int=10,high_percentile:i
     
     if save_outputs==True:
     # Saves Entire Results DataFrame as Filename_TimeSeries.csv in the same path
-        timesrs_processed.to_csv(path.parent/(path.name+"_TimeSeries.csv"))
+        timesrs_processed.to_csv(path.parent/(path.stem+"_TimeSeries.csv"))
 
         # Saves Mean Satisfaction with time as Filename_Means.csv in the same path
-        mean.to_csv(path.parent/(path.name+"_Means.csv"))
+        mean.to_csv(path.parent/(path.stem+"_Means.csv"))
 
         # Saves Median Satisfaction with time as Filename_Medians.csv in the same path
-        median.to_csv(path.parent/(path.name+"_Medians.csv"))
+        median.to_csv(path.parent/(path.stem+"_Medians.csv"))
 
         # Saves the specified low percentile (XX) values with time as Filename_XXthPercentile.csv in the same path
-        low_percentile_series.to_csv(path.parent/(path.name+"_"+str(low_percentile)+"thPercentile.csv"))
+        low_percentile_series.to_csv(path.parent/(path.stem+"_"+str(low_percentile)+"thPercentile.csv"))
 
         # Saves the specified high percentile (YY) values with time as Filename_YYthPercentile.csv in the same path
-        high_percentile_series.to_csv(path.parent/(path.name+"_"+str(high_percentile)+"thPercentile.csv"))
+        high_percentile_series.to_csv(path.parent/(path.stem+"_"+str(high_percentile)+"thPercentile.csv"))
     if plots:
         mpl.rcParams['figure.dpi'] = 450
         font = {'family' : 'Times',
@@ -810,11 +810,14 @@ def OutletOutfall(path:pathlib.Path,ran_before:bool,output:str='S',low_percentil
 
         # runs the simulation step by step
         with sim as sim:
+            system_routing = pyswmm.SystemStats(sim)
             for step in sim:
                 if stp%every==0:
-                    print('Current Simulation Time is >> ',sim.current_time)
+                    print('Current Simulation Time is >> ',sim.current_time,", ",round(sim.percent_complete*100,1),"% Complete")
                 stp+=1
                 pass
+            sim._model.swmm_end()
+            print("Continuity Error: ",sim.flow_routing_error,"%\n")
 
     timesrs_output=pd.DataFrame()  #Empty Dataframe to store demand rates
     swtch=True              # switch variable for upcoming condition
@@ -1008,11 +1011,14 @@ def OutletStorage(path:pathlib.Path,ran_before:bool,output:str='S',low_percentil
 
         # runs the simulation step by step
         with sim as sim:
+            system_routing = pyswmm.SystemStats(sim)
             for step in sim:
                 if stp%every==0:
-                    print('Current Simulation Time is >> ',sim.current_time)
+                    print('Current Simulation Time is >> ',sim.current_time,", ",round(sim.percent_complete*100,1),"% Complete")
                 stp+=1
                 pass
+            sim._model.swmm_end()
+            print("Continuity Error: ",sim.flow_routing_error,"%\n")
 
     Tank_Depths=pd.DataFrame()   #Empty Dataframe to store water depth in tanks
     Node_Depths=pd.DataFrame()   #Empty Dataframe to store water depth in nodes
