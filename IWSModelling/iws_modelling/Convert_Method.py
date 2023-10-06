@@ -1,10 +1,11 @@
-global wntr,np,pd,re,math
+global wntr,np,pd,re,math,pathlib
 
 import wntr
 import numpy as np 
 import pandas as pd
 import re
 import math 
+import pathlib 
 
 
 def to_CVTank(path:str,Hmin:float,Hdes:float):
@@ -25,11 +26,9 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
     pressure_diff=Hdes-Hmin 
 
@@ -160,7 +159,7 @@ def to_CVTank(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=coordinates_add
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+'_CV-Tank.inp'
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_CV-Tank.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -201,13 +200,10 @@ def to_CVRes(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
-    pressure_diff=Hdes-Hmin 
 
     pressure_diff=Hdes-Hmin  
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -333,7 +329,7 @@ def to_CVRes(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+'_CV-Res.inp'
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_CV-Res.inp")
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -373,11 +369,9 @@ def to_FCVEM(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""    
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
     pressure_diff=Hdes-Hmin 
 
@@ -562,7 +556,7 @@ def to_FCVEM(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+'_FCV-EM.inp'
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_FCV-EM.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -604,11 +598,9 @@ def to_FCVRes(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""    
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
     pressure_diff=Hdes-Hmin 
 
@@ -783,7 +775,7 @@ def to_FCVRes(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+'_FCV-Res.inp'
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_FCV-Res.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -825,11 +817,9 @@ def to_PSVTank(path:str,Hmin:float,Hdes:float):
 
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""    
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
     pressure_diff=Hdes-Hmin 
 
@@ -1027,7 +1017,7 @@ def to_PSVTank(path:str,Hmin:float,Hdes:float):
     lines[coords_marker:coords_marker]=added_coordinates
 
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+'_PSV-Tank.inp'
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+'_PSV-Tank.inp')
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -1068,11 +1058,9 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Returns: path of produced file. Saves produced file in same directory as input file
     """
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""    
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
     print("Selected File: ",name_only)
     pressure_diff=Hdes-Hmin 
 
@@ -1082,7 +1070,6 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
     coords=dict()         # For storing coordinates corresponding to each node as a tuple with the id as key
     all_nodes=[]          # For storing list of node ids of all nodes
     all_elevations=[]     # For storing elevations of all nodes
-    ## MAYBE SAVE ALL NODE IDS IN DATAFRAME WITH ELEVATION AND BASE DEMAND AND THEN FILTER DATA FRAME LATER FOR DEMAND NODES ONLY
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(path)
@@ -1116,6 +1103,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         conduit_lengths.append(link[1].length)
         conduit_diameters.append(link[1].diameter)
 
+    conduit_ids=["P"+conduit for conduit in conduit_ids]
     reservoir_ids=[]      # To store the source reservoirs' IDs
     reservoir_heads={}    # To store the total head of each reservoir indexed by ID
     reservoir_coords={}   # To store the coordinates as tuple (x,y) indexed by ID
@@ -1125,7 +1113,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         reservoir_ids.append(reservoir[1].name)
         reservoir_heads[reservoir_ids[-1]]=reservoir[1].base_head
         reservoir_coords[reservoir_ids[-1]]=reservoir[1].coordinates
-
+    reservoir_elevations={reservoir:reservoir_heads[reservoir]-30 for reservoir in reservoir_heads}
 
     # Get the supply duration in minutes (/60) as an integer
     supply_duration=int(network.options.time.duration/60)
@@ -1148,94 +1136,12 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
     # Set the conduit ID as the index
     conduits.set_index("ID",inplace=True)
 
-    # Loop over each conduit in the original file
-    for conduit in conduits.index:
+    connectivity=pd.DataFrame(index=junctions.index, columns=["US","DS"])
 
-        length=conduits["Length"][conduit]  #Stores the length of the current conduit for shorthand
+    conduits, junctions, connectivity = __match_concentric__(conduits,junctions)
 
-        # If the conduit is bigger than the maximum allowable length (delta x), we will break it down into smaller pipes
-        if length>del_x_max:
-            # Number of smaller pipes is calculated from 
-            n_parts=math.ceil(length/del_x_max)
-            # Calculate the length of each part 
-            part_length=length/n_parts
-            # Start node ID (for shorthand)
-            start_node=conduits["from node"][conduit]
-            # End node ID (for shorthand)
-            end_node=conduits["to node"][conduit]
-            # If the start node is a reservoir
-            if start_node in reservoir_ids:
-                # MAke the start elevation the same as the end but add 1 (since reservoirs don't have ground elevation in EPANET)
-                start_elevation=junctions.at[end_node,"Elevation"]+1
-            # Otherwise make the start elevation equal to the elevation of the start node
-            else: start_elevation=junctions.at[start_node,"Elevation"]
-            
-            # If the end node is a reservoir
-            if end_node in reservoir_ids:
-                # MAke the end elevation the same as the start but subtract 1 (since reservoirs don't have ground elevation in EPANET)
-                end_elevation=start_elevation-1
-            # Make the end elevation equal to the elevation of the end node
-            else: end_elevation=junctions.at[end_node,"Elevation"]
-            # Calculate the uniform drop (or rise) in elevation for all the intermediate nodes about to be created when this pipe is broken into several smaller ones
-            unit_elev_diff=(end_elevation-start_elevation)/n_parts
-
-            # if the starting node is a reservoir
-            if start_node in reservoir_ids:
-                # Get coordinates from reservoir data
-                start_x=reservoir_coords[start_node][0]
-                start_y=reservoir_coords[start_node][1]
-            else:
-                # Get the coordinates from the junction data
-                start_x=junctions.at[start_node,"Coordinates"][0]
-                start_y=junctions.at[start_node,"Coordinates"][1]
-            
-            # If the end node is a reservoir
-            if end_node in reservoir_ids:
-                # Get the coordinates from the reservoir data
-                end_x=reservoir_coords[end_node][0]
-                end_y=reservoir_coords[end_node][1]
-            else:
-                # Get them from the junctions data
-                end_x=junctions.at[end_node,"Coordinates"][0]
-                end_y=junctions.at[end_node,"Coordinates"][1]
-                
-            # Calculate the unit difference in x and y coordinates for this pipe and its segments
-            unit_x_diff=(end_x-start_x)/n_parts
-            unit_y_diff=(end_y-start_y)/n_parts
-
-
-    # THIS LOOP GENERATES THE SMALLER PIPES TO REPLACE THE ORIGINAL LONG PIPE
-            # For each part to be created
-            for part in np.arange(1,n_parts+1):
-
-                # CREATING THE LINKS
-                # Create the ID for the new smaller pipe as OriginPipeID-PartNumber
-                new_id=conduit+"-"+str(part)
-                # Set the new pipe's diameter equal to the original one
-                conduits.at[new_id,"diameter"]=conduits["diameter"][conduit]
-                # Set the start node as OriginStartNode-NewNodeNumber-OriginEndNode  as in the first intermediate nodes between node 13 and 14 will be named 13-1-14
-                conduits.at[new_id,"from node"]=start_node+"-"+str(part-1)+"-"+end_node
-                # if this is the first part, use the original start node 
-                if part==1:
-                    conduits.at[new_id,"from node"]=start_node
-                # Set the end node as OriginStartNode-NewNodeNumber+1-OriginEndNode  as in the second intermediate nodes between node 13 and 14 will be named 13-2-14
-                conduits.at[new_id,"to node"]=start_node+"-"+str(part)+"-"+end_node
-                # If this is the last part, use the original end node as the end node
-                if part==n_parts:
-                    conduits.at[new_id,"to node"]=end_node
-                # Set the new pipe's length to the length of each part
-                conduits.at[new_id,"Length"]=part_length
-
-                # if this is NOT the last part (as the last pipe segment joins a pre-existing node and does not need a node to be created)
-                if part<n_parts:
-                    # Create a new node at the end of this pipe segment whose elevation is translated from the start elevation using the unit slope and the part number
-                    junctions.at[conduits.at[new_id,"to node"],"Elevation"]=start_elevation+part*unit_elev_diff
-                    # Calculate the coordinates for the new node using the unit difference in x and y coordinates
-                    junctions.at[conduits.at[new_id,"to node"],"Coordinates"]=(start_x+part*unit_x_diff,start_y+part*unit_y_diff)
-
-            # After writing the new smaller pipes, delete the original pipe (since it is now redundant)
-            conduits.drop(conduit,inplace=True)
-
+    conduits,junctions=__discretize_pipes__(conduits,junctions,del_x_max,reservoir_ids,reservoir_elevations,reservoir_coords)
+    
     MaxDepth=[0]*len(junctions)
     InitDepth=MaxDepth
     SurDepth=[100] * len(junctions)  # High value to prevent surcharging
@@ -1405,7 +1311,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
         lines.append(line)
         linecount+=1
 
-    new_file_name=dir+name_only+"_Outlet-Outfall.inp"
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_"+str(del_x_max)+"m_Outlet-Outfall.inp")
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
@@ -1426,7 +1332,7 @@ def to_Outlet_Outfall(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     demands=pd.DataFrame(zip(outlet_ids,desired_demands),columns=["ID","Demand"])
     demands.set_index("ID", inplace=True)
-    demands.to_csv(new_file_name[0:-4]+"_Demands.csv")
+    demands.to_csv(new_file_name.parent/pathlib.Path(new_file_name.stem+"_Demands.csv"))
     return new_file_name
 
 
@@ -1447,12 +1353,10 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
 
     Returns: path of produced file. Saves produced file in same directory as input file
     """
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""    
-    print("Selected File: ",name_only)
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
+    print("Selected File: ",name_only[0:-4])
     pressure_diff=Hdes-Hmin 
 
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
@@ -1516,9 +1420,6 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     if len(supply_hh)<2:
         supply_hh='0'+supply_hh
 
-    # Maximum length of conduit allowed
-    maximum_xdelta=10
-
     # Dataframe aggregating all node information gathered from the EPANET file
     junctions=pd.DataFrame(zip(all_nodes,all_elevations,coords.values()),columns=["ID","Elevation","Coordinates"])
     # Set the junction ID as the index of the Dataframe
@@ -1529,94 +1430,11 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
     # Set the conduit ID as the index
     conduits.set_index("ID",inplace=True)
 
-    # Loop over each conduit in the original file
-    for conduit in conduits.index:
+    connectivity=pd.DataFrame(index=junctions.index, columns=["US","DS"])
 
-        length=conduits["Length"][conduit]  #Stores the length of the current conduit for shorthand
+    conduits, junctions, connectivity = __match_concentric__(conduits,junctions)
 
-        # If the conduit is bigger than the maximum allowable length (delta x), we will break it down into smaller pipes
-        if length>maximum_xdelta:
-            # Number of smaller pipes is calculated from 
-            n_parts=math.ceil(length/maximum_xdelta)
-            # Calculate the length of each part 
-            part_length=length/n_parts
-            # Start node ID (for shorthand)
-            start_node=conduits["from node"][conduit]
-            # End node ID (for shorthand)
-            end_node=conduits["to node"][conduit]
-            # If the start node is a reservoir
-            if start_node in reservoir_ids:
-                # MAke the start elevation the same as the end but add 1 (since reservoirs don't have ground elevation in EPANET)
-                start_elevation=junctions.at[end_node,"Elevation"]+1
-                reservoir_elevations[start_node]=start_elevation+1
-            # Otherwise make the start elevation equal to the elevation of the start node
-            else: start_elevation=junctions.at[start_node,"Elevation"]
-            
-            # If the end node is a reservoir
-            if end_node in reservoir_ids:
-                # MAke the end elevation the same as the start but subtract 1 (since reservoirs don't have ground elevation in EPANET)
-                end_elevation=start_elevation-1
-            # Make the end elevation equal to the elevation of the end node
-            else: end_elevation=junctions.at[end_node,"Elevation"]
-            # Calculate the uniform drop (or rise) in elevation for all the intermediate nodes about to be created when this pipe is broken into several smaller ones
-            unit_elev_diff=(end_elevation-start_elevation)/n_parts
-
-            # if the starting node is a reservoir
-            if start_node in reservoir_ids:
-                # Get coordinates from reservoir data
-                start_x=reservoir_coords[start_node][0]
-                start_y=reservoir_coords[start_node][1]
-            else:
-                # Get the coordinates from the junction data
-                start_x=junctions.at[start_node,"Coordinates"][0]
-                start_y=junctions.at[start_node,"Coordinates"][1]
-            
-            # If the end node is a reservoir
-            if end_node in reservoir_ids:
-                # Get the coordinates from the reservoir data
-                end_x=reservoir_coords[end_node][0]
-                end_y=reservoir_coords[end_node][1]
-            else:
-                # Get them from the junctions data
-                end_x=junctions.at[end_node,"Coordinates"][0]
-                end_y=junctions.at[end_node,"Coordinates"][1]
-                
-            # Calculate the unit difference in x and y coordinates for this pipe and its segments
-            unit_x_diff=(end_x-start_x)/n_parts
-            unit_y_diff=(end_y-start_y)/n_parts
-
-
-    # THIS LOOP GENERATES THE SMALLER PIPES TO REPLACE THE ORIGINAL LONG PIPE
-            # For each part to be created
-            for part in np.arange(1,n_parts+1):
-
-                # CREATING THE LINKS
-                # Create the ID for the new smaller pipe as OriginPipeID-PartNumber
-                new_id=conduit+"-"+str(part)
-                # Set the new pipe's diameter equal to the original one
-                conduits.at[new_id,"diameter"]=conduits["diameter"][conduit]
-                # Set the start node as OriginStartNode-NewNodeNumber-OriginEndNode  as in the first intermediate nodes between node 13 and 14 will be named 13-1-14
-                conduits.at[new_id,"from node"]=start_node+"-"+str(part-1)+"-"+end_node
-                # if this is the first part, use the original start node 
-                if part==1:
-                    conduits.at[new_id,"from node"]=start_node
-                # Set the end node as OriginStartNode-NewNodeNumber+1-OriginEndNode  as in the second intermediate nodes between node 13 and 14 will be named 13-2-14
-                conduits.at[new_id,"to node"]=start_node+"-"+str(part)+"-"+end_node
-                # If this is the last part, use the original end node as the end node
-                if part==n_parts:
-                    conduits.at[new_id,"to node"]=end_node
-                # Set the new pipe's length to the length of each part
-                conduits.at[new_id,"Length"]=part_length
-
-                # if this is NOT the last part (as the last pipe segment joins a pre-existing node and does not need a node to be created)
-                if part<n_parts:
-                    # Create a new node at the end of this pipe segment whose elevation is translated from the start elevation using the unit slope and the part number
-                    junctions.at[conduits.at[new_id,"to node"],"Elevation"]=start_elevation+part*unit_elev_diff
-                    # Calculate the coordinates for the new node using the unit difference in x and y coordinates
-                    junctions.at[conduits.at[new_id,"to node"],"Coordinates"]=(start_x+part*unit_x_diff,start_y+part*unit_y_diff)
-
-            # After writing the new smaller pipes, delete the original pipe (since it is now redundant)
-            conduits.drop(conduit,inplace=True)
+    conduits,junctions=__discretize_pipes__(conduits,junctions,del_x_max,reservoir_ids,reservoir_elevations,reservoir_coords)
 
     MaxDepth=[0]*len(junctions)
     InitDepth=MaxDepth
@@ -1815,7 +1633,7 @@ def to_Outlet_Storage(path:str,Hmin:float,Hdes:float,del_x_max:float):
         linecount+=1
 
 
-    new_file_name=dir+name_only+"_Outlet-Storage.inp"
+    new_file_name=dir/pathlib.Path(name_only[0:-4]+"_"+str(del_x_max)+"m_Outlet-Storage.inp")
     file=open(new_file_name,'w')
     lines[end_time]="END_TIME             "+str(supply_hh)+":"+str(supply_mm)+":00\n"
     lines[dimensions]="DIMENSIONS "+dimensions_line
@@ -1855,18 +1673,16 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
     assert 0<=duration_hr<=24, 'Durations of 24 hours or more are not intermittent and thus not supported'
     assert 0<=duration_min<=59, 'Enter Valid Value for minutes 0-59'
 
-    file=path.split("/")[-1]
-    name_only=file[0:-4]
-    if len(path.split("/"))>1:
-        dir=path.rsplit("/",1)[0]+"/"
-    else:dir=""
-    print("Selected File: ",name_only)  
+    file=pathlib.Path(path)
+    name_only=file.stem
+    dir=file.parent
+    print("Selected File: ",name_only)
     demand_nodes=[]       # For storing list of nodes that have non-zero demands
     desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
     elevations=[]
 
     # Creates a network model object using EPANET .inp file
-    network=wntr.network.WaterNetworkModel(path)
+    network=wntr.network.WaterNetworkModel(file)
 
     # Iterates over the junction list in the Network object
     for node in network.junctions():
@@ -1914,7 +1730,7 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
 
     print(lines[supply_duration_line])
     # Opens a new file in the same directory to write the modified network .inp file in
-    new_file_name=dir+name_only+"_"+str(duration_hr)+"hr.inp"
+    new_file_name=dir/pathlib.Path(name_only+"_"+str(duration_hr)+"hr.inp")
     file=open(new_file_name,'w')
     c=0     #line counter
 
@@ -1928,7 +1744,7 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
     return new_file_name
 
 
-def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
+def to_all(path:pathlib.Path,Hmin:float,Hdes:float,del_x_max:float):
     '''
     converts a PDA .inp file to all 7 other methods
 
@@ -1948,19 +1764,156 @@ def to_all(dir:str,file:str,Hmin:float,Hdes:float,del_x_max:float):
     Returns: list of paths of produced files. Saves produced file sin same directory as input file
     '''
 
-
     assert 0<=Hmin<=Hdes, "Hmin must be smaller than Hdes"
     assert del_x_max>0, "Delta x must be a positive number"
     output_paths=[]
-    output_paths.append(to_CVRes(dir,file,Hmin,Hdes))
-    output_paths.append(to_CVTank(dir,file,Hmin,Hdes))
-    output_paths.append(to_FCVEM(dir,file,Hmin,Hdes))
-    output_paths.append(to_FCVRes(dir,file,Hmin,Hdes))
-    output_paths.append(to_PSVTank(dir,file,Hmin,Hdes))
-    output_paths.append(to_Outlet_Outfall(dir,file,Hmin,Hdes,del_x_max))
-    output_paths.append(to_Outlet_Storage(dir,file,Hmin,Hdes,del_x_max))
+    output_paths.append(to_CVRes(path,Hmin,Hdes))
+    output_paths.append(to_CVTank(path,Hmin,Hdes))
+    output_paths.append(to_FCVEM(path,Hmin,Hdes))
+    output_paths.append(to_FCVRes(path,Hmin,Hdes))
+    output_paths.append(to_PSVTank(path,Hmin,Hdes))
+    output_paths.append(to_Outlet_Outfall(path,Hmin,Hdes,del_x_max))
+    output_paths.append(to_Outlet_Storage(path,Hmin,Hdes,del_x_max))
 
     return output_paths
+
+
+def __match_concentric__(conduits:pd.DataFrame,junctions:pd.DataFrame):
+
+    connectivity=pd.DataFrame(index=junctions.index, columns=["US","DS"])
+
+    for junction in junctions.index:
+        upst_connected=[] #List of pipes whose upstream end connects to this node
+        downst_connected=[] #List of pipes whose downstream end connects to this node
+        for conduit in conduits.index:
+            if conduits.at[conduit,"from node"]==junction:
+                upst_connected.append(conduit)
+            elif conduits.at[conduit,"to node"]==junction:
+                downst_connected.append(conduit)
+        connected_conduits=upst_connected+downst_connected
+        connected_diameters=[conduits.at[conduit,"diameter"] for conduit in connected_conduits]
+        max_diameter=max(connected_diameters)
+        for conduit in upst_connected:
+            if conduits.at[conduit,"diameter"]<max_diameter:
+                conduits.at[conduit,"InOffset"]=(max_diameter-conduits.at[conduit,"diameter"])/2
+            else: conduits.at[conduit,"InOffset"]=0
+        for conduit in downst_connected:
+            if conduits.at[conduit,"diameter"]<max_diameter:
+                conduits.at[conduit,"OutOffset"]=(max_diameter-conduits.at[conduit,"diameter"])/2
+            else: conduits.at[conduit,"OutOffset"]=0
+        connectivity.at[junction,"US"]=upst_connected
+        connectivity.at[junction,"DS"]=downst_connected
+        connectivity.at[junction,"Max D"]=max_diameter
+    
+    return conduits,junctions,connectivity
+
+def __discretize_pipes__(conduits:pd.DataFrame,junctions:pd.DataFrame,del_x_max,reservoir_ids,reservoir_elevations,reservoir_coords):
+# Loop over each conduit in the original file
+    for conduit in conduits.index:
+
+        length=conduits["Length"][conduit]  #Stores the length of the current conduit for shorthand
+
+        # If the conduit is bigger than the maximum allowable length (delta x), we will break it down into smaller pipes
+        if length>del_x_max:
+            # Number of smaller pipes is calculated from 
+            n_parts=math.ceil(length/del_x_max)
+            # Calculate the length of each part 
+            part_length=length/n_parts
+            # Start node ID (for shorthand)
+            start_node=conduits["from node"][conduit]
+            # Inlet Offset for the Current Conduit
+            in_offset=conduits["InOffset"][conduit]
+            # End node ID (for shorthand)
+            end_node=conduits["to node"][conduit]
+            #Outlet Offset for the Current Conduit
+            out_offset=conduits["OutOffset"][conduit]
+            # If the start node is a reservoir
+            if start_node in reservoir_ids:
+                # MAke the start elevation the same as the end but add 1 (since reservoirs don't have ground elevation in EPANET)
+                start_elevation=junctions.at[end_node,"Elevation"]+1
+                reservoir_elevations[start_node]=start_elevation+1
+            # Otherwise make the start elevation equal to the elevation of the start node + the offset of the pipe
+            else: start_elevation=junctions.at[start_node,"Elevation"]+in_offset
+            
+            # If the end node is a reservoir
+            if end_node in reservoir_ids:
+                # Make the end elevation the same as the start but subtract 1 (since reservoirs don't have ground elevation in EPANET)
+                end_elevation=start_elevation-1
+            # Make the end elevation equal to the elevation of the end node + the offset of the pipe
+            else: end_elevation=junctions.at[end_node,"Elevation"]+out_offset
+            # Calculate the uniform drop (or rise) in elevation for all the intermediate nodes about to be created when this pipe is broken into several smaller ones
+            unit_elev_diff=(end_elevation-start_elevation)/n_parts
+
+            # if the starting node is a reservoir
+            if start_node in reservoir_ids:
+                # Get coordinates from reservoir data
+                start_x=reservoir_coords[start_node][0]
+                start_y=reservoir_coords[start_node][1]
+            else:
+                # Get the coordinates from the junction data
+                start_x=junctions.at[start_node,"Coordinates"][0]
+                start_y=junctions.at[start_node,"Coordinates"][1]
+            
+            # If the end node is a reservoir
+            if end_node in reservoir_ids:
+                # Get the coordinates from the reservoir data
+                end_x=reservoir_coords[end_node][0]
+                end_y=reservoir_coords[end_node][1]
+            else:
+                # Get them from the junctions data
+                end_x=junctions.at[end_node,"Coordinates"][0]
+                end_y=junctions.at[end_node,"Coordinates"][1]
+                
+            # Calculate the unit difference in x and y coordinates for this pipe and its segments
+            unit_x_diff=(end_x-start_x)/n_parts
+            unit_y_diff=(end_y-start_y)/n_parts
+
+
+    # THIS LOOP GENERATES THE SMALLER PIPES TO REPLACE THE ORIGINAL LONG PIPE
+            # For each part to be created
+            for part in np.arange(1,n_parts+1):
+
+                # CREATING THE LINKS
+                # Create the ID for the new smaller pipe as OriginPipeID-PartNumber
+                new_id=conduit+"-"+str(part)
+                # Set the new pipe's diameter equal to the original one
+                conduits.at[new_id,"diameter"]=conduits["diameter"][conduit]
+                # Set the start node as OriginStartNode-NewNodeNumber-OriginEndNode  as in the first intermediate nodes between node 13 and 14 will be named 13-1-14
+                conduits.at[new_id,"from node"]=start_node+"-"+str(part-1)+"-"+end_node
+
+                # Set Inlet and Outlet Offsets to Zero by default
+                conduits.at[new_id,"InOffset"]=0
+                conduits.at[new_id,"OutOffset"]=0
+
+                # if this is the first part, use the original start node 
+                if part==1:
+                    conduits.at[new_id,"from node"]=start_node
+                    # Set the first inlet offset to concentrically match the upstream pipe
+                    conduits.at[new_id,"InOffset"]=in_offset
+                # Set the end node as OriginStartNode-NewNodeNumber+1-OriginEndNode  as in the second intermediate nodes between node 13 and 14 will be named 13-2-14
+                conduits.at[new_id,"to node"]=start_node+"-"+str(part)+"-"+end_node
+                # If this is the last part, use the original end node as the end node
+                if part==n_parts:
+                    conduits.at[new_id,"to node"]=end_node
+                    # Set the last outlet offset to concentrically match the downstream pipe
+                    conduits.at[new_id,"OutOffset"]=out_offset
+                # Set the new pipe's length to the length of each part
+                conduits.at[new_id,"Length"]=part_length
+
+                # if this is NOT the last part (as the last pipe segment joins a pre-existing node and does not need a node to be created)
+                if part<n_parts:
+                    # Create a new node at the end of this pipe segment whose elevation is translated from the start elevation using the unit slope and the part number
+                    junctions.at[conduits.at[new_id,"to node"],"Elevation"]=start_elevation+part*unit_elev_diff
+                    # Calculate the coordinates for the new node using the unit difference in x and y coordinates
+                    junctions.at[conduits.at[new_id,"to node"],"Coordinates"]=(start_x+part*unit_x_diff,start_y+part*unit_y_diff)
+
+            # After writing the new smaller pipes, delete the original pipe (since it is now redundant)
+            conduits.drop(conduit,inplace=True)
+
+    conduits[["InOffset","OutOffset"]]=conduits[["InOffset","OutOffset"]].fillna(0)
+
+    return conduits,junctions
+
 
 def __swmm_template__():
     template='''
@@ -2034,6 +1987,9 @@ DRY_ONLY         NO
 ;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow
 ;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
 
+[PUMPS]
+;;Name           From Node        To Node          Pump Curve       Status   Sartup Shutoff 
+;;-------------- ---------------- ---------------- ---------------- ------ -------- --------
 
 [OUTLETS]
 ;;Name           From Node        To Node          Offset     Type            QTable/Qcoeff    Qexpon     Gated
@@ -2044,11 +2000,19 @@ DRY_ONLY         NO
 ;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert
 ;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
 
+[CONTROLS]
+
+
+[CONTROLS]
+
 
 [CURVES]
 ;;Name           Type       X-Value    Y-Value
 ;;-------------- ---------- ---------- ----------
 
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;-------------- ---------- ---------- ----------
 
 [REPORT]
 ;;Reporting Options
@@ -2070,6 +2034,7 @@ Units      None
 [VERTICES]
 ;;Link           X-Coord            Y-Coord
 ;;-------------- ------------------ ------------------
+
     '''
     template=template.split('\n')
     return template
