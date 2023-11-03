@@ -1677,9 +1677,10 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
     name_only=file.stem
     dir=file.parent
     print("Selected File: ",name_only)
-    demand_nodes=[]       # For storing list of nodes that have non-zero demands
-    desired_demands=[]    # For storing demand rates desired by each node for desired volume calculations
-    elevations=[]
+    demand_nodes = []       # For storing list of nodes that have non-zero demands
+    desired_demands = []    # For storing demand rates desired by each node for desired volume calculations
+    elevations = []
+    patterns = []
 
     # Creates a network model object using EPANET .inp file
     network=wntr.network.WaterNetworkModel(file)
@@ -1690,6 +1691,7 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
         demand_nodes.append(node[1].name)
         desired_demands.append(node[1].base_demand)
         elevations.append(node[1].elevation)
+        patterns.append(node[1].demand_timeseries_list._list[0].pattern_name)
 
     # Get the supply duration in minutes (/60) as an integer
     supply_duration=int(network.options.time.duration/60)
@@ -1700,7 +1702,6 @@ def change_duration(path:str,duration_hr:int,duration_min:int):
     else: duration_min=str(duration_min)
 
     desired_demands=[demand*demand_multiplier*1000 for demand in desired_demands]
-    patterns=["       " for demand in desired_demands]
     semicolons=[";" for demand in desired_demands]
     node_section=pd.DataFrame(list(zip(demand_nodes,elevations,desired_demands,patterns,semicolons)))
     node_section=node_section.to_string(header=False,index=False,col_space=10).splitlines()
